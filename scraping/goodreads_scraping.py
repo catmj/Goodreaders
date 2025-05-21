@@ -16,7 +16,7 @@ HEADERS = {
 
 #get the list of best books of 2024
 app_url = "https://www.goodreads.com"
-start_url = "https://www.goodreads.com/choiceawards/best-books-2024"
+start_url = "https://www.goodreads.com/choiceawards/best-books-2020" #I think this should work for a lot of years, done 2024, 2023, 2022,  2019
 
 res = requests.get(start_url, headers=HEADERS)
 soup = bs(res.text, 'html.parser')
@@ -181,10 +181,11 @@ for index, category in enumerate(categories):
 
         csv_filename = "books.csv"
 
-        if index == 0 and book_index == 0:
-            with open(csv_filename, "w", newline="", encoding="utf-8") as csv_file:
-                writer = csv.DictWriter(csv_file, fieldnames=book_dict.keys(), quoting=csv.QUOTE_ALL)
-                writer.writeheader()
+        #get titles when starting new file
+        # if index == 0 and book_index == 0:
+        #     with open(csv_filename, "w", newline="", encoding="utf-8") as csv_file:
+        #         writer = csv.DictWriter(csv_file, fieldnames=book_dict.keys(), quoting=csv.QUOTE_ALL)
+        #         writer.writeheader()
 
 
         with open(csv_filename, mode="a", newline="", encoding="utf-8") as csv_file:

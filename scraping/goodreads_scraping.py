@@ -16,7 +16,7 @@ HEADERS = {
 
 #get the list of best books of 2024
 app_url = "https://www.goodreads.com"
-start_url = "https://www.goodreads.com/choiceawards/best-books-2020" #I think this should work for a lot of years, done 2024, 2023, 2022,  2019
+start_url = "https://www.goodreads.com/choiceawards/best-books-2016" #I think this should work for a lot of years, done 2024, 2023, 2022, 2019, 2018
 
 res = requests.get(start_url, headers=HEADERS)
 soup = bs(res.text, 'html.parser')

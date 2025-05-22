@@ -16,7 +16,7 @@ HEADERS = {
 
 #get the list of best books of 2024
 app_url = "https://www.goodreads.com"
-start_url = "https://www.goodreads.com/choiceawards/best-books-2017" #I think this should work for a lot of years, done 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2011.  (Need to merge Catherine and Katie's .csv files, which should be straightforward.)
+start_url = "https://www.goodreads.com/choiceawards/best-books-2017" #I think this should work for a lot of years, done 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2013, 2012, 2011.  (Need to merge Catherine and Katie's .csv files, which should be straightforward.)
 
 res = requests.get(start_url, headers=HEADERS)
 soup = bs(res.text, 'html.parser')

@@ -1,0 +1,55 @@
+import pandas as pd
+
+
+books = pd.read_csv('../scraping/books.csv')
+reviews = pd.read_csv('../scraping/books_by_user.csv')
+
+def clean_author(author_name):
+    pieces = author_name.replace("*","").split(", ")
+    if len(pieces)==2:
+        new_name = pieces[1]+" "+pieces[0]
+        return new_name
+    else:
+        return author_name
+
+def clean_title(title):
+    first_split = title.split("\n")
+    second_split = first_split[0].split(":")
+    if second_split[0] == "Black Panther, Vol. 1":
+        return "black panther (2016-2018) #1"
+    else:
+        return second_split[0]
+    
+def clean_title_2(title):
+    if title == "The Terrible and Wonderful Reasons Why I Run Long Distances (...":
+        return "The Terrible and Wonderful Reasons Why I Run Long Distances (Volume 5)"
+    elif title == "Death Weavers (4)":
+        return "Death Weavers"
+    elif title == "The Girl Who Circumnavigated Fairyland in a Ship of Her Own M...":
+        return "the girl who circumnavigated fairyland in a ship of her own making"
+    elif title == "But What If We're Wrong? Thinking About the Present As If It ...":
+       return "but what if we're wrong? thinking about the present as if it were the past"
+    elif title == "5 Very Good Reasons to Punch a Dolphin in the Mouth and Other...":
+        return "5 very good reasons to punch a dolphin in the mouth and other useful guides"
+    else:
+        return title
+
+
+
+reviews["Author"] = reviews["Author"].map(clean_author).str.lower()
+reviews["Title"] = reviews["Title"].map(clean_title).str.lower()
+books["author_name"] = books["author_name"].str.lower()
+books["title"] = books["title"].map(clean_title_2).str.lower()
+
+
+pairs_books = set(tuple(x) for x in books[['title', 'author_name']].values)
+pairs_reviews = set(tuple(x) for x in reviews[['Title', 'Author']].values)
+
+common_pairs = pairs_books.intersection(pairs_reviews)
+
+books_matched = books[books.apply(lambda row: (row['title'], row['author_name']) in common_pairs, axis=1)]
+reviews_matched = reviews[reviews.apply(lambda row: (row['Title'], row['Author']) in common_pairs, axis=1)]
+
+books_matched.to_csv('../cleaned_data/books_matched.csv')
+reviews_matched.to_csv('../cleaned_data/reviews_matched.csv')
+

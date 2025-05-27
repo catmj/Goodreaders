@@ -1,9 +1,10 @@
-import pandas as pd
+import pandas as pd # type: ignore
 
 
 books = pd.read_csv('../scraping/books.csv')
 reviews = pd.read_csv('../scraping/books_by_user.csv')
 
+### cleaning for review author
 def clean_author(author_name):
     pieces = author_name.replace("*","").split(", ")
     if len(pieces)==2:
@@ -11,7 +12,12 @@ def clean_author(author_name):
         return new_name
     else:
         return author_name
+    
+### not currently accounted for, but in the the books data set, books with two authors are seperated by an and, 
+### however the second author name might be cut off by "..."
 
+
+#cleaning for review title
 def clean_title(title):
     first_split = title.split("\n")
     second_split = first_split[0].split(":")
@@ -20,6 +26,7 @@ def clean_title(title):
     else:
         return second_split[0]
     
+#cleaning for book title: observation, cuts off longer titles with "..."
 def clean_title_2(title):
     if title == "The Terrible and Wonderful Reasons Why I Run Long Distances (...":
         return "The Terrible and Wonderful Reasons Why I Run Long Distances (Volume 5)"

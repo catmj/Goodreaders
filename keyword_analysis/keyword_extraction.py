@@ -13,7 +13,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 
 # IMPORTING COPIES OF DATA
 df1 = pd.read_csv('./keyword_analysis/books_matched_copy.csv')
-# df2 = pd.read_csv('./keyword_analysis/reviews_matched_copy.csv')
+df2 = pd.read_csv('./keyword_analysis/reviews_matched_copy.csv')
 # print(df1)
 # print(df2)
 # df1.info()
@@ -22,7 +22,9 @@ df1 = pd.read_csv('./keyword_analysis/books_matched_copy.csv')
 # PRE-PROCESSING
 stop_words = set(stopwords.words('english'))
 # Choose stopwords to exclude:
-new_stop_words = ["book"]
+new_stop_words = ["book", "books", "novel", "novels", "writer", "writers", "write", "writes", "writing", "written", "author", "authors", "edition", "editions",
+                  "bestseller", "bestsellers", "bestselling", "reader", "readers", "reading", "read", "reads", "isbn", "title", "titles", "titled", "titular",   
+                  "genre", "genres", "review", "reviews", "reviewed", "reviewer", "reviewers", "critic", "critics", "series", "newest", "latest", "yet"]
 # Add the above words to the list of default stopwords:
 stop_words = list(stop_words.union(new_stop_words))
 def pre_process(text):
@@ -42,11 +44,19 @@ def pre_process(text):
     lmtzr = WordNetLemmatizer()
     text = [lmtzr.lemmatize(word) for word in text]
     return ' '.join(text)
-# TROUBLESHOOT THIS:
-# docs = df1['description'].apply(lambda x:pre_process(x))
 
-# TESTING FOR SAMPLE STRING
-mystr = "This is my book test line. Mathematics. Physics. Giraffe. Pineapple. Helpers."
-newstr = pre_process(mystr)
-print(newstr)
-print(type(newstr))
+# KEYWORDS FOR BOOKS.CSV
+keyword_lists_df1 = df1['description'].astype(str).apply(lambda x:pre_process(x)) # Create keyword lists.
+# print(keyword_lists_df1)
+keyword_lists_df1.to_csv('./keyword_analysis/output_file_books.csv', index=True) # Convert keyword lists to .csv file.
+
+# KEYWORDS FOR REVIEWS.CSV
+keyword_lists_df2 = df2['review'].astype(str).apply(lambda x:pre_process(x)) # Create keyword lists.
+# print(keyword_lists_df2)
+keyword_lists_df2.to_csv('./keyword_analysis/output_file_reviews.csv', index=True) # Convert keyword lists to .csv file.
+
+# TESTING CODE
+# mystr = "This is my books test line. Mathematics. Physics. Giraffe. Pineapple. Helpers."
+# newstr = pre_process(mystr)
+# print(newstr)
+# print(type(newstr))

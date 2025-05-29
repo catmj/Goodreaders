@@ -4,6 +4,23 @@ import pandas as pd # type: ignore
 books = pd.read_csv('../scraping/books.csv')
 reviews = pd.read_csv('../scraping/books_by_user.csv')
 
+books["publication_info"] = pd.to_datetime(books["publication_info"],errors ="coerce")
+
+
+def clean_dates(date):
+    if date == "not set":
+        return ""
+
+print(reviews[["date_started","date_added","date_read","date_pub_edition"]])
+
+reviews["date_started"] = pd.to_datetime(reviews["date_started"],errors ="coerce")
+reviews["date_added"] = pd.to_datetime(reviews["date_added"],errors ="coerce")
+reviews["date_read"] = pd.to_datetime(reviews["date_read"],errors ="coerce")
+reviews["date_pub_edition"] = pd.to_datetime(reviews["date_pub_edition"],errors ="coerce")
+
+print(books["publication_info"])
+print(reviews[["date_started","date_added","date_read","date_pub_edition"]])
+
 ### cleaning for review author
 def clean_author(author_name):
     pieces = author_name.replace("*","").split(", ")

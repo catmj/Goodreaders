@@ -3,8 +3,8 @@
 
 
 # PACKAGES
-import pandas as pd
-from keybert import KeyBERT
+import pandas as pd # type: ignore
+from keybert import KeyBERT # type: ignore
 
 
 # IMPORTING COPIES OF DATA

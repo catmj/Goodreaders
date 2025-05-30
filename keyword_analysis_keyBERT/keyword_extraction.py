@@ -1,5 +1,5 @@
 # using https://github.com/MaartenGr/KeyBERT
-# to run fist do: pip install -r requirements.txt
+# to run first do: pip install -r requirements.txt
 
 
 # PACKAGES

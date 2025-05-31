@@ -1,4 +1,5 @@
 # Good resource: https://www.kaggle.com/code/akhatova/extract-keywords
+# To run first do: pip install -r requirements.txt
 
 # PACKAGES
 import numpy as np

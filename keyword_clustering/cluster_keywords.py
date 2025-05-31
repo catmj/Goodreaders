@@ -24,7 +24,7 @@ print("Start clustering")
 start_time = time.time()
 
 # Two parameters to tune:
-# min_cluster_size: Only consider cluster that have at least 5 elements
+# min_cluster_size: Only consider cluster that have at least 10 elements
 # threshold: Consider sentence pairs with a cosine-similarity larger than threshold as similar
 
 clusters = util.community_detection(key_embeddings, min_community_size=10, threshold=0.6)

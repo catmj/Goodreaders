@@ -1,4 +1,5 @@
 import pandas as pd # type: ignore
+import numpy as np  # type: ignore
 
 
 books = pd.read_csv('../scraping/books.csv')
@@ -64,7 +65,11 @@ common_pairs = pairs_books.intersection(pairs_reviews)
 
 books_matched = books[books.apply(lambda row: (row['title'], row['author_name']) in common_pairs, axis=1)]
 reviews_matched = reviews[reviews.apply(lambda row: (row['Title'], row['Author']) in common_pairs, axis=1)]
+books_unmatched = books[books.apply(lambda row: (row['title'], row['author_name']) not in common_pairs, axis=1)]
+reviews_unmatched = reviews[reviews.apply(lambda row: (row['Title'], row['Author']) not in common_pairs, axis=1)]
+reviews_unmatched = reviews[["Title","Author"]].drop_duplicates().sort_values(by=['Title'])
 
 books_matched.to_csv('../cleaned_data/books_matched.csv')
 reviews_matched.to_csv('../cleaned_data/reviews_matched.csv')
-
+books_unmatched.to_csv('../cleaned_data/books_unmatched.csv')
+reviews_unmatched.to_csv('../cleaned_data/reviews_unmatched.csv')

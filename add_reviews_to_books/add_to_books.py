@@ -24,10 +24,14 @@ def clean_string(string):
 
 # Function for getting reviews and ratings.
 def get_ratings_reviews(text): 
-    # Find the substring for ratings
+    # Find the substring for ratings.
     ratings = text[:text.find(" ratings")].replace(",", "")
-    # Find the substring for reviews
+    # Remove non-numeric characters.
+    ratings = re.sub("[^0-9]", "", ratings)
+    # Find the substring for reviews.
     reviews = text[text.find("and ") + 4:text.find(" reviews")].replace(",", "")
+    # Remove non-numeric characters.
+    reviews = re.sub("[^0-9]", "", reviews)
     return int(ratings), int(reviews)
 
 # Function for getting genres.

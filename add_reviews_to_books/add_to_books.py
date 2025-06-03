@@ -120,7 +120,9 @@ for index, row in df.iterrows():
     else:
         publication = "No publication found"
 
+    index_to_use = index + 5337
     book_dict = {
+        "index": index_to_use,
         "category": genre,
         "genres": genres,
         "votes": book_votes,

@@ -96,7 +96,7 @@ for index, row in df.iterrows():
     book_ratings_reviews_hist = soup.find_all(class_="RatingsHistogram__labelTotal")#.get('aria-label').strip()
     hist = []
     for i in book_ratings_reviews_hist:
-    hist.append(i.text.strip())
+        hist.append(i.text.strip())
 
     # Other information.
     author_avatar_url_element = soup.select('.PageSection .AuthorPreview a.Avatar img.Avatar__image')

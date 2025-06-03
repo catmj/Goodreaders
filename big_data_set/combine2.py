@@ -6,13 +6,13 @@ import re
 def clean_title(title):
     """
     Cleans and standardizes a book title for matching purposes,
-    then truncates to the first 10 characters.
+    then truncates to the first 61 characters.
     - Converts to string, handles None/NaN.
     - Removes common subtitle separators (colon, parentheses) and text after them.
     - Converts to lowercase.
     - Removes non-alphanumeric characters (keeping spaces).
     - Replaces multiple spaces with a single space and strips extra whitespace.
-    - Truncates to the first 10 characters.
+    - Truncates to the first 61 characters.
     """
     if pd.isna(title):
         return ""
@@ -30,8 +30,8 @@ def clean_title(title):
     # Replace multiple spaces with a single space and strip leading/trailing spaces
     title = re.sub(r'\s+', ' ', title).strip()
     
-    # Truncate to the first 10 characters for matching
-    title = title[:10]
+    # Truncate to the first 61 characters for matching
+    title = title[:61]
     
     return title
 

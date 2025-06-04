@@ -62,11 +62,18 @@ for index, row in df.iterrows():
     genres = get_genres(soup)
     book_name = df.astype(str).iloc[index,1]
     book_author = df.astype(str).iloc[index,2]
-    book_rating = soup.find(class_="RatingStatistics__rating").text.strip()
+    if soup.find(class_="RatingStatistics__rating") == None:
+        book_rating = "Skip"
+    else:
+        book_rating = soup.find(class_="RatingStatistics__rating").text.strip()
 
     # Get number of book reviews.
-    book_ratings_reviews = soup.find(class_="RatingStatistics__meta").get('aria-label').strip()
-    book_ratings, book_reviews = get_ratings_reviews(book_ratings_reviews)
+    if soup.find(class_="RatingStatistics__meta") == None:
+        book_ratings = "Skip"
+        book_reviews = "Skip"
+    else:
+        book_ratings_reviews = soup.find(class_="RatingStatistics__meta").get('aria-label').strip()
+        book_ratings, book_reviews = get_ratings_reviews(book_ratings_reviews)
     # print(f"Ratings: {book_ratings}, Reviews: {book_reviews}")
 
     # Get book blurb.

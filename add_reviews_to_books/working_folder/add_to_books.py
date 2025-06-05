@@ -15,7 +15,7 @@ HEADERS = {
     "Accept-Language": "en-US, en;q=0.5",
 }
 url_base = "https://www.goodreads.com/book/show/"
-df = pd.read_csv('reviews_with_urls_left_to_scrub.csv')
+df = pd.read_csv('reviews_with_urls_left_to_scrub_2.csv')
 
 # Function for cleaning strings.
 def clean_string(string):
@@ -131,7 +131,7 @@ for index, row in df.iterrows():
     else:
         publication = "No publication found"
 
-    index_to_use = index + 5561
+    index_to_use = index + 1
     book_dict = {
         "index": index_to_use,
         "category": genre,
@@ -158,7 +158,7 @@ for index, row in df.iterrows():
     #     print(i, ":", book_dict[i])
     # print(book_dict.keys())
 
-    csv_filename = "books_matched_in_progress.csv"
+    csv_filename = "books_matched_in_progress_2.csv"
     with open(csv_filename, mode="a", newline="", encoding="utf-8") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=book_dict.keys(), quoting=csv.QUOTE_ALL)
         writer.writerow(book_dict)

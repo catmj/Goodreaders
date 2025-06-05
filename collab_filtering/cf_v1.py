@@ -32,37 +32,19 @@ num_features = 200
 ###
 
 
-# book_list = pivot_ratings.index.tolist()
-
-# my_books = ["gideon the ninth, tamsyn muir", "the fifth season, n.k. jemisin", 
-#             "return of the thief, megan whalen turner", "iron widow, xiran jay zhao",
-#             "catching fire, suzanne collins"]
-
-# my_ratings = [5,5,4,3,3]
-# my_index = [book_list.index(book) for book in my_books]
-# my_index_rating = list(zip(my_index,my_ratings))
-
-# test_ratings = np.zeros(num_books)
-
-# for i,rating in my_index_rating:
-#     test_ratings[i] = rating
+book_list = pivot_ratings.index.tolist()
 
 
-# test_rated = [i for i in range(len(test_ratings)) if test_ratings[i] > 0]
-
-# print('\nTest user ratings:\n')
-# for i in range(len(test_ratings)):
-#     if test_ratings[i] > 0 :
-#         print(f'Rated {test_ratings[i]} for  {book_list[i]}')
+test_ratings = Y[:,0]
 
 
-# # Add new user ratings to Y 
-# Y = np.c_[test_ratings, Y]
+test_rated = [i for i in range(len(test_ratings)) if test_ratings[i] > 0]
 
-# # Add new user indicator matrix to R
-# R = np.c_[(test_ratings != 0).astype(int), R]
+print('\nTest user ratings:\n')
+for i in range(len(test_ratings)):
+    if test_ratings[i] > 0 :
+        print(f'Rated {test_ratings[i]} for  {book_list[i]}')
 
-# num_books, num_users = Y.shape
 
 
 

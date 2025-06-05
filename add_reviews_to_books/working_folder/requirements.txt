@@ -1,5 +1,3 @@
 bs4
 requests
-re
-csv
 pandas

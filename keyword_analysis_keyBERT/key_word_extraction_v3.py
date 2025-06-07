@@ -13,7 +13,7 @@ nltk.download('wordnet')
 class KeywordExtractor:
     """
     A class to encapsulate the text preprocessing and keyword extraction logic
-    for multiple CSV files with varying KeyBERT parameters.
+    for multiple CSV files with varying KeyBERT parameters, retaining key metadata.
     """
     def __init__(self, file_paths):
         if not isinstance(file_paths, list) or not file_paths:
@@ -65,16 +65,29 @@ class KeywordExtractor:
 
     def process_file(self, file_path, param_combinations):
         """
-        Processes a single CSV file, extracting keywords for each specified
-        combination of n and diversity.
+        Processes a single CSV file: loads, preprocesses, extracts keywords,
+        and saves results including specified metadata columns.
         """
         print(f"\nProcessing file: {file_path}")
         try:
             df = pd.read_csv(file_path)
+            
+            # Define required columns for processing and metadata
+            #required_cols = ['description']
+            metadata_cols = ['genres', 'title', 'author_name', 'rating']
+            
+            # Check for required 'description' column
             if 'description' not in df.columns:
                 print(f"Skipping {file_path}: 'description' column not found.")
                 return
 
+            # Check for optional metadata columns and warn if missing
+            available_metadata_cols = [col for col in metadata_cols if col in df.columns]
+            missing_metadata_cols = [col for col in metadata_cols if col not in df.columns]
+            if missing_metadata_cols:
+                print(f"Warning: Following metadata columns missing in {file_path}: {', '.join(missing_metadata_cols)}. They will be omitted from output.")
+
+            # Get base name for output files
             base_name = os.path.basename(file_path).replace('.csv', '')
 
             print("Starting text preprocessing...")
@@ -85,22 +98,19 @@ class KeywordExtractor:
             for n_val, diversity_val in param_combinations:
                 print(f"\n--- Extracting keywords for n={n_val}, diversity={diversity_val} ---")
                 
-                # Extract from original descriptions
-                col_name_original = f'{base_name}_keywords_original_n{n_val}_div{diversity_val}'
-                df[col_name_original] = df['description'].astype(str).apply(
-                    lambda x: self.extract_keywords(x, n=n_val, diversity=diversity_val)
-                )
-                output_original_path = f'output_file_{base_name}_original_n{n_val}_div{diversity_val}.csv'
-                df[[df.columns[0], col_name_original]].to_csv(output_original_path, index=False)
-                print(f"Keywords from original descriptions saved to '{output_original_path}'")
+                # Prepare base columns for output (metadata + description)
+                output_base_df = df[available_metadata_cols + ['description']].copy()
 
                 # Extract from preprocessed descriptions
-                col_name_preprocessed = f'{base_name}_keywords_preprocessed_n{n_val}_div{diversity_val}'
-                df[col_name_preprocessed] = df['description_preprocessed'].astype(str).apply(
+                col_name_preprocessed_keywords = 'keywords'
+                output_base_df[col_name_preprocessed_keywords] = df['description_preprocessed'].astype(str).apply(
                     lambda x: self.extract_keywords(x, n=n_val, diversity=diversity_val)
                 )
                 output_preprocessed_path = f'output_file_{base_name}_preprocessed_n{n_val}_div{diversity_val}.csv'
-                df[[df.columns[0], col_name_preprocessed]].to_csv(output_preprocessed_path, index=False)
+                
+                # Select columns for output: original metadata + original description + new keyword column
+                cols_to_save_preprocessed = available_metadata_cols + [col_name_preprocessed_keywords]
+                output_base_df[cols_to_save_preprocessed].to_csv(output_preprocessed_path, index=False)
                 print(f"Keywords from preprocessed descriptions saved to '{output_preprocessed_path}'")
 
         except Exception as e:
@@ -117,11 +127,12 @@ class KeywordExtractor:
 if __name__ == "__main__":
     data_folder_path = 'data_folder' # Adjust this to your data directory
 
-    # Define the combinations of n and diversity you want to test
-    # Each tuple is (n_value, diversity_value)
-    keyword_params = [
-        (15, 0.2)
-    ]
+    # Define ranges for n and diversity
+    n_values = [15]
+    diversity_values = [0.2]
+
+    # Generate all combinations (grid search)
+    keyword_params_grid = [(n, div) for n in n_values for div in diversity_values]
 
     if os.path.exists(data_folder_path):
         all_csv_files_in_folder = [os.path.join(data_folder_path, f) for f in os.listdir(data_folder_path) if f.endswith('.csv')]
@@ -134,4 +145,4 @@ if __name__ == "__main__":
         exit()
 
     extractor = KeywordExtractor(data_files)
-    extractor.run_keyword_extraction_for_all_files(keyword_params)
+    extractor.run_keyword_extraction_for_all_files(keyword_params_grid)

@@ -1,4 +1,4 @@
-# Data after entry 5336 may still need to be cleaned or matched.
+# Data after entry 5336 still need to be cleaned or matched.
 # TO FIX: URLs with multiple books.
 
 # Needed packages.
@@ -15,7 +15,7 @@ HEADERS = {
     "Accept-Language": "en-US, en;q=0.5",
 }
 url_base = "https://www.goodreads.com/book/show/"
-df = pd.read_csv('reviews_unmatched_with_goodreads_urls_filtered_no_dupes.csv')
+df = pd.read_csv('reviews_with_urls_left_to_scrub_3.csv')
 
 # Function for cleaning strings.
 def clean_string(string):
@@ -24,11 +24,11 @@ def clean_string(string):
 
 # Function for getting reviews and ratings.
 def get_ratings_reviews(text): 
-    # Find the substring for ratings.
+    # Find the substring for ratings
     ratings = text[:text.find(" ratings")].replace(",", "")
     # Remove non-numeric characters.
     ratings = re.sub("[^0-9]", "", ratings)
-    # Find the substring for reviews.
+    # Find the substring for reviews
     reviews = text[text.find("and ") + 4:text.find(" reviews")].replace(",", "")
     # Remove non-numeric characters.
     reviews = re.sub("[^0-9]", "", reviews)
@@ -131,7 +131,7 @@ for index, row in df.iterrows():
     else:
         publication = "No publication found"
 
-    index_to_use = index + 5337
+    index_to_use = index + 18117
     book_dict = {
         "index": index_to_use,
         "category": genre,
@@ -158,7 +158,7 @@ for index, row in df.iterrows():
     #     print(i, ":", book_dict[i])
     # print(book_dict.keys())
 
-    csv_filename = "books_matched_more.csv"
+    csv_filename = "books_matched_in_progress_2.csv"
     with open(csv_filename, mode="a", newline="", encoding="utf-8") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=book_dict.keys(), quoting=csv.QUOTE_ALL)
         writer.writerow(book_dict)

@@ -5,8 +5,8 @@ from pathlib import Path # For better path handling
 
 # --- Configuration ---
 # Define base paths for input and output directories
-INPUT_DIR = Path('../scraping')
-OUTPUT_DIR = Path('../cleaned_data')
+INPUT_DIR = Path('../files_to_clean')
+OUTPUT_DIR = Path('../cleaned_data_2')
 MAX_FILE_SIZE_MB = 45 # Maximum size for output CSV chunks
 
 # Ensure output directory exists
@@ -15,10 +15,10 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 # --- Data Loading ---
 # Load primary datasets
 try:
-    books = pd.read_csv(INPUT_DIR / 'books.csv')
+    books = pd.read_csv(INPUT_DIR / 'books_full_unmatched_uncleaned_1.csv')
     reviews = pd.read_csv(INPUT_DIR / 'books_by_user.csv')
 except FileNotFoundError as e:
-    print(f"Error loading initial CSV files: {e}. Please ensure 'books.csv' and 'books_by_user.csv' are in {INPUT_DIR}")
+    print(f"Error loading initial CSV files: {e}. Please ensure 'books_full_unmatched_uncleaned_1.csv' and 'books_by_user.csv' are in {INPUT_DIR}")
     exit() # Exit if essential files are missing
 
 # List of additional review files to load and concatenate
@@ -28,11 +28,24 @@ additional_review_files = [
     'books_by_user24.csv',
 ]
 
+# List of additional book files to load and concatenate
+additional_book_files = [
+    'books_full_unmatched_uncleaned_2.csv',
+    'books_full_unmatched_uncleaned_3.csv'
+]
+
 # Define the expected columns for review files
 REVIEW_COLUMNS = [
     'Title', 'Author', 'Rating', 'User_id', 'isbn', 'num_ratings',
     'avg_rating', 'num_pages', 'review', 'date_started', 'date_read',
     'date_added', 'format', 'date_pub_edition'
+]
+
+# Define the expected columns for book files
+BOOK_COLUMNS = [
+    "index","category","genres","votes","title","description","author_name",
+    "author_about","avatar_url","pages","rating","num_ratings","num_reviews",
+    "publication_info","img_url","book_url","ratings_hist","want_to_read_num","current_read_num"
 ]
 
 # Load and concatenate additional review files
@@ -62,6 +75,37 @@ for file_name in additional_review_files:
 if loaded_additional_reviews:
     reviews = pd.concat([reviews] + loaded_additional_reviews, ignore_index=True)
     print(f"Total reviews after concatenation: {len(reviews)} rows.")
+else:
+    print("No additional review files were loaded or concatenated.")
+
+
+# Load and concatenate additional review files
+loaded_additional_books = []
+for file_name in additional_book_files:
+    file_path = INPUT_DIR / file_name
+    if file_path.exists():
+        try:
+            df = pd.read_csv(file_path)
+            # Assign columns if they are not already set (or if they are generic integer columns)
+            # This handles cases where headers might be missing or incorrect
+            if list(df.columns) != BOOK_COLUMNS:
+                if len(df.columns) == len(BOOK_COLUMNS):
+                    df.columns = BOOK_COLUMNS
+                else:
+                    print(f"Warning: {file_name} has {len(df.columns)} columns, expected {len(BOOK_COLUMNS)}. Skipping this file.")
+                    continue
+            loaded_additional_books.append(df)
+            print(f"Successfully loaded {file_name}")
+        except pd.errors.EmptyDataError:
+            print(f"Warning: {file_name} is empty. Skipping.")
+        except Exception as e:
+            print(f"Error loading {file_name}: {e}. Skipping.")
+    else:
+        print(f"Info: {file_name} not found at {file_path}. Skipping.")
+
+if loaded_additional_books:
+    books = pd.concat([books] + loaded_additional_books, ignore_index=True)
+    print(f"Total books after concatenation: {len(books)} rows.")
 else:
     print("No additional review files were loaded or concatenated.")
 
@@ -138,6 +182,7 @@ def clean_title_2(title: str) -> str:
     return title_corrections.get(title, title) # Return corrected title or original if not found
 
 
+
 # --- Apply Cleaning Functions and Normalize Text ---
 print("Applying cleaning functions and normalizing text...")
 # Convert to string first to avoid errors with non-string types, then apply map
@@ -146,6 +191,7 @@ reviews["Title"] = reviews["Title"].astype(str).map(clean_title).str.lower()
 books["author_name"] = books["author_name"].astype(str).str.lower()
 books["title"] = books["title"].astype(str).map(clean_title_2).str.lower()
 print("Cleaning and normalization complete.")
+
 
 
 # --- Data Matching ---
@@ -163,6 +209,7 @@ print(f"Found {len(common_pairs)} common book-author pairs.")
 # Using .isin() for potentially better performance than apply with lambda for large DFs
 books_matched = books[books.apply(lambda row: (row['title'], row['author_name']) in common_pairs, axis=1)]
 reviews_matched = reviews[reviews.apply(lambda row: (row['Title'], row['Author']) in common_pairs, axis=1)]
+reviews_matched = reviews_matched.sample(frac=1)
 
 books_unmatched = books[~books.apply(lambda row: (row['title'], row['author_name']) in common_pairs, axis=1)]
 reviews_unmatched = reviews[~reviews.apply(lambda row: (row['Title'], row['Author']) in common_pairs, axis=1)]
@@ -246,3 +293,4 @@ def split_into_chunks(frame_matched: pd.DataFrame, OUTPUT_DIR: Path, MAX_FILE_SI
 
 
 split_into_chunks(reviews_matched, OUTPUT_DIR, MAX_FILE_SIZE_MB, "reviews_matched")
+split_into_chunks(books_matched, OUTPUT_DIR, MAX_FILE_SIZE_MB, "books_matched")

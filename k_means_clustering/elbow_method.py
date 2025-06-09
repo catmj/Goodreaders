@@ -1,0 +1,36 @@
+import pandas as pd
+import numpy as np
+from kmodes.kmodes import KModes
+import matplotlib.pyplot as plt
+
+# Defining a method that converts strings of feature vectors to actual feature vectors.
+def str_to_feat(input):
+    cleaned_input = input.strip("[").strip("]").split(", ")
+    output = [int(x) for x in cleaned_input]
+    return output
+
+# Importing feature data.
+feature_df = pd.read_csv('books.csv')
+num_rows = len(feature_df) # Do not count column names as a row.
+num_features = len(str_to_feat(feature_df.iloc[0,2]))
+
+# Isolating feature data into an array.
+data = np.vstack((np.array(str_to_feat(feature_df.iloc[0,2])),np.array(str_to_feat(feature_df.iloc[1,2]))))
+for i in range(2,num_rows):
+    data = np.vstack((data,np.array(str_to_feat(feature_df.iloc[i,2]))))
+print(data)
+
+# Determine costs.
+cost = []
+K = range(1,30)
+for k in list(K):
+    kmode = KModes(n_clusters=k, init = "random", n_init = 5, verbose=1)
+    kmode.fit_predict(data)
+    cost.append(kmode.cost_)
+
+# Create elbow plot.
+plt.plot(K, cost, 'x-')
+plt.xlabel('Number of Clusters')
+plt.ylabel('Cost')
+plt.title('Elbow Curve')
+plt.show()

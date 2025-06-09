@@ -24,7 +24,7 @@ print(data)
 cost = []
 K = range(1,30)
 for k in list(K):
-    kmode = KModes(n_clusters=k, init = "random", n_init = 5, verbose=1)
+    kmode = KModes(n_clusters=k, init = "random", n_init = 10, max_iter = 20, verbose=1)
     kmode.fit_predict(data)
     cost.append(kmode.cost_)
 

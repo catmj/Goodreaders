@@ -1,0 +1,32 @@
+--- Your Top Recommendations ---
+
+Predicted Rating: 7.62, Book: star wars, catherine saunders
+Predicted Rating: 7.00, Book: crush, richard siken
+Predicted Rating: 6.82, Book: son of the shadows, juliet marillier
+Predicted Rating: 6.73, Book: death and her devotion, kendra elliot
+Predicted Rating: 6.72, Book: brisingr, christopher paolini
+Predicted Rating: 6.64, Book: cloud atlas, david mitchell
+Predicted Rating: 6.57, Book: the grace of kings, ken liu
+Predicted Rating: 6.55, Book: hot six, janet evanovich
+Predicted Rating: 6.53, Book: royal assassin, robin hobb
+Predicted Rating: 6.53, Book: saga, volume 2, brian k. vaughan
+Predicted Rating: 6.52, Book: targeted, kendra elliot
+Predicted Rating: 6.51, Book: the best thing i never had, erin lawless
+Predicted Rating: 6.51, Book: gone with the wind, john escott
+Predicted Rating: 6.47, Book: scarlet, marissa meyer
+Predicted Rating: 6.47, Book: fruits basket, natsuki takaya
+Predicted Rating: 6.45, Book: in this moment, karen kingsbury
+Predicted Rating: 6.41, Book: the legion of flame, anthony ryan
+Predicted Rating: 6.36, Book: three women at the water's edge, nancy thayer
+Predicted Rating: 6.32, Book: a lick of frost, laurell k. hamilton
+Predicted Rating: 6.30, Book: building from ashes, elizabeth hunter
+Predicted Rating: 6.30, Book: ein tanz mit drachen, george r.r. martin
+Predicted Rating: 6.28, Book: so speaks the heart, johanna lindsey
+Predicted Rating: 6.27, Book: my soul to keep, tananarive due
+Predicted Rating: 6.24, Book: when life happened, jewel e. ann
+Predicted Rating: 6.23, Book: susannah, stephen king
+Predicted Rating: 6.22, Book: break out, nina croft
+Predicted Rating: 6.22, Book: kissing madeline, lex martin
+Predicted Rating: 6.20, Book: fusion, diana kane
+Predicted Rating: 6.19, Book: love's sacred song, mesu andrews
+Predicted Rating: 6.19, Book: for a few demons more, kim harrison

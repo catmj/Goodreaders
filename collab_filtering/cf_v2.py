@@ -2,15 +2,19 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
+import os 
 
 # --- Configuration ---
-DATA_PATH = '../fake_data/'
-RATINGS_FILE = DATA_PATH + 'ratings.csv'
-NUM_FEATURES = 200
+DATA_PATH = '../train_test_split/split_data_combined/'
+RATINGS_FILE = DATA_PATH + 'train_ratings.csv'
+NUM_FEATURES = 300
 LEARNING_RATE = 1e-1
-ITERATIONS = 200
-LAMBDA = 1
-TOP_N_RECOMMENDATIONS = 10 
+ITERATIONS = 400
+LAMBDA = 3.25
+TOP_N_RECOMMENDATIONS = 20
+TRAINED_DATA_FOLDER = 'trained_data/'
+
+os.makedirs(TRAINED_DATA_FOLDER, exist_ok=True)
 
 # --- Data Loading and Preprocessing ---
 def load_and_preprocess_data(ratings_file):
@@ -21,7 +25,7 @@ def load_and_preprocess_data(ratings_file):
         ratings = pd.read_csv(ratings_file)
     except FileNotFoundError:
         print(f"Error: {ratings_file} not found. Please check the path.")
-        return None, None, None, None, None
+        return None, None, None, None, None, None
 
     ratings["book"] = ratings[['Title', 'Author']].agg(', '.join, axis=1)
     ratings = ratings[["book", "User_id", "Rating"]]
@@ -41,25 +45,14 @@ def load_and_preprocess_data(ratings_file):
 
     book_list = pivot_ratings.index.tolist()
     user_list = pivot_ratings.columns.tolist()
-    
+
     return Y, R, Y_norm, Y_mean, book_list, user_list
 
 # --- Collaborative Filtering Cost Function ---
+@tf.function(jit_compile=True) # Added XLA compilation
 def cofi_cost_func_v(X, W, b, Y, R, lambda_):
     """
     Computes the cost for the collaborative filtering model.
-
-    Args:
-      X (tf.Tensor): Matrix of item features (num_books, num_features).
-      W (tf.Tensor): Matrix of user parameters (num_users, num_features).
-      b (tf.Tensor): Vector of user biases (1, num_users).
-      Y (tf.Tensor): Matrix of user ratings of books (num_books, num_users).
-      R (tf.Tensor): Binary matrix, where R(i, j) = 1 if the i-th book
-                     was rated by the j-th user, 0 otherwise.
-      lambda_ (float): Regularization parameter.
-
-    Returns:
-      J (tf.Tensor): The computed cost.
     """
     predictions = tf.linalg.matmul(X, tf.transpose(W)) + b
     error = (predictions - Y) * R
@@ -123,6 +116,33 @@ def make_predictions_and_recommendations(X, W, b, Y_mean, Y_original, book_list,
         if Y_original[idx, user_index] > 0:
             print(f"Book: {book_list[idx]}, Original Rating: {Y_original[idx, user_index]}, Predicted Rating: {user_predictions[idx]:0.2f}")
 
+# --- Data Export (Adjusted to save into a specific folder) ---
+def export_data(X, book_list, Y_mean, num_features, output_folder):
+    """
+    Exports the matrix X to a .npy file, book_list to a plain text file,
+    and Y_mean to a .npy file, within a specified output folder.
+    """
+    # Create the output folder if it doesn't exist
+    os.makedirs(output_folder, exist_ok=True)
+
+    # Construct full file paths
+    x_filepath = os.path.join(output_folder, f'X_features_{num_features}.npy')
+    book_list_filepath = os.path.join(output_folder, f'book_list_features_{num_features}.txt')
+    y_mean_filepath = os.path.join(output_folder, f'Y_mean_features_{num_features}.npy')
+
+    np.save(x_filepath, X.numpy())
+
+    with open(book_list_filepath, 'w', encoding='utf-8') as f:
+        for book in book_list:
+            f.write(book + '\n')
+
+    np.save(y_mean_filepath, Y_mean)
+
+    print(f"\n--- Data Export Complete ---")
+    print(f"Matrix X exported to: {x_filepath}")
+    print(f"Book list exported to: {book_list_filepath}")
+    print(f"Y_mean exported to: {y_mean_filepath}")
+
 
 # --- Main Execution ---
 if __name__ == "__main__":
@@ -140,3 +160,6 @@ if __name__ == "__main__":
     X, W, b = train_model(Y_norm, R, num_books, num_users, NUM_FEATURES, LEARNING_RATE, ITERATIONS, LAMBDA)
 
     make_predictions_and_recommendations(X, W, b, Y_mean, Y_original, book_list, test_user_index, TOP_N_RECOMMENDATIONS)
+
+    # Export the matrix X, book_list, and Y_mean into the specified folder
+    export_data(X, book_list, Y_mean, NUM_FEATURES, TRAINED_DATA_FOLDER)

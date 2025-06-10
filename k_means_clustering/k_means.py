@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import random
 random.seed(38)
+from kmodes.kmodes import KModes
 
 # Defining Hamming distance.
 def hamming_dist(vec_1, vec_2):
@@ -31,21 +32,38 @@ def str_to_feat(input):
     output = [int(x) for x in cleaned_input]
     return output
 
-# Specifying number of clusters and importing feature data.
-clusters = {}
-num_clusters = 200
+# Importing feature data.
 feature_df = pd.read_csv('books.csv')
 num_rows = len(feature_df) # Do not count column names as a row.
 num_features = len(str_to_feat(feature_df.iloc[1,2]))
 
+# Isolating feature data into an array.
+data = np.array(str_to_feat(feature_df.iloc[0,2]))
+for i in range(1,num_rows):
+    data = np.vstack((data,np.array(str_to_feat(feature_df.iloc[i,2]))))
+# print(data)
+
+# Specifying number of clusters.
+num_clusters = 200
+# clusters = {}
+
+
+
+
+kmode = KModes(n_clusters=k, init = "random", n_init = 10, max_iter = 20, verbose=1)
+kmode.fit_predict(data)
+
+
+
+
 # Initializing random mode centroids.
-initial_modes = random.sample(range(num_rows), num_clusters)
-for i in range(num_clusters):
-    center = initial_modes[i]
-    points = []
-    cluster = {
-        'center' : center,
-        'points' : []
-    }
-    clusters[i] = cluster
-print(clusters)
+#initial_modes = random.sample(range(num_rows), num_clusters)
+#for i in range(num_clusters):
+#    center = initial_modes[i]
+#    points = []
+#    cluster = {
+#        'center' : center,
+#        'points' : []
+#    }
+#    clusters[i] = cluster
+#print(clusters)

@@ -22,7 +22,12 @@ print(data)
 
 # Determine costs.
 cost = []
-K = range(1,30)
+K = []
+K_num_points = 50
+K_spacing = 20
+for i in range(1,K_num_points+1):
+    k = i*K_spacing
+    K.append(k)
 for k in list(K):
     kmode = KModes(n_clusters=k, init = "random", n_init = 10, max_iter = 20, verbose=1)
     kmode.fit_predict(data)

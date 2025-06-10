@@ -4,6 +4,7 @@
 import pandas as pd
 import numpy as np
 import random
+random.seed(38)
 
 # Defining Hamming distance.
 def hamming_dist(vec_1, vec_2):
@@ -38,7 +39,6 @@ num_rows = len(feature_df) # Do not count column names as a row.
 num_features = len(str_to_feat(feature_df.iloc[1,2]))
 
 # Initializing random mode centroids.
-random.seed(37)
 initial_modes = random.sample(range(num_rows), num_clusters)
 for i in range(num_clusters):
     center = initial_modes[i]
@@ -48,3 +48,4 @@ for i in range(num_clusters):
         'points' : []
     }
     clusters[i] = cluster
+print(clusters)

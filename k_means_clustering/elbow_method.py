@@ -1,3 +1,6 @@
+# Code for determining optimal number of clusters for k-modes.
+
+# Importing necessary packages.
 import pandas as pd
 import numpy as np
 from kmodes.kmodes import KModes
@@ -18,16 +21,17 @@ num_features = len(str_to_feat(feature_df.iloc[0,2]))
 data = np.vstack((np.array(str_to_feat(feature_df.iloc[0,2])),np.array(str_to_feat(feature_df.iloc[1,2]))))
 for i in range(2,num_rows):
     data = np.vstack((data,np.array(str_to_feat(feature_df.iloc[i,2]))))
-print(data)
 
-# Determine costs.
-cost = []
+# Set numbers of clusters to test.
 K = []
 K_num_points = 50
 K_spacing = 20
 for i in range(1,K_num_points+1):
     k = i*K_spacing
     K.append(k)
+
+# Determine costs.
+cost = []
 for k in list(K):
     kmode = KModes(n_clusters=k, init = "random", n_init = 10, max_iter = 20, verbose=1)
     kmode.fit_predict(data)

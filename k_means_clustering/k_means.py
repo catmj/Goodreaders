@@ -4,6 +4,7 @@
 import pandas as pd
 import numpy as np
 import random
+import csv
 random.seed(38)
 from kmodes.kmodes import KModes
 
@@ -43,20 +44,40 @@ for i in range(1,num_rows):
     data = np.vstack((data,np.array(str_to_feat(feature_df.iloc[i,2]))))
 # print(data)
 
-# Specifying number of clusters.
+# Specifying number of clusters. Use "elbow_method.py" to determine optimal number.
 num_clusters = 200
-# clusters = {}
 
+# Running k-modes algorithm.
+kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 10, max_iter = 20, verbose=1)
+clusters = kmode.fit_predict(data)
+# print("Cluster labels:", clusters)
+# print("Cluster centroids:", kmode.cluster_centroids_)
 
+# Adding a column of feature labels to the input file.
+feature_df['cluster'] = clusters
+feature_df.to_csv('books_clustered.csv', index=False)
 
-
-kmode = KModes(n_clusters=k, init = "random", n_init = 10, max_iter = 20, verbose=1)
-kmode.fit_predict(data)
+# Print lists of each cluster.
+cluster_list = []
+for cluster in range(0,num_clusters):
+    book_list = []
+    for row in range(0,num_rows):
+        if feature_df.iloc[row,4] == cluster:
+            book_to_add = []
+            # Add book title.
+            book_to_add.append(feature_df.iloc[row,0])
+            # Add book author.
+            book_to_add.append(feature_df.iloc[row,1])
+            book_list.append(book_to_add)
+    cluster_list.append(book_list)
+output_df = pd.DataFrame({"titles_authors":cluster_list})
+output_df.to_csv('books_by_cluster.csv', index=True)
 
 
 
 
 # Initializing random mode centroids.
+#clusters = {}
 #initial_modes = random.sample(range(num_rows), num_clusters)
 #for i in range(num_clusters):
 #    center = initial_modes[i]

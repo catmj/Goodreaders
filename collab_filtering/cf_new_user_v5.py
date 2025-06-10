@@ -478,26 +478,23 @@ if __name__ == "__main__":
         "gideon the ninth, tamsyn muir",
         "the fifth season, n.k. jemisin",
         "the king of attolia, megan whalen turner",
-        # "iron widow, xiran jay zhao"
-        # ,
-        # "all systems red, martha wells",
-        # "witch king, martha wells",
-        # "deathless, catherynne m. valente",
-        # "the adventures of amina al-sirafi, shannon chakraborty",
-        # "the city of brass, s.a. chakraborty",
-        # "flight of magpies, k.j. charles",
-        # "ninefox gambit, yoon ha lee",
-        # "she who became the sun, shelley parker-chan",
-        # "boyfriend material, alexis hall",
-        # "the traitor baru cormorant, seth dickinson",
-        # "a memory called empire, arkady martine",
-        # "this is how you lose the time war, amal el-mohtar",
-        # "summer sons, lee mandelo"
+        "iron widow, xiran jay zhao",
+        "all systems red, martha wells",
+        "witch king, martha wells",
+        "deathless, catherynne m. valente",
+        "the adventures of amina al-sirafi, shannon chakraborty",
+        "the city of brass, s.a. chakraborty",
+        "flight of magpies, k.j. charles",
+        "ninefox gambit, yoon ha lee",
+        "she who became the sun, shelley parker-chan",
+        "boyfriend material, alexis hall",
+        "the traitor baru cormorant, seth dickinson",
+        "a memory called empire, arkady martine",
+        "this is how you lose the time war, amal el-mohtar",
+        "summer sons, lee mandelo"
 
     ]
-    sample_my_ratings = [5, 5, 5, 
-                        #  3, 4, 5, 2, 4, 5, 4, 5, 4, 4, 5, 4, 5, 4
-                        ]
+    sample_my_ratings = [5, 5, 5, 3, 4, 5, 2, 4, 5, 4, 5, 4, 4, 5, 4, 5, 4]
 
     # Call the new master function to get recommendations for the sample user
     final_recommendations = get_recommendations_for_user(

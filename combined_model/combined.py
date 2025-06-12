@@ -18,6 +18,75 @@ DEFAULT_NUM_FEATURES = 400
 DEFAULT_NEW_USER_REGULARIZATION_STRENGTH = 15
 DEFAULT_GENRE_WEIGHT = 1
 
+def _load_recommendation_data(
+    genre_weight: int,
+    num_features: int,
+    new_user_regularization_strength: int
+) -> tuple:
+    """
+    Helper function to load all necessary data and models for both content-based
+    and collaborative filtering recommendations.
+
+    Args:
+        genre_weight (int): The weight applied to genre similarity for CB model file paths.
+        num_features (int): Number of features for the collaborative filtering model.
+        new_user_regularization_strength (int): Regularization strength for the new user CF model.
+
+    Returns:
+        tuple: Contains all loaded components in the following order:
+               (cb_similarity_matrix_npy_filepath, cb_book_identifiers_txt_filepath,
+                book_features_loaded, item_bias_loaded, all_book_identifiers_cf,
+                mean_book_ratings_loaded, total_books_loaded)
+               Returns (None, ..., None) if any critical data loading fails.
+    """
+    print("\n--- Loading All Necessary Recommendation Data ---")
+
+    # --- Content-Based File Paths ---
+    cb_similarity_matrix_npy_filepath = f"{BASE_FILE_NAME}_{str(genre_weight).replace('.', '-')}.npy"
+    cb_book_identifiers_txt_filepath = f"{BASE_FILE_NAME}_books_{str(genre_weight).replace('.', '-')}.txt"
+
+    # Verify if CB files exist before proceeding, though find_all_books_with_scores handles it.
+    if not os.path.exists(cb_similarity_matrix_npy_filepath):
+        print(f"Content-based similarity matrix file not found: {cb_similarity_matrix_npy_filepath}")
+        return (None, None, None, None, None, None, None)
+    if not os.path.exists(cb_book_identifiers_txt_filepath):
+        print(f"Content-based book identifiers file not found: {cb_book_identifiers_txt_filepath}")
+        return (None, None, None, None, None, None, None)
+
+    # --- Load Collaborative Filtering Pre-trained Data ---
+    book_features_loaded, item_bias_loaded, all_book_identifiers_cf, \
+    mean_book_ratings_loaded, total_books_loaded = load_pretrained_data(
+        num_features, new_user_regularization_strength, PRETRAINED_DATA_PATH
+    )
+
+    if (book_features_loaded is None or item_bias_loaded is None or
+        all_book_identifiers_cf is None or mean_book_ratings_loaded is None or
+        total_books_loaded is None):
+        print("Failed to load all necessary pre-trained data for collaborative filtering within helper.")
+        return (None, None, None, None, None, None, None)
+
+    print("--- All Data Loaded Successfully ---")
+    return (cb_similarity_matrix_npy_filepath, cb_book_identifiers_txt_filepath,
+            book_features_loaded, item_bias_loaded, all_book_identifiers_cf,
+            mean_book_ratings_loaded, total_books_loaded)
+
+
+def _get_unrated_books(combined_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Helper function to filter out books that the user has already rated.
+
+    Args:
+        combined_df (pd.DataFrame): The DataFrame containing combined CB and CF scores.
+
+    Returns:
+        pd.DataFrame: A DataFrame containing only books not rated by the user.
+                      Returns an empty DataFrame if no unrated books are found.
+    """
+    unrated_books = combined_df[~combined_df['Rated by User']].copy()
+    if unrated_books.empty:
+        print("No unrated books available for recommendation.")
+    return unrated_books
+
 
 def get_combined_recommendations(
     user_books: list[str],
@@ -45,10 +114,17 @@ def get_combined_recommendations(
     print(f"\n--- Starting Combined Recommendation Generation for Settings ---")
     print(f"  Genre Weight: {genre_weight}, Num Features: {num_features}, User Reg Strength: {new_user_regularization_strength}")
 
+    # --- Load all necessary data using the helper function ---
+    (cb_similarity_matrix_npy_filepath, cb_book_identifiers_txt_filepath,
+     book_features_loaded, item_bias_loaded, all_book_identifiers_cf,
+     mean_book_ratings_loaded, total_books_loaded) = _load_recommendation_data(
+        genre_weight, num_features, new_user_regularization_strength
+    )
 
-    # --- Configuration for file paths from both models (now dynamic based on arguments) ---
-    cb_similarity_matrix_npy_filepath = f"{BASE_FILE_NAME}_{str(genre_weight).replace('.', '-')}.npy"
-    cb_book_identifiers_txt_filepath = f"{BASE_FILE_NAME}_books_{str(genre_weight).replace('.', '-')}.txt"
+    if (cb_similarity_matrix_npy_filepath is None or
+        book_features_loaded is None): # Check for any None indicating failure
+        print("Failed to load necessary data for combined recommendations. Exiting.")
+        return None
 
     # --- 1. Get Content-Based Recommendations ---
     print("\n--- Generating Content-Based Recommendations ---")
@@ -70,18 +146,6 @@ def get_combined_recommendations(
     cb_df = cb_df[['Book Identifier', 'CB_Weighted_Similarity_Score']]
 
     # --- 2. Get Collaborative Filtering Predictions ---
-    print("\n--- Loading Pre-trained Data for Collaborative Filtering ---")
-    book_features_loaded, item_bias_loaded, all_book_identifiers_cf, \
-    mean_book_ratings_loaded, total_books_loaded = load_pretrained_data(
-        num_features, new_user_regularization_strength, PRETRAINED_DATA_PATH
-    )
-
-    if (book_features_loaded is None or item_bias_loaded is None or
-        all_book_identifiers_cf is None or mean_book_ratings_loaded is None or
-        total_books_loaded is None):
-        print("Failed to load all necessary pre-trained data for collaborative filtering. Cannot proceed.")
-        return None
-
     print("\n--- Generating Collaborative Filtering Predictions ---")
     cf_df = generate_user_predictions(
         book_features_loaded,
@@ -114,7 +178,9 @@ def get_combined_recommendations(
     )
 
     # --- Convert 'Rated by User' to boolean and handle NaNs ---
-    combined_df['Rated by User'] = combined_df['Rated by User'].fillna(False).astype(bool)
+    # This addresses the FutureWarning regarding implicit downcasting by explicitly
+    # converting to the nullable boolean dtype first, then filling NaNs.
+    combined_df['Rated by User'] = combined_df['Rated by User'].astype('boolean').fillna(False)
 
     # --- Fill NaN scores with 0 ---
     combined_df['CB_Weighted_Similarity_Score'] = combined_df['CB_Weighted_Similarity_Score'].fillna(0)
@@ -132,8 +198,7 @@ def get_combined_recommendations(
 def recommend_fraction_of_top_n(
     combined_df: pd.DataFrame,
     n: int = 100,
-    cb_fraction: float = 0.5,
-    output_limit: int = 30
+    cb_fraction: float = 0.5
 ) -> list[str]:
     """
     Recommends books by taking a specified fraction of the top N from content-based
@@ -146,15 +211,12 @@ def recommend_fraction_of_top_n(
         n (int): The total number of top recommendations to consider from each method.
         cb_fraction (float): The fraction (0.0 to 1.0) of 'n' to take from the content-based method.
                              The remaining fraction (1 - cb_fraction) will be taken from CF.
-        output_limit (int): The maximum number of book identifiers to return in the list.
 
     Returns:
         list[str]: A list of recommended book identifiers, sorted with duplicates prioritized.
     """
-    unrated_books = combined_df[~combined_df['Rated by User']].copy()
-
+    unrated_books = _get_unrated_books(combined_df) # Use helper
     if unrated_books.empty:
-        print("No unrated books available for recommendation.")
         return []
 
     num_to_take_cb = int(n * cb_fraction)
@@ -186,14 +248,14 @@ def recommend_fraction_of_top_n(
         unrated_books['Book Identifier'].isin(cb_ids.union(cf_ids))
     ].copy()
 
-    # Sort: First by 'Recommended_By_Both' (True first), then by CF_Predicted_Rating
+    # Sort: First by 'Recommended_By_Both' (True first) then by 'CB_Weighted_Similarity_Score'
     combined_top_n_prioritized = candidate_books.sort_values(
-        by=['Recommended_By_Both', 'CF_Predicted_Rating'],
+        by=['Recommended_By_Both', 'CB_Weighted_Similarity_Score'],
         ascending=[False, False]
     ).reset_index(drop=True)
 
     # Return the 'Book Identifier' column as a list, limited to output_limit
-    return combined_top_n_prioritized['Book Identifier'].head(output_limit).tolist()
+    return combined_top_n_prioritized['Book Identifier'].head(n).tolist()
 
 
 def recommend_cb_filtered_by_cf(
@@ -215,10 +277,8 @@ def recommend_cb_filtered_by_cf(
         list[str]: A list of recommended book identifiers, sorted by CF_Predicted_Rating
                    from the initially CB-filtered list.
     """
-    unrated_books = combined_df[~combined_df['Rated by User']].copy()
-
+    unrated_books = _get_unrated_books(combined_df) # Use helper
     if unrated_books.empty:
-        print("No unrated books available for recommendation.")
         return []
 
     top_cb_initial = unrated_books.sort_values(
@@ -249,10 +309,8 @@ def recommend_by_multiplying_scores(
     Returns:
         list[str]: A list of recommended book identifiers, sorted by the new multiplied score.
     """
-    unrated_books = combined_df[~combined_df['Rated by User']].copy()
-
+    unrated_books = _get_unrated_books(combined_df) # Use helper
     if unrated_books.empty:
-        print("No unrated books available for recommendation.")
         return []
 
     # Create the combined score by multiplying the two scores
@@ -295,10 +353,8 @@ def recommend_hybrid_strategy_2_and_1(
     Returns:
         list[str]: A list of recommended book identifiers.
     """
-    unrated_books = combined_df[~combined_df['Rated by User']].copy()
-
+    unrated_books = _get_unrated_books(combined_df) # Use helper
     if unrated_books.empty:
-        print("No unrated books available for recommendation.")
         return []
 
     # Calculate number of books for each fraction
@@ -346,6 +402,31 @@ def recommend_hybrid_strategy_2_and_1(
     return hybrid_recommendations['Book Identifier'].head(output_limit).tolist()
 
 
+###For display only:
+
+def print_as_numbered_list(input_list):
+    """
+    Takes a list and prints its elements as a numbered list.
+
+    Args:
+        input_list (list): The list to be printed.
+    """
+    if not isinstance(input_list, list):
+        print("Error: Input must be a list.")
+        return
+
+    if not input_list:
+        print("The list is empty.")
+        return
+
+    print("--- Rec List ---")
+    for i, item in enumerate(input_list):
+        # enumerate starts counting from 0 by default, so we add 1 for user-friendly numbering
+        print(f"{i + 1}. {item}")
+    print("---------------------\n")
+
+
+
 # --- Example Usage ---
 if __name__ == "__main__":
     # Sample user input (these should be consistent with how they appear in your book_list_features.txt)
@@ -372,9 +453,9 @@ if __name__ == "__main__":
     sample_user_ratings = [5, 5, 5, 3, 4, 5, 2, 4, 5, 4, 5, 4, 4, 5, 4, 5, 4]
 
     # Define multiple settings to test
-    genre_weights = [1, 0.8] # Example genre weights
+    genre_weights = [1] # Example genre weights
     num_features_settings = [400, 300, 200] # Example number of features
-    user_reg_strengths = [15, 15, 10] # Example regularization strengths
+    user_reg_strengths = [15, 10] # Example regularization strengths
 
     # Iterate through different combinations of settings
     for gw in genre_weights:
@@ -395,15 +476,17 @@ if __name__ == "__main__":
                 if final_recommendations_df is not None:
                     print(f"\n--- RECOMMENDATION STRATEGY 1: CB Top 200 Filtered by CF (output_limit=30) ---")
                     rec_strategy_2_list = recommend_cb_filtered_by_cf(final_recommendations_df, cb_initial_top_n=200, output_limit=30)
-                    print(rec_strategy_2_list)
+                    print_as_numbered_list(rec_strategy_2_list)
 
                     print(f"\n--- RECOMMENDATION STRATEGY 2: Scores Multiplied Together (output_limit=30) ---")
                     rec_strategy_3_list = recommend_by_multiplying_scores(final_recommendations_df, output_limit=30)
-                    print(rec_strategy_3_list)
+                    print_as_numbered_list(rec_strategy_3_list)
 
-                    print(f"\n--- RECOMMENDATION STRATEGY 3: Hybrid (Pure CB Fraction + Filtered List Fraction) (n=50, cb_fraction=0.5, cb_initial_top_n_for_filtered_list=200, output_limit=30) ---")
-                    rec_strategy_4_list = recommend_hybrid_strategy_2_and_1(final_recommendations_df, n=50, cb_fraction=0.5, cb_initial_top_n_for_filtered_list=200, output_limit=30)
-                    print(rec_strategy_4_list)
-
+                    print(f"\n--- RECOMMENDATION STRATEGY 3: Pure CB (output_limit=30) ---")
+                    rec_strategy_3_list = recommend_fraction_of_top_n(final_recommendations_df, cb_fraction= 1, n=30)
+                    print_as_numbered_list(rec_strategy_3_list)
+                
                 else:
                     print(f"\n--- Recommendation generation failed for GW={gw}, NF={nf}, URS={urs} ---")
+
+

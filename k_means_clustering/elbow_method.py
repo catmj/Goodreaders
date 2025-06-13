@@ -1,4 +1,5 @@
 # Code for determining optimal number of clusters for k-modes.
+# Cosine similarity is not yet implemented.
 
 # Importing necessary packages.
 import pandas as pd

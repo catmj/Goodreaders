@@ -1,32 +1,32 @@
 --- Your Top Recommendations ---
 
-Predicted Rating: 7.62, Book: star wars, catherine saunders
-Predicted Rating: 7.00, Book: crush, richard siken
-Predicted Rating: 6.82, Book: son of the shadows, juliet marillier
-Predicted Rating: 6.73, Book: death and her devotion, kendra elliot
-Predicted Rating: 6.72, Book: brisingr, christopher paolini
-Predicted Rating: 6.64, Book: cloud atlas, david mitchell
-Predicted Rating: 6.57, Book: the grace of kings, ken liu
-Predicted Rating: 6.55, Book: hot six, janet evanovich
-Predicted Rating: 6.53, Book: royal assassin, robin hobb
-Predicted Rating: 6.53, Book: saga, volume 2, brian k. vaughan
-Predicted Rating: 6.52, Book: targeted, kendra elliot
-Predicted Rating: 6.51, Book: the best thing i never had, erin lawless
-Predicted Rating: 6.51, Book: gone with the wind, john escott
-Predicted Rating: 6.47, Book: scarlet, marissa meyer
-Predicted Rating: 6.47, Book: fruits basket, natsuki takaya
-Predicted Rating: 6.45, Book: in this moment, karen kingsbury
-Predicted Rating: 6.41, Book: the legion of flame, anthony ryan
-Predicted Rating: 6.36, Book: three women at the water's edge, nancy thayer
-Predicted Rating: 6.32, Book: a lick of frost, laurell k. hamilton
-Predicted Rating: 6.30, Book: building from ashes, elizabeth hunter
-Predicted Rating: 6.30, Book: ein tanz mit drachen, george r.r. martin
-Predicted Rating: 6.28, Book: so speaks the heart, johanna lindsey
-Predicted Rating: 6.27, Book: my soul to keep, tananarive due
-Predicted Rating: 6.24, Book: when life happened, jewel e. ann
-Predicted Rating: 6.23, Book: susannah, stephen king
-Predicted Rating: 6.22, Book: break out, nina croft
-Predicted Rating: 6.22, Book: kissing madeline, lex martin
-Predicted Rating: 6.20, Book: fusion, diana kane
-Predicted Rating: 6.19, Book: love's sacred song, mesu andrews
-Predicted Rating: 6.19, Book: for a few demons more, kim harrison
+Predicted Rating: 6.76, Book: speaker for the dead, orson scott card
+Predicted Rating: 6.74, Book: i am malala, malala yousafzai
+Predicted Rating: 6.65, Book: the stranger, albert camus
+Predicted Rating: 6.52, Book: king of scars, leigh bardugo
+Predicted Rating: 6.46, Book: the princess bride, william goldman
+Predicted Rating: 6.45, Book: harry potter and the prisoner of azkaban, j.k. rowling
+Predicted Rating: 6.45, Book: by the shores of silver lake, laura ingalls wilder
+Predicted Rating: 6.43, Book: morrighan, mary e. pearson
+Predicted Rating: 6.43, Book: where'd you go, bernadette, maria semple
+Predicted Rating: 6.43, Book: translation state, ann leckie
+Predicted Rating: 6.39, Book: the hate u give, angie thomas
+Predicted Rating: 6.35, Book: olive kitteridge, elizabeth strout
+Predicted Rating: 6.35, Book: the war that saved my life, kimberly brubaker bradley
+Predicted Rating: 6.31, Book: the seven husbands of evelyn hugo, taylor jenkins reid
+Predicted Rating: 6.28, Book: the miraculous journey of edward tulane, kate dicamillo
+Predicted Rating: 6.18, Book: hell bent, leigh bardugo
+Predicted Rating: 6.17, Book: the last lecture, randy pausch
+Predicted Rating: 6.16, Book: the bullet that missed, richard osman
+Predicted Rating: 6.15, Book: harry potter and the goblet of fire, j.k. rowling
+Predicted Rating: 6.13, Book: hogfather, terry pratchett
+Predicted Rating: 6.13, Book: starter villain, john scalzi
+Predicted Rating: 6.12, Book: vision in silver, anne bishop
+Predicted Rating: 6.12, Book: born to run, bruce springsteen
+Predicted Rating: 6.11, Book: all the pretty horses, cormac mccarthy
+Predicted Rating: 6.10, Book: the cat in the hat, dr. seuss
+Predicted Rating: 6.08, Book: letters from father christmas, j.r.r. tolkien
+Predicted Rating: 6.05, Book: we should all be feminists, chimamanda ngozi adichie
+Predicted Rating: 6.04, Book: i know why the caged bird sings, maya angelou
+Predicted Rating: 6.04, Book: tuck everlasting, natalie babbitt
+Predicted Rating: 5.99, Book: all the missing girls, megan miranda

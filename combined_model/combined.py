@@ -14,8 +14,8 @@ except ImportError as e:
 
 # --- Configuration Constants ---
 # These constants are primarily for defining default behavior or for cases where not passed.
-DEFAULT_NUM_FEATURES = 400
-DEFAULT_NEW_USER_REGULARIZATION_STRENGTH = 15
+DEFAULT_NUM_FEATURES = 600
+DEFAULT_NEW_USER_REGULARIZATION_STRENGTH = 8
 DEFAULT_GENRE_WEIGHT = 1
 
 def _load_recommendation_data(
@@ -454,8 +454,8 @@ if __name__ == "__main__":
 
     # Define multiple settings to test
     genre_weights = [1] # Example genre weights
-    num_features_settings = [400, 300, 200] # Example number of features
-    user_reg_strengths = [15, 10] # Example regularization strengths
+    num_features_settings = [600] # Example number of features
+    user_reg_strengths = [10] # Example regularization strengths
 
     # Iterate through different combinations of settings
     for gw in genre_weights:

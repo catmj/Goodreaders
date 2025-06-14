@@ -6,12 +6,12 @@ import os
 # --- Configuration ---
 DATA_PATH = '../fake_data/'
 PRETRAINED_DATA_PATH = './trained_data/' 
-NARROWED_RECOMMENDATIONS_FILE = DATA_PATH + 'narrowed_recommendations.csv' ##added not to ignore filtering
+NARROWED_RECOMMENDATIONS_FILE = DATA_PATH + 'narrowed_recommendations_not.csv' ##added not to ignore filtering
 RECOMMENDATION_OUTPUT_FOLDER = './recommendations_output/'
 RECOMMENDATION_OUTPUT_FILENAME = 'new_user_recommendations.txt'
-NUM_FEATURES = 400
+NUM_FEATURES = 600
 TOP_N_RECOMMENDATIONS = 30
-LAMBDA_NEW_USER = 15
+LAMBDA_NEW_USER = 5
 
 os.makedirs(RECOMMENDATION_OUTPUT_FOLDER, exist_ok=True)
 

@@ -46,11 +46,11 @@ for i in range(1,num_rows):
 # print(data)
 
 # Specifying number of clusters. Use "elbow_method.py" to determine optimal number.
-num_clusters = 1500
+num_clusters = 300
 # Optimal is ~1/20 of number of books according to elbow chart. Probably less is better for our purposes.
 
 # Running k-modes algorithm.
-kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1)
+kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 5, max_iter = 20, verbose=1)
 clusters = kmode.fit_predict(data)
 # print("Cluster labels:", clusters)
 # print("Cluster centroids:", kmode.cluster_centroids_)

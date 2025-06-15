@@ -58,7 +58,7 @@ start_time = time.time()
 # min_cluster_size: Only consider cluster that have at least 10 elements
 # threshold: Consider sentence pairs with a cosine-similarity larger than threshold as similar
 
-clusters = util.community_detection(key_embeddings, min_community_size=5, threshold=0.75)
+clusters = util.community_detection(key_embeddings, min_community_size=4, threshold=0.65)
 
 print(f"Clustering done after {time.time() - start_time:.2f} sec")
 

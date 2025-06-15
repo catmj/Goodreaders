@@ -35,18 +35,18 @@ def str_to_feat(input):
     return output
 
 # Importing feature data.
-feature_df = pd.read_csv('books_with_vectors.csv')
+feature_df = pd.read_csv('books_with_vectors_big.csv')
 num_rows = len(feature_df) # Do not count column names as a row.
-num_features = len(str_to_feat(feature_df.iloc[1,3])) # 2 for fake data, 3 for genre vectors.
+num_features = len(str_to_feat(feature_df.iloc[1,2])) # 2 for fake data, 3 for genre vectors.
 
 # Isolating feature data into an array.
-data = np.array(str_to_feat(feature_df.iloc[0,3])) # 2 for fake data, 3 for genre vectors.
+data = np.array(str_to_feat(feature_df.iloc[0,2])) # 2 for fake data, 3 for genre vectors.
 for i in range(1,num_rows):
-    data = np.vstack((data,np.array(str_to_feat(feature_df.iloc[i,3])))) # 2 for fake data, 3 for genre vectors.
+    data = np.vstack((data,np.array(str_to_feat(feature_df.iloc[i,2])))) # 2 for fake data, 3 for genre vectors.
 # print(data)
 
 # Specifying number of clusters. Use "elbow_method.py" to determine optimal number.
-num_clusters = 300
+num_clusters = 500
 # Optimal is ~1/20 of number of books according to elbow chart. Probably less is better for our purposes.
 
 # Running k-modes algorithm.
@@ -64,7 +64,7 @@ cluster_list = []
 for cluster in range(0,num_clusters):
     book_list = []
     for row in range(0,num_rows):
-        if feature_df.iloc[row,4] == cluster:
+        if feature_df.iloc[row,6] == cluster:
             # Consistent book formatting.
             book_to_add = feature_df.iloc[row,0] + ", " + feature_df.iloc[row,1]
             # Alternate book formatting.

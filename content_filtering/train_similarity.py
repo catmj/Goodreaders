@@ -105,7 +105,7 @@ def export_similarity_data(combined_sim_matrix, combined_headers, base_output_fi
 
 
 
-for g,k in [(1,0), (0.5,0.5), (0.8,0.2)]:
+for g,k in [(0.5,0.5), (0.8,0.2), {0, 1}]:
     print(f"genre weight = {g}, keyword wight = {k}")
     combined_sim_matrix, combined_headers = calculate_book_similarity(output_vectors_csv_file, genre_weight = g, keyword_weight = k)
     export_similarity_data(combined_sim_matrix, combined_headers, g=g)

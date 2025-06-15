@@ -452,10 +452,39 @@ if __name__ == "__main__":
 
     sample_user_ratings = [5, 5, 5, 3, 4, 5, 2, 4, 5, 4, 5, 4, 4, 5, 4, 5, 4]
 
+    # sample_user_books = [
+    # "the hobbit, or there and back again, j.r.r. tolkien",
+    # "the girl on the train, paula hawkins",
+    # "things fall apart, chinua achebe",
+    # "anthem, ayn rand",
+    # "the hunger games, suzanne collins",
+    # "the maze runner, james dashner",
+    # "the metamorphosis and other stories, franz kafka",
+    # "the stranger, albert camus",
+    # "into the water, paula hawkins",
+    # "night, elie wiesel",
+    # "a wrinkle in time, madeleine l'engle",
+    # "shadow divers, robert kurson",
+    # "silent spring, rachel carson",
+    # "the great gatsby, f. scott fitzgerald",
+    # "ways of seeing, john berger",
+    # "1984, george orwell",
+    # "all about love, bell hooks",
+    # "raven's gate, anthony horowitz",
+    # "touching spirit bear, ben mikaelsen",
+    # "don quixote, miguel de cervantes saavedra",
+    # "the elements, theodore gray",
+    # "beowulf, unknown",
+    # "the outsiders, s.e. hinton"
+    # ]
+
+    # sample_user_ratings = [4, 3, 5, 1, 4, 4, 5, 4, 2, 5, 2, 4, 4, 3, 5, 3, 4, 2, 3, 4, 4, 3, 4]
+
+
     # Define multiple settings to test
-    genre_weights = [1] # Example genre weights
+    genre_weights = [0.5, 0.8, 0] # Example genre weights
     num_features_settings = [600] # Example number of features
-    user_reg_strengths = [10] # Example regularization strengths
+    user_reg_strengths = [5] # Example regularization strengths
 
     # Iterate through different combinations of settings
     for gw in genre_weights:

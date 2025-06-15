@@ -42,7 +42,16 @@ test_configs = [
     {'num_features': 400, 'lambda_val': 8, 'genre_weight': 1},
     {'num_features': 500, 'lambda_val': 8, 'genre_weight': 1},
     {'num_features': 600, 'lambda_val': 8, 'genre_weight': 1},
-    {'num_features': 600, 'lambda_val': 10, 'genre_weight': 1}
+    {'num_features': 600, 'lambda_val': 10, 'genre_weight': 1},
+
+    {'num_features': 500, 'lambda_val': 10, 'genre_weight': 0.8},
+    {'num_features': 500, 'lambda_val': 10, 'genre_weight': 0.5},
+    {'num_features': 500, 'lambda_val': 10, 'genre_weight': 0},
+
+    {'num_features': 600, 'lambda_val': 5, 'genre_weight': 0.8},
+    {'num_features': 600, 'lambda_val': 5, 'genre_weight': 0.5},
+    {'num_features': 600, 'lambda_val': 5, 'genre_weight': 0}
+
     
 ]
 

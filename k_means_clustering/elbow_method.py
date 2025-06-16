@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from kmodes.kmodes import KModes
 import matplotlib.pyplot as plt
-# from kmodes.util.dissim import matching_dissim, euclidean_dissim # 
+from kmodes.util.dissim import matching_dissim, euclidean_dissim
 
 # Defining a method that converts strings of feature vectors to actual feature vectors.
 def str_to_feat(input):

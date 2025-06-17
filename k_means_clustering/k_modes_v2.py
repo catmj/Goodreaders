@@ -17,43 +17,48 @@ num_genres = 0
 # Weight of keywords relative to genres.
 keyword_weight = 0.8
 
-# # Defining Hamming distance.
-# def hamming_dist(X_array, Y_array, **kw): # NOT TESTED
-#     """
-#     Calculates a weighted Hamming dissimilarity matrix between two arrays of vectors. This function adheres to the signature expected by KModes.cat_dissim.
-#     Parameters:
-#     X_array : numpy.ndarray
-#         First array of data points. Shape (n_samples_X, n_features).
-#     Y_array : numpy.ndarray
-#         Second array of data points (e.g., cluster centroids or other data points). Shape (n_samples_Y, n_features).
-#     **kw : dict
-#         Additional keyword arguments (currently not used within this function as num_keywords, num_genres, and keyword_weight are assumed global).
-#     Returns:
-#     numpy.ndarray
-#         Dissimilarity matrix of shape (n_samples_X, n_samples_Y), where each element (i, j) is the weighted Hamming distance between X_array[i] and Y_array[j].
-#     """
-#     # Declare globals to ensure the function uses the current values of these variables defined outside the function.
-#     global num_keywords, num_genres, keyword_weight
-#     # Ensure arrays are float type for proper weighted sum, as keyword_weight is float.
-#     X_processed = X_array.astype(float)
-#     Y_processed = Y_array.astype(float)
-#     n_features = X_processed.shape[1] # Total number of features (keywords + genres).
-#     # Initialize the dissimilarity matrix with zeros.
-#     # This matrix will store the weighted Hamming distance between each row in X_processed and each row in Y_processed.
-#     dissimilarity_matrix = np.zeros((X_processed.shape[0], Y_processed.shape[0]))
-#     # Iterate over each feature (column) to calculate mismatches and apply weights.
-#     for col_idx in range(n_features):
-#         # Create broadcastable views for the current column from both arrays. X_col will be (n_samples_X, 1) and Y_col will be (1, n_samples_Y).
-#         # This allows a direct comparison that results in a (n_samples_X, n_samples_Y). Boolean matrix indicating mismatches for this specific column.
-#         mismatches = (X_processed[:, col_idx][:, np.newaxis] != Y_processed[:, col_idx][np.newaxis, :])
-#         # Apply the appropriate weight based on whether the feature is a keyword or a genre.
-#         if col_idx < num_keywords:
-#             # If it's a keyword feature, add mismatches multiplied by keyword_weight.
-#             dissimilarity_matrix += mismatches * keyword_weight
-#         else:
-#             # If it's a genre feature, add mismatches multiplied by 1 (default weight).
-#             dissimilarity_matrix += mismatches * 1.0 # Use 1.0 to ensure float arithmetic.
-#     return dissimilarity_matrix
+# Defining Hamming distance.
+def hamming_dist(X_array, Y_array, **kw): # NOT TESTED
+    """
+    Calculates a weighted Hamming dissimilarity matrix between two arrays of vectors. This function adheres to the signature expected by KModes.cat_dissim.
+    Parameters:
+    X_array : numpy.ndarray
+        First array of data points. Shape (n_samples_X, n_features).
+    Y_array : numpy.ndarray
+        Second array of data points (e.g., cluster centroids or other data points). Shape (n_samples_Y, n_features).
+    **kw : dict
+        Additional keyword arguments (currently not used within this function as num_keywords, num_genres, and keyword_weight are assumed global).
+    Returns:
+    numpy.ndarray
+        Dissimilarity matrix of shape (n_samples_X, n_samples_Y), where each element (i, j) is the weighted Hamming distance between X_array[i] and Y_array[j].
+    """
+    # Declare globals to ensure the function uses the current values of these variables defined outside the function.
+    global num_keywords, num_genres, keyword_weight
+    # Ensure arrays are float type for proper weighted sum, as keyword_weight is float.
+    X_processed = X_array.astype(float)
+    Y_processed = Y_array.astype(float)
+    n_features = X_processed.shape[1] # Total number of features (keywords + genres).
+    # Initialize the dissimilarity matrix with zeros.
+    # Reshape 1D inputs to 2D (single row, n_features columns) for consistent slicing.
+    if X_processed.ndim == 1:
+        X_processed = X_processed.reshape(1, -1) # Reshape to (1, n_features).
+    if Y_processed.ndim == 1:
+        Y_processed = Y_processed.reshape(1, -1) # Reshape to (1, n_features).
+    # This matrix will store the weighted Hamming distance between each row in X_processed and each row in Y_processed.
+    dissimilarity_matrix = np.zeros((X_processed.shape[0], Y_processed.shape[0]))
+    # Iterate over each feature (column) to calculate mismatches and apply weights.
+    for col_idx in range(n_features):
+        # Create broadcastable views for the current column from both arrays. X_col will be (n_samples_X, 1) and Y_col will be (1, n_samples_Y).
+        # This allows a direct comparison that results in a (n_samples_X, n_samples_Y). Boolean matrix indicating mismatches for this specific column.
+        mismatches = (X_processed[:, col_idx][:, np.newaxis] != Y_processed[:, col_idx][np.newaxis, :])
+        # Apply the appropriate weight based on whether the feature is a keyword or a genre.
+        if col_idx < num_keywords:
+            # If it's a keyword feature, add mismatches multiplied by keyword_weight.
+            dissimilarity_matrix += mismatches * keyword_weight
+        else:
+            # If it's a genre feature, add mismatches multiplied by 1 (default weight).
+            dissimilarity_matrix += mismatches * 1.0 # Use 1.0 to ensure float arithmetic.
+    return dissimilarity_matrix
 
 # Defining cosine similarity.
 def cosine_dissim(X_array, Y_array, **kw):
@@ -118,7 +123,7 @@ num_clusters = 500
 # Optimal is ~1/20 of number of books according to elbow chart. Probably less is better for our purposes.
 
 # Running k-modes algorithm with custom dissimilarity metric (hamming_dist, cosine_dissim, matching_dissim, euclidean_dissim).
-kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1, cat_dissim=cosine_dissim)
+kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1, cat_dissim=hamming_dist)
 clusters = kmode.fit_predict(data)
 # print("Cluster labels:", clusters)
 # print("Cluster centroids:", kmode.cluster_centroids_)

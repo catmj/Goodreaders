@@ -119,11 +119,11 @@ for i in range(num_rows):
 data = np.array(data_list, dtype=float) # Ensure data is float type for cosine similarity.
 
 # Specifying number of clusters.
-num_clusters = 500
+num_clusters = 1500
 # Optimal is ~1/20 of number of books according to elbow chart. Probably less is better for our purposes.
 
 # Running k-modes algorithm with custom dissimilarity metric (hamming_dist, cosine_dissim, matching_dissim, euclidean_dissim).
-kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1, cat_dissim=hamming_dist)
+kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1, cat_dissim=cosine_dissim)
 clusters = kmode.fit_predict(data)
 # print("Cluster labels:", clusters)
 # print("Cluster centroids:", kmode.cluster_centroids_)

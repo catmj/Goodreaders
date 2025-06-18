@@ -105,7 +105,7 @@ def str_to_feat(input):
     return output
 
 # Importing feature data.
-feature_df = pd.read_csv('books_with_vectors_big.csv')
+feature_df = pd.read_csv('books_with_vectors_and_sums.csv')
 # Various sizes of data.
 num_rows = len(feature_df) # Do not count column names as a row.
 num_keywords = len(str_to_feat(feature_df.iloc[0,2])) # MAKE SURE COLUMNS MATCH.

@@ -1,0 +1,5 @@
+numpy
+pandas
+kmodes
+sklearn
+matplotlib

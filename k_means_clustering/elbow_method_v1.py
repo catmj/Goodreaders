@@ -1,11 +1,15 @@
 # Code for determining optimal number of clusters for k-modes.
 
+# To run first do: pip install -r requirements.txt
 # Importing necessary packages.
 import pandas as pd
 import numpy as np
+# import random
+# import csv
 from kmodes.kmodes import KModes
 import matplotlib.pyplot as plt
-from kmodes.util.dissim import matching_dissim, euclidean_dissim
+# Setting random seed.
+# random.seed(38)
 
 # Defining a method that converts strings of feature vectors to actual feature vectors.
 def str_to_feat(input):
@@ -15,13 +19,16 @@ def str_to_feat(input):
 
 # Importing feature data.
 feature_df = pd.read_csv('books_test_nonrandom.csv')
+# Various sizes of data.
 num_rows = len(feature_df) # Do not count column names as a row.
-num_features = len(str_to_feat(feature_df.iloc[0,3])) # 2 for fake data, 3 for genre vectors.
+num_keywords = len(str_to_feat(feature_df.iloc[0,2])) # MAKE SURE COLUMNS MATCH.
+num_genres = len(str_to_feat(feature_df.iloc[0,4])) # MAKE SURE COLUMNS MATCH.
+num_features = num_keywords + num_genres
 
-# Isolating feature data into an array.
-data = np.vstack((np.array(str_to_feat(feature_df.iloc[0,3])),np.array(str_to_feat(feature_df.iloc[1,3])))) # 2 for fake data, 3 for genre vectors.
-for i in range(2,num_rows):
-    data = np.vstack((data,np.array(str_to_feat(feature_df.iloc[i,3])))) # 2 for fake data, 3 for genre vectors.
+# Isolating feature data into an array (keywords and genres).
+data = np.hstack((np.array(str_to_feat(feature_df.iloc[0,2])),np.array(str_to_feat(feature_df.iloc[0,4])))) # MAKE SURE COLUMNS MATCH.
+for i in range(1,num_rows):
+    data = np.vstack((data,np.hstack((np.array(str_to_feat(feature_df.iloc[i,2])),np.array(str_to_feat(feature_df.iloc[i,4])))))) # MAKE SURE COLUMNS MATCH.
 
 # Set numbers of clusters to test.
 K = []

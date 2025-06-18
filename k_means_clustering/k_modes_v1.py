@@ -1,39 +1,14 @@
 # Clustering books by keyword and genre features using k-modes (a k-means variant).
 
+# To run first do: pip install -r requirements.txt
 # Importing necessary packages.
 import pandas as pd
 import numpy as np
-import random
-import csv
-random.seed(38)
+# import random
+# import csv
 from kmodes.kmodes import KModes
-# from kmodes.util.dissim import matching_dissim, euclidean_dissim
-
-# Defining Hamming distance.
-def hamming_dist(vec_1, vec_2, **kw):
-    distance = 0
-    if len(vec_1) != len(vec_2):
-        raise ValueError("Vectors must be of equal length.")
-    for i in range(0,num_keywords): 
-        if vec_1[i] != vec_2[i]:
-            distance += keyword_weight
-    for i in range(0,num_genres): 
-        if vec_1[num_keywords+i] != vec_2[num_keywords+i]:
-            distance += 1
-    return distance
-
-# Defining cosine similarity.
-def cosine_dissim(vec_1, vec_2, **kw):
-    if len(vec_1) != len(vec_2):
-        raise ValueError("Vectors must be of equal length.")
-    # Weighing keywords against genres.
-    for i in range(0,num_keywords): 
-        vec_1[i] *= keyword_weight
-        vec_2[i] *= keyword_weight
-    dot_product = np.dot(vec_1, vec_2)
-    mag_vec1 = np.linalg.norm(vec_1)
-    mag_vec2 = np.linalg.norm(vec_2)
-    return 1-(dot_product / (mag_vec1 * mag_vec2))
+# Setting random seed.
+# random.seed(38)
 
 # Defining a method that converts strings of feature vectors to actual feature vectors.
 def str_to_feat(input):

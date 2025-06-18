@@ -1,4 +1,4 @@
-# Clustering books by keyword and genre features using k-modes (a k-means variant).
+# Code for determining optimal number of clusters for k-modes.
 # Google Gemini used to assist.
 
 # To run first do: pip install -r requirements.txt
@@ -10,6 +10,7 @@ import numpy as np
 from kmodes.kmodes import KModes
 from kmodes.util.dissim import matching_dissim, euclidean_dissim
 from sklearn.metrics.pairwise import cosine_similarity
+import matplotlib.pyplot as plt
 # Setting random seed.
 # random.seed(38)
 
@@ -105,7 +106,7 @@ def str_to_feat(input):
     return output
 
 # Importing feature data.
-feature_df = pd.read_csv('books_with_vectors_big.csv')
+feature_df = pd.read_csv('books_test_nonrandom.csv')
 # Various sizes of data.
 num_rows = len(feature_df) # Do not count column names as a row.
 num_keywords = len(str_to_feat(feature_df.iloc[0,2])) # MAKE SURE COLUMNS MATCH.
@@ -120,33 +121,25 @@ for i in range(num_rows):
     data_list.append(row_data)
 data = np.array(data_list, dtype=float) # Ensure data is float type for cosine similarity.
 
-# Specifying number of clusters.
-num_clusters = 1000
-# Optimal is ~1/20 of number of books according to elbow chart. Probably less is better for our purposes.
+# Set numbers of clusters to test.
+K = []
+K_num_points = 25
+K_spacing = 10
+for i in range(1,K_num_points+1):
+    k = i*K_spacing
+    K.append(k)
 
-# Running k-modes algorithm with custom dissimilarity metric (hamming_dist, cosine_dissim, matching_dissim, euclidean_dissim).
-kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1, cat_dissim=hamming_dist)
-clusters = kmode.fit_predict(data)
-# print("Cluster labels:", clusters)
-# print("Cluster centroids:", kmode.cluster_centroids_)
+# Determine costs.
+cost = []
+for k in list(K):
+    # Running k-modes algorithm with custom dissimilarity metric (hamming_dist, cosine_dissim, matching_dissim, euclidean_dissim).
+    kmode = KModes(n_clusters=k, init = "random", n_init = 5, max_iter = 20, verbose=1, cat_dissim=hamming_dist)
+    kmode.fit_predict(data)
+    cost.append(kmode.cost_)
 
-# Adding a column of feature labels to the input file.
-feature_df['cluster'] = clusters
-feature_df.to_csv('books_clustered.csv', index=False)
-
-# Print lists of each cluster.
-cluster_list = []
-for cluster in range(0,num_clusters):
-    book_list = []
-    for row in range(0,num_rows):
-        if feature_df.iloc[row,6] == cluster: # MAKE SURE COLUMNS MATCH.
-            # Consistent book formatting.
-            book_to_add = feature_df.iloc[row,0] + ", " + feature_df.iloc[row,1] # MAKE SURE COLUMNS MATCH.
-            # Alternate book formatting.
-            # book_to_add = []
-            # book_to_add.append(feature_df.iloc[row,0])
-            # book_to_add.append(feature_df.iloc[row,1])
-            book_list.append(book_to_add)
-    cluster_list.append(book_list)
-output_df = pd.DataFrame({"titles_authors":cluster_list})
-output_df.to_csv('books_by_cluster.csv', index=True)
+# Create elbow plot.
+plt.plot(K, cost, 'x-')
+plt.xlabel('Number of Clusters')
+plt.ylabel('Cost')
+plt.title('Elbow Curve')
+plt.show()

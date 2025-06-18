@@ -1,4 +1,4 @@
-# Clustering books by keyword and genre features using k-modes (a k-means variant).
+# Clustering books by keyword and genre features using k-modes (a k-means variant), using feature vectors of genres and (clustered) keywords.
 
 # To run first do: pip install -r requirements.txt
 # Importing necessary packages.
@@ -12,7 +12,9 @@ from kmodes.kmodes import KModes
 
 # Defining a method that converts strings of feature vectors to actual feature vectors.
 def str_to_feat(input):
+    # Removing non-numerical characters.
     cleaned_input = input.strip("[").strip("]").split(", ")
+    # Converting string to integers.
     output = [int(x) for x in cleaned_input]
     return output
 
@@ -27,7 +29,9 @@ num_features = num_keywords + num_genres
 keyword_weight = 0.8
 
 # Isolating feature data into an array (keywords and genres).
+# Creating the row for the feature vector of the first book.
 data = np.hstack((np.array(str_to_feat(feature_df.iloc[0,2])),np.array(str_to_feat(feature_df.iloc[0,4])))) # MAKE SURE COLUMNS MATCH.
+# Appending the rows for the feature vectors of each other book.
 for i in range(1,num_rows):
     data = np.vstack((data,np.hstack((np.array(str_to_feat(feature_df.iloc[i,2])),np.array(str_to_feat(feature_df.iloc[i,4])))))) # MAKE SURE COLUMNS MATCH.
 
@@ -51,7 +55,7 @@ for cluster in range(0,num_clusters):
     book_list = []
     for row in range(0,num_rows):
         if feature_df.iloc[row,6] == cluster: # MAKE SURE COLUMNS MATCH.
-            # Consistent book formatting.
+            # Consistent book formatting with other parts of the project.
             book_to_add = feature_df.iloc[row,0] + ", " + feature_df.iloc[row,1] # MAKE SURE COLUMNS MATCH.
             # Alternate book formatting.
             # book_to_add = []

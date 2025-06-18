@@ -1,4 +1,4 @@
-# Clustering books by keyword and genre features using k-modes (a k-means variant).
+# Clustering books by keyword and genre features using k-modes (a k-means variant), using custom dissimilarity metrics with different weights given to keywords and genres.
 # Google Gemini used to assist.
 
 # To run first do: pip install -r requirements.txt
@@ -13,13 +13,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Setting random seed.
 # random.seed(38)
 
-# Important placeholders for Hamming distance and cosine dissimilarity.
+# Important global variable placeholders for Hamming distance and cosine dissimilarity.
 num_keywords = 0
 num_genres = 0
 # Weight of keywords relative to genres.
 keyword_weight = 0.8
 
-# Defining Hamming distance.
+# Defining weighted Hamming distance.
 def hamming_dist(X_array, Y_array, **kw):
     """
     Calculates a weighted Hamming dissimilarity matrix between two arrays of vectors. This function adheres to the signature expected by KModes.cat_dissim.
@@ -62,7 +62,7 @@ def hamming_dist(X_array, Y_array, **kw):
             dissimilarity_matrix += mismatches * 1.0 # Use 1.0 to ensure float arithmetic.
     return dissimilarity_matrix
 
-# Defining cosine dissimilarity.
+# Defining weighted cosine dissimilarity.
 def cosine_dissim(X_array, Y_array, **kw):
     """
     Calculates 1-cosine_similarity between two arrays of vectors.
@@ -100,7 +100,9 @@ def cosine_dissim(X_array, Y_array, **kw):
 
 # Defining a method that converts strings of feature vectors to actual feature vectors.
 def str_to_feat(input):
+    # Removing non-numerical characters.
     cleaned_input = input.strip("[").strip("]").split(", ")
+    # Converting string to integers.
     output = [int(x) for x in cleaned_input]
     return output
 

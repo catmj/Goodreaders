@@ -24,15 +24,15 @@ def hamming_dist(X_array, Y_array, **kw):
     """
     Calculates a weighted Hamming dissimilarity matrix between two arrays of vectors. This function adheres to the signature expected by KModes.cat_dissim.
     Parameters:
-    X_array : numpy.ndarray
-        First array of data points. Shape (n_samples_X, n_features).
-    Y_array : numpy.ndarray
-        Second array of data points (e.g., cluster centroids or other data points). Shape (n_samples_Y, n_features).
-    **kw : dict
-        Additional keyword arguments (currently not used within this function as num_keywords, num_genres, and keyword_weight are assumed global).
+        X_array : numpy.ndarray
+            First array of data points. Shape (n_samples_X, n_features).
+        Y_array : numpy.ndarray
+            Second array of data points (e.g., cluster centroids or other data points). Shape (n_samples_Y, n_features).
+        **kw : dict
+            Additional keyword arguments (currently not used within this function as num_keywords, num_genres, and keyword_weight are assumed global).
     Returns:
-    numpy.ndarray
-        Dissimilarity matrix of shape (n_samples_X, n_samples_Y), where each element (i, j) is the weighted Hamming distance between X_array[i] and Y_array[j].
+        numpy.ndarray
+            Dissimilarity matrix of shape (n_samples_X, n_samples_Y), where each element (i, j) is the weighted Hamming distance between X_array[i] and Y_array[j].
     """
     # Declare globals to ensure the function uses the current values of these variables defined outside the function.
     global num_keywords, num_genres, keyword_weight
@@ -68,15 +68,15 @@ def cosine_dissim(X_array, Y_array, **kw):
     Calculates 1-cosine_similarity between two arrays of vectors.
     This function now handles both 1D and 2D input arrays by reshaping them to 2D for the vectorized operations.
     Parameters:
-    X_array : numpy.ndarray
-        First array of data points. Can be shape (n_features,) for a single point or (n_samples_X, n_features) for multiple points.
-    Y_array : numpy.ndarray
-        Second array of data points. Can be shape (n_features,) for a single point or (n_samples_Y, n_features) for multiple points (e.g., cluster centroids).
-    **kw : dict
-        Additional keyword arguments. (Currently not explicitly used in logic, as num_keywords and keyword_weight are assumed global).
+        X_array : numpy.ndarray
+            First array of data points. Can be shape (n_features,) for a single point or (n_samples_X, n_features) for multiple points.
+        Y_array : numpy.ndarray
+            Second array of data points. Can be shape (n_features,) for a single point or (n_samples_Y, n_features) for multiple points (e.g., cluster centroids).
+        **kw : dict
+            Additional keyword arguments. (Currently not explicitly used in logic, as num_keywords and keyword_weight are assumed global).
     Returns:
-    numpy.ndarray
-        Dissimilarity matrix of shape (n_samples_X_effective, n_samples_Y_effective). If input was 1D, the effective sample size is 1.
+        numpy.ndarray
+            Dissimilarity matrix of shape (n_samples_X_effective, n_samples_Y_effective). If input was 1D, the effective sample size is 1.
     """
     global num_keywords, keyword_weight # Declare global to access them.
     # Ensure float type for multiplication and create copies to avoid modifying originals.
@@ -128,7 +128,28 @@ num_clusters = 1000
 
 # Running k-modes algorithm with custom dissimilarity metric (hamming_dist, cosine_dissim, matching_dissim, euclidean_dissim).
 kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1, cat_dissim=hamming_dist)
+"""
+Initializes a K-Modes clustering model.
+Parameters:
+    n_clusters : int 
+        The number of clusters to form, the 'k' in K-Modes.
+    init : str 
+        Method for initialization. "random" selects random centroids from the data. "Huang" and "Cao" are other options.
+    n_init : int 
+        Number of times the K-Modes algorithm will be run with different centroid seeds. The final result will be the best output of n_init consecutive runs in terms of cost.
+    max_iter : int 
+        Maximum number of iterations of the K-Modes algorithm for a single run.
+    verbose : int 
+        Verbosity mode. 0 = silent, 1 = progress messages.
+    cat_dissim : callable 
+        Function to compute the dissimilarity between two categorical vectors.
+Returns:
+    KModes
+        An initialized K-Modes clustering model object.
+"""
+# Get cluster indices from KModes.
 clusters = kmode.fit_predict(data)
+# Optional prints for testing purposes.
 # print("Cluster labels:", clusters)
 # print("Cluster centroids:", kmode.cluster_centroids_)
 
@@ -136,19 +157,21 @@ clusters = kmode.fit_predict(data)
 feature_df['cluster'] = clusters
 feature_df.to_csv('books_clustered.csv', index=False)
 
-# Print lists of each cluster.
+# Print lists of each cluster to a CSV file.
 cluster_list = []
 for cluster in range(0,num_clusters):
     book_list = []
     for row in range(0,num_rows):
         if feature_df.iloc[row,6] == cluster: # MAKE SURE COLUMNS MATCH.
-            # Consistent book formatting.
+            # Consistent book formatting ('title, author') with other parts of the project.
             book_to_add = feature_df.iloc[row,0] + ", " + feature_df.iloc[row,1] # MAKE SURE COLUMNS MATCH.
             # Alternate book formatting.
             # book_to_add = []
             # book_to_add.append(feature_df.iloc[row,0])
             # book_to_add.append(feature_df.iloc[row,1])
             book_list.append(book_to_add)
+    # Add the list of books (one cluster) to the list of clusters.
     cluster_list.append(book_list)
+# Convert list of clusters to a dataframe.
 output_df = pd.DataFrame({"titles_authors":cluster_list})
 output_df.to_csv('books_by_cluster.csv', index=True)

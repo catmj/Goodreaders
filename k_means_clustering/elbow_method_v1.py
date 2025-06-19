@@ -47,6 +47,26 @@ cost = []
 for k in list(K):
     # Running k-modes algorithm with unweighted Hamming distance as the dissimilarity metric.
     kmode = KModes(n_clusters=k, init = "random", n_init = 5, max_iter = 20, verbose=1)
+    """
+    Initializes a K-Modes clustering model.
+    Parameters:
+        n_clusters : int 
+            The number of clusters to form, the 'k' in K-Modes.
+        init : str 
+            Method for initialization. "random" selects random centroids from the data. "Huang" and "Cao" are other options.
+        n_init : int 
+            Number of times the K-Modes algorithm will be run with different centroid seeds. The final result will be the best output of n_init consecutive runs in terms of cost.
+        max_iter : int 
+            Maximum number of iterations of the K-Modes algorithm for a single run.
+        verbose : int 
+            Verbosity mode. 0 = silent, 1 = progress messages.
+        cat_dissim : callable 
+            Function to compute the dissimilarity between two categorical vectors.
+    Returns:
+        KModes
+            An initialized K-Modes clustering model object.
+    """
+    # Get cluster indices from KModes.
     kmode.fit_predict(data)
     # Collecting costs for use in elbow plot.
     cost.append(kmode.cost_)

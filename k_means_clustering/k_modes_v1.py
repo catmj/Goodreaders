@@ -41,7 +41,28 @@ num_clusters = 50
 
 # Running k-modes algorithm with custom dissimilarity metric.
 kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 5, max_iter = 20, verbose=1)
+"""
+Initializes a K-Modes clustering model.
+Parameters:
+    n_clusters : int 
+        The number of clusters to form, the 'k' in K-Modes.
+    init : str 
+        Method for initialization. "random" selects random centroids from the data. "Huang" and "Cao" are other options.
+    n_init : int 
+        Number of times the K-Modes algorithm will be run with different centroid seeds. The final result will be the best output of n_init consecutive runs in terms of cost.
+    max_iter : int 
+        Maximum number of iterations of the K-Modes algorithm for a single run.
+    verbose : int 
+        Verbosity mode. 0 = silent, 1 = progress messages.
+    cat_dissim : callable 
+        Function to compute the dissimilarity between two categorical vectors.
+Returns:
+    KModes
+        An initialized K-Modes clustering model object.
+"""
+# Get cluster indices from KModes.
 clusters = kmode.fit_predict(data)
+# Optional prints for testing purposes.
 # print("Cluster labels:", clusters)
 # print("Cluster centroids:", kmode.cluster_centroids_)
 
@@ -49,19 +70,21 @@ clusters = kmode.fit_predict(data)
 feature_df['cluster'] = clusters
 feature_df.to_csv('books_clustered.csv', index=False)
 
-# Print lists of each cluster.
+# Print lists of each cluster to a CSV file.
 cluster_list = []
 for cluster in range(0,num_clusters):
     book_list = []
     for row in range(0,num_rows):
         if feature_df.iloc[row,6] == cluster: # MAKE SURE COLUMNS MATCH.
-            # Consistent book formatting with other parts of the project.
+            # Consistent book formatting ('title, author') with other parts of the project.
             book_to_add = feature_df.iloc[row,0] + ", " + feature_df.iloc[row,1] # MAKE SURE COLUMNS MATCH.
             # Alternate book formatting.
             # book_to_add = []
             # book_to_add.append(feature_df.iloc[row,0])
             # book_to_add.append(feature_df.iloc[row,1])
             book_list.append(book_to_add)
+    # Add the list of books (one cluster) to the list of clusters.
     cluster_list.append(book_list)
+# Convert list of clusters to a dataframe.
 output_df = pd.DataFrame({"titles_authors":cluster_list})
 output_df.to_csv('books_by_cluster.csv', index=True)

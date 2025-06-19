@@ -1,5 +1,4 @@
-# Data after entry 5336 still need to be cleaned or matched.
-# TO FIX: URLs with multiple books.
+# To run in a virtual environment, first do: pip install -r requirements.txt
 
 # Needed packages.
 from bs4 import BeautifulSoup as bs

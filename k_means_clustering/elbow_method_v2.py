@@ -1,7 +1,7 @@
 # Code for determining optimal number of clusters for k-modes, using custom dissimilarity metrics with different weights given to keywords and genres.
 # Google Gemini used to assist.
 
-# To run first do: pip install -r requirements.txt
+# To run in a virtual environment, first do: pip install -r requirements.txt
 # Importing necessary packages.
 import pandas as pd
 import numpy as np

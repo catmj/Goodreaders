@@ -1,6 +1,7 @@
+# Prepares for additional keyword processing by generating a list of potential keywords for each book.
 # Good resource: https://www.kaggle.com/code/akhatova/extract-keywords
-# To run first do: pip install -r requirements.txt
 
+# To run in a virtual environment, first do: pip install -r requirements.txt
 # PACKAGES
 import numpy as np
 import pandas as pd
@@ -15,8 +16,6 @@ from nltk.stem.wordnet import WordNetLemmatizer
 # IMPORTING COPIES OF DATA
 df1 = pd.read_csv('./keyword_analysis/books_matched_copy.csv')
 df2 = pd.read_csv('./keyword_analysis/reviews_matched_copy.csv')
-# print(df1)
-# print(df2)
 # df1.info()
 # df2.info()
 
@@ -57,7 +56,7 @@ keyword_lists_df2 = df2['review'].astype(str).apply(lambda x:pre_process(x)) # C
 # print(keyword_lists_df2)
 keyword_lists_df2.to_csv('./keyword_analysis/output_file_reviews.csv', index=True) # Convert keyword lists to .csv file.
 
-# TESTING CODE
+# TESTING
 # mystr = "This is my books test line. Mathematics. Physics. Giraffe. Pineapple. Helpers."
 # newstr = pre_process(mystr)
 # print(newstr)

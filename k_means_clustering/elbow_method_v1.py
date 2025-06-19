@@ -1,6 +1,6 @@
 # Code for determining optimal number of clusters for k-modes, using feature vectors of genres and (clustered) keywords.
 
-# To run first do: pip install -r requirements.txt
+# To run in a virtual environment, first do: pip install -r requirements.txt
 # Importing necessary packages.
 import pandas as pd
 import numpy as np

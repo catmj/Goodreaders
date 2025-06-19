@@ -1,0 +1,7 @@
+numpy
+pandas
+matplotlib
+requests
+beautifulsoup4
+tqdm
+sklearn

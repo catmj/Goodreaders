@@ -117,8 +117,7 @@ num_features = num_keywords + num_genres
 # Isolating feature data into an array (keywords and genres). Ensure 'data' is float for cosine similarity.
 data_list = []
 for i in range(num_rows):
-    row_data = np.hstack((np.array(str_to_feat(feature_df.iloc[i,2])),
-                          np.array(str_to_feat(feature_df.iloc[i,4]))))
+    row_data = np.hstack((np.array(str_to_feat(feature_df.iloc[i,2])),np.array(str_to_feat(feature_df.iloc[i,4])))) # MAKE SURE COLUMNS MATCH.
     data_list.append(row_data)
 data = np.array(data_list, dtype=float) # Ensure data is float type for cosine similarity.
 

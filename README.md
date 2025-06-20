@@ -9,7 +9,7 @@ Procedural order from data collection to book recommendations:
 
         add_reviews_to_books\add_to_books.py
 
-    2. DATA CLEANING: Modifies scraped data to make formats more consistent, remove problematic books, etc.
+    2. DATA CLEANING AND MATCHING: Modifies scraped data to make formats more consistent, remove problematic books, etc.
 
     3. DATA SPLITTING: 
         train_test_split\split_data.py
@@ -97,10 +97,11 @@ REMAINING TO DO:
     big_data_set\combine.py
     big_data_set\combine2.py
     big_data_set\find_ids.py
+    ANY FILES NOT IN GITHUB
 
 CLEANING PROGRESS:
     add_reviews_to_books
-
+        DONE.
     big_data_set
 
     cleaned_data

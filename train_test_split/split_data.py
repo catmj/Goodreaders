@@ -106,7 +106,6 @@ print(f"Filtered cross_val ratings count: {len(cross_val_ratings_matched)}")
 print(f"Filtered books_train count: {len(books_train_matched)}")
 
 # --- Function to Split DataFrames into Chunks ---
-
 def split_into_chunks(frame_to_split: pd.DataFrame, output_dir: Path, max_file_size_mb: int, file_name_prefix: str):
     """
     Splits a DataFrame into multiple CSV files, each with a maximum specified size.
@@ -166,10 +165,7 @@ def split_into_chunks(frame_to_split: pd.DataFrame, output_dir: Path, max_file_s
 
     print(f"Finished splitting '{file_name_prefix}'.")
 
-
 # --- Saving and Chunking All Data ---
-
-
 print("\n--- Saving and Chunking All Data ---")
 
 # --- train_ratings ---
@@ -211,6 +207,5 @@ books_test.to_csv(OUTPUT_PATH / f'{file_prefix_books_test}.csv', index=False)
 print(f"Saved unchunked {file_prefix_books_test}.csv")
 # Save chunked version
 split_into_chunks(books_test, OUTPUT_PATH, MAX_FILE_SIZE_MB, file_prefix_books_test)
-
 
 print("\nAll data splits, matching, and chunking completed successfully!")

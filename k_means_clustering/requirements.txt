@@ -1,5 +1,5 @@
 numpy
 pandas
 kmodes
-sklearn
+scikit-learn
 matplotlib

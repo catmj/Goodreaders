@@ -44,7 +44,7 @@ def combine_csv_files(base_filename: str):
         print(f'Successfully combined {file_index - 1} files.')
         print(f'Combined DataFrame shape: {combined_df.shape}')
         output_filename = f"{base_filename}.csv"
-        combined_df.to_csv(output_filename, index=False) # index=False prevents writing DataFrame index
+        combined_df.to_csv(output_filename, index=False) # index=False prevents writing DataFrame index.
         print(f'Combined data saved to {output_filename}')
     else:
         print("No CSV files were found or combined.")

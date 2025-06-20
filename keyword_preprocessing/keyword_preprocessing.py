@@ -21,12 +21,12 @@ df2 = pd.read_csv('./keyword_analysis/reviews_matched_copy.csv')
 
 # PRE-PROCESSING
 stop_words = set(stopwords.words('english'))
-# Choose stopwords to exclude:
+# Choose stopwords to exclude.
 new_stop_words = ["book", "books", "novel", "novels", "writer", "writers", "write", "writes", "writing", "written", "author", "authors", "edition", "editions",
                   "bestseller", "bestsellers", "bestselling", "reader", "readers", "reading", "read", "reads", "isbn", "title", "titles", "titled", "titular",   
                   "genre", "genres", "review", "reviews", "reviewed", "reviewer", "reviewers", "critic", "critics", "series", "newest", "latest", "literary", 
                   "hardcover", "paperback", "publisher", "publishers", "published", "yet"]
-# Add the above words to the list of default stopwords:
+# Add the above words to the list of default stopwords.
 stop_words = list(stop_words.union(new_stop_words))
 def pre_process(text):
     # Make text lowercase.
@@ -56,7 +56,7 @@ keyword_lists_df2 = df2['review'].astype(str).apply(lambda x:pre_process(x)) # C
 # print(keyword_lists_df2)
 keyword_lists_df2.to_csv('./keyword_analysis/output_file_reviews.csv', index=True) # Convert keyword lists to .csv file.
 
-# TESTING
+# OPTIONAL TESTING CODE
 # mystr = "This is my books test line. Mathematics. Physics. Giraffe. Pineapple. Helpers."
 # newstr = pre_process(mystr)
 # print(newstr)

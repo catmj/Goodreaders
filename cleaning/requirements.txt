@@ -4,4 +4,4 @@ matplotlib
 requests
 beautifulsoup4
 tqdm
-sklearn
+scikit-learn

@@ -11,7 +11,7 @@ import pyarrow.parquet as pq # Import pyarrow for Parquet file handling
 # Explicitly import functions from your combined_recs_testing_3.py file
 # IMPORTANT: Please ensure 'combined_recs_testing_3.py' is the correct file on your system
 # and is accessible from this script's location.
-from combined_recs_testing_3 import (
+from combined_recs_testing_v3 import (
     _load_recommendation_data,
     _process_user_ratings_file,
     _split_user_data_for_testing,

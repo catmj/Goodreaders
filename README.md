@@ -2,51 +2,64 @@
 Goodreaders project for Erdos Institute Data Science Bootcamp.
 
 Procedural order from data collection to book recommendations:
-    1. SCRAPING: Data is collected from "https://www.goodreads.com/" using BeautifulSoup web scraping. Data for individual books is scraped, as well as data for individual user reviews of books.
+    1. SCRAPING: Collect data from "https://www.goodreads.com/" using BeautifulSoup web scraping. Scrape data for individual books, as well as data for individual user reviews of books.
         scraping\goodreads_scraping.py (scraping\goodreads_scraping.ipynb)
 
         scraping\goodreads_scraping_user.py (scraping\goodreads_scraping_user.ipynb)
 
         add_reviews_to_books\add_to_books.py
 
-    2. DATA CLEANING AND MATCHING: Modifies scraped data to make formats more consistent, remove problematic books, etc. User reviews of books are matched with the corresponding books.
+    2. DATA CLEANING AND MATCHING: Modify scraped data to make formats more consistent, remove problematic books, etc. Match user reviews of books with the corresponding books.
         cleaning\same_books_v2.py
 
-    3. DATA SPLITTING: Splits cleaned and matched data into a training dataset and a testing dataset.
+    3. DATA SPLITTING: Split cleaned and matched data into a training dataset and a testing dataset. Use the latter for verification purposes.
         train_test_split\split_data.py
 
-    4. KEYWORD PREPROCESSING (optional): 
+    4. KEYWORD PREPROCESSING (optional): Create a list of potential keywords from book descriptions by removing common and problematic words. Reformat book descriptions to ensure consistency.
         keyword_preprocessing\keyword_preprocessing.py
-            Prepares for additional keyword processing by generating a list of potential keywords from each book's description.
-    5. KEYWORD PROCESSING: 
+
+    5. KEYWORD PROCESSING: Create a list of keywords from each book's description.
         keyword_processing\get_keys_v2.py
 
-    6. KEYWORD CLUSTERING:
+    6. KEYWORD CLUSTERING: Create clusters of keywords that have similar meanings. Assign each cluster a component in the feature vectors.
         keyword_clustering\cluster_keywords.py
 
-    7. K-MODES BOOK CLUSTERING: 
+    7. K-MODES BOOK CLUSTERING: Create clusters of similar books using their feature vectors and the k-modes algorithm (a variant of k-means for categorical data). Use these clusters to reduce runtime when making book recommendations.
         k_means_clustering\k_modes_v2.py
-
+            Generates a fixed number of book clusters using k-modes, using feature vectors of genres and (clustered) keywords for each book. This updated version uses custom dissimilarity metrics with different weights given to keywords and genres.
+            Parameters:
+                num_clusters: int
+                    The predetermined number of clusters to form using KModes.
+                cat_dissim: callable
+                    Specifies the function to use as the dissimilarity metric (e.g., hamming_dist, cosine_dissim).
+                "books_with_vectors_and_sums.csv": CSV file
+                    CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided.
+                Additional parameters used by KModes (e.g., init, n_init, max_iter, verbose).
+            Returns:
+                "books_clustered.csv": CSV file
+                    The input CSV file with an additional column indicating the assigned cluster for each book.
+                "books_by_cluster.csv": CSV file
+                    A CSV file containing lists of books, grouped by their assigned cluster.
         k_means_clustering\elbow_method_v2.py
             Determines optimal number of book clusters for k-modes, using feature vectors of genres and (clustered) keywords for each book. This updated version uses custom dissimilarity metrics with different weights given to keywords and genres.
             Parameters:
                 K : int list
                     List of numbers of initial cluster centroids to test with KModes.
                 cat_dissim : callable
-                    Specifies what function to use as the dissimilarity metric.
-                 : CSV file
+                    Specifies the function to use as the dissimilarity metric (e.g., hamming_dist, cosine_dissim).
+                "books_with_vectors_and_sums.csv" : CSV file
                     CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided.
-                Additional parameters used by KModes.
+                Additional parameters used by KModes (e.g., init, n_init, max_iter, verbose).
             Returns:
                 "elbow_graph.png" : PNG file
-                    The bend in the elbow plot is approximately the optimal number of clusters in terms of costs.
-    8A. CONTENT-BASED FILTERING:
+                    The bend in the elbow plot is approximately the optimal number of book clusters in terms of costs.
+    8A. CONTENT-BASED FILTERING: Generate book recommendations using content-based filtering (option A).
         content_filtering\train_similarity_v2.py
 
-    8B. COLLABORATIVE FILTERING:
+    8B. COLLABORATIVE FILTERING: Generate book recommendations using collaborative filtering (option B).
         collab_filtering\cf_v7.py
 
-    8C. COMBINED FILTERING:
+    8C. COMBINED FILTERING: Generate book recommendations using a combination of content-based filtering and collaborative filtering (option C).
         combined_model\cb_get_recs.py
 
         combined_model\cf_get_recs.py
@@ -57,7 +70,7 @@ Procedural order from data collection to book recommendations:
 
         combined_model\testing_no_print_v2.py
 
-    9. TESTING AND VERIFICATION:
+    9. TESTING AND VERIFICATION: Verify the accuracy of book recommendations.
 
 
 Other important scripts:

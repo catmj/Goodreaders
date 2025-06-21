@@ -17,7 +17,19 @@ Procedural order from data collection to book recommendations:
 
     4. KEYWORD PREPROCESSING (optional): Create a list of potential keywords from book descriptions by removing common and problematic words. Reformat book descriptions to ensure consistency.
         keyword_preprocessing\keyword_preprocessing.py
-
+            Takes words from books' descriptions and users' reviews, formats them consistently, removes special characters and numerals, and removes short words and words commonly found in book reviews (stopwords).
+            Parameters:
+                "books_matched_copy.csv" : CSV file
+                    Contains an indexed list of books, where each book has a description ("description").
+                "reviews_matched_copy.csv" : CSV file
+                    Contains an indexed list of user reviews of books, where each user review may have user-written text ("review").
+                new_stop_words : str list
+                    Additional stopwords to add to the default list of stopwords from the nltk.corpus library. Generally, contains words common in book descriptions and reviews, such as words related to reading, publishing, or writing.
+            Returns: 
+                "output_file_books.csv" : CSV file
+                    Contains all potential keywords from each book description from the "books_matched_copy.csv" dataset.
+                "output_file_reviews.csv" : CSV file
+                    Contains all potential keywords from each user review from the "reviews_matched_copy.csv" dataset. Not as useful since book reviews are usually blank (ratings only).
     5. KEYWORD PROCESSING: Create a list of keywords from each book's description.
         keyword_processing\get_keys_v2.py
 

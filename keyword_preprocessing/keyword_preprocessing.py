@@ -25,7 +25,7 @@ stop_words = set(stopwords.words('english'))
 new_stop_words = ["book", "books", "novel", "novels", "writer", "writers", "write", "writes", "writing", "written", "author", "authors", "edition", "editions",
                   "bestseller", "bestsellers", "bestselling", "reader", "readers", "reading", "read", "reads", "isbn", "title", "titles", "titled", "titular",   
                   "genre", "genres", "review", "reviews", "reviewed", "reviewer", "reviewers", "critic", "critics", "series", "newest", "latest", "literary", 
-                  "hardcover", "paperback", "publisher", "publishers", "published", "yet"]
+                  "hardcover", "softcover", "paperback", "publisher", "publishers", "published", "publishing", "publish", "publishes", "yet"]
 # Add the above words to the list of default stopwords.
 stop_words = list(stop_words.union(new_stop_words))
 def pre_process(text):

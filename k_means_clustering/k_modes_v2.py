@@ -110,14 +110,14 @@ def str_to_feat(input):
 feature_df = pd.read_csv('books_with_vectors_and_sums.csv')
 # Various sizes of data.
 num_rows = len(feature_df) # Do not count column names as a row.
-num_keywords = len(str_to_feat(feature_df.iloc[0,2])) # MAKE SURE COLUMNS MATCH.
-num_genres = len(str_to_feat(feature_df.iloc[0,4])) # MAKE SURE COLUMNS MATCH.
+num_keywords = len(str_to_feat(feature_df.at[0,"keyword_vector"]))
+num_genres = len(str_to_feat(feature_df.at[0,"genre_vector"]))
 num_features = num_keywords + num_genres
 
 # Isolating feature data into an array (keywords and genres). Ensure 'data' is float for cosine similarity.
 data_list = []
 for i in range(num_rows):
-    row_data = np.hstack((np.array(str_to_feat(feature_df.iloc[i,2])),np.array(str_to_feat(feature_df.iloc[i,4])))) # MAKE SURE COLUMNS MATCH.
+    row_data = np.hstack((np.array(str_to_feat(feature_df.at[i,"keyword_vector"])),np.array(str_to_feat(feature_df.at[i,"genre_vector"]))))
     data_list.append(row_data)
 data = np.array(data_list, dtype=float) # Ensure data is float type for cosine similarity.
 
@@ -161,13 +161,13 @@ cluster_list = []
 for cluster in range(0,num_clusters):
     book_list = []
     for row in range(0,num_rows):
-        if feature_df.iloc[row,6] == cluster: # MAKE SURE COLUMNS MATCH.
+        if feature_df.at[row,"cluster"] == cluster:
             # Consistent book formatting ('title, author') with other parts of the project.
-            book_to_add = feature_df.iloc[row,0] + ", " + feature_df.iloc[row,1] # MAKE SURE COLUMNS MATCH.
+            book_to_add = feature_df.at[row,"title"] + ", " + feature_df.at[row,"author_name"]
             # Alternate book formatting.
             # book_to_add = []
-            # book_to_add.append(feature_df.iloc[row,0])
-            # book_to_add.append(feature_df.iloc[row,1])
+            # book_to_add.append(feature_df.at[row,"title"])
+            # book_to_add.append(feature_df.at[row,"author_name"])
             book_list.append(book_to_add)
     # Add the list of books (one cluster) to the list of clusters.
     cluster_list.append(book_list)

@@ -48,7 +48,7 @@ def get_genres(soup): # Idea taken from https://stackoverflow.com/questions/7576
 # Scraping each book's webpage.
 for index, row in df.iterrows():
     # Create URL for each book.
-    url_addendum = df.astype(str).iloc[index,3] # MAKE SURE COLUMNS MATCH.
+    url_addendum = df.astype(str).at[index,"Cleaned Goodreads URL"]
     start_url = url_base + url_addendum 
     # book_url_formatted = f"{start_url}"
 
@@ -64,8 +64,8 @@ for index, row in df.iterrows():
 
     # Get easy information.
     genres = get_genres(soup)
-    book_name = df.astype(str).iloc[index,1] # MAKE SURE COLUMNS MATCH.
-    book_author = df.astype(str).iloc[index,2] # MAKE SURE COLUMNS MATCH.
+    book_name = df.astype(str).at[index, "Title"]
+    book_author = df.astype(str).at[index, "Author"]
 
     # Get average rating. Skip if not present.
     if soup.find(class_="RatingStatistics__rating") == None:

@@ -161,7 +161,7 @@ for index, row in df.iterrows():
         }
 
     # Set name of output file.
-    csv_filename = "books_matched_in_progress_3.csv"
+    csv_filename = "books_in_progress.csv"
     # Print new line to output file containing all scraped information for book.
     with open(csv_filename, mode="a", newline="", encoding="utf-8") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=book_dict.keys(), quoting=csv.QUOTE_ALL)

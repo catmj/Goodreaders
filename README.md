@@ -22,7 +22,7 @@ Procedural order from data collection to book recommendations and verification:
         add_reviews_to_books\add_to_books.py
             Scrapes book data for books that do not appear on Goodreads' Readers' Favorite Books lists but do have ratings scraped by "goodreads_scraping_user.py".
             Parameters:
-                "reviews_with_urls_left_to_scrub.csv" : str (CSV file)
+                "reviews_with_urls_left_to_scrape.csv" : str (CSV file)
                     Each row corresponds to a book and contains the portion of its URL after "https://www.goodreads.com/book/show/". Some books have duplicate URLs, particularly books whose titles contain non-Latin characters.
             Returns:
                 "books_in_progress.csv" : CSV file
@@ -188,6 +188,47 @@ Other scripts not used:
     keyword_processing\scripts_older_versions\get_keys_v1.py
 
 Guide to datasets:
+    1. SCRAPING:
+        scraping\books_by_user.csv
+            Contains data for each user review scraped, such as book title, book author, user ID, user rating, average rating, and review text.
+        scraping\books.csv
+            Contains data for each book scraped from the Goodreads' yearly Readers' Favorite Books lists, such as title, author, description, average rating, and genres.
+        add_reviews_to_books\working_folder\books_in_progress.csv
+            Contains data for each book scraped, including those not on the Goodreads' yearly Readers' Favorite Books lists, such as title, author, description, average rating, and genres. Some information from the Goodreads' Readers' Favorite Books lists is not present for all books, such as number of votes and award category.
+        add_reviews_to_books\working_folder\reviews_with_urls_left_to_scrape.csv
+            URLs of books to be scraped. In particular, those books that do have user reviews but are not present on the Goodreads' Readers' Favorite Books lists.
+        add_reviews_to_books\working_folder\reviews_with_urls_not_included.csv
+            URLs of books that were not scraped due to causing issues. Non-Latin text was the most common cause of issues.
+        add_reviews_to_books\duplicate_url_identification\reviews_unmatched_with_urls_filtered_no_dupes.csv
+            URLs for all books that do not have problematic duplicate URLs.
+        add_reviews_to_books\duplicate_url_identification\reviews_unmatched_with_urls_filtered_only_dupes.csv
+            URLs for all books that do have problematic duplicate URLs.
+        add_reviews_to_books\final_output_books_unmatched_uncleaned\books_full_unmatched_uncleaned.csv
+
+    2. DATA CLEANING AND MATCHING:
+
+    3. DATA SPLITTING:
+    
+    4. KEYWORD PREPROCESSING (optional):
+
+    5. KEYWORD PROCESSING:
+
+    6. KEYWORD CLUSTERING:
+
+    7. K-MODES BOOK CLUSTERING:
+
+    8A. CONTENT-BASED FILTERING:
+
+    8B. COLLABORATIVE FILTERING:
+
+    8C. COMBINED FILTERING:
+
+    9. TESTING AND VALIDATION:
+
+
+
+
+
 
 
 
@@ -204,6 +245,7 @@ REMAINING TO DO:
     big_data_set\combine_v2.py
     big_data_set\find_ids.py
     ANY FILES NOT IN GITHUB
+    VERSIONS?
 
 CLEANING PROGRESS:
     add_reviews_to_books

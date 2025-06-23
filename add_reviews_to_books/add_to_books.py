@@ -18,8 +18,8 @@ HEADERS = {
 }
 # Base URL to be added to.
 url_base = "https://www.goodreads.com/book/show/"
-# Create dataframe of urls that have reviews scrubed but not the corresponding books.
-df = pd.read_csv('reviews_with_urls_left_to_scrub.csv') # File no longer exists since scraping is complete for now.
+# Create dataframe of urls that have reviews scraped but not the corresponding books.
+df = pd.read_csv('reviews_with_urls_left_to_scrape.csv') # File no longer exists since scraping is complete for now.
 
 # Function for cleaning strings.
 def clean_string(string):

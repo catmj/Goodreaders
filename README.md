@@ -4,34 +4,50 @@ Goodreaders project for Erdos Institute Data Science Bootcamp.
 Procedural order from data collection to book recommendations and verification:
     1. SCRAPING: Collect data from "https://www.goodreads.com/" using BeautifulSoup web scraping. Scrape data for individual books, as well as data for individual user reviews of books.
         scraping\goodreads_scraping.py (scraping\goodreads_scraping.ipynb)
+            Scrapes book data from Goodreads' yearly Readers' Favorite Books lists at "https://www.goodreads.com/choiceawards/best-books-XXXX", where XXXX is a year between 2011-2024. Will likely work for future years.
             Parameters:
+                start_url : str (URL)
+                    Readers' Favorite Books end-of-year list webpage to scrape.
             Returns:
+                "books.csv" : CSV file
+                    Contains data for each book scraped, such as title, author, description, average rating, and genres.
         scraping\goodreads_scraping_user.py (scraping\goodreads_scraping_user.ipynb)
+            Scrapes user book review data from the Goodreads pages of randomly selected Goodreads users.
             Parameters:
+                base_url : str (URL)
+                    The webpage from which to scrape a user's ratings and reviews. The exact URL differs by user ID.
             Returns:
+                "books_by_user.csv" : CSV file
+                    Contains data for each user review scraped, such as book title, book author, user ID, user rating, average rating, and review text.
         add_reviews_to_books\add_to_books.py
             Scrapes book data for books that do not appear on Goodreads' Readers' Favorite Books lists but do have ratings scraped by "goodreads_scraping_user.py".
             Parameters:
-                "reviews_with_urls_left_to_scrub.csv" : CSV file
+                "reviews_with_urls_left_to_scrub.csv" : str (CSV file)
                     Each row corresponds to a book and contains the portion of its URL after "https://www.goodreads.com/book/show/". Some books have duplicate URLs, particularly books whose titles contain non-Latin characters.
             Returns:
                 "books_in_progress.csv" : CSV file
                     Adds a row of data for each book scraped, one at a time. Can add rows to an existing file "books_in_progress.csv".
     2. DATA CLEANING AND MATCHING: Modify scraped data to make formats more consistent, remove problematic books, etc. Match user reviews of books with the corresponding books.
         cleaning\same_books_v2.py
+
             Parameters:
+        
             Returns:
+    
     3. DATA SPLITTING: Split cleaned and matched data into a training dataset and a testing dataset. Use the latter for verification purposes.
         train_test_split\split_data.py
+
             Parameters:
+
             Returns:
+
     4. KEYWORD PREPROCESSING (optional): Create a list of potential keywords from book descriptions by removing common and problematic words. Reformat book descriptions to ensure consistency.
         keyword_preprocessing\keyword_preprocessing.py
             Takes words from books' descriptions and users' reviews, formats them consistently, removes special characters and numerals, and removes short words and words commonly found in book reviews (stopwords).
             Parameters:
-                "books_matched_copy.csv" : CSV file
+                "books_matched_copy.csv" : str (CSV file)
                     Contains an indexed list of books, where each book has a description ("description").
-                "reviews_matched_copy.csv" : CSV file
+                "reviews_matched_copy.csv" : str (CSV file)
                     Contains an indexed list of user reviews of books, where each user review may have user-written text ("review").
                 new_stop_words : str list
                     Additional stopwords to add to the default list of stopwords from the nltk.corpus library. Generally, contains words common in book descriptions and reviews, such as words related to reading, publishing, or writing.
@@ -42,12 +58,18 @@ Procedural order from data collection to book recommendations and verification:
                     Contains all potential keywords from each user review from the "reviews_matched_copy.csv" dataset. Not as useful since book reviews are usually blank (ratings only).
     5. KEYWORD PROCESSING: Create a list of keywords from each book's description.
         keyword_processing\get_keys_v2.py
+
             Parameters:
+
             Returns:
+
     6. KEYWORD CLUSTERING: Create clusters of keywords that have similar meanings. Assign each cluster a component in the feature vectors.
         keyword_clustering\cluster_keywords.py
+
             Parameters:
+
             Returns:
+
     7. K-MODES BOOK CLUSTERING: Create clusters of similar books using their feature vectors and the k-modes algorithm (a variant of k-means for categorical data). Use these clusters to reduce runtime when making book recommendations.
         k_means_clustering\k_modes_v2.py
             Generates a fixed number of book clusters using k-modes, using feature vectors of genres and (clustered) keywords for each book. This updated version uses custom dissimilarity metrics with different weights given to keywords and genres.
@@ -56,7 +78,7 @@ Procedural order from data collection to book recommendations and verification:
                     The predetermined number of clusters to form using KModes.
                 cat_dissim: callable
                     Specifies the function to use as the dissimilarity metric (e.g., hamming_dist, cosine_dissim).
-                "books_with_vectors_and_sums.csv": CSV file
+                "books_with_vectors_and_sums.csv": str (CSV file)
                     CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided.
                 Additional parameters used by KModes (e.g., init, n_init, max_iter, verbose).
             Returns:
@@ -71,7 +93,7 @@ Procedural order from data collection to book recommendations and verification:
                     List of numbers of initial cluster centroids to test with KModes.
                 cat_dissim : callable
                     Specifies the function to use as the dissimilarity metric (e.g., hamming_dist, cosine_dissim).
-                "books_with_vectors_and_sums.csv" : CSV file
+                "books_with_vectors_and_sums.csv" : str (CSV file)
                     CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided.
                 Additional parameters used by KModes (e.g., init, n_init, max_iter, verbose).
             Returns:
@@ -79,29 +101,50 @@ Procedural order from data collection to book recommendations and verification:
                     The bend in the elbow plot is approximately the optimal number of book clusters in terms of costs.
     8A. CONTENT-BASED FILTERING: Generate book recommendation lists using content-based filtering (option A).
         content_filtering\train_similarity_v2.py
+
             Parameters:
+
             Returns:
+
     8B. COLLABORATIVE FILTERING: Generate book recommendation lists using collaborative filtering (option B).
         collab_filtering\cf_v7.py
+
             Parameters:
+
             Returns:
+
     8C. COMBINED FILTERING: Generate book recommendation lists using a combination of content-based filtering and collaborative filtering (option C).
         combined_model\cb_get_recs.py
+
             Parameters:
+
             Returns:
+
         combined_model\cf_get_recs.py
+
             Parameters:
+
             Returns:
+
         combined_model\combined.py
+
             Parameters:
+
             Returns:
+
         combined_model\combined_recs_testing_v3.py
+
             Parameters:
+
             Returns:
+
         combined_model\testing_no_print_v2.py
+
             Parameters:
+
             Returns:
-    9. TESTING AND VERIFICATION: Verify the accuracy of book recommendation lists.
+
+    9. TESTING AND VALIDATION: Verify the accuracy of book recommendation lists.
         MANUAL TESTING
             The quality of book recommendation lists can be verified by developers by inputting a list of books with ratings out of five stars and then evaluating the quality of the resulting recommendations.
 

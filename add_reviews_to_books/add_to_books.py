@@ -10,6 +10,7 @@ import pandas as pd
 
 # Set index of first scraped book.
 starting_index = 0
+# count = 0
 # Headers to obtain scraping permission.
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64)...",

@@ -1,5 +1,6 @@
-#This code started from the tutorial at https://dev.to/bekaar_coder/how-to-scrape-data-from-goodreads-using-python-and-beautifulsoup-4mf9
+# This code started from the tutorial at https://dev.to/bekaar_coder/how-to-scrape-data-from-goodreads-using-python-and-beautifulsoup-4mf9
 
+# To run in a virtual environment, first do: pip install -r requirements.txt
 # !pip install beautifulsoup4
 # !pip install requests
 
@@ -16,7 +17,7 @@ HEADERS = {
 
 #get the list of best books of 2024
 app_url = "https://www.goodreads.com"
-start_url = "https://www.goodreads.com/choiceawards/best-books-2011" #I think this should work for a lot of years, done 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011.
+start_url = "https://www.goodreads.com/choiceawards/best-books-2011" # Works for 2011-2024 and probably later years.
 
 res = requests.get(start_url, headers=HEADERS)
 soup = bs(res.text, 'html.parser')
@@ -187,9 +188,6 @@ for index, category in enumerate(categories):
         #         writer = csv.DictWriter(csv_file, fieldnames=book_dict.keys(), quoting=csv.QUOTE_ALL)
         #         writer.writeheader()
 
-
         with open(csv_filename, mode="a", newline="", encoding="utf-8") as csv_file:
             writer = csv.DictWriter(csv_file, fieldnames=book_dict.keys(), quoting=csv.QUOTE_ALL)
             writer.writerow(book_dict)
-
-

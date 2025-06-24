@@ -169,28 +169,29 @@ if 'last_recommendations_backend' not in st.session_state:
     st.session_state.last_recommendations_backend = []
 
 
-# Input form for adding a new book
-with st.form("book_input_form"): # Removed clear_on_submit=True
-    col1, col2 = st.columns([3, 1])
-    with col1:
-        # Use st_searchbox for combined search and select
-        selected_book_display_title = st_searchbox(
-            search_books,
-            key="book_search_input",
-            placeholder="Type to search for a book...",
-            label="Select a Book You've Read" # Add a label to the searchbox
-        )
-        # DEBUG: Display the current value of the searchbox in real-time
-        st.info(f"Current searchbox value: `{selected_book_display_title}`")
+# --- Book Input Form ---
+# Move st_searchbox outside the form for live reactivity
+selected_book_display_title = st_searchbox(
+    search_books,
+    key="book_search_input",
+    placeholder="Type to search for a book...",
+    label="Select a Book You've Read" # Add a label to the searchbox
+)
+# Removed DEBUG: Display the current value of the searchbox in real-time
+# st.info(f"Current searchbox value: `{selected_book_display_title}`")
 
-    with col2:
+with st.form("book_input_form"):
+    col1, col2 = st.columns([3, 1])
+    # The searchbox is now outside, so it's not in these columns directly.
+    # We still need the rating slider and the button inside the form.
+    with col2: # Place rating slider in the second column
         book_rating = st.slider("Your Rating (1-5)", 1, 5, 3)
 
     add_book_button = st.form_submit_button("Add Book")
 
     if add_book_button:
-        # DEBUG: Confirm value at button click
-        st.write(f"DEBUG: 'Add Book' button clicked. Value captured: '{selected_book_display_title}'")
+        # Removed DEBUG: Confirm value at button click
+        # st.write(f"DEBUG: 'Add Book' button clicked. Value captured: '{selected_book_display_title}'")
         if selected_book_display_title: # st_searchbox returns None if nothing is selected/typed
             # Convert the selected display title back to the backend format (lowercase)
             selected_book_backend_title = display_to_backend_map.get(selected_book_display_title)
@@ -203,9 +204,9 @@ with st.form("book_input_form"): # Removed clear_on_submit=True
                         'rating': book_rating
                     })
                     st.success(f"Added '{selected_book_display_title}' with rating {book_rating}!")
-                    # Manually clear the searchbox after successful addition
-                    st.session_state['book_search_input'] = ''
-                    st.rerun() # Rerun to clear the searchbox and update the list
+                    # Manually clear the searchbox by deleting its key from session state
+                    if 'book_search_input' in st.session_state:
+                        del st.session_state['book_search_input']
                 else:
                     st.warning(f"'{selected_book_display_title}' has already been added.")
             else:
@@ -227,7 +228,7 @@ if st.session_state.user_books_data:
         st.session_state.user_books_data = []
         st.session_state.last_recommendations_display = [] # Clear recommendations as well
         st.session_state.last_recommendations_backend = [] # Clear recommendations as well
-        st.rerun() # Rerun to clear the displayed dataframe immediately
+
 
 # --- Fixed Model Settings (Backend Configuration) ---
 # These values are now fixed in the backend as per your request.
@@ -290,26 +291,27 @@ st.header("Provide Feedback on Recommended Books")
 
 if st.session_state.last_recommendations_display:
     st.markdown("Did you read one of our recommendations? Rate it here to get even better suggestions!")
+    # Move st_searchbox outside the form for live reactivity
+    selected_feedback_book_display_title = st_searchbox(
+        search_books,
+        key="feedback_search_input",
+        placeholder="Type to search for a recommended book...",
+        label="Select a Recommended Book to Rate" # Add a label to the searchbox
+    )
+    # Removed DEBUG: Display the current value of the feedback searchbox in real-time
+    # st.info(f"Current feedback searchbox value: `{selected_feedback_book_display_title}`")
+
     with st.form("feedback_form", clear_on_submit=True):
         col1_feedback, col2_feedback = st.columns([3, 1])
-        with col1_feedback:
-            # Use st_searchbox for combined search and select for feedback
-            selected_feedback_book_display_title = st_searchbox(
-                search_books,
-                key="feedback_search_input",
-                placeholder="Type to search for a recommended book...",
-                label="Select a Recommended Book to Rate" # Add a label to the searchbox
-            )
-            # DEBUG: Display the current value of the feedback searchbox in real-time
-            st.info(f"Current feedback searchbox value: `{selected_feedback_book_display_title}`")
-        with col2_feedback:
+        # The searchbox is now outside, so it's not in these columns directly.
+        with col2_feedback: # Place rating slider in the second column
             feedback_rating = st.slider("Your Rating (1-5)", 1, 5, 3, key="feedback_rating_slider")
 
         add_feedback_button = st.form_submit_button("Add Feedback & Regenerate Recommendations")
 
         if add_feedback_button:
-            # DEBUG: Confirm feedback value at button click
-            st.write(f"DEBUG: 'Add Feedback' button clicked. Value captured: '{selected_feedback_book_display_title}'")
+            # Removed DEBUG: Confirm feedback value at button click
+            # st.write(f"DEBUG: 'Add Feedback' button clicked. Value captured: '{selected_feedback_book_display_title}'")
             if selected_feedback_book_display_title: # st_searchbox returns None if nothing is selected/typed
                 # Convert the selected display title back to the backend format
                 selected_feedback_book_backend_title = display_to_backend_map.get(selected_feedback_book_display_title)
@@ -325,7 +327,9 @@ if st.session_state.last_recommendations_display:
                         # Clear previous recommendations so that the next run generates fresh ones
                         st.session_state.last_recommendations_display = []
                         st.session_state.last_recommendations_backend = []
-                        st.rerun() # Rerun to trigger new recommendations with updated user data
+                        # Manually clear the feedback searchbox by deleting its key from session state
+                        if 'feedback_search_input' in st.session_state:
+                            del st.session_state['feedback_search_input']
                     else:
                         st.warning(f"'{selected_feedback_book_display_title}' has already been added. Its rating can be adjusted in 'Your Books & Ratings' section.")
                 else:

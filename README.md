@@ -155,6 +155,8 @@ Other important scripts:
         Recombines file chunks created by "large_files.py" into one CSV file.
     cleaning\create_fake_data.py
         Generates fake feature vectors for a list of title-author pairs (for testing purposes).
+    app\streamlit.py
+        Creates an app to make the recommendation process easier.
 
 Other scripts not used:
     big_data_set\scripts_older_versions\author_names.py

@@ -1,13 +1,24 @@
 import streamlit as st
 import pandas as pd
-import os # Import the os module to handle file paths
+import os
+import sys # Import sys module for path manipulation
+
+# --- Import streamlit-searchbox (assuming it's in requirements.txt or pre-installed) ---
+from streamlit_searchbox import st_searchbox
+
+
+# --- Adjust Python Path for Module Discovery ---
+# Get the directory of the current script (e.g., 'your_app_folder' where app.py resides)
+script_dir = os.path.dirname(__file__)
+# Go up one level to reach the project root (e.g., 'your_project_root' folder)
+# os.pardir is equivalent to '..'
+project_root = os.path.abspath(os.path.join(script_dir, os.pardir))
+# Add the project root to sys.path so Python can find 'combined_model' as a top-level package
+sys.path.insert(0, project_root)
 
 # --- IMPORT RECOMMENDATION FUNCTIONS FROM YOUR LOCAL FILE ---
-# Ensure the 'combined.py' file is in the specified path relative to your Streamlit app.
+# Now, 'combined_model' should be discoverable because its parent directory (project_root) is on sys.path.
 try:
-    # Attempt to import the necessary functions from the 'combined' module within 'combined_model' package.
-    # This assumes 'combined_model' is a directory in the parent directory of this script,
-    # and 'combined.py' is inside 'combined_model'.
     from combined_model.combined import (
         get_combined_recommendations,
         recommend_by_multiplying_scores, # Only importing this specific recommendation strategy
@@ -15,33 +26,30 @@ try:
     st.success("Successfully loaded recommendation functions from 'combined.py'!")
 except ImportError as e:
     # If the import fails, display an error message and stop the Streamlit application.
-    st.error(f"Error loading recommendation functions: {e}. Please ensure 'combined.py' is in the correct path ('../combined_model/') and all its dependencies are installed.")
+    st.error(f"Error loading recommendation functions: {e}. Please ensure 'combined_model' directory is at the project root level, contains 'combined.py', and potentially has an '__init__.py' file. Also, verify internal imports within 'combined.py' for modules like 'cb_get_recs' and 'cf_get_recs' are relative (e.g., 'from .cb_get_recs import ...'). Error: {e}")
     st.stop() # Stop the app if functions cannot be loaded
 
 
 # --- Predetermined List of Books (Original Lowercase Format for Backend) ---
-# Define the relative path to the book list file.
-book_list_file_path = "../collab_filtering/trained_data/book_list_features_600_lambda_5.txt"
+# Define the absolute path to the book list file by joining it with the project_root.
+# Assuming 'collab_filtering' is also at the project root level, sibling to 'your_app_folder'.
+book_list_file_path_abs = os.path.join(project_root, "collab_filtering/trained_data/book_list_features_600_lambda_5.txt")
 predetermined_book_list_backend_format = []
 
 try:
-    # Get the directory of the current script (app.py) to construct an absolute path.
-    script_dir = os.path.dirname(__file__)
-    # Construct the absolute path to the book list file, making it robust to different execution contexts.
-    abs_file_path = os.path.join(script_dir, book_list_file_path)
-
+    st.info(f"Attempting to load book list from: `{book_list_file_path_abs}`")
     # Open and read the book list file, adding each line (stripped of whitespace) to the list.
-    with open(abs_file_path, 'r', encoding='utf-8') as f:
+    with open(book_list_file_path_abs, 'r', encoding='utf-8') as f:
         for line in f:
             predetermined_book_list_backend_format.append(line.strip()) # Read each line and strip whitespace
-    st.success(f"Successfully loaded {len(predetermined_book_list_backend_format)} books from '{book_list_file_path}'!")
+    st.success(f"Successfully loaded {len(predetermined_book_list_backend_format)} books from '{os.path.basename(book_list_file_path_abs)}'!")
 except FileNotFoundError:
     # Handle the case where the book list file does not exist.
-    st.error(f"Error: The book list file '{book_list_file_path}' was not found. Please check the path and ensure the file exists.")
+    st.error(f"Error: The book list file was not found at `{book_list_file_path_abs}`. Please check the path and ensure the file exists at the project root level within the `collab_filtering/trained_data/` directory.")
     st.stop() # Stop the app if the book list cannot be loaded
 except Exception as e:
     # Handle any other exceptions that might occur during file loading.
-    st.error(f"An error occurred while loading the book list: {e}")
+    st.error(f"An error occurred while loading the book list from `{book_list_file_path_abs}`: {e}")
     st.stop()
 
 
@@ -100,16 +108,36 @@ def format_book_title_for_display(title_str: str) -> str:
         # If no comma or only one part, assume it's just the title and apply capitalization.
         return _capitalize_part(title_str.strip())
 
-# Create a display-friendly list with proper capitalization for the selectbox.
+# Create a display-friendly list with proper capitalization for the searchbox.
 predetermined_book_list_display = sorted([
     format_book_title_for_display(book) for book in predetermined_book_list_backend_format
 ])
+
+# Debugging: Show how many books are in the display list and the first few
+st.info(f"Loaded {len(predetermined_book_list_display)} display-formatted books.")
+if predetermined_book_list_display:
+    st.write("First 5 display books:", predetermined_book_list_display[:5])
+else:
+    st.warning("The display-formatted book list is empty. This means the searchbox will not show options.")
+
 
 # Create a mapping from the display-friendly title to the original backend-formatted title.
 # This is crucial for converting user selection back to the format your model expects.
 display_to_backend_map = {
     format_book_title_for_display(book): book for book in predetermined_book_list_backend_format
 }
+
+# Function for st_searchbox to fetch suggestions
+def search_books(search_term: str):
+    if not search_term:
+        results = predetermined_book_list_display[:50]
+        return results
+    search_term_lower = search_term.lower()
+    filtered_results = [
+        book for book in predetermined_book_list_display
+        if search_term_lower in book.lower()
+    ][:50] # Limit suggestions to 50 for performance
+    return filtered_results
 
 
 # --- Streamlit Application Layout ---
@@ -142,22 +170,28 @@ if 'last_recommendations_backend' not in st.session_state:
 
 
 # Input form for adding a new book
-with st.form("book_input_form", clear_on_submit=True):
+with st.form("book_input_form"): # Removed clear_on_submit=True
     col1, col2 = st.columns([3, 1])
     with col1:
-        # Use st.selectbox for predetermined list with display-friendly titles
-        selected_book_display_title = st.selectbox(
-            "Select a Book You've Read",
-            options=["-- Select a book --"] + predetermined_book_list_display, # Use display list
-            help="Choose a book from the available list."
+        # Use st_searchbox for combined search and select
+        selected_book_display_title = st_searchbox(
+            search_books,
+            key="book_search_input",
+            placeholder="Type to search for a book...",
+            label="Select a Book You've Read" # Add a label to the searchbox
         )
+        # DEBUG: Display the current value of the searchbox in real-time
+        st.info(f"Current searchbox value: `{selected_book_display_title}`")
+
     with col2:
         book_rating = st.slider("Your Rating (1-5)", 1, 5, 3)
 
     add_book_button = st.form_submit_button("Add Book")
 
     if add_book_button:
-        if selected_book_display_title and selected_book_display_title != "-- Select a book --":
+        # DEBUG: Confirm value at button click
+        st.write(f"DEBUG: 'Add Book' button clicked. Value captured: '{selected_book_display_title}'")
+        if selected_book_display_title: # st_searchbox returns None if nothing is selected/typed
             # Convert the selected display title back to the backend format (lowercase)
             selected_book_backend_title = display_to_backend_map.get(selected_book_display_title)
 
@@ -169,12 +203,15 @@ with st.form("book_input_form", clear_on_submit=True):
                         'rating': book_rating
                     })
                     st.success(f"Added '{selected_book_display_title}' with rating {book_rating}!")
+                    # Manually clear the searchbox after successful addition
+                    st.session_state['book_search_input'] = ''
+                    st.rerun() # Rerun to clear the searchbox and update the list
                 else:
                     st.warning(f"'{selected_book_display_title}' has already been added.")
             else:
-                st.error("Error: Could not find the selected book in the backend list. Please try again.")
+                st.error("Error: Could not find the selected book in the backend list. Please try again. Make sure you select from the suggestions.")
         else:
-            st.warning("Please select a book from the list.")
+            st.warning("Please select a book from the list (type and choose from suggestions).")
 
 # Display current list of books and a button to clear
 if st.session_state.user_books_data:
@@ -256,19 +293,24 @@ if st.session_state.last_recommendations_display:
     with st.form("feedback_form", clear_on_submit=True):
         col1_feedback, col2_feedback = st.columns([3, 1])
         with col1_feedback:
-            # Selectbox for the user to choose from the *last generated* recommendations
-            selected_feedback_book_display_title = st.selectbox(
-                "Select a Recommended Book to Rate",
-                options=["-- Select a book --"] + st.session_state.last_recommendations_display,
-                help="Choose a book from the last recommendations generated."
+            # Use st_searchbox for combined search and select for feedback
+            selected_feedback_book_display_title = st_searchbox(
+                search_books,
+                key="feedback_search_input",
+                placeholder="Type to search for a recommended book...",
+                label="Select a Recommended Book to Rate" # Add a label to the searchbox
             )
+            # DEBUG: Display the current value of the feedback searchbox in real-time
+            st.info(f"Current feedback searchbox value: `{selected_feedback_book_display_title}`")
         with col2_feedback:
             feedback_rating = st.slider("Your Rating (1-5)", 1, 5, 3, key="feedback_rating_slider")
 
         add_feedback_button = st.form_submit_button("Add Feedback & Regenerate Recommendations")
 
         if add_feedback_button:
-            if selected_feedback_book_display_title and selected_feedback_book_display_title != "-- Select a book --":
+            # DEBUG: Confirm feedback value at button click
+            st.write(f"DEBUG: 'Add Feedback' button clicked. Value captured: '{selected_feedback_book_display_title}'")
+            if selected_feedback_book_display_title: # st_searchbox returns None if nothing is selected/typed
                 # Convert the selected display title back to the backend format
                 selected_feedback_book_backend_title = display_to_backend_map.get(selected_feedback_book_display_title)
 
@@ -287,9 +329,9 @@ if st.session_state.last_recommendations_display:
                     else:
                         st.warning(f"'{selected_feedback_book_display_title}' has already been added. Its rating can be adjusted in 'Your Books & Ratings' section.")
                 else:
-                    st.error("Error: Could not find the selected book for feedback. Please try again.")
+                    st.error("Error: Could not find the selected book for feedback. Please try again. Make sure you select from the suggestions.")
             else:
-                st.warning("Please select a book from the recommended list to provide feedback.")
+                st.warning("Please select a book from the recommended list to provide feedback (type and choose from suggestions).")
 else:
     st.info("Generate recommendations first to provide feedback on them.")
 
@@ -297,4 +339,11 @@ else:
 st.markdown("""
 ---
 **Note:** The recommendation functions are imported from `combined_model/combined.py`. Model parameters (Genre Weight, Number of Features, User Regularization Strength) are now fixed in the backend for consistent performance.
+""")
+
+st.markdown("""
+---
+**How to Close the App:**
+To stop this Streamlit application, return to your terminal or command prompt where you launched it and press `Ctrl + C` (or `Cmd + C` on macOS).
+Closing this browser tab or window will *not* stop the application from running in your terminal.
 """)

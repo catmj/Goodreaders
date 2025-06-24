@@ -4,12 +4,13 @@ import os
 
 # --- Import functions from your content-based and collaborative filtering modules ---
 try:
-    from cb_get_recs import find_all_books_with_scores, BASE_FILE_NAME
-    from cf_get_recs import load_pretrained_data, generate_user_predictions, \
-                            PRETRAINED_DATA_PATH
+    # Use relative imports (the '.' signifies the current package)
+    from .cb_get_recs import find_all_books_with_scores, BASE_FILE_NAME
+    from .cf_get_recs import load_pretrained_data, generate_user_predictions, \
+                                PRETRAINED_DATA_PATH
 except ImportError as e:
-    print(f"Error importing modules: {e}")
-    print("Please ensure 'cb_get_recs.py' and 'cf_get_recs.py' are in the same directory or correctly configured in your Python path.")
+    print(f"Error importing modules within combined.py: {e}")
+    print("Please ensure 'cb_get_recs.py' and 'cf_get_recs.py' are in the same directory as 'combined.py' and that 'combined_model' is treated as a Python package (contains an __init__.py file).")
     exit()
 
 # --- Configuration Constants ---

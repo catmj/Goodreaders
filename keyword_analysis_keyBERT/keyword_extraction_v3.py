@@ -74,7 +74,7 @@ class KeywordExtractor:
             
             # Define required columns for processing and metadata
             #required_cols = ['description']
-            metadata_cols = ['genres', 'title', 'author_name', 'rating']
+            metadata_cols = ['genres', 'title', 'author_name', 'rating', 'num_ratings']
             
             # Check for required 'description' column
             if 'description' not in df.columns:

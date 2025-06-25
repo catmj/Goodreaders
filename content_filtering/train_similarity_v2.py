@@ -190,7 +190,7 @@ if __name__ == "__main__":
         print(f"Using existing main checkpoint directory: {checkpoint_dir}")
 
     # Define the different weight pairs to iterate through
-    weight_pairs = [(0.5, 0.5), (0.8, 0.2), (0, 1)]
+    weight_pairs = [(0.8, 0.2)] # [(0.5, 0.5), (0.8, 0.2), (0, 1)]
 
     for g, k in weight_pairs:
         # Print separators for better readability between runs

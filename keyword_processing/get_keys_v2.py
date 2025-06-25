@@ -187,7 +187,7 @@ def export_vectors_to_csv(books_df, keyword_vecs, genre_vecs, output_filename='b
     print(f"\nPreparing data for export to {output_filename}...")
 
     # Select relevant columns from the original book DataFrame
-    export_df = books_df[['title', 'author_name']].copy()
+    export_df = books_df[['title', 'author_name', 'rating', 'num_ratings']].copy()
 
     # Add keyword vectors as a single column (list representation)
     export_df['keyword_vector'] = keyword_vecs

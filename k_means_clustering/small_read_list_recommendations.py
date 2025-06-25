@@ -1,9 +1,30 @@
 # Code for generating a list of recommendations for users who only submit 1-5 rated books using k-modes clusters.
+# Google Gemini used to assist.
 
 # To run in a virtual environment, first do: pip install -r requirements.txt
 # Importing necessary packages.
 import pandas as pd
+import numpy as np
 import ast
+
+def cosine_sim(vec1, vec2):
+    # Convert lists to NumPy arrays for efficient computation.
+    vec1 = np.array(vec1)
+    vec2 = np.array(vec2)
+    # Check if vectors have the same length.
+    if len(vec1) != len(vec2):
+        raise ValueError("Vectors must have the same length to compute cosine similarity.")
+    # Calculate the dot product.
+    dot_product = np.dot(vec1, vec2)
+    # Calculate the l2 norm (Euclidean norm) of each vector.
+    norm_vec1 = np.linalg.norm(vec1)
+    norm_vec2 = np.linalg.norm(vec2)
+    # Handle division by zero if either norm is zero.
+    if norm_vec1 == 0 or norm_vec2 == 0:
+        return 0.0
+    else:
+        similarity = dot_product / (norm_vec1 * norm_vec2)
+        return similarity
 
 # Defining a method that converts strings of feature vectors to actual feature vectors.
 def str_to_feat(input):
@@ -80,6 +101,78 @@ if rows_to_remove: # Only try to drop if there are rows to remove.
     feature_df.drop(rows_to_remove, inplace=True)
     # Reset the index to have a clean, sequential index after dropping rows.
     feature_df.reset_index(drop=True, inplace=True)
+
+# Combine 'title' and 'author_name' into a new 'titles_authors' column in feature_df.
+# Use .fillna('') to handle potential NaN values in title or author_name before combining.
+feature_df['titles_authors'] = feature_df['title'].fillna('') + ', ' + feature_df['author_name'].fillna('')
+# Strip any leading/trailing spaces from the combined string, if necessary.
+feature_df['titles_authors'] = feature_df['titles_authors'].str.strip()
+
+# Isolating feature data into an array (keywords and genres). Ensure 'data' is float for cosine similarity.
+data_list = []
+for i in range(len(feature_df)):
+    row_data = np.hstack((np.array(str_to_feat(feature_df.at[i,"keyword_vector"])),np.array(str_to_feat(feature_df.at[i,"genre_vector"])))) # CHANGE BACK 
+    data_list.append(row_data)
+data = np.array(data_list, dtype=float) # Ensure data is float type for cosine similarity.
+
+# Identifying feature vectors for rated books.
+rated_books_features = [] # Initialize an empty list to hold the feature vectors
+for rated_book_title_author in sample_user_books:
+    # Find the row in feature_df that matches the rated book.
+    # This efficiently filters the DataFrame to find the book.
+    matching_rows = feature_df[feature_df['titles_authors'] == rated_book_title_author]
+    if not matching_rows.empty:
+        # Assuming there's only one match per book.
+        book_row = matching_rows.iloc[0] # Get the first (and likely only) matching row.
+        keyword_vec_str = book_row["keyword_vector"]
+        genre_vec_str = book_row["genre_vector"]
+        # Convert string representations of vectors (e.g., "[1, 0, 1]") into actual numerical lists/arrays using your str_to_feat function.
+        keyword_feat = str_to_feat(keyword_vec_str)
+        genre_feat = str_to_feat(genre_vec_str)
+        # Concatenate the keyword and genre features into a single, comprehensive feature vector.
+        full_feature_vector = np.hstack((np.array(keyword_feat), np.array(genre_feat)))
+        rated_books_features.append(full_feature_vector) # Add the combined vector to the list.
+    else:
+        # This warning helps if a book from your sample_user_books couldn't be found in the filtered feature_df (e.g., if it wasn't in any of the relevant clusters).
+        print(f"Warning: Rated book '{rated_book_title_author}' not found in the filtered feature_df.")
+# Convert the list of feature vectors for rated books into a single NumPy array. This makes it easier to perform array operations later.
+rated_books_features_array = np.array(rated_books_features, dtype=float)
+
+# Identify and remove outliers using cosine dissimilarity.
+sim_matrix = np.zeros((num_ratings,len(feature_df)))
+for rating in range(num_ratings):
+    rating_features = rated_books_features_array[rating,:]
+    for book in range(len(feature_df)):
+        book_features = data[book,:]
+        sim_matrix[rating,book] = cosine_sim(rating_features,book_features)
+sim_averages = np.mean(sim_matrix, axis=0)
+mean_value = np.mean(sim_averages)
+std_dev_value = np.std(sim_averages)
+# Specify the number of standard deviations to be considered an outlier. Should be positive.
+std_num_outlier = 2.0
+# Create list of outlier rows to remove.
+outliers_to_remove = []
+for book_idx in range(len(sim_averages)): # Loop through the sim_averages, which corresponds to current feature_df indices.
+    # We consider books with average similarity significantly below the mean as outliers.
+    if sim_averages[book_idx] < (mean_value - std_num_outlier * std_dev_value):
+        outliers_to_remove.append(book_idx)
+# Remove identified outlier rows from the dataframe.
+if outliers_to_remove: # Only try to drop if there are outliers to remove
+    # Use the actual index labels of the DataFrame, which are the current row numbers.
+    feature_df.drop(feature_df.index[outliers_to_remove], inplace=True)
+    # Reset the index again to maintain a clean sequential index
+    feature_df.reset_index(drop=True, inplace=True)
+    print(f"Removed {len(outliers_to_remove)} outlier books.")
+else:
+    print("No outliers found to remove based on the specified criteria.")
+
+# After removing outliers, 'data' array needs to be regenerated to reflect the current state of 'feature_df'.
+# This is crucial for any subsequent operations that rely on 'data' being aligned with 'feature_df'.
+# data_list_after_outlier_removal = []
+# for i in range(len(feature_df)):
+#     row_data_after_removal = np.hstack((np.array(str_to_feat(feature_df.at[i,"keyword_vector"])),np.array(str_to_feat(feature_df.at[i,"genre_vector"]))))
+#     data_list_after_outlier_removal.append(row_data_after_removal)
+# data = np.array(data_list_after_outlier_removal, dtype=float)
 
 # Keep the top N most popular books, and then keep the top M highest rated books. Vice versa if N<M (worse results).
 highest_hits_to_keep = 100 # N

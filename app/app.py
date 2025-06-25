@@ -23,9 +23,8 @@ try:
         get_combined_recommendations,
         recommend_by_multiplying_scores, # Only importing this specific recommendation strategy
     )
-    st.success("Successfully loaded recommendation functions from 'combined.py'!")
 except ImportError as e:
-    # If the import fails, display an error message and stop the Streamlit application.
+    # If the import fails, display an message and stop the Streamlit application.
     st.error(f"Error loading recommendation functions: {e}. Please ensure 'combined_model' directory is at the project root level, contains 'combined.py', and potentially has an '__init__.py' file. Also, verify internal imports within 'combined.py' for modules like 'cb_get_recs' and 'cf_get_recs' are relative (e.g., 'from .cb_get_recs import ...'). Error: {e}")
     st.stop() # Stop the app if functions cannot be loaded
 
@@ -37,12 +36,10 @@ book_list_file_path_abs = os.path.join(project_root, "collab_filtering/trained_d
 predetermined_book_list_backend_format = []
 
 try:
-    st.info(f"Attempting to load book list from: `{book_list_file_path_abs}`")
     # Open and read the book list file, adding each line (stripped of whitespace) to the list.
     with open(book_list_file_path_abs, 'r', encoding='utf-8') as f:
         for line in f:
             predetermined_book_list_backend_format.append(line.strip()) # Read each line and strip whitespace
-    st.success(f"Successfully loaded {len(predetermined_book_list_backend_format)} books from '{os.path.basename(book_list_file_path_abs)}'!")
 except FileNotFoundError:
     # Handle the case where the book list file does not exist.
     st.error(f"Error: The book list file was not found at `{book_list_file_path_abs}`. Please check the path and ensure the file exists at the project root level within the `collab_filtering/trained_data/` directory.")
@@ -61,23 +58,38 @@ def format_book_title_for_display(title_str: str) -> str:
        (title_str.startswith('"') and title_str.endswith('"')):
         title_str = title_str[1:-1] # Remove the outer quotes
 
+    # List of common minor words that should not be capitalized in titles
+    # unless they are the first word.
+    minor_words = {
+        "a", "an", "and", "as", "at", "but", "by", "for", "in", "nor", "of",
+        "on", "or", "so", "the", "to", "up", "yet"
+    }
+
     # Helper function for consistent capitalization logic.
     def _capitalize_part(part: str) -> str:
+        words = part.split()
+        if not words:
+            return ""
+
         formatted_words = []
-        for word in part.split():
+        for i, word in enumerate(words):
+            if not word: # Handle empty strings from multiple spaces
+                continue
+
+            # Handle words like '#1Q84' - capitalize after the hash.
             if word.startswith('#') and len(word) > 1:
-                # Handle words like '#1Q84' - capitalize after the hash.
                 formatted_words.append('#' + word[1:].title())
-            elif word and word[0].isdigit() and any(c.isalpha() for c in word):
-                # Handle mixed alphanumeric words like '1Q84' - capitalize after the first digit.
+            # Handle mixed alphanumeric words like '1Q84' - capitalize after the first digit.
+            elif word[0].isdigit() and any(c.isalpha() for c in word):
                 if len(word) > 1 and word[1].isalpha():
                     formatted_words.append(word[0] + word[1:].title())
                 else:
-                    # For purely numeric words or single digits, no title case.
-                    formatted_words.append(word)
-            else:
-                # Default to title case for most words.
+                    formatted_words.append(word) # For purely numeric words
+            # Apply title case for most words, but lowercase minor words
+            elif i == 0 or word.lower() not in minor_words:
                 formatted_words.append(word.title())
+            else:
+                formatted_words.append(word.lower())
         return ' '.join(formatted_words)
 
     # Split the title string into title and author based on the last comma.
@@ -103,7 +115,7 @@ def format_book_title_for_display(title_str: str) -> str:
         formatted_author = ' '.join(formatted_author_parts)
 
         # Changed format from "{formatted_title}, {formatted_author}" to "{formatted_title}, by {formatted_author}"
-        return f"{formatted_title}, by {formatted_author}"
+        return f"{formatted_title} by {formatted_author}"
     else:
         # If no comma or only one part, assume it's just the title and apply capitalization.
         return _capitalize_part(title_str.strip())
@@ -112,13 +124,6 @@ def format_book_title_for_display(title_str: str) -> str:
 predetermined_book_list_display = sorted([
     format_book_title_for_display(book) for book in predetermined_book_list_backend_format
 ])
-
-# Debugging: Show how many books are in the display list and the first few
-st.info(f"Loaded {len(predetermined_book_list_display)} display-formatted books.")
-if predetermined_book_list_display:
-    st.write("First 5 display books:", predetermined_book_list_display[:5])
-else:
-    st.warning("The display-formatted book list is empty. This means the searchbox will not show options.")
 
 
 # Create a mapping from the display-friendly title to the original backend-formatted title.
@@ -168,6 +173,50 @@ if 'last_recommendations_display' not in st.session_state:
 if 'last_recommendations_backend' not in st.session_state:
     st.session_state.last_recommendations_backend = []
 
+# Initialize session state for feedback on recommended books
+if 'feedback_ratings' not in st.session_state:
+    st.session_state.feedback_ratings = {}
+
+# New flag to control when recommendations are displayed
+if 'display_recommendations' not in st.session_state:
+    st.session_state.display_recommendations = False
+
+# New flag to trigger recommendation generation when a rerun happens
+if 'run_recommendation_logic_on_rerun' not in st.session_state:
+    st.session_state.run_recommendation_logic_on_rerun = False
+
+
+# Helper function to generate and display recommendations
+def generate_and_display_recommendations_section(user_books, user_ratings, output_limit):
+    with st.spinner("Generating recommendations..."):
+        final_recommendations_df = get_combined_recommendations(
+            user_books,
+            user_ratings,
+            genre_weight=FIXED_GENRE_WEIGHT,
+            num_features=FIXED_NUM_FEATURES,
+            new_user_regularization_strength=FIXED_NEW_USER_REGULARIZATION_STRENGTH
+        )
+
+    if final_recommendations_df is not None and not final_recommendations_df.empty:
+        st.subheader("✨ Your Personalized Recommendations:")
+        rec_list = recommend_by_multiplying_scores(final_recommendations_df, output_limit=output_limit)
+        
+        st.session_state.last_recommendations_display = [format_book_title_for_display(book) for book in rec_list]
+        st.session_state.last_recommendations_backend = rec_list
+
+        # Re-initialize feedback_ratings for the new recommendations
+        st.session_state.feedback_ratings = {}
+        for backend_title in st.session_state.last_recommendations_backend:
+            st.session_state.feedback_ratings[backend_title] = {'read': False, 'rating': 3}
+
+        if rec_list:
+            for i, rec_book in enumerate(rec_list):
+                st.write(f"- {format_book_title_for_display(rec_book)}")
+        else:
+            st.info("No recommendations found using this strategy. Try adding more books or different ratings!")
+    else:
+        st.error("Recommendation generation failed or returned an empty result. Please check your inputs and model functions.")
+
 
 # --- Book Input Form ---
 # Move st_searchbox outside the form for live reactivity
@@ -177,8 +226,6 @@ selected_book_display_title = st_searchbox(
     placeholder="Type to search for a book...",
     label="Select a Book You've Read" # Add a label to the searchbox
 )
-# Removed DEBUG: Display the current value of the searchbox in real-time
-# st.info(f"Current searchbox value: `{selected_book_display_title}`")
 
 with st.form("book_input_form"):
     col1, col2 = st.columns([3, 1])
@@ -190,8 +237,6 @@ with st.form("book_input_form"):
     add_book_button = st.form_submit_button("Add Book")
 
     if add_book_button:
-        # Removed DEBUG: Confirm value at button click
-        # st.write(f"DEBUG: 'Add Book' button clicked. Value captured: '{selected_book_display_title}'")
         if selected_book_display_title: # st_searchbox returns None if nothing is selected/typed
             # Convert the selected display title back to the backend format (lowercase)
             selected_book_backend_title = display_to_backend_map.get(selected_book_display_title)
@@ -214,20 +259,74 @@ with st.form("book_input_form"):
         else:
             st.warning("Please select a book from the list (type and choose from suggestions).")
 
+# --- Function to remove a single book ---
+def remove_single_book(book_backend_title_to_remove):
+    # Filter out the book to be removed
+    st.session_state.user_books_data = [
+        item for item in st.session_state.user_books_data
+        if item['title'] != book_backend_title_to_remove
+    ]
+    # Clear recommendations and feedback as input has changed
+    st.session_state.last_recommendations_display = []
+    st.session_state.last_recommendations_backend = []
+    st.session_state.feedback_ratings = {}
+    st.session_state.display_recommendations = False
+    st.session_state.run_recommendation_logic_on_rerun = False
+    st.rerun() # Force a rerun to update the UI
+
+# --- Function to update a single book's rating ---
+def update_single_book_rating(book_backend_title_to_update):
+    # Retrieve the new rating from the session state key associated with the slider
+    new_rating = st.session_state[f"user_book_rating_slider_{book_backend_title_to_update}"]
+    for item in st.session_state.user_books_data:
+        if item['title'] == book_backend_title_to_update:
+            item['rating'] = new_rating
+            break
+    # Clear recommendations and feedback as input has changed.
+    # Do NOT call st.rerun() here. The user will manually trigger new recommendations.
+    st.session_state.last_recommendations_display = []
+    st.session_state.last_recommendations_backend = []
+    st.session_state.feedback_ratings = {}
+    st.session_state.display_recommendations = False # Hide old recommendations
+
+
 # Display current list of books and a button to clear
 if st.session_state.user_books_data:
     st.subheader("Books You've Added:")
-    df_books = pd.DataFrame(st.session_state.user_books_data)
-    # Display a more user-friendly title (capitalized)
-    df_books_display = df_books.copy()
-    df_books_display['Book Title'] = df_books_display['title'].apply(lambda x: format_book_title_for_display(x))
-    df_books_display['Rating'] = df_books_display['rating']
-    st.dataframe(df_books_display[['Book Title', 'Rating']], hide_index=True, use_container_width=True)
+    
+    # Manually display books with a remove button and an adjustable rating slider for each
+    for i, book_item in enumerate(st.session_state.user_books_data):
+        col_title, col_rating_slider, col_remove = st.columns([0.5, 0.3, 0.2]) # Adjusted column widths
+        with col_title:
+            st.write(f"**{format_book_title_for_display(book_item['title'])}**")
+        with col_rating_slider:
+            # Add a slider to adjust the rating
+            st.slider(
+                "Rating",
+                1, 5,
+                value=book_item['rating'],
+                key=f"user_book_rating_slider_{book_item['title']}", # Unique key for this slider
+                on_change=update_single_book_rating,
+                args=(book_item['title'],) # Pass only the title, new value is from key
+            )
+        with col_remove:
+            st.button(
+                "Remove",
+                key=f"remove_book_{book_item['title']}_{i}", # Unique key for each button
+                on_click=remove_single_book,
+                args=(book_item['title'],)
+            )
+
+    st.markdown("---") # Separator between individual books and the "Clear All" button
 
     if st.button("Clear All Books"):
         st.session_state.user_books_data = []
         st.session_state.last_recommendations_display = [] # Clear recommendations as well
         st.session_state.last_recommendations_backend = [] # Clear recommendations as well
+        st.session_state.feedback_ratings = {} # Clear feedback data as well
+        st.session_state.display_recommendations = False # Hide recommendations
+        st.session_state.run_recommendation_logic_on_rerun = False # Reset flag
+        st.rerun() # Force a rerun
 
 
 # --- Fixed Model Settings (Backend Configuration) ---
@@ -249,105 +348,112 @@ st.header("Generate Recommendations")
 
 if st.button("Get Recommendations", type="primary"):
     if st.session_state.user_books_data:
-        # Prepare data for your combined recommendation function (using backend-formatted titles)
-        user_books = [item['title'] for item in st.session_state.user_books_data]
-        user_ratings = [item['rating'] for item in st.session_state.user_books_data]
-
-        with st.spinner("Generating recommendations..."):
-            # Call your actual `get_combined_recommendations` function with fixed settings
-            final_recommendations_df = get_combined_recommendations(
-                user_books,
-                user_ratings,
-                genre_weight=FIXED_GENRE_WEIGHT,
-                num_features=FIXED_NUM_FEATURES,
-                new_user_regularization_strength=FIXED_NEW_USER_REGULARIZATION_STRENGTH
-            )
-
-        if final_recommendations_df is not None and not final_recommendations_df.empty:
-            st.subheader("✨ Your Personalized Recommendations:")
-
-            # Only Strategy: Scores Multiplied Together
-            st.markdown("#### Recommendations (Hybrid: Content-Based & Collaborative Filtering Scores Multiplied)")
-            rec_list = recommend_by_multiplying_scores(final_recommendations_df, output_limit=output_limit)
-            
-            # Store the current recommendations in session state for feedback functionality
-            st.session_state.last_recommendations_display = [format_book_title_for_display(book) for book in rec_list]
-            st.session_state.last_recommendations_backend = rec_list
-
-            if rec_list:
-                for i, rec_book in enumerate(rec_list):
-                    st.write(f"- {format_book_title_for_display(rec_book)}") # Display with capitalized titles
-            else:
-                st.info("No recommendations found using this strategy. Try adding more books or different ratings!")
-
-        else:
-            st.error("Recommendation generation failed or returned an empty result. Please check your inputs and model functions.")
+        st.session_state.display_recommendations = True
+        st.session_state.run_recommendation_logic_on_rerun = True # Set flag to trigger generation
+        st.rerun() # Force a rerun to display recommendations
     else:
         st.warning("Please add some books and ratings before generating recommendations!")
 
+
+# --- Conditional Recommendation Display and Feedback ---
+# This block will run on every rerun, and only execute the generation if the flag is set
+if st.session_state.run_recommendation_logic_on_rerun and st.session_state.user_books_data:
+    user_books = [item['title'] for item in st.session_state.user_books_data]
+    user_ratings = [item['rating'] for item in st.session_state.user_books_data]
+    generate_and_display_recommendations_section(user_books, user_ratings, output_limit)
+    st.session_state.run_recommendation_logic_on_rerun = False # Reset flag after generation
+
+
 # --- New Section: Feedback on Recommended Books ---
-st.markdown("---")
-st.header("Provide Feedback on Recommended Books")
+# This section only displays if there are recommendations to give feedback on
+if st.session_state.display_recommendations and st.session_state.last_recommendations_display:
+    st.markdown("---")
+    st.header("Provide Feedback on Recommended Books")
 
-if st.session_state.last_recommendations_display:
+    def update_feedback_read_status(backend_book_title):
+        # Ensure the key exists before attempting to access it
+        if backend_book_title not in st.session_state.feedback_ratings:
+            st.session_state.feedback_ratings[backend_book_title] = {'read': False, 'rating': 3}
+        
+        current_status = st.session_state.get(f"read_checkbox_{backend_book_title}", False) # Get with default
+        st.session_state.feedback_ratings[backend_book_title]['read'] = current_status
+        # Reset rating to 0 if unchecked, or to default 3 if newly checked and was 0
+        if not current_status:
+            st.session_state.feedback_ratings[backend_book_title]['rating'] = 0
+        elif st.session_state.feedback_ratings[backend_book_title]['rating'] == 0:
+            st.session_state.feedback_ratings[backend_book_title]['rating'] = 3
+
+    def update_feedback_rating(backend_book_title):
+        # Ensure the key exists before attempting to access it
+        if backend_book_title not in st.session_state.feedback_ratings:
+            st.session_state.feedback_ratings[backend_book_title] = {'read': False, 'rating': 3}
+            
+        new_rating = st.session_state.get(f"rating_slider_{backend_book_title}", 3) # Get with default
+        st.session_state.feedback_ratings[backend_book_title]['rating'] = new_rating
+
     st.markdown("Did you read one of our recommendations? Rate it here to get even better suggestions!")
-    # Move st_searchbox outside the form for live reactivity
-    selected_feedback_book_display_title = st_searchbox(
-        search_books,
-        key="feedback_search_input",
-        placeholder="Type to search for a recommended book...",
-        label="Select a Recommended Book to Rate" # Add a label to the searchbox
-    )
-    # Removed DEBUG: Display the current value of the feedback searchbox in real-time
-    # st.info(f"Current feedback searchbox value: `{selected_feedback_book_display_title}`")
 
-    with st.form("feedback_form", clear_on_submit=True):
-        col1_feedback, col2_feedback = st.columns([3, 1])
-        # The searchbox is now outside, so it's not in these columns directly.
-        with col2_feedback: # Place rating slider in the second column
-            feedback_rating = st.slider("Your Rating (1-5)", 1, 5, 3, key="feedback_rating_slider")
+    # Display feedback controls outside the form for immediate reactivity
+    for i, rec_book_display_title in enumerate(st.session_state.last_recommendations_display):
+        backend_book_title = st.session_state.last_recommendations_backend[i]
+        
+        # Ensure feedback_ratings is initialized for this book if it's a new recommendation
+        if backend_book_title not in st.session_state.feedback_ratings:
+            st.session_state.feedback_ratings[backend_book_title] = {'read': False, 'rating': 3}
 
-        add_feedback_button = st.form_submit_button("Add Feedback & Regenerate Recommendations")
+        col_cb, col_rate = st.columns([0.7, 0.3])
+        with col_cb:
+            # Checkbox for "I have read this book"
+            st.checkbox(
+                f"I have read: **{rec_book_display_title}**",
+                value=st.session_state.feedback_ratings[backend_book_title]['read'],
+                key=f"read_checkbox_{backend_book_title}",
+                on_change=update_feedback_read_status,
+                args=(backend_book_title,)
+            )
+        with col_rate:
+            # The rating slider is only displayed if the checkbox is marked as read
+            if st.session_state.feedback_ratings[backend_book_title]['read']:
+                st.slider(
+                    "Your Rating",
+                    1, 5,
+                    value=st.session_state.feedback_ratings[backend_book_title]['rating'],
+                    key=f"rating_slider_{backend_book_title}",
+                    on_change=update_feedback_rating,
+                    args=(backend_book_title,)
+                )
+    
+    # Form for the submit button only
+    with st.form("feedback_submit_form", clear_on_submit=True):
+        add_feedback_button = st.form_submit_button("Submit Feedback & Get New Recommendations")
 
         if add_feedback_button:
-            # Removed DEBUG: Confirm feedback value at button click
-            # st.write(f"DEBUG: 'Add Feedback' button clicked. Value captured: '{selected_feedback_book_display_title}'")
-            if selected_feedback_book_display_title: # st_searchbox returns None if nothing is selected/typed
-                # Convert the selected display title back to the backend format
-                selected_feedback_book_backend_title = display_to_backend_map.get(selected_feedback_book_display_title)
-
-                if selected_feedback_book_backend_title:
-                    # Check if the book has already been added to prevent duplicates
-                    if selected_feedback_book_backend_title not in [item['title'] for item in st.session_state.user_books_data]:
+            feedback_processed_count = 0
+            for backend_title, data in st.session_state.feedback_ratings.items():
+                if data['read'] and data['rating'] > 0: # Only process if read and rated
+                    found_and_updated = False
+                    for item in st.session_state.user_books_data:
+                        if item['title'] == backend_title:
+                            item['rating'] = data['rating']
+                            st.success(f"Updated rating for '{format_book_title_for_display(backend_title)}' to {data['rating']}!")
+                            found_and_updated = True
+                            break
+                    if not found_and_updated:
                         st.session_state.user_books_data.append({
-                            'title': selected_feedback_book_backend_title,
-                            'rating': feedback_rating
+                            'title': backend_title,
+                            'rating': data['rating']
                         })
-                        st.success(f"Added feedback for '{selected_feedback_book_display_title}' with rating {feedback_rating}!")
-                        # Clear previous recommendations so that the next run generates fresh ones
-                        st.session_state.last_recommendations_display = []
-                        st.session_state.last_recommendations_backend = []
-                        # Manually clear the feedback searchbox by deleting its key from session state
-                        if 'feedback_search_input' in st.session_state:
-                            del st.session_state['feedback_search_input']
-                    else:
-                        st.warning(f"'{selected_feedback_book_display_title}' has already been added. Its rating can be adjusted in 'Your Books & Ratings' section.")
-                else:
-                    st.error("Error: Could not find the selected book for feedback. Please try again. Make sure you select from the suggestions.")
-            else:
-                st.warning("Please select a book from the recommended list to provide feedback (type and choose from suggestions).")
+                        st.success(f"Added feedback for '{format_book_title_for_display(backend_title)}' with rating {data['rating']}!")
+                    feedback_processed_count += 1
+            
+            if feedback_processed_count == 0:
+                st.info("No new feedback was provided for recommended books.")
+            
+            # Set the flag to trigger a new recommendation generation on the next rerun
+            st.session_state.run_recommendation_logic_on_rerun = True
+            st.rerun() # Force a rerun to apply feedback and get new recommendations
+
 else:
-    st.info("Generate recommendations first to provide feedback on them.")
-
-
-st.markdown("""
----
-**Note:** The recommendation functions are imported from `combined_model/combined.py`. Model parameters (Genre Weight, Number of Features, User Regularization Strength) are now fixed in the backend for consistent performance.
-""")
-
-st.markdown("""
----
-**How to Close the App:**
-To stop this Streamlit application, return to your terminal or command prompt where you launched it and press `Ctrl + C` (or `Cmd + C` on macOS).
-Closing this browser tab or window will *not* stop the application from running in your terminal.
-""")
+    # Only show this message if recommendations haven't been displayed yet
+    if not st.session_state.display_recommendations:
+        st.info("Generate recommendations first to provide feedback on them.")

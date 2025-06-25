@@ -5,8 +5,8 @@ import os
 
 # --- Configuration Constants ---
 PRETRAINED_DATA_PATH = '../collab_filtering/trained_data/'
-NUM_FEATURES = 400
-NEW_USER_REGULARIZATION_STRENGTH = 15
+NUM_FEATURES = 600
+NEW_USER_REGULARIZATION_STRENGTH = 5
 
 
 # --- Loading Pre-trained Data (book_features, item_bias, all_book_identifiers, and mean_book_ratings) ---

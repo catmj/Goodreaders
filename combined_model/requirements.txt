@@ -4,3 +4,5 @@ scikit-learn
 pyarrow
 tqdm
 scipy
+matplotlib
+seaborn

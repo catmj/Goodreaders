@@ -1,0 +1,2634 @@
+
+--- Analysis Results Summary ---
+
+Results for single_run_evaluation_results_loop/nf500_rs10_gw1/overlap_evaluation_nf500_rs10_gw1.csv:
+  --- Overall Statistics ---
+  Column: Overlap_Rec_CB_Only
+    Mean: 2.6151
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.9659
+    Range: 20.0000
+    Standard Deviation: 3.1498
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 7.0000
+    95th Percentile: 9.0000
+    Zero Count: 660
+    Zero Proportion: 0.2877
+    Coefficient of Variation (CV): 1.2045
+    Kurtosis: 4.8721
+------------------------------
+  Column: Overlap_Rec_CF_Only
+    Mean: 1.4364
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 2.0833
+    Range: 16.0000
+    Standard Deviation: 2.0946
+    IQR: 2.0000
+    10th Percentile: 0.0000
+    90th Percentile: 4.0000
+    95th Percentile: 6.0000
+    Zero Count: 1103
+    Zero Proportion: 0.4808
+    Coefficient of Variation (CV): 1.4583
+    Kurtosis: 5.3265
+------------------------------
+  Column: Overlap_Rec_CB_Filtered_by_CF
+    Mean: 2.3919
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 1.8855
+    Range: 21.0000
+    Standard Deviation: 2.8115
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.0000
+    95th Percentile: 8.0000
+    Zero Count: 679
+    Zero Proportion: 0.2960
+    Coefficient of Variation (CV): 1.1754
+    Kurtosis: 4.8860
+------------------------------
+  Column: Overlap_Rec_By_Multiplying_Scores
+    Mean: 2.5584
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.8237
+    Range: 19.0000
+    Standard Deviation: 2.9521
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.0000
+    95th Percentile: 9.0000
+    Zero Count: 647
+    Zero Proportion: 0.2820
+    Coefficient of Variation (CV): 1.1539
+    Kurtosis: 4.1169
+------------------------------
+
+  --- Binned Statistics by Total_Relevant_Books ---
+  Bin: Low (0-10)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.6432
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.0639
+      Range: 6.0000
+      Standard Deviation: 1.0289
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 365
+      Zero Proportion: 0.6114
+      Coefficient of Variation (CV): 1.5997
+      Kurtosis: 5.0005
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.0988
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.0303
+      Range: 2.0000
+      Standard Deviation: 0.3097
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 0.0000
+      95th Percentile: 1.0000
+      Zero Count: 540
+      Zero Proportion: 0.9045
+      Coefficient of Variation (CV): 3.1339
+      Kurtosis: 8.4890
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.4791
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.7918
+      Range: 4.0000
+      Standard Deviation: 0.7974
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 399
+      Zero Proportion: 0.6683
+      Coefficient of Variation (CV): 1.6646
+      Kurtosis: 2.8551
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.5863
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.0590
+      Range: 6.0000
+      Standard Deviation: 0.9666
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 382
+      Zero Proportion: 0.6399
+      Coefficient of Variation (CV): 1.6487
+      Kurtosis: 5.0732
+------------------------------
+  Bin: Medium (11-50)
+    Column: Overlap_Rec_CB_Only
+      Mean: 1.8766
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 2.5940
+      Range: 20.0000
+      Standard Deviation: 2.2256
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 6.0000
+      Zero Count: 205
+      Zero Proportion: 0.2941
+      Coefficient of Variation (CV): 1.1859
+      Kurtosis: 11.5972
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.5768
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.0190
+      Range: 6.0000
+      Standard Deviation: 0.8923
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 426
+      Zero Proportion: 0.6112
+      Coefficient of Variation (CV): 1.5471
+      Kurtosis: 5.3963
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 1.6011
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 1.8515
+      Range: 14.0000
+      Standard Deviation: 1.7058
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 202
+      Zero Proportion: 0.2898
+      Coefficient of Variation (CV): 1.0653
+      Kurtosis: 5.9664
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 1.6241
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 2.7422
+      Range: 17.0000
+      Standard Deviation: 1.7906
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 4.0000
+      Zero Count: 206
+      Zero Proportion: 0.2956
+      Coefficient of Variation (CV): 1.1025
+      Kurtosis: 15.7507
+------------------------------
+  Bin: High (51-150)
+    Column: Overlap_Rec_CB_Only
+      Mean: 3.8021
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.3804
+      Range: 18.0000
+      Standard Deviation: 3.1885
+      IQR: 4.0000
+      10th Percentile: 0.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 81
+      Zero Proportion: 0.1062
+      Coefficient of Variation (CV): 0.8386
+      Kurtosis: 2.5255
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 2.3617
+      Median: 2.0000
+      Mode(s): 1
+      Skew: 1.3603
+      Range: 16.0000
+      Standard Deviation: 2.0261
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 5.0000
+      95th Percentile: 6.0000
+      Zero Count: 120
+      Zero Proportion: 0.1573
+      Coefficient of Variation (CV): 0.8579
+      Kurtosis: 3.2621
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 3.5950
+      Median: 3.0000
+      Mode(s): 1, 2
+      Skew: 1.3956
+      Range: 20.0000
+      Standard Deviation: 2.8561
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 7.0000
+      95th Percentile: 9.0000
+      Zero Count: 72
+      Zero Proportion: 0.0944
+      Coefficient of Variation (CV): 0.7945
+      Kurtosis: 3.2182
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 3.8309
+      Median: 3.0000
+      Mode(s): 3
+      Skew: 1.1480
+      Range: 16.0000
+      Standard Deviation: 2.8601
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 9.0000
+      Zero Count: 54
+      Zero Proportion: 0.0708
+      Coefficient of Variation (CV): 0.7466
+      Kurtosis: 1.6053
+------------------------------
+  Bin: Very High (151+)
+    Column: Overlap_Rec_CB_Only
+      Mean: 5.9325
+      Median: 5.0000
+      Mode(s): 3
+      Skew: 0.9672
+      Range: 20.0000
+      Standard Deviation: 4.3855
+      IQR: 5.0000
+      10th Percentile: 1.0000
+      90th Percentile: 12.0000
+      95th Percentile: 15.0000
+      Zero Count: 9
+      Zero Proportion: 0.0380
+      Coefficient of Variation (CV): 0.7392
+      Kurtosis: 0.6195
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 4.3544
+      Median: 4.0000
+      Mode(s): 3
+      Skew: 0.7384
+      Range: 14.0000
+      Standard Deviation: 2.9589
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.4000
+      95th Percentile: 10.0000
+      Zero Count: 17
+      Zero Proportion: 0.0717
+      Coefficient of Variation (CV): 0.6795
+      Kurtosis: 0.2464
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 5.6624
+      Median: 5.0000
+      Mode(s): 3
+      Skew: 1.0037
+      Range: 21.0000
+      Standard Deviation: 3.7081
+      IQR: 5.0000
+      10th Percentile: 1.6000
+      90th Percentile: 10.4000
+      95th Percentile: 12.0000
+      Zero Count: 6
+      Zero Proportion: 0.0253
+      Coefficient of Variation (CV): 0.6549
+      Kurtosis: 1.4143
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 6.1772
+      Median: 5.0000
+      Mode(s): 3
+      Skew: 0.9017
+      Range: 19.0000
+      Standard Deviation: 3.9556
+      IQR: 6.0000
+      10th Percentile: 2.0000
+      90th Percentile: 11.4000
+      95th Percentile: 14.0000
+      Zero Count: 5
+      Zero Proportion: 0.0211
+      Coefficient of Variation (CV): 0.6403
+      Kurtosis: 0.4252
+------------------------------
+
+Results for single_run_evaluation_results_loop/nf600_rs5_gw1/overlap_evaluation_nf600_rs5_gw1.csv:
+  --- Overall Statistics ---
+  Column: Overlap_Rec_CB_Only
+    Mean: 2.6452
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.9249
+    Range: 24.0000
+    Standard Deviation: 3.1542
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 7.0000
+    95th Percentile: 9.0000
+    Zero Count: 640
+    Zero Proportion: 0.2790
+    Coefficient of Variation (CV): 1.1924
+    Kurtosis: 4.7203
+------------------------------
+  Column: Overlap_Rec_CF_Only
+    Mean: 1.2036
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 1.9864
+    Range: 12.0000
+    Standard Deviation: 1.7009
+    IQR: 2.0000
+    10th Percentile: 0.0000
+    90th Percentile: 4.0000
+    95th Percentile: 5.0000
+    Zero Count: 1122
+    Zero Proportion: 0.4891
+    Coefficient of Variation (CV): 1.4132
+    Kurtosis: 4.9312
+------------------------------
+  Column: Overlap_Rec_CB_Filtered_by_CF
+    Mean: 2.4163
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.8493
+    Range: 22.0000
+    Standard Deviation: 2.8448
+    IQR: 3.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.0000
+    95th Percentile: 8.0000
+    Zero Count: 678
+    Zero Proportion: 0.2956
+    Coefficient of Variation (CV): 1.1773
+    Kurtosis: 4.5295
+------------------------------
+  Column: Overlap_Rec_By_Multiplying_Scores
+    Mean: 2.8134
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.7179
+    Range: 19.0000
+    Standard Deviation: 3.1784
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 7.0000
+    95th Percentile: 9.0000
+    Zero Count: 591
+    Zero Proportion: 0.2576
+    Coefficient of Variation (CV): 1.1297
+    Kurtosis: 3.3846
+------------------------------
+
+  --- Binned Statistics by Total_Relevant_Books ---
+  Bin: Low (0-10)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.7093
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.1172
+      Range: 7.0000
+      Standard Deviation: 1.0977
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 350
+      Zero Proportion: 0.5814
+      Coefficient of Variation (CV): 1.5475
+      Kurtosis: 5.6140
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.1246
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.3334
+      Range: 2.0000
+      Standard Deviation: 0.3948
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 0.9000
+      95th Percentile: 1.0000
+      Zero Count: 541
+      Zero Proportion: 0.8987
+      Coefficient of Variation (CV): 3.1686
+      Kurtosis: 10.8897
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.4884
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.7945
+      Range: 4.0000
+      Standard Deviation: 0.7977
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 397
+      Zero Proportion: 0.6595
+      Coefficient of Variation (CV): 1.6334
+      Kurtosis: 3.1393
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.6246
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.0517
+      Range: 7.0000
+      Standard Deviation: 0.9611
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 362
+      Zero Proportion: 0.6013
+      Coefficient of Variation (CV): 1.5388
+      Kurtosis: 5.8187
+------------------------------
+  Bin: Medium (11-50)
+    Column: Overlap_Rec_CB_Only
+      Mean: 1.8773
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 2.3040
+      Range: 16.0000
+      Standard Deviation: 2.1215
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 6.0000
+      Zero Count: 189
+      Zero Proportion: 0.2727
+      Coefficient of Variation (CV): 1.1301
+      Kurtosis: 8.5064
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.6205
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.3015
+      Range: 4.0000
+      Standard Deviation: 0.8339
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 392
+      Zero Proportion: 0.5657
+      Coefficient of Variation (CV): 1.3439
+      Kurtosis: 1.2355
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 1.5180
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 1.7494
+      Range: 10.0000
+      Standard Deviation: 1.5962
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 3.0000
+      95th Percentile: 4.0000
+      Zero Count: 206
+      Zero Proportion: 0.2973
+      Coefficient of Variation (CV): 1.0515
+      Kurtosis: 4.6001
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 1.6696
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 2.2529
+      Range: 17.0000
+      Standard Deviation: 1.7533
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 195
+      Zero Proportion: 0.2814
+      Coefficient of Variation (CV): 1.0502
+      Kurtosis: 11.4512
+------------------------------
+  Bin: High (51-150)
+    Column: Overlap_Rec_CB_Only
+      Mean: 3.8525
+      Median: 3.0000
+      Mode(s): 1
+      Skew: 1.2302
+      Range: 19.0000
+      Standard Deviation: 3.2468
+      IQR: 5.0000
+      10th Percentile: 0.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 89
+      Zero Proportion: 0.1162
+      Coefficient of Variation (CV): 0.8428
+      Kurtosis: 1.8344
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 1.8264
+      Median: 2.0000
+      Mode(s): 1
+      Skew: 0.8916
+      Range: 8.0000
+      Standard Deviation: 1.5941
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 175
+      Zero Proportion: 0.2285
+      Coefficient of Variation (CV): 0.8728
+      Kurtosis: 0.4407
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 3.7023
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.3276
+      Range: 22.0000
+      Standard Deviation: 2.8956
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 7.0000
+      95th Percentile: 9.0000
+      Zero Count: 70
+      Zero Proportion: 0.0914
+      Coefficient of Variation (CV): 0.7821
+      Kurtosis: 3.2529
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 4.2454
+      Median: 4.0000
+      Mode(s): 3
+      Skew: 1.2253
+      Range: 19.0000
+      Standard Deviation: 2.9980
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 31
+      Zero Proportion: 0.0405
+      Coefficient of Variation (CV): 0.7062
+      Kurtosis: 2.0255
+------------------------------
+  Bin: Very High (151+)
+    Column: Overlap_Rec_CB_Only
+      Mean: 5.9614
+      Median: 5.0000
+      Mode(s): 4
+      Skew: 1.0445
+      Range: 24.0000
+      Standard Deviation: 4.4366
+      IQR: 5.0000
+      10th Percentile: 1.0000
+      90th Percentile: 12.8000
+      95th Percentile: 14.4000
+      Zero Count: 12
+      Zero Proportion: 0.0515
+      Coefficient of Variation (CV): 0.7442
+      Kurtosis: 1.0796
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 3.6781
+      Median: 3.0000
+      Mode(s): 4
+      Skew: 0.7989
+      Range: 12.0000
+      Standard Deviation: 2.5042
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 7.0000
+      95th Percentile: 8.4000
+      Zero Count: 14
+      Zero Proportion: 0.0601
+      Coefficient of Variation (CV): 0.6808
+      Kurtosis: 0.3721
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 5.8412
+      Median: 5.0000
+      Mode(s): 5
+      Skew: 0.9035
+      Range: 17.0000
+      Standard Deviation: 3.7146
+      IQR: 5.0000
+      10th Percentile: 2.0000
+      90th Percentile: 10.8000
+      95th Percentile: 14.0000
+      Zero Count: 5
+      Zero Proportion: 0.0215
+      Coefficient of Variation (CV): 0.6359
+      Kurtosis: 0.6615
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 7.1631
+      Median: 6.0000
+      Mode(s): 6
+      Skew: 0.5810
+      Range: 19.0000
+      Standard Deviation: 4.0662
+      IQR: 6.0000
+      10th Percentile: 2.0000
+      90th Percentile: 13.0000
+      95th Percentile: 15.0000
+      Zero Count: 3
+      Zero Proportion: 0.0129
+      Coefficient of Variation (CV): 0.5677
+      Kurtosis: -0.1773
+------------------------------
+
+Results for single_run_evaluation_results_loop/nf500_rs10_gw0.8/overlap_evaluation_nf500_rs10_gw0.8.csv:
+  --- Overall Statistics ---
+  Column: Overlap_Rec_CB_Only
+    Mean: 2.6979
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.9900
+    Range: 26.0000
+    Standard Deviation: 3.2194
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 7.0000
+    95th Percentile: 9.0000
+    Zero Count: 641
+    Zero Proportion: 0.2794
+    Coefficient of Variation (CV): 1.1933
+    Kurtosis: 5.2916
+------------------------------
+  Column: Overlap_Rec_CF_Only
+    Mean: 1.4525
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 1.8949
+    Range: 12.0000
+    Standard Deviation: 2.1038
+    IQR: 2.0000
+    10th Percentile: 0.0000
+    90th Percentile: 4.0000
+    95th Percentile: 6.0000
+    Zero Count: 1102
+    Zero Proportion: 0.4804
+    Coefficient of Variation (CV): 1.4484
+    Kurtosis: 3.6304
+------------------------------
+  Column: Overlap_Rec_CB_Filtered_by_CF
+    Mean: 2.4595
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.9999
+    Range: 24.0000
+    Standard Deviation: 2.9600
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.0000
+    95th Percentile: 9.0000
+    Zero Count: 676
+    Zero Proportion: 0.2947
+    Coefficient of Variation (CV): 1.2035
+    Kurtosis: 5.3172
+------------------------------
+  Column: Overlap_Rec_By_Multiplying_Scores
+    Mean: 2.6656
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 2.0338
+    Range: 23.0000
+    Standard Deviation: 3.1580
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 7.0000
+    95th Percentile: 9.0000
+    Zero Count: 606
+    Zero Proportion: 0.2642
+    Coefficient of Variation (CV): 1.1847
+    Kurtosis: 5.4054
+------------------------------
+
+  --- Binned Statistics by Total_Relevant_Books ---
+  Bin: Low (0-10)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.7219
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.9709
+      Range: 7.0000
+      Standard Deviation: 1.1236
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 360
+      Zero Proportion: 0.5960
+      Coefficient of Variation (CV): 1.5565
+      Kurtosis: 4.6191
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.1060
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.1131
+      Range: 2.0000
+      Standard Deviation: 0.3289
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 0.0000
+      95th Percentile: 1.0000
+      Zero Count: 544
+      Zero Proportion: 0.9007
+      Coefficient of Variation (CV): 3.1037
+      Kurtosis: 9.4885
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.5116
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.1732
+      Range: 6.0000
+      Standard Deviation: 0.8512
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 393
+      Zero Proportion: 0.6507
+      Coefficient of Variation (CV): 1.6639
+      Kurtosis: 6.2340
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.6424
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.0546
+      Range: 7.0000
+      Standard Deviation: 1.0113
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 366
+      Zero Proportion: 0.6060
+      Coefficient of Variation (CV): 1.5744
+      Kurtosis: 5.2434
+------------------------------
+  Bin: Medium (11-50)
+    Column: Overlap_Rec_CB_Only
+      Mean: 1.8974
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 2.3141
+      Range: 18.0000
+      Standard Deviation: 2.1438
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 6.0000
+      Zero Count: 193
+      Zero Proportion: 0.2789
+      Coefficient of Variation (CV): 1.1299
+      Kurtosis: 9.4845
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.5780
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.8252
+      Range: 5.0000
+      Standard Deviation: 0.8715
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 419
+      Zero Proportion: 0.6055
+      Coefficient of Variation (CV): 1.5076
+      Kurtosis: 3.9882
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 1.5650
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 2.3041
+      Range: 16.0000
+      Standard Deviation: 1.6953
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 208
+      Zero Proportion: 0.3006
+      Coefficient of Variation (CV): 1.0833
+      Kurtosis: 11.1732
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 1.6431
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 3.0798
+      Range: 19.0000
+      Standard Deviation: 1.8040
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 4.4500
+      Zero Count: 184
+      Zero Proportion: 0.2659
+      Coefficient of Variation (CV): 1.0980
+      Kurtosis: 19.6388
+------------------------------
+  Bin: High (51-150)
+    Column: Overlap_Rec_CB_Only
+      Mean: 3.9385
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.4660
+      Range: 20.0000
+      Standard Deviation: 3.3006
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 75
+      Zero Proportion: 0.0982
+      Coefficient of Variation (CV): 0.8380
+      Kurtosis: 3.0128
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 2.3534
+      Median: 2.0000
+      Mode(s): 1
+      Skew: 1.1833
+      Range: 12.0000
+      Standard Deviation: 2.0243
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 5.0000
+      95th Percentile: 6.0000
+      Zero Count: 124
+      Zero Proportion: 0.1623
+      Coefficient of Variation (CV): 0.8602
+      Kurtosis: 1.7275
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 3.7264
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.3264
+      Range: 18.0000
+      Standard Deviation: 2.9526
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 68
+      Zero Proportion: 0.0890
+      Coefficient of Variation (CV): 0.7923
+      Kurtosis: 2.2223
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 3.9607
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.1879
+      Range: 16.0000
+      Standard Deviation: 2.9644
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 50
+      Zero Proportion: 0.0654
+      Coefficient of Variation (CV): 0.7484
+      Kurtosis: 1.5996
+------------------------------
+  Bin: Very High (151+)
+    Column: Overlap_Rec_CB_Only
+      Mean: 6.1154
+      Median: 6.0000
+      Mode(s): 1
+      Skew: 0.9597
+      Range: 26.0000
+      Standard Deviation: 4.5416
+      IQR: 6.0000
+      10th Percentile: 1.0000
+      90th Percentile: 12.7000
+      95th Percentile: 14.0000
+      Zero Count: 13
+      Zero Proportion: 0.0556
+      Coefficient of Variation (CV): 0.7427
+      Kurtosis: 1.1272
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 4.5726
+      Median: 4.0000
+      Mode(s): 4
+      Skew: 0.3027
+      Range: 12.0000
+      Standard Deviation: 2.8626
+      IQR: 5.0000
+      10th Percentile: 1.0000
+      90th Percentile: 9.0000
+      95th Percentile: 9.0000
+      Zero Count: 15
+      Zero Proportion: 0.0641
+      Coefficient of Variation (CV): 0.6260
+      Kurtosis: -0.7407
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 5.9957
+      Median: 5.0000
+      Mode(s): 3
+      Skew: 1.0484
+      Range: 24.0000
+      Standard Deviation: 4.1521
+      IQR: 5.0000
+      10th Percentile: 1.0000
+      90th Percentile: 12.0000
+      95th Percentile: 14.0000
+      Zero Count: 7
+      Zero Proportion: 0.0299
+      Coefficient of Variation (CV): 0.6925
+      Kurtosis: 1.4187
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 6.6838
+      Median: 6.0000
+      Mode(s): 4
+      Skew: 0.9535
+      Range: 23.0000
+      Standard Deviation: 4.6521
+      IQR: 6.7500
+      10th Percentile: 1.0000
+      90th Percentile: 13.0000
+      95th Percentile: 15.0000
+      Zero Count: 6
+      Zero Proportion: 0.0256
+      Coefficient of Variation (CV): 0.6960
+      Kurtosis: 0.6982
+------------------------------
+
+Results for single_run_evaluation_results_loop/nf500_rs10_gw0.5/overlap_evaluation_nf500_rs10_gw0.5.csv:
+  --- Overall Statistics ---
+  Column: Overlap_Rec_CB_Only
+    Mean: 2.5689
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 2.0214
+    Range: 23.0000
+    Standard Deviation: 3.0100
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.0000
+    95th Percentile: 8.0000
+    Zero Count: 637
+    Zero Proportion: 0.2777
+    Coefficient of Variation (CV): 1.1717
+    Kurtosis: 5.8074
+------------------------------
+  Column: Overlap_Rec_CF_Only
+    Mean: 1.4141
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 1.9389
+    Range: 13.0000
+    Standard Deviation: 2.0351
+    IQR: 2.0000
+    10th Percentile: 0.0000
+    90th Percentile: 4.0000
+    95th Percentile: 6.0000
+    Zero Count: 1103
+    Zero Proportion: 0.4808
+    Coefficient of Variation (CV): 1.4391
+    Kurtosis: 4.0530
+------------------------------
+  Column: Overlap_Rec_CB_Filtered_by_CF
+    Mean: 2.4459
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.8392
+    Range: 20.0000
+    Standard Deviation: 2.8081
+    IQR: 3.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.0000
+    95th Percentile: 8.0000
+    Zero Count: 650
+    Zero Proportion: 0.2833
+    Coefficient of Variation (CV): 1.1480
+    Kurtosis: 4.3634
+------------------------------
+  Column: Overlap_Rec_By_Multiplying_Scores
+    Mean: 2.6997
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.8003
+    Range: 20.0000
+    Standard Deviation: 3.0362
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 7.0000
+    95th Percentile: 9.0000
+    Zero Count: 596
+    Zero Proportion: 0.2598
+    Coefficient of Variation (CV): 1.1247
+    Kurtosis: 4.0279
+------------------------------
+
+  --- Binned Statistics by Total_Relevant_Books ---
+  Bin: Low (0-10)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.6755
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.2572
+      Range: 7.0000
+      Standard Deviation: 1.1356
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 373
+      Zero Proportion: 0.6206
+      Coefficient of Variation (CV): 1.6810
+      Kurtosis: 5.8923
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.1098
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.6568
+      Range: 2.0000
+      Standard Deviation: 0.3182
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 1.0000
+      Zero Count: 536
+      Zero Proportion: 0.8918
+      Coefficient of Variation (CV): 2.8976
+      Kurtosis: 5.6926
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.4759
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.9413
+      Range: 5.0000
+      Standard Deviation: 0.8041
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 404
+      Zero Proportion: 0.6722
+      Coefficient of Variation (CV): 1.6896
+      Kurtosis: 4.1117
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.6273
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.1670
+      Range: 6.0000
+      Standard Deviation: 1.0332
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 378
+      Zero Proportion: 0.6290
+      Coefficient of Variation (CV): 1.6471
+      Kurtosis: 5.8029
+------------------------------
+  Bin: Medium (11-50)
+    Column: Overlap_Rec_CB_Only
+      Mean: 1.9083
+      Median: 1.0000
+      Mode(s): 0, 1
+      Skew: 2.3263
+      Range: 19.0000
+      Standard Deviation: 2.1365
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.4000
+      95th Percentile: 6.0000
+      Zero Count: 184
+      Zero Proportion: 0.2678
+      Coefficient of Variation (CV): 1.1196
+      Kurtosis: 9.5219
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.5735
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.5232
+      Range: 5.0000
+      Standard Deviation: 0.8260
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 412
+      Zero Proportion: 0.5997
+      Coefficient of Variation (CV): 1.4403
+      Kurtosis: 2.3860
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 1.7045
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 1.5611
+      Range: 13.0000
+      Standard Deviation: 1.6708
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 185
+      Zero Proportion: 0.2693
+      Coefficient of Variation (CV): 0.9802
+      Kurtosis: 4.3759
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 1.8108
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 2.0836
+      Range: 16.0000
+      Standard Deviation: 1.8364
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 175
+      Zero Proportion: 0.2547
+      Coefficient of Variation (CV): 1.0141
+      Kurtosis: 8.5454
+------------------------------
+  Bin: High (51-150)
+    Column: Overlap_Rec_CB_Only
+      Mean: 3.7302
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.7787
+      Range: 23.0000
+      Standard Deviation: 3.2071
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 75
+      Zero Proportion: 0.0973
+      Coefficient of Variation (CV): 0.8598
+      Kurtosis: 5.2150
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 2.3048
+      Median: 2.0000
+      Mode(s): 1
+      Skew: 1.0871
+      Range: 11.0000
+      Standard Deviation: 1.9730
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 5.0000
+      95th Percentile: 6.0000
+      Zero Count: 137
+      Zero Proportion: 0.1777
+      Coefficient of Variation (CV): 0.8560
+      Kurtosis: 1.1825
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 3.7043
+      Median: 3.0000
+      Mode(s): 3
+      Skew: 1.3728
+      Range: 20.0000
+      Standard Deviation: 2.9082
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 9.0000
+      Zero Count: 56
+      Zero Proportion: 0.0726
+      Coefficient of Variation (CV): 0.7851
+      Kurtosis: 2.5039
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 3.9754
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.3028
+      Range: 20.0000
+      Standard Deviation: 2.9287
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 42
+      Zero Proportion: 0.0545
+      Coefficient of Variation (CV): 0.7367
+      Kurtosis: 2.3669
+------------------------------
+  Bin: Very High (151+)
+    Column: Overlap_Rec_CB_Only
+      Mean: 5.5319
+      Median: 5.0000
+      Mode(s): 2
+      Skew: 1.0572
+      Range: 20.0000
+      Standard Deviation: 3.8076
+      IQR: 4.0000
+      10th Percentile: 2.0000
+      90th Percentile: 11.0000
+      95th Percentile: 13.0000
+      Zero Count: 5
+      Zero Proportion: 0.0213
+      Coefficient of Variation (CV): 0.6883
+      Kurtosis: 1.0068
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 4.2851
+      Median: 4.0000
+      Mode(s): 3
+      Skew: 0.5433
+      Range: 13.0000
+      Standard Deviation: 2.8599
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 9.0000
+      Zero Count: 18
+      Zero Proportion: 0.0766
+      Coefficient of Variation (CV): 0.6674
+      Kurtosis: -0.2869
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 5.5234
+      Median: 5.0000
+      Mode(s): 2, 5
+      Skew: 1.0273
+      Range: 20.0000
+      Standard Deviation: 3.6448
+      IQR: 5.0000
+      10th Percentile: 2.0000
+      90th Percentile: 10.0000
+      95th Percentile: 13.0000
+      Zero Count: 5
+      Zero Proportion: 0.0213
+      Coefficient of Variation (CV): 0.6599
+      Kurtosis: 1.0859
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 6.4128
+      Median: 6.0000
+      Mode(s): 3
+      Skew: 0.8047
+      Range: 20.0000
+      Standard Deviation: 4.1143
+      IQR: 6.0000
+      10th Percentile: 2.0000
+      90th Percentile: 12.0000
+      95th Percentile: 14.0000
+      Zero Count: 1
+      Zero Proportion: 0.0043
+      Coefficient of Variation (CV): 0.6416
+      Kurtosis: 0.2200
+------------------------------
+
+Results for single_run_evaluation_results_loop/nf500_rs10_gw0/overlap_evaluation_nf500_rs10_gw0.csv:
+  --- Overall Statistics ---
+  Column: Overlap_Rec_CB_Only
+    Mean: 0.5436
+    Median: 0.0000
+    Mode(s): 0
+    Skew: 2.5785
+    Range: 8.0000
+    Standard Deviation: 0.9771
+    IQR: 1.0000
+    10th Percentile: 0.0000
+    90th Percentile: 2.0000
+    95th Percentile: 2.0000
+    Zero Count: 1528
+    Zero Proportion: 0.6661
+    Coefficient of Variation (CV): 1.7975
+    Kurtosis: 9.1387
+------------------------------
+  Column: Overlap_Rec_CF_Only
+    Mean: 1.4106
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 1.7554
+    Range: 11.0000
+    Standard Deviation: 1.9975
+    IQR: 2.0000
+    10th Percentile: 0.0000
+    90th Percentile: 4.0000
+    95th Percentile: 6.0000
+    Zero Count: 1117
+    Zero Proportion: 0.4869
+    Coefficient of Variation (CV): 1.4160
+    Kurtosis: 2.9320
+------------------------------
+  Column: Overlap_Rec_CB_Filtered_by_CF
+    Mean: 0.5763
+    Median: 0.0000
+    Mode(s): 0
+    Skew: 2.2514
+    Range: 8.0000
+    Standard Deviation: 0.9460
+    IQR: 1.0000
+    10th Percentile: 0.0000
+    90th Percentile: 2.0000
+    95th Percentile: 2.0000
+    Zero Count: 1448
+    Zero Proportion: 0.6312
+    Coefficient of Variation (CV): 1.6416
+    Kurtosis: 7.0698
+------------------------------
+  Column: Overlap_Rec_By_Multiplying_Scores
+    Mean: 0.6726
+    Median: 0.0000
+    Mode(s): 0
+    Skew: 2.1557
+    Range: 8.0000
+    Standard Deviation: 1.0638
+    IQR: 1.0000
+    10th Percentile: 0.0000
+    90th Percentile: 2.0000
+    95th Percentile: 3.0000
+    Zero Count: 1384
+    Zero Proportion: 0.6033
+    Coefficient of Variation (CV): 1.5816
+    Kurtosis: 6.4193
+------------------------------
+
+  --- Binned Statistics by Total_Relevant_Books ---
+  Bin: Low (0-10)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.1227
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 4.0833
+      Range: 3.0000
+      Standard Deviation: 0.4175
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 0.0000
+      95th Percentile: 1.0000
+      Zero Count: 545
+      Zero Proportion: 0.9038
+      Coefficient of Variation (CV): 3.4018
+      Kurtosis: 19.1278
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.0846
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.8214
+      Range: 2.0000
+      Standard Deviation: 0.3069
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 0.0000
+      95th Percentile: 1.0000
+      Zero Count: 557
+      Zero Proportion: 0.9237
+      Coefficient of Variation (CV): 3.6282
+      Kurtosis: 15.1732
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.1327
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.5041
+      Range: 3.0000
+      Standard Deviation: 0.4063
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 1.0000
+      Zero Count: 536
+      Zero Proportion: 0.8889
+      Coefficient of Variation (CV): 3.0626
+      Kurtosis: 14.0036
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.1592
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.8397
+      Range: 4.0000
+      Standard Deviation: 0.4835
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 1.0000
+      Zero Count: 529
+      Zero Proportion: 0.8773
+      Coefficient of Variation (CV): 3.0368
+      Kurtosis: 17.7555
+------------------------------
+  Bin: Medium (11-50)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.3974
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.2658
+      Range: 7.0000
+      Standard Deviation: 0.8453
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 2.0000
+      Zero Count: 511
+      Zero Proportion: 0.7384
+      Coefficient of Variation (CV): 2.1270
+      Kurtosis: 15.0984
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.5665
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.7256
+      Range: 5.0000
+      Standard Deviation: 0.8438
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 418
+      Zero Proportion: 0.6040
+      Coefficient of Variation (CV): 1.4895
+      Kurtosis: 3.2695
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.3743
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.1196
+      Range: 4.0000
+      Standard Deviation: 0.6911
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 2.0000
+      Zero Count: 498
+      Zero Proportion: 0.7197
+      Coefficient of Variation (CV): 1.8466
+      Kurtosis: 4.8326
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.4668
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.6623
+      Range: 7.0000
+      Standard Deviation: 0.8423
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 2.0000
+      Zero Count: 470
+      Zero Proportion: 0.6792
+      Coefficient of Variation (CV): 1.8045
+      Kurtosis: 10.6204
+------------------------------
+  Bin: High (51-150)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.8189
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.1943
+      Range: 8.0000
+      Standard Deviation: 1.1560
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 389
+      Zero Proportion: 0.5105
+      Coefficient of Variation (CV): 1.4117
+      Kurtosis: 6.7986
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 2.3635
+      Median: 2.0000
+      Mode(s): 1
+      Skew: 1.0557
+      Range: 10.0000
+      Standard Deviation: 1.9909
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 5.0000
+      95th Percentile: 6.0000
+      Zero Count: 129
+      Zero Proportion: 0.1693
+      Coefficient of Variation (CV): 0.8423
+      Kurtosis: 1.1250
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.8517
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 1.7883
+      Range: 8.0000
+      Standard Deviation: 1.0483
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 351
+      Zero Proportion: 0.4606
+      Coefficient of Variation (CV): 1.2308
+      Kurtosis: 5.4138
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.9659
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 1.7513
+      Range: 8.0000
+      Standard Deviation: 1.1853
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 3.0000
+      95th Percentile: 3.0000
+      Zero Count: 339
+      Zero Proportion: 0.4449
+      Coefficient of Variation (CV): 1.2271
+      Kurtosis: 4.7890
+------------------------------
+  Bin: Very High (151+)
+    Column: Overlap_Rec_CB_Only
+      Mean: 1.1561
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 0.9447
+      Range: 5.0000
+      Standard Deviation: 1.1372
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 3.0000
+      95th Percentile: 3.0000
+      Zero Count: 83
+      Zero Proportion: 0.3502
+      Coefficient of Variation (CV): 0.9837
+      Kurtosis: 0.6804
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 4.1857
+      Median: 4.0000
+      Mode(s): 2
+      Skew: 0.3402
+      Range: 11.0000
+      Standard Deviation: 2.5327
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 9.0000
+      Zero Count: 13
+      Zero Proportion: 0.0549
+      Coefficient of Variation (CV): 0.6051
+      Kurtosis: -0.5975
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 1.4093
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 1.2438
+      Range: 6.0000
+      Standard Deviation: 1.3297
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 3.0000
+      95th Percentile: 4.0000
+      Zero Count: 63
+      Zero Proportion: 0.2658
+      Coefficient of Variation (CV): 0.9436
+      Kurtosis: 1.7526
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 1.6371
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 1.0651
+      Range: 8.0000
+      Standard Deviation: 1.3353
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 3.0000
+      95th Percentile: 4.0000
+      Zero Count: 46
+      Zero Proportion: 0.1941
+      Coefficient of Variation (CV): 0.8156
+      Kurtosis: 1.9553
+------------------------------
+
+Results for single_run_evaluation_results_loop/nf600_rs5_gw0.8/overlap_evaluation_nf600_rs5_gw0.8.csv:
+  --- Overall Statistics ---
+  Column: Overlap_Rec_CB_Only
+    Mean: 2.7088
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 2.0151
+    Range: 25.0000
+    Standard Deviation: 3.2044
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 7.0000
+    95th Percentile: 9.0000
+    Zero Count: 599
+    Zero Proportion: 0.2611
+    Coefficient of Variation (CV): 1.1830
+    Kurtosis: 5.4978
+------------------------------
+  Column: Overlap_Rec_CF_Only
+    Mean: 1.1866
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 2.0053
+    Range: 15.0000
+    Standard Deviation: 1.6777
+    IQR: 2.0000
+    10th Percentile: 0.0000
+    90th Percentile: 3.0000
+    95th Percentile: 5.0000
+    Zero Count: 1141
+    Zero Proportion: 0.4974
+    Coefficient of Variation (CV): 1.4139
+    Kurtosis: 5.6016
+------------------------------
+  Column: Overlap_Rec_CB_Filtered_by_CF
+    Mean: 2.4795
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.7512
+    Range: 18.0000
+    Standard Deviation: 2.8190
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.0000
+    95th Percentile: 8.0000
+    Zero Count: 640
+    Zero Proportion: 0.2790
+    Coefficient of Variation (CV): 1.1369
+    Kurtosis: 3.8706
+------------------------------
+  Column: Overlap_Rec_By_Multiplying_Scores
+    Mean: 2.8200
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.6617
+    Range: 20.0000
+    Standard Deviation: 3.1249
+    IQR: 3.0000
+    10th Percentile: 0.0000
+    90th Percentile: 7.0000
+    95th Percentile: 9.0000
+    Zero Count: 570
+    Zero Proportion: 0.2485
+    Coefficient of Variation (CV): 1.1081
+    Kurtosis: 3.1914
+------------------------------
+
+  --- Binned Statistics by Total_Relevant_Books ---
+  Bin: Low (0-10)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.7337
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.8912
+      Range: 6.0000
+      Standard Deviation: 1.0904
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 342
+      Zero Proportion: 0.5729
+      Coefficient of Variation (CV): 1.4863
+      Kurtosis: 4.1706
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.1106
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.6166
+      Range: 2.0000
+      Standard Deviation: 0.3770
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 0.0000
+      95th Percentile: 1.0000
+      Zero Count: 544
+      Zero Proportion: 0.9112
+      Coefficient of Variation (CV): 3.4100
+      Kurtosis: 12.9950
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.5142
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.9135
+      Range: 5.0000
+      Standard Deviation: 0.8265
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 385
+      Zero Proportion: 0.6449
+      Coefficient of Variation (CV): 1.6072
+      Kurtosis: 4.3843
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.6164
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.1059
+      Range: 6.0000
+      Standard Deviation: 0.9582
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 359
+      Zero Proportion: 0.6013
+      Coefficient of Variation (CV): 1.5544
+      Kurtosis: 5.7993
+------------------------------
+  Bin: Medium (11-50)
+    Column: Overlap_Rec_CB_Only
+      Mean: 1.9785
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 2.5007
+      Range: 19.0000
+      Standard Deviation: 2.2729
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 5.0000
+      95th Percentile: 6.0000
+      Zero Count: 177
+      Zero Proportion: 0.2536
+      Coefficient of Variation (CV): 1.1488
+      Kurtosis: 10.1498
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.5845
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.4164
+      Range: 4.0000
+      Standard Deviation: 0.8294
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 414
+      Zero Proportion: 0.5931
+      Coefficient of Variation (CV): 1.4190
+      Kurtosis: 1.5614
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 1.6175
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 1.4250
+      Range: 11.0000
+      Standard Deviation: 1.5931
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 195
+      Zero Proportion: 0.2794
+      Coefficient of Variation (CV): 0.9849
+      Kurtosis: 3.2553
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 1.7149
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 2.1154
+      Range: 15.0000
+      Standard Deviation: 1.7392
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 170
+      Zero Proportion: 0.2436
+      Coefficient of Variation (CV): 1.0142
+      Kurtosis: 8.3721
+------------------------------
+  Bin: High (51-150)
+    Column: Overlap_Rec_CB_Only
+      Mean: 3.8925
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.4534
+      Range: 20.0000
+      Standard Deviation: 3.2578
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 10.0000
+      Zero Count: 69
+      Zero Proportion: 0.0904
+      Coefficient of Variation (CV): 0.8369
+      Kurtosis: 3.0363
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 1.8375
+      Median: 2.0000
+      Mode(s): 1
+      Skew: 1.0932
+      Range: 10.0000
+      Standard Deviation: 1.5898
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 164
+      Zero Proportion: 0.2149
+      Coefficient of Variation (CV): 0.8652
+      Kurtosis: 1.7580
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 3.7077
+      Median: 3.0000
+      Mode(s): 3
+      Skew: 1.2060
+      Range: 18.0000
+      Standard Deviation: 2.7560
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 7.0000
+      95th Percentile: 9.0000
+      Zero Count: 53
+      Zero Proportion: 0.0695
+      Coefficient of Variation (CV): 0.7433
+      Kurtosis: 2.1432
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 4.1979
+      Median: 4.0000
+      Mode(s): 3
+      Skew: 1.1348
+      Range: 20.0000
+      Standard Deviation: 2.8925
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 9.0000
+      Zero Count: 39
+      Zero Proportion: 0.0511
+      Coefficient of Variation (CV): 0.6890
+      Kurtosis: 1.9691
+------------------------------
+  Bin: Very High (151+)
+    Column: Overlap_Rec_CB_Only
+      Mean: 6.0381
+      Median: 5.0000
+      Mode(s): 1
+      Skew: 1.0605
+      Range: 25.0000
+      Standard Deviation: 4.5018
+      IQR: 7.0000
+      10th Percentile: 1.0000
+      90th Percentile: 12.0000
+      95th Percentile: 14.2500
+      Zero Count: 11
+      Zero Proportion: 0.0466
+      Coefficient of Variation (CV): 0.7456
+      Kurtosis: 1.4652
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 3.5847
+      Median: 3.0000
+      Mode(s): 4
+      Skew: 0.9000
+      Range: 15.0000
+      Standard Deviation: 2.3873
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 7.0000
+      95th Percentile: 8.0000
+      Zero Count: 19
+      Zero Proportion: 0.0805
+      Coefficient of Variation (CV): 0.6660
+      Kurtosis: 1.7205
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 6.0297
+      Median: 6.0000
+      Mode(s): 3
+      Skew: 0.7687
+      Range: 18.0000
+      Standard Deviation: 3.7523
+      IQR: 5.2500
+      10th Percentile: 2.0000
+      90th Percentile: 11.0000
+      95th Percentile: 13.2500
+      Zero Count: 7
+      Zero Proportion: 0.0297
+      Coefficient of Variation (CV): 0.6223
+      Kurtosis: 0.4830
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 7.2076
+      Median: 7.0000
+      Mode(s): 4
+      Skew: 0.6045
+      Range: 20.0000
+      Standard Deviation: 3.9231
+      IQR: 6.0000
+      10th Percentile: 3.0000
+      90th Percentile: 13.0000
+      95th Percentile: 14.0000
+      Zero Count: 2
+      Zero Proportion: 0.0085
+      Coefficient of Variation (CV): 0.5443
+      Kurtosis: -0.0247
+------------------------------
+
+Results for single_run_evaluation_results_loop/nf600_rs5_gw0.5/overlap_evaluation_nf600_rs5_gw0.5.csv:
+  --- Overall Statistics ---
+  Column: Overlap_Rec_CB_Only
+    Mean: 2.5915
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.9845
+    Range: 23.0000
+    Standard Deviation: 3.0212
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.7000
+    95th Percentile: 8.0000
+    Zero Count: 629
+    Zero Proportion: 0.2742
+    Coefficient of Variation (CV): 1.1658
+    Kurtosis: 5.7203
+------------------------------
+  Column: Overlap_Rec_CF_Only
+    Mean: 1.1722
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 1.8600
+    Range: 12.0000
+    Standard Deviation: 1.6529
+    IQR: 2.0000
+    10th Percentile: 0.0000
+    90th Percentile: 3.0000
+    95th Percentile: 5.0000
+    Zero Count: 1142
+    Zero Proportion: 0.4978
+    Coefficient of Variation (CV): 1.4101
+    Kurtosis: 4.0102
+------------------------------
+  Column: Overlap_Rec_CB_Filtered_by_CF
+    Mean: 2.4738
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.7337
+    Range: 21.0000
+    Standard Deviation: 2.8270
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 6.0000
+    95th Percentile: 8.0000
+    Zero Count: 656
+    Zero Proportion: 0.2860
+    Coefficient of Variation (CV): 1.1428
+    Kurtosis: 3.8827
+------------------------------
+  Column: Overlap_Rec_By_Multiplying_Scores
+    Mean: 2.8793
+    Median: 2.0000
+    Mode(s): 0
+    Skew: 1.6753
+    Range: 23.0000
+    Standard Deviation: 3.2307
+    IQR: 4.0000
+    10th Percentile: 0.0000
+    90th Percentile: 8.0000
+    95th Percentile: 9.0000
+    Zero Count: 603
+    Zero Proportion: 0.2629
+    Coefficient of Variation (CV): 1.1221
+    Kurtosis: 3.5398
+------------------------------
+
+  --- Binned Statistics by Total_Relevant_Books ---
+  Bin: Low (0-10)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.6512
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.1392
+      Range: 6.0000
+      Standard Deviation: 1.0752
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 374
+      Zero Proportion: 0.6213
+      Coefficient of Variation (CV): 1.6511
+      Kurtosis: 5.2126
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.1296
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.1544
+      Range: 2.0000
+      Standard Deviation: 0.3910
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 1.0000
+      Zero Count: 536
+      Zero Proportion: 0.8904
+      Coefficient of Variation (CV): 3.0179
+      Kurtosis: 9.7823
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.4601
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.0491
+      Range: 5.0000
+      Standard Deviation: 0.7648
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 2.0000
+      Zero Count: 399
+      Zero Proportion: 0.6628
+      Coefficient of Variation (CV): 1.6621
+      Kurtosis: 5.2509
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.5714
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.1725
+      Range: 6.0000
+      Standard Deviation: 0.9648
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 386
+      Zero Proportion: 0.6412
+      Coefficient of Variation (CV): 1.6884
+      Kurtosis: 5.3576
+------------------------------
+  Bin: Medium (11-50)
+    Column: Overlap_Rec_CB_Only
+      Mean: 1.8973
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 2.6229
+      Range: 20.0000
+      Standard Deviation: 2.1749
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 6.0000
+      Zero Count: 185
+      Zero Proportion: 0.2677
+      Coefficient of Variation (CV): 1.1463
+      Kurtosis: 12.6280
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.5847
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.4718
+      Range: 4.0000
+      Standard Deviation: 0.8356
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 409
+      Zero Proportion: 0.5919
+      Coefficient of Variation (CV): 1.4292
+      Kurtosis: 1.7585
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 1.6614
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 1.5538
+      Range: 10.0000
+      Standard Deviation: 1.6857
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 187
+      Zero Proportion: 0.2706
+      Coefficient of Variation (CV): 1.0147
+      Kurtosis: 3.4411
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 1.7713
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 2.3528
+      Range: 16.0000
+      Standard Deviation: 1.8774
+      IQR: 3.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 178
+      Zero Proportion: 0.2576
+      Coefficient of Variation (CV): 1.0598
+      Kurtosis: 10.5001
+------------------------------
+  Bin: High (51-150)
+    Column: Overlap_Rec_CB_Only
+      Mean: 3.7484
+      Median: 3.0000
+      Mode(s): 1
+      Skew: 1.5265
+      Range: 23.0000
+      Standard Deviation: 3.0930
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 9.0000
+      Zero Count: 63
+      Zero Proportion: 0.0826
+      Coefficient of Variation (CV): 0.8252
+      Kurtosis: 3.9575
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 1.7929
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 0.9707
+      Range: 8.0000
+      Standard Deviation: 1.5871
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 175
+      Zero Proportion: 0.2294
+      Coefficient of Variation (CV): 0.8852
+      Kurtosis: 0.6784
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 3.7300
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 1.2341
+      Range: 20.0000
+      Standard Deviation: 2.7723
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.0000
+      95th Percentile: 9.0000
+      Zero Count: 60
+      Zero Proportion: 0.0786
+      Coefficient of Variation (CV): 0.7432
+      Kurtosis: 2.5795
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 4.3093
+      Median: 4.0000
+      Mode(s): 4
+      Skew: 1.1876
+      Range: 21.0000
+      Standard Deviation: 3.0159
+      IQR: 4.0000
+      10th Percentile: 1.0000
+      90th Percentile: 8.8000
+      95th Percentile: 10.0000
+      Zero Count: 39
+      Zero Proportion: 0.0511
+      Coefficient of Variation (CV): 0.6999
+      Kurtosis: 2.2425
+------------------------------
+  Bin: Very High (151+)
+    Column: Overlap_Rec_CB_Only
+      Mean: 5.8067
+      Median: 5.0000
+      Mode(s): 4
+      Skew: 1.2387
+      Range: 22.0000
+      Standard Deviation: 3.8980
+      IQR: 4.0000
+      10th Percentile: 2.0000
+      90th Percentile: 11.0000
+      95th Percentile: 13.0000
+      Zero Count: 7
+      Zero Proportion: 0.0294
+      Coefficient of Variation (CV): 0.6713
+      Kurtosis: 2.1183
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 3.5252
+      Median: 3.0000
+      Mode(s): 3
+      Skew: 0.6014
+      Range: 12.0000
+      Standard Deviation: 2.3125
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 7.0000
+      95th Percentile: 7.0000
+      Zero Count: 22
+      Zero Proportion: 0.0924
+      Coefficient of Variation (CV): 0.6560
+      Kurtosis: 0.2956
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 5.8992
+      Median: 5.0000
+      Mode(s): 4
+      Skew: 0.7987
+      Range: 21.0000
+      Standard Deviation: 3.7108
+      IQR: 5.0000
+      10th Percentile: 2.0000
+      90th Percentile: 11.0000
+      95th Percentile: 13.0000
+      Zero Count: 10
+      Zero Proportion: 0.0420
+      Coefficient of Variation (CV): 0.6290
+      Kurtosis: 0.6550
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 7.3487
+      Median: 7.0000
+      Mode(s): 4
+      Skew: 0.7794
+      Range: 22.0000
+      Standard Deviation: 3.9201
+      IQR: 6.0000
+      10th Percentile: 2.7000
+      90th Percentile: 12.0000
+      95th Percentile: 13.1500
+      Zero Count: 0
+      Zero Proportion: 0.0000
+      Coefficient of Variation (CV): 0.5334
+      Kurtosis: 1.1458
+------------------------------
+
+Results for single_run_evaluation_results_loop/nf600_rs5_gw0/overlap_evaluation_nf600_rs5_gw0.csv:
+  --- Overall Statistics ---
+  Column: Overlap_Rec_CB_Only
+    Mean: 0.5615
+    Median: 0.0000
+    Mode(s): 0
+    Skew: 2.5617
+    Range: 8.0000
+    Standard Deviation: 0.9788
+    IQR: 1.0000
+    10th Percentile: 0.0000
+    90th Percentile: 2.0000
+    95th Percentile: 2.0000
+    Zero Count: 1487
+    Zero Proportion: 0.6482
+    Coefficient of Variation (CV): 1.7433
+    Kurtosis: 9.0180
+------------------------------
+  Column: Overlap_Rec_CF_Only
+    Mean: 1.1931
+    Median: 1.0000
+    Mode(s): 0
+    Skew: 2.0378
+    Range: 12.0000
+    Standard Deviation: 1.7308
+    IQR: 2.0000
+    10th Percentile: 0.0000
+    90th Percentile: 3.0000
+    95th Percentile: 5.0000
+    Zero Count: 1146
+    Zero Proportion: 0.4996
+    Coefficient of Variation (CV): 1.4507
+    Kurtosis: 5.0007
+------------------------------
+  Column: Overlap_Rec_CB_Filtered_by_CF
+    Mean: 0.5946
+    Median: 0.0000
+    Mode(s): 0
+    Skew: 2.3247
+    Range: 9.0000
+    Standard Deviation: 0.9833
+    IQR: 1.0000
+    10th Percentile: 0.0000
+    90th Percentile: 2.0000
+    95th Percentile: 3.0000
+    Zero Count: 1445
+    Zero Proportion: 0.6299
+    Coefficient of Variation (CV): 1.6537
+    Kurtosis: 7.6892
+------------------------------
+  Column: Overlap_Rec_By_Multiplying_Scores
+    Mean: 0.8047
+    Median: 0.0000
+    Mode(s): 0
+    Skew: 1.9484
+    Range: 8.0000
+    Standard Deviation: 1.1917
+    IQR: 1.0000
+    10th Percentile: 0.0000
+    90th Percentile: 2.0000
+    95th Percentile: 3.0000
+    Zero Count: 1280
+    Zero Proportion: 0.5580
+    Coefficient of Variation (CV): 1.4809
+    Kurtosis: 4.5380
+------------------------------
+
+  --- Binned Statistics by Total_Relevant_Books ---
+  Bin: Low (0-10)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.1364
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 4.1398
+      Range: 4.0000
+      Standard Deviation: 0.4412
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 1.0000
+      Zero Count: 536
+      Zero Proportion: 0.8918
+      Coefficient of Variation (CV): 3.2339
+      Kurtosis: 21.4430
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.1065
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.2049
+      Range: 2.0000
+      Standard Deviation: 0.3346
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 0.0000
+      95th Percentile: 1.0000
+      Zero Count: 542
+      Zero Proportion: 0.9018
+      Coefficient of Variation (CV): 3.1423
+      Kurtosis: 10.2451
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.1165
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.6839
+      Range: 3.0000
+      Standard Deviation: 0.3870
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 0.0000
+      95th Percentile: 1.0000
+      Zero Count: 544
+      Zero Proportion: 0.9052
+      Coefficient of Variation (CV): 3.3224
+      Kurtosis: 14.6350
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.1597
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.3661
+      Range: 3.0000
+      Standard Deviation: 0.4631
+      IQR: 0.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 1.0000
+      Zero Count: 525
+      Zero Proportion: 0.8735
+      Coefficient of Variation (CV): 2.8991
+      Kurtosis: 12.6600
+------------------------------
+  Bin: Medium (11-50)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.4239
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 3.2894
+      Range: 7.0000
+      Standard Deviation: 0.8587
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 2.0000
+      Zero Count: 499
+      Zero Proportion: 0.7098
+      Coefficient of Variation (CV): 2.0258
+      Kurtosis: 14.9705
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 0.5576
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 1.5729
+      Range: 4.0000
+      Standard Deviation: 0.8160
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 2.0000
+      Zero Count: 425
+      Zero Proportion: 0.6046
+      Coefficient of Variation (CV): 1.4634
+      Kurtosis: 2.3789
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.3898
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.9960
+      Range: 6.0000
+      Standard Deviation: 0.7579
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 2.0000
+      Zero Count: 500
+      Zero Proportion: 0.7112
+      Coefficient of Variation (CV): 1.9445
+      Kurtosis: 13.0791
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 0.5036
+      Median: 0.0000
+      Mode(s): 0
+      Skew: 2.7791
+      Range: 6.0000
+      Standard Deviation: 0.8913
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 1.0000
+      95th Percentile: 2.0000
+      Zero Count: 460
+      Zero Proportion: 0.6543
+      Coefficient of Variation (CV): 1.7701
+      Kurtosis: 10.8513
+------------------------------
+  Bin: High (51-150)
+    Column: Overlap_Rec_CB_Only
+      Mean: 0.8556
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 2.0373
+      Range: 8.0000
+      Standard Deviation: 1.1361
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 368
+      Zero Proportion: 0.4874
+      Coefficient of Variation (CV): 1.3278
+      Kurtosis: 6.2540
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 1.9073
+      Median: 2.0000
+      Mode(s): 1
+      Skew: 1.4267
+      Range: 12.0000
+      Standard Deviation: 1.7342
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 160
+      Zero Proportion: 0.2119
+      Coefficient of Variation (CV): 0.9092
+      Kurtosis: 3.3874
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 0.9285
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 1.8369
+      Range: 9.0000
+      Standard Deviation: 1.1459
+      IQR: 1.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.0000
+      95th Percentile: 3.0000
+      Zero Count: 341
+      Zero Proportion: 0.4517
+      Coefficient of Variation (CV): 1.2342
+      Kurtosis: 5.6198
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 1.1947
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 1.4402
+      Range: 8.0000
+      Standard Deviation: 1.2523
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 3.0000
+      95th Percentile: 3.0000
+      Zero Count: 263
+      Zero Proportion: 0.3483
+      Coefficient of Variation (CV): 1.0482
+      Kurtosis: 3.1750
+------------------------------
+  Bin: Very High (151+)
+    Column: Overlap_Rec_CB_Only
+      Mean: 1.1149
+      Median: 1.0000
+      Mode(s): 0
+      Skew: 1.3671
+      Range: 6.0000
+      Standard Deviation: 1.1874
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 2.6000
+      95th Percentile: 4.0000
+      Zero Count: 84
+      Zero Proportion: 0.3574
+      Coefficient of Variation (CV): 1.0650
+      Kurtosis: 2.1028
+------------------------------
+    Column: Overlap_Rec_CF_Only
+      Mean: 3.5787
+      Median: 3.0000
+      Mode(s): 2
+      Skew: 0.6244
+      Range: 11.0000
+      Standard Deviation: 2.4031
+      IQR: 3.0000
+      10th Percentile: 1.0000
+      90th Percentile: 7.0000
+      95th Percentile: 8.0000
+      Zero Count: 19
+      Zero Proportion: 0.0809
+      Coefficient of Variation (CV): 0.6715
+      Kurtosis: -0.0855
+------------------------------
+    Column: Overlap_Rec_CB_Filtered_by_CF
+      Mean: 1.3574
+      Median: 1.0000
+      Mode(s): 1
+      Skew: 1.1418
+      Range: 6.0000
+      Standard Deviation: 1.2159
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 3.0000
+      95th Percentile: 4.0000
+      Zero Count: 60
+      Zero Proportion: 0.2553
+      Coefficient of Variation (CV): 0.8958
+      Kurtosis: 1.6584
+------------------------------
+    Column: Overlap_Rec_By_Multiplying_Scores
+      Mean: 2.1021
+      Median: 2.0000
+      Mode(s): 2
+      Skew: 0.7486
+      Range: 7.0000
+      Standard Deviation: 1.5519
+      IQR: 2.0000
+      10th Percentile: 0.0000
+      90th Percentile: 4.0000
+      95th Percentile: 5.0000
+      Zero Count: 32
+      Zero Proportion: 0.1362
+      Coefficient of Variation (CV): 0.7382
+      Kurtosis: 0.1282
+------------------------------

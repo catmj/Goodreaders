@@ -38,6 +38,7 @@
 100 selected poems, e.e. cummings
 100 ways to motivate yourself, steve chandler
 1000 journals project, someguy
+1000 record covers, michael ochs
 1001 books you must read before you die, peter boxall
 1001 inventions, salim t.s. al-hassani
 1001 movies you must see before you die, steven jay schneider
@@ -83,6 +84,7 @@
 1793, niklas natt och dag
 18% сиво, zachary karabashliev
 1861, adam goodheart
+19 razy katherine, john green
 1916, morgan llywelyn
 1922, stephen king
 1932, karen m. cox
@@ -108,6 +110,7 @@
 22/11/'63, stephen king
 24690, a.a. dark
 3 a.m., nick pirog
+3 sleuths, 2 dogs, 1 murder, maggie pill
 3 truths and a lie, lisa gardner
 3 willows, ann brashares
 3, gretchen mcneil
@@ -115,6 +118,7 @@
 3,096 days, natascha kampusch
 30 days of night, steve niles
 30 days of night, tim lebbon
+30 days to understanding the bible in 15 minutes in a day, max e. anders
 30 pieces of silver, carolyn mccray
 30-minute meals 2, rachael ray
 31 bond street, ellen horan
@@ -148,6 +152,7 @@
 59 seconds, richard wiseman
 6 killer bodies, stephanie bond
 600 hours of edward, craig lancaster
+68 kill part 2, bryan smith
 68 kill, bryan smith
 69 million things i hate about you, kira archer
 7 ans après..., guillaume musso
@@ -186,6 +191,7 @@ a beautiful wedding, jamie mcguire
 a beautiful work in progress, mirna valerio
 a beautifully foolish endeavor, hank green
 a beauty so rare, tamera alexander
+a bed of thorns and roses, sondra allan carr
 a beginner's guide to acting english, shappi khorsandi
 a beginner's guide to investing, alex h. frey
 a betrayal in winter, daniel abraham
@@ -434,6 +440,7 @@ a few lessons for investors and managers from warren buffett, peter bevelin
 a few of the girls, maeve binchy
 a field guide to getting lost, rebecca solnit
 a field guide to lucid dreaming, dylan tuccillo
+a field of red, greg enslen
 a fierce and subtle poison, samantha mabry
 a fighting chance, elizabeth warren
 a fine balance, rohinton mistry
@@ -448,6 +455,7 @@ a fistful of collars, spencer quinn
 a flor de piel, javier moro
 a fool's gold christmas, susan mallery
 a forest divided, erin hunter
+a fork in the road, james oseland
 a fort of nine towers, qais akbar omar
 a fortune for your disaster, hanif abdurraqib
 a fountain filled with blood, julia spencer-fleming
@@ -471,6 +479,7 @@ a gentleman in moscow, amor towles
 a ghostly undertaking, tonya kappes
 a gift for kit, nalini singh
 a gift of dragons, anne mccaffrey
+a gift of poison, kate avery ellison
 a gift to my children, jim rogers
 a girl called fearless, catherine linka
 a girl from yamhill, beverly cleary
@@ -742,6 +751,7 @@ a paradise built in hell, rebecca solnit
 a parchment of leaves, silas house
 a paris affair, tatiana de rosnay
 a paris apartment, michelle gable
+a partridge in a pear tree, amanda mccabe
 a passage to india, e.m. forster
 a passion for leadership, robert m. gates
 a path with heart, jack kornfield
@@ -814,6 +824,7 @@ a rare book of cunning device, ben aaronovitch
 a really short history of nearly everything, bill bryson
 a reaper at the gates, sabaa tahir
 a reason to believe, diana copland
+a reason to kill, michael kerr
 a reason to live, matthew iden
 a rebel's daughter, janet lunn
 a reclusive heart, r.l. mathewson
@@ -902,6 +913,7 @@ a simple thing, kathleen mccleary
 a single man, christopher isherwood
 a single shard, linda sue park
 a single thread, marie bostwick
+a sister's gift, giselle green
 a slave in the white house, elizabeth dowling taylor
 a slice of heaven, sherryl woods
 a slip of the keyboard, terry pratchett
@@ -943,6 +955,7 @@ a spy among friends, ben macintyre
 a square meal, jane ziegelman
 a star called henry, roddy doyle
 a star for mrs. blake, april smith
+a stitch in time, monica ferris
 a stolen life, jaycee dugard
 a stone in my hand, cathryn clinton
 a stone in the sea, a.l. jackson
@@ -995,6 +1008,7 @@ a taste of power, elaine brown
 a terrible beauty, graham masterton
 a terrible beauty, tasha alexander
 a texan's luck, jodi thomas
+a texas cowboy, charles a. siringo
 a textbook case, jeffery deaver
 a theory of justice, john rawls
 a theory of small earthquakes, meredith maran
@@ -1023,6 +1037,7 @@ a touch of chaos, scarlett st. clair
 a touch of dead, charlaine harris
 a touch of midnight, lara adrian
 a town like alice, nevil shute
+a trace of death, blake pierce
 a trace of moonlight, allison pang
 a trail of broken dreams, barbara haworth-attard
 a trail of crumbs, susie finkbeiner
@@ -1032,6 +1047,7 @@ a tramp abroad, mark twain
 a treacherous curse, deanna raybourn
 a treacherous trader, ellery adams
 a treasure worth seeking, sandra brown
+a treasury of christmas miracles, karen kingsbury
 a treatise of human nature, david hume
 a tree grows in brooklyn, betty smith
 a tres metros sobre el cielo, federico moccia
@@ -1203,6 +1219,7 @@ ach wie gut, dass niemand weiß, alexa hennig von lange
 acheron, sherrilyn kenyon
 achilleid, publius papinius statius
 achtnacht, sebastian fitzek
+achtste-groepers huilen niet, jacques vriens
 acid dreams, martin a. lee
 acid row, minette walters
 across a moonlit sea, marsha canham
@@ -1394,6 +1411,7 @@ agnes moor's wild knight, alyssa cole
 agostino, alberto moravia
 agua para elefantes, sara gruen
 ah, treachery!, ross thomas
+ahriman, john french
 aiden's charity, lora leigh
 aimee, mary beth miller
 aimless love, billy collins
@@ -1417,9 +1435,11 @@ akira, vol. 3, katsuhiro otomo
 akira, vol. 4, katsuhiro otomo
 akira, vol. 5, katsuhiro otomo
 akira, vol. 6, katsuhiro otomo
+aku ini binatang jalang, chairil anwar
 al capone does my shirts, gennifer choldenko
 al capone shines my shoes, gennifer choldenko
 al franken, giant of the senate, al franken
+alabama moon, watt key
 alan turing, andrew hodges
 alan turing, david boyle
 alarm, shay savage
@@ -1479,6 +1499,7 @@ alicia, lisi harrison
 alicja w krainie czarów, lewis carroll
 alien dragon's baby, miranda martin
 alien hunter, james patterson
+alien secrets, annette curtis klause
 alien vs. predator, michael robbins
 alien, alan dean foster
 alien, james a. moore
@@ -1640,6 +1661,7 @@ alligator baby, robert munsch
 allomancer jak and the pits of eltania, brandon sanderson
 allure, nina lane
 almost a bride, jane feather
+almost a bride, jo watson
 almost christian, kenda creasy dean
 almost dead, lisa jackson
 almost dead, t.r. ragan
@@ -1714,6 +1736,7 @@ amazing grace, kathleen norris
 amazing grace, mary hoffman
 amber brown goes fourth, paula danziger
 amber brown sees red, paula danziger
+amber eyes, maya banks
 amber morn, brandilyn collins
 amber smoke, kristin cast
 amberlough, lara elena donnelly
@@ -1755,6 +1778,7 @@ american prince, sierra simone
 american prometheus, kai bird
 american psycho, bret easton ellis
 american radical, tamer elnoury
+american reset, mark goodwin
 american royals, katharine mcgee
 american savage, dan savage
 american savages, j.j. mcavoy
@@ -1798,6 +1822,7 @@ amphigorey too, edward gorey
 amrita, banana yoshimoto
 amsterdam, ian mcewan
 amsterdam, russell shorto
+amuse bouche, anthony bidulka
 amy & roger's epic detour, morgan matson
 amy and isabelle, elizabeth strout
 amy and the missing puppy, callie barkley
@@ -1809,6 +1834,7 @@ an academy for liars, alexis henderson
 an acceptable time, madeleine l'engle
 an accidental death, peter grainger
 an act of obsession, k.c. lynn
+an alpha's path, carrie ann ryan
 an altar in the world, barbara brown taylor
 an american childhood, annie dillard
 an american dream, norman mailer
@@ -1902,6 +1928,7 @@ an unquiet mind, kay redfield jamison
 an unsuitable heir, k.j. charles
 an unsuitable job for a woman, p.d. james
 an untamed state, roxane gay
+an unwavering trust, l.l. diamond
 an unwelcome quest, scott meyer
 ana karenina, leo tolstoy
 ana la de avonlea, l.m. montgomery
@@ -1955,6 +1982,7 @@ and the shofar blew, francine rivers
 and the trees crept in, dawn kurtagich
 and the weak suffer what they must?  europe's crisis and america's economic future, yanis varoufakis
 and then i found you, patti callahan henry
+and then she was gone, christopher greyson
 and then she was gone, rosalind noonan
 and then there were none, agatha christie
 and to all a good night, kaje harper
@@ -2147,6 +2175,7 @@ apple tree christmas, trinka hakes noble
 apple tree yard, louise doughty
 apple turnover murder, joanne fluke
 apples never fall, liane moriarty
+apples to oregon, deborah hopkinson
 appointment in samarra, john o'hara
 appointment with death, agatha christie
 apprentice in death, j.d. robb
@@ -2187,6 +2216,7 @@ archie (2015-) #1, mark waid
 archie, michael e. uslan
 archie, vol. 2, mark waid
 archie, vol. 4, mark waid
+architecture, francis d.k. ching
 archivist wasp, nicole kornher-stace
 archmage, r.a. salvatore
 arctic dreams, barry lopez
@@ -2206,6 +2236,7 @@ arh+, h.r. giger
 arhanghelul raul, ovidiu eftimie
 ariadne, jennifer saint
 ariel, sylvia plath
+aristocrats, stella tillyard
 aristotle and dante dive into the waters of the world, benjamin alire sáenz
 ark angel, anthony horowitz
 ark, stephen baxter
@@ -2344,6 +2375,7 @@ astonishing x-men, vol. 1, joss whedon
 astor, anderson cooper
 astray, emma donoghue
 astro city, vol. 2, kurt busiek
+astro city, vol. 3, kurt busiek
 astro city, vol. 4, kurt busiek
 astrophysics for people in a hurry, neil degrasse tyson
 asura, anand neelakantan
@@ -2429,6 +2461,7 @@ august, audrey carlan
 augustus, anthony everitt
 augustus, john williams
 aunt bessie believes, diana xarissa
+aunt bessie considers, diana xarissa
 aunt bessie enjoys, diana xarissa
 aunt bessie invites, diana xarissa
 aunt julia and the scriptwriter, mario vargas llosa
@@ -2488,6 +2521,7 @@ awful auntie, david walliams
 awkward family photos, mike bender
 awkward, svetlana chmakova
 awry, chelsea fine
+ax to grind, tonya kappes
 axiom's end, lindsay ellis
 axiomatic, greg egan
 axis, robert charles wilson
@@ -2551,6 +2585,7 @@ backfire, catherine coulter
 backseat saints, joshilyn jackson
 backup, jim butcher
 backwards, rob grant
+bad action, james swain
 bad behavior, mary gaitskill
 bad blood, casey kelleher
 bad blood, chuck wendig
@@ -2617,6 +2652,7 @@ bambi, walt disney company
 bamboo & lace, lori wick
 banana fish, vol. 1, akimi yoshida
 bane, l.j. shen
+bang bang, rachel van dyken
 bang, e.k. blair
 bangkok 8, john burdett
 banished from our home, sharon stewart
@@ -2808,8 +2844,10 @@ beautiful you, chuck palahniuk
 beautiful, christina lauren
 beautiful, stephen michael shearer
 beautifully damaged, l.a. fiore
+beautifully decadent, l.a. fiore
 beauty and sadness, yasunari kawabata
 beauty and the beast novelization, elizabeth rudnick
+beauty and the beast, charles perrault
 beauty and the beast, ellen titlebaum
 beauty and the beast, k.m. shea
 beauty and the beast, wendy mass
@@ -2898,6 +2936,7 @@ before the devil breaks you, libba bray
 before the ever after, jacqueline woodson
 before the fall, noah hawley
 before the frost, henning mankell
+before the rains, dinah jefferies
 before they are hanged, joe abercrombie
 before tomorrowland, jeff jensen
 before us, anna todd
@@ -2968,6 +3007,7 @@ belle, cameron dokey
 bellman & black, diane setterfield
 bellweather rhapsody, kate racculia
 belong to me, marisa de los santos
+belong to the night, shelly laurenston
 belonging to heaven, gale sears
 beloved enemy, janet miller
 beloved hope, tracie peterson
@@ -2995,6 +3035,7 @@ beneath this ink, meghan march
 beneath this man, jodi ellen malpas
 beneath this mask, meghan march
 bengal's heart, lora leigh
+benjamin franklin's bastard, sally cabot
 beowulf and the fight at finnsburgh, unknown
 beowulf, gareth hinds
 beowulf, michael morpurgo
@@ -3130,6 +3171,7 @@ beyond grace's rainbow, carmel harrington
 beyond justice, joshua graham
 beyond magenta, susan kuklin
 beyond reach, karin slaughter
+beyond repair, susie tate
 beyond shame, kit rocha
 beyond that, the sea, laura spence-ash
 beyond the breakwater, radclyffe
@@ -3180,6 +3222,7 @@ big red barn, margaret wise brown
 big red lollipop, rukhsana khan
 big red, jim kjelgaard
 big rock, lauren blakely
+big russ & me, tim russert
 big stone gap, adriana trigiani
 big summer, jennifer weiner
 big sur, jack kerouac
@@ -3327,6 +3370,7 @@ black ice, becca fitzpatrick
 black in white, j.c. andrijeski
 black indians, william loren katz
 black iris, leah raeder
+black lamb and grey falcon, rebecca west
 black lies, alessandra torre
 black light, stephen hunter
 black like me, john howard griffin
@@ -3528,6 +3572,7 @@ blood of the demon, diana rowland
 blood of the earth, faith hunter
 blood of the fold, terry goodkind
 blood of the mantis, adrian tchaikovsky
+blood of thieves, michael j. sullivan
 blood of tyrants, naomi novik
 blood of victory, alan furst
 blood of wonderland, colleen oakes
@@ -3618,6 +3663,8 @@ blue moon, james ponti
 blue moon, laurell k. hamilton
 blue murder, emma jameson
 blue nights, joan didion
+blue ocean shift, w. chan kim
+blue ocean strategy, expanded edition, w. chan kim
 blue ocean strategy, w. chan kim
 blue on black, michael connelly
 blue ridge sunrise, denise hunter
@@ -3644,6 +3691,7 @@ blyssful lies, j.c. cliff
 boar island, nevada barr
 board resolution, joey w. hill
 boardgames that tell stories, ignacy trzewiczek
+boaz's wager, ruth ann nordin
 bob honey who just do stuff, pappy pariah
 bob, wendy mass
 bobbie faye's very (very, very, very) bad day, toni mcgee causey
@@ -3746,6 +3794,7 @@ born in fire, k.f. breene
 born in fire, nora roberts
 born in shame, nora roberts
 born of blood and ash, jennifer l. armentrout
+born of earth (elemental origins, #3), a.l. knorr
 born of fury, sherrilyn kenyon
 born of hatred, steve mchugh
 born of night, sherrilyn kenyon
@@ -3840,6 +3889,7 @@ braving the wilderness, brené brown
 bravo two zero, andy mcnab
 brawn, laurann dohner
 brazen and the beast, sarah maclean
+brazen, maya banks
 breach of crust, ellery adams
 breach, k.i. lynn
 bread alone, judi hendricks
@@ -3882,6 +3932,7 @@ breaking the rules, lucy score
 breaking the rules, suzanne brockmann
 breaking the silence, diane chamberlain
 breaking the spell, daniel c. dennett
+breaking walls, tracie puckett
 breakthrough, michael c. grumley
 breakthroughs, harry turtledove
 breakwater, anthony j. melchiorri
@@ -3944,6 +3995,7 @@ brimstone, robert b. parker
 bring her home, david bell
 bring me back, b.a. paris
 bring me home for christmas, robyn carr
+bring me the rhinoceros, john tarrant
 bring the jubilee, ward moore
 bring up the bodies, hilary mantel
 bringing adam home, les standiford
@@ -3998,6 +4050,7 @@ brotherhood of the wolf, david farland
 brothers and bones, james hankins
 brothers and keepers, john edgar wideman
 brothers far from home, jean little
+brothers in blue, jeanne st. james
 brothers majere, kevin stein
 brothers of were, goddess of love, dixie lynn dwyer
 brothers, angela elwell hunt
@@ -4079,6 +4132,7 @@ burn for you, annabel joseph
 burn for you, j.t. geissinger
 burn the place, iliana regan
 burn this, lanford wilson
+burn, erin mccarthy
 burn, helen hardt
 burn, james patterson
 burn, julianna baggott
@@ -4123,6 +4177,7 @@ busted, karin slaughter
 buszujący w zbożu, j.d. salinger
 but enough about me, burt reynolds
 but enough about me, jancee dunn
+but excuse me that is my book, lauren child
 but for the grace, peter grainger
 but i love him, amanda grace
 but what if we're wrong? thinking about the present as if it were the past, chuck klosterman
@@ -4190,6 +4245,7 @@ calamity jayne, kathleen bacus
 calamity rayne, lydia michaels
 calamity, brandon sanderson
 calculating god, robert j. sawyer
+calder born, calder bred, janet dailey
 calder pride, janet dailey
 calder promise, janet dailey
 calder storm, janet dailey
@@ -4278,6 +4334,7 @@ capitalism, ayn rand
 capitães da areia, jorge amado
 cappuccinos, cupcakes, and a corpse, harper lin
 caps for sale, esphyr slobodkina
+captain america & bucky, ed brubaker
 captain america, vol. 1, ed brubaker
 captain blood, rafael sabatini
 captain marvel, brian reed
@@ -4462,6 +4519,7 @@ cesar's way, cesar millan
 cesur yeni dünya, aldous huxley
 cetaganda, lois mcmaster bujold
 chain letter, christopher pike
+chain of evidence, garry disher
 chain of gold, cassandra clare
 chain reaction, simone elkeles
 chainfire, terry goodkind
@@ -4478,6 +4536,7 @@ champions, vol. 1, mark waid
 champions, vol. 2, mark waid
 chance, robert b. parker
 chances, jackie collins
+chancy, louis l'amour
 chang and eng, darin strauss
 change by design, tim brown
 change of heart, jodi picoult
@@ -4588,6 +4647,7 @@ chesapeake blue, nora roberts
 chesapeake, james a. michener
 chess story, stefan zweig
 chesty, jon t. hoffman
+chevengur, andrei platonov
 chew, john layman
 chew, vol. 1, john layman
 chew, vol. 2, john layman
@@ -4707,6 +4767,7 @@ christmas in silver bell falls, samantha chase
 christmas in the big woods, laura ingalls wilder
 christmas jars, jason f. wright
 christmas on candy cane lane, sheila roberts
+christmas on primrose hill, karen swan
 christmas under a cranberry sky, holly martin
 christmas under a starlit sky, holly martin
 christmas wishes and mistletoe kisses, jenny hale
@@ -4743,6 +4804,7 @@ cinder, marissa meyer
 cinderella and the colonel, k.m. shea
 cinderella is dead, kalynn bayron
 cinderella steals home, carly syms
+cinderella undone, nicole snow
 cinderella, maureen mcgowan
 cinderella, volume 2, chris roberson
 cinderella, walt disney company
@@ -4812,6 +4874,7 @@ ciudad de los ángeles caídos, cassandra clare
 ciudad del fuego celestial, cassandra clare
 civil disobedience and other essays, henry david thoreau
 civil disobedience, henry david thoreau
+civil war on sunday, mary pope osborne
 civil war, mark millar
 civilization and its discontents, sigmund freud
 civilization, niall ferguson
@@ -4899,6 +4962,7 @@ clifford's christmas, norman bridwell
 clifford's family, norman bridwell
 clifford's first autumn, norman bridwell
 clifford's kitten, norman bridwell
+clifford's manners, norman bridwell
 climbing mount improbable, richard dawkins
 clinton cash, peter schweizer
 cloaked in shadow, ben alderson
@@ -4928,6 +4992,7 @@ closer than you think, karen rose
 closing time, joseph heller
 cloud atlas, david mitchell
 cloud nine, luanne rice
+cloud walking, a. meredith walters
 cloudburst, v.c. andrews
 clouds in my coffee, julie mulhern
 clouds of witness, dorothy l. sayers
@@ -4954,6 +5019,7 @@ cobalt red, siddharth kara
 cocaine blues, kerry greenwood
 cocaine nights, j.g. ballard
 cockatiels at seven, donna andrews
+cockloft, k.c. lynn
 cocktail hour under the tree of forgetfulness, alexandra fuller
 cocktails for three, madeleine wickham
 cocky roommate, claire kingsley
@@ -5050,6 +5116,7 @@ come back, amelia bedelia, peggy parish
 come closer, sara gran
 come fly the world, julia cooke
 come hell or highball, maia chance
+come high water, carolyn brown
 come home, lisa scottoline
 come love a stranger, kathleen e. woodiwiss
 come sundown, nora roberts
@@ -5126,6 +5193,7 @@ concrete evidence, rachel grant
 concrete rose, angie thomas
 condemnation, richard baker
 conditional citizens, laila lalami
+conditions are favorable, tara staley
 confederates in the attic, tony horwitz
 confesión, jodi ellen malpas
 confession of a buddhist atheist, stephen batchelor
@@ -5135,6 +5203,7 @@ confessions of a mask, yukio mishima
 confessions of a prairie bitch, alison arngrim
 confessions of a sociopath, m.e. thomas
 confessions of a teenage drama queen, dyan sheldon
+confessions of a triple shot betty, jody gehrman
 confessions of an advertising man, david ogilvy
 confessions of an alli cat, courtney cole
 confessions of an economic hit man, john perkins
@@ -5169,9 +5238,11 @@ conspiracy game, christine feehan
 conspiracy in death, j.d. robb
 conspiracy in kiev, noel hynd
 conspiracy of silence, martha powers
+conspiracy, s.j. parris
 conspirator, c.j. cherryh
 constable on the hill, nicholas rhea
 constance, matthew fitzsimmons
+constellation, adrien bosc
 consumed, skyla madi
 consumed, suzanne wright
 contact, carl sagan
@@ -5364,6 +5435,7 @@ crooked kingdom, leigh bardugo
 crooked letter, crooked letter, tom franklin
 crooked little lies, barbara taylor sissel
 crooked little vein, warren ellis
+crooked, cathryn jakobson ramin
 crookedstar's promise, erin hunter
 cross and burn, val mcdermid
 cross bones, kathy reichs
@@ -5398,6 +5470,7 @@ crossover, michael jan friedman
 crossroad blues, ace atkins
 crossroads in time, sarah woodbury
 crossroads of twilight, robert jordan
+crossroads, belva plain
 crossroads, jonathan franzen
 crossroads, riley hart
 crosstalk, connie willis
@@ -5487,6 +5560,7 @@ cursed, marissa meyer
 cursor's fury, jim butcher
 curtain, agatha christie
 curtsies & conspiracies, gail carriger
+curveball, jordan sonnenblick
 cut & run, madeleine urban
 cut and thrust, stuart woods
 cut, cathy glass
@@ -5509,6 +5583,7 @@ cyteen, c.j. cherryh
 cytonic, brandon sanderson
 czas pogardy, andrzej sapkowski
 czas żniw, samantha shannon
+czerwień rubinu, kerstin gier
 cómo ganar amigos e influir sobre las personas, dale carnegie
 d day through german eyes - the hidden story of june 6th 1944, holger eckhertz
 d is for deadbeat, sue grafton
@@ -5543,6 +5618,7 @@ daisy jones & the six, taylor jenkins reid
 dakiti, ej fisch
 dakota born, debbie macomber
 dakota home, debbie macomber
+damage control, jae*
 damage control, john gilstrap
 damage, john lescroart
 damaged 2, h.m. ward
@@ -5621,6 +5697,8 @@ darcy's voyage, kara louise
 dare to desire, carly phillips
 dare to hold, carly phillips
 dare to love, carly phillips
+dare to rock, carly phillips
+dare to take, carly phillips
 dare to touch, carly phillips
 dare truth or promise, paula boock
 dare you to, katie mcgarry
@@ -5794,6 +5872,8 @@ das kind in dir muss heimat finden. der schlüssel zur lösung (fast) aller prob
 das paket, sebastian fitzek
 das schicksal ist ein mieser verräter, john green
 das schloß, franz kafka
+das spiel, stephen king
+das vermächtnis der drachenreiter, christopher paolini
 das wunder von narnia, c.s. lewis
 dash & lily's book of dares, rachel cohn
 dash, kirby larson
@@ -5870,6 +5950,7 @@ days of blood & starlight, laini taylor
 days with frog and toad, arnold lobel
 days without end, sebastian barry
 daytripper, fábio moon
+dazzle, judith krantz
 dc comics, marguerite bennett
 dc universe, alan moore
 dc, darwyn cooke
@@ -5882,6 +5963,7 @@ de engelenmaker, stefan brijs
 de hemel boven parijs, bregje hofstede
 de kommer att drunkna i sina mödrars tårar, johannes anyuru
 de profundis, oscar wilde
+de selectie, kiera cass
 de veghe în lanul de secară, j.d. salinger
 de vliegeraar, khaled hosseini
 de vreemdeling, albert camus
@@ -5934,6 +6016,7 @@ dead ringer, lisa scottoline
 dead rules, randy russell
 dead sea, brian keene
 dead sea, tim curran
+dead secret, janice frost*
 dead silence, brenda novak
 dead silence, s.a. barnes
 dead silent, helen h. durrant
@@ -6065,6 +6148,7 @@ death in st. petersburg, tasha alexander
 death in the air, kate winkler dawson
 death in the clouds, agatha christie
 death in the devil's acre, anne perry
+death in the floating city, tasha alexander
 death in the stocks, georgette heyer
 death instinct, bentley little
 death is my bff, katarina e. tonks
@@ -6226,6 +6310,7 @@ delinquent daddy, linda kage
 delirious, m.s. force
 delirium stories, lauren oliver
 deliver her, patricia perry donovan
+deliver me from negative self talk, lynn r. davis
 deliver us from evil, david baldacci
 deliver us from evil, robin caroll
 deliver, pam godwin
@@ -6478,6 +6563,7 @@ die stürme des zorns, brandon sanderson
 die säulen der erde, ken follett
 die therapie, sebastian fitzek
 die tore der welt, ken follett
+die tribute von panem, suzanne collins
 die trying, lee child
 die vegetarierin, han kang
 die verratenen, ursula poznanski
@@ -6500,6 +6586,7 @@ diggers, terry pratchett
 digging to america, anne tyler
 digital fortress, dan brown
 digital gold, nathaniel popper
+digital heretic, terry schott
 digital minimalism, cal newport
 dinner at the center of the earth, nathan englander
 dinosaur roar!, paul stickland
@@ -6551,6 +6638,7 @@ disappearing earth, julia phillips
 disarming the narcissist, wendy t. behary
 disastrous, e.l. montes
 discipline and punish, michel foucault
+discipline without stress punishments or rewards, marvin marshall
 disclosure, michael crichton
 disco for the departed, colin cotterill
 discount armageddon, seanan mcguire
@@ -6611,6 +6699,7 @@ dna, yrsa sigurdardottir
 do androids dream of electric sheep? omnibus, philip k. dick
 do androids dream of electric sheep?, philip k. dick
 do more great work, michael bungay stanier
+do more, spend less, brad wilson
 do no harm, gregg hurwitz
 do not become alarmed, maile meloy
 do not bring your dragon to the library (fiction picture books), julie gassman
@@ -6897,6 +6986,7 @@ draw, cora brent
 drawing blood, poppy z. brite
 drawing conclusions, donna leon
 drawing from memory, allen say
+drawing on the right side of the brain, betty edwards
 drawing the head and figure, jack hamm
 drawing the head and hands, andrew loomis
 drawn into darkness, annette mccleave
@@ -6940,6 +7030,7 @@ dreams of the raven, carmen carter
 drei, stephen king
 dress her in indigo, john d. macdonald
 dress your family in corduroy and denim, david sedaris
+dress-tease, jae*
 drift, marion pauw
 drift, rachel maddow
 driftwood, cathy cassidy
@@ -6968,6 +7059,7 @@ drowned wednesday, garth nix
 drowning erin, elizabeth o'roark
 drowning instinct, ilsa j. bick
 drowning ruth, christina schwarz
+druga szansa, katarzyna berenika miszczuk
 drugs without the hot air, david j. nutt
 drums along the mohawk, walter d. edmonds
 drums of autumn, diana gabaldon
@@ -7004,7 +7096,9 @@ durable goods, elizabeth berg
 durch einen spiegel, in einem dunklen wort, jostein gaarder
 dusk or dark or dawn or day, seanan mcguire
 dust and shadow, lyndsay faye
+dust on the mountain, ruskin bond
 dust tracks on a road, zora neale hurston
+dust world, b.v. larson
 dust, hugh howey
 dust, patricia cornwell
 dustbin baby, jacqueline wilson
@@ -7086,6 +7180,7 @@ eat slay love, jesse petersen
 eat stop eat, brad pilon
 eat the buddha, barbara demick
 eat this book, eugene h. peterson
+eat, drink, and be wary, maggie pill
 eat, pray, die, chelsea field
 eaters of the dead, michael crichton
 eating fire , margaret atwood
@@ -7119,6 +7214,7 @@ edgar allan poe, edgar allan poe
 edge of dawn, lara adrian
 edge of evil, j.a. jance
 edge of midnight, shannon mckenna
+edge of oblivion, j.t. geissinger
 edge of sight, roxanne st. claire
 edge of tomorrow, hiroshi sakurazaka
 edgedancer, brandon sanderson
@@ -7141,7 +7237,9 @@ efrén divided, ernesto cisneros
 egg & spoon, gregory maguire
 ego is the enemy, ryan holiday
 egomaniac, vi keeland
+egyedül, laura leiner
 egypt's sister, angela elwell hunt
+együtt, laura leiner
 eichmann in jerusalem, hannah arendt
 eifelheim, michael flynn
 eiger dreams, jon krakauer
@@ -7157,8 +7255,10 @@ eighty days, matthew goodman
 eileen, ottessa moshfegh
 ein bild von dir, jojo moyes
 ein ganzes halbes jahr, jojo moyes
+ein schloss aus alabaster, valentina fast
 ein tanz mit drachen, george r.r. martin
 ein wenig leben, hanya yanagihara
+eine liebe aus samt, valentina fast
 einstein, walter isaacson
 eisenhorn, dan abnett
 eisige wellen, leigh bardugo
@@ -7175,6 +7275,7 @@ el arte de no amargarse la vida, rafael santandreu
 el baile de las luciérnagas, kristin hannah
 el beso de la mujer araña, manuel puig
 el beso del infierno, jennifer l. armentrout
+el bosque de los pigmeos, isabel allende
 el caballero de la armadura oxidada, robert fisher
 el caballero de los siete reinos, george r.r. martin
 el castillo ambulante, diana wynne jones
@@ -7243,6 +7344,7 @@ el proceso, franz kafka
 el proyecto esposa, graeme simsion
 el psicoanalista, john katzenbach
 el regalo, eloy moreno
+el reino del dragón de oro, isabel allende
 el resplandor, stephen king
 el restaurante del fin del mundo, douglas adams
 el retrato de dorian gray, oscar wilde
@@ -7250,6 +7352,7 @@ el retrato de rose madder, stephen king
 el rey de hierro, maurice druon
 el ruiseñor, kristin hannah
 el sabueso de los baskerville, arthur conan doyle
+el sanador de caballos, gonzalo giner
 el secreto, donna tartt
 el señor de las moscas, william golding
 el silencio de los corderos, thomas harris
@@ -7443,6 +7546,7 @@ endgame, ann aguirre
 endgame, chloe walsh
 endgame, samuel beckett
 endless knight, kresley cole
+endless magic, rachel higginson
 endless summer, jennifer echols
 endless, jessica shirvington
 endlessly, kiersten white
@@ -7461,6 +7565,7 @@ enfance, nathalie sarraute
 enforcer, samantha whiskey
 engaging father christmas, robin jones gunn
 engaging the muslim world, juan cole
+engineering mechanics, j.l. meriam
 england's perfect hero, suzanne enoch
 england, england, julian barnes
 engleby, sebastian faulks
@@ -7488,6 +7593,7 @@ entice, carrie jones
 entice, s.e. hall
 entre dos mundos, gennifer albin
 entreat me, grace draven
+entrepreneurial you, dorie clark
 entwined with you, sylvia day
 enuma elish, unknown
 envelope poems, emily dickinson
@@ -7528,6 +7634,7 @@ escape, lynne ewing
 escaping destiny, amelia hutchins
 escaping peril, tui t. sutherland
 escaping the dead, w.j. lundy
+escort in training, james grey
 escorted, claire kent
 escorts and thieves, tina folsom
 esio trot, roald dahl
@@ -7586,9 +7693,11 @@ even cowgirls get the blues, tom robbins
 even dogs in the wild, ian rankin
 even in paradise, chelsey philpot
 even money, dick francis
+even more short & shivery, robert d. san souci
 even now, karen kingsbury
 even silence has an end, ingrid betancourt
 even the darkest stars, heather fawcett
+even the score, beth ehemann
 even vampires get the blues, katie macalister
 evening class, maeve binchy
 evening primrose, kopano matlwa
@@ -7697,6 +7806,7 @@ evvie drake starts over, linda holmes
 ewiglich unvergessen, marah woolf
 ex games, stella rhys
 ex libris, anne fadiman
+ex machina, alex garland
 ex machina, vol. 1, brian k. vaughan
 ex machina, vol. 4, brian k. vaughan
 ex machina, vol. 6, brian k. vaughan
@@ -7720,6 +7830,7 @@ executor rising, rhett c. bruno
 exercises in style, raymond queneau
 exes with benefits, nicole williams
 exhalation, ted chiang
+exigency, michael siemsen
 exile and the kingdom, albert camus
 exile for dreamers, kathleen baldwin
 exile on front street, george christie
@@ -7793,6 +7904,7 @@ eyeshot, taylor adams
 eyrie, tim winton
 f in exams, richard benson
 f is for fugitive, sue grafton
+fab five, mitch albom
 fable, adrienne young
 fablehaven, brandon mull
 fables, arnold lobel
@@ -7877,6 +7989,7 @@ fall of a philanderer, carola dunn
 fall of angels, l.e. modesitt jr.
 fall of giants, ken follett
 fall of hades, richard paul evans
+fall of knight, peter david
 fall of light, steven erikson
 fall of night, rachel caine
 fall of ruin and wrath, jennifer l. armentrout
@@ -7912,6 +8025,7 @@ falling fast, sophie mckenzie
 falling for danger, chanel cleeton
 falling for her fiance, cindi madsen
 falling for the ghost of you, nicole christie
+falling for you, jill mansell
 falling free, lois mcmaster bujold
 falling free, shannan martin
 falling glass, adrian mckinty
@@ -8070,6 +8184,7 @@ fear, michael grant
 fear, stefan zweig
 fear, thich nhat hanh
 fearless fourteen, janet evanovich
+fearless in love, bella andre
 fearless, diana palmer
 fearless, eric blehm
 fearless, robin parrish
@@ -8118,6 +8233,7 @@ ferney, james long
 fervent, priscilla shirer
 festín de cuervos, george r.r. martin
 fetching raymond, john grisham
+feuerkind, stephen king
 fever 1793, laurie halse anderson
 fever chart, bill cotter
 fever dream, douglas preston
@@ -8159,6 +8275,7 @@ fight with me, kristen proby
 fighter, tijan*
 fighting destiny, amelia hutchins
 fighting for flight, j.b. salsbury
+fighting seduction, claire adams
 fighting to forget, j.b. salsbury
 fighting to forgive, j.b. salsbury
 fighting to survive, rhiannon frater
@@ -8198,6 +8315,7 @@ finding cinderella, colleen hoover
 finding dandelion, lex martin
 finding eden, mia sheridan
 finding emma, steena holmes
+finding everett ruess, david roberts
 finding faith, tabatha vargo
 finding father christmas, robin jones gunn
 finding fish, antwone quenton fisher
@@ -8216,6 +8334,7 @@ finding meaning in the second half of life, james hollis
 finding nemo, andrew stanton
 finding noel, richard paul evans
 finding north, rachel dunning
+finding pride, jill sanders
 finding rebecca, eoin dempsey
 finding serendipity, angelica banks
 finding sky, joss stirling
@@ -8324,6 +8443,7 @@ first you run, roxanne st. claire
 first, break all the rules, marcus buckingham
 first, evan thomas
 first, we make the beast beautiful, sarah wilson
+fish whistle, daniel pinkwater
 fisher's light, tara sivec
 fist stick knife gun, geoffrey canada
 fitzwilliam darcy, rock star, heather lynn rigaud
@@ -8360,9 +8480,11 @@ five presidents, clint hill
 five quarters of the orange, joanne harris
 five run away together, enid blyton
 five survive, holly jackson
+five were missing, lois duncan
 fixed forever, laurelin paige
 fixed on you, laurelin paige
 fixing delilah, sarah ockler
+fixing fate, anna brooks
 flag in exile, david weber
 flags of our fathers, james d. bradley
 flame in the dark, faith hunter
@@ -8489,6 +8611,7 @@ food, jim gaffigan
 fool for love, beth ciotta
 fool for love, eloisa james
 fool for love, marie force
+fool for love, sam shepard
 fool me once, catherine bybee
 fool me once, harlan coben
 fool moon, jim butcher
@@ -8572,6 +8695,7 @@ forever and always, jude deveraux
 forever black, sandi lynn
 forever blue, suzanne brockmann
 forever christmas, christine lynxwiler
+forever entangled, kathleen brooks
 forever in blue, ann brashares
 forever jade, shara azod
 forever mine, elizabeth reyes
@@ -8595,6 +8719,7 @@ forever, interrupted, taylor jenkins reid
 forever..., jude deveraux
 forge, laurie halse anderson
 forged by fire, sharon m. draper
+forged in faith, rod gragg
 forged in fire, trish mccallan
 forged in flames, ivy smoak
 forged, bart d. ehrman
@@ -8758,6 +8883,8 @@ freedom's ransom, anne mccaffrey
 freedom, osho
 freedom™, daniel suarez
 freefall, tess oliver
+freeing asia, e.m. abel
+freeing carter, nyrae dawn
 freeing your child from anxiety, tamar e. chansky
 freeze frame, peter may
 freight train, donald crews
@@ -8811,6 +8938,7 @@ frog, mo yan
 froggy gets dressed, jonathan london
 froggy goes to school, jonathan london
 from a buick 8, stephen king
+from a distance, tamera alexander
 from bacteria to bach and back, daniel c. dennett
 from bad to cursed, katie alender
 from beirut to jerusalem, thomas l. friedman
@@ -8843,6 +8971,7 @@ from the holocaust to hogan's heroes, robert clary
 from the holy mountain, william dalrymple
 from the mixed-up files of mrs. basil e. frankweiler, e.l. konigsburg
 from the wreckage, michele g. miller
+from thin air, carolyn brown
 from this moment on, bella andre
 from this moment on, shania twain
 from this moment, melanie harlow
@@ -8995,6 +9124,7 @@ gabriel's inferno, sylvain reynard
 gabriel's rapture, sylvain reynard
 gabriel's redemption, sylvain reynard
 gabriel's woman, robin schone
+gabriela, clavo y canela, jorge amado
 gadiantons and the silver sword, chris heimerdinger
 gage, tess oliver
 gai-jin, james clavell
@@ -9033,6 +9163,7 @@ garfield at large, jim davis
 gargoyle's mate, nia k. foxx
 garlic and sapphires, ruth reichl
 garment of shadows, laurie r. king
+garnet, carolyn brown
 garrett, karla sorensen
 gas or ass, eden connor
 gaslighted, douglas preston
@@ -9044,6 +9175,7 @@ gates of paradise, v.c. andrews
 gates of rapture, caris roane
 gateway, frederik pohl
 gather the daughters, jennie melamed
+gather the stars, kimberly cates
 gather together in my name, maya angelou
 gathering darkness, morgan rhodes
 gathering moss, robin wall kimmerer
@@ -9090,6 +9222,7 @@ genuine fraud, e. lockhart
 george a. romero's empire of the dead, george a. romero
 george and lizzie, nancy pearl
 george lucas, brian jay jones
+george washington's leadership lessons, james rees
 george washington's secret six, brian kilmeade
 george washington, paul johnson
 georgette heyer's regency world, jennifer kloester
@@ -9103,6 +9236,7 @@ germany, neil macgregor
 gertrude bell, georgina howell
 gesponnen aus gefühlen, marah woolf
 get a grip on philosophy, neil turnbull
+get big things done, erica dhawan
 get in the van, henry rollins
 get in trouble, kelly link
 get lucky, lila monroe
@@ -9276,7 +9410,9 @@ glass sword, victoria aveyard
 glass, ellen hopkins
 glass, irony and god, anne carson
 glasshouse, charles stross
+gli incantevoli giorni di shirley, elisabetta gnone
 gli indifferenti, alberto moravia
+glimmer of hope, ryan king
 glimmer of hope, sarah m. eden
 glimmerglass, jenna black
 glimpse, stacey wallace benefiel
@@ -9343,6 +9479,7 @@ goddess of the night, lynne ewing
 goddess of the sea, p.c. cast
 goddess of troy, p.c. cast
 goddess, josephine angelini
+goddesses, joseph campbell
 godless, dan barker
 gods and kings, lynn austin
 gods behaving badly, marie phillips
@@ -9471,6 +9608,7 @@ gotcha!, fern michaels
 goth girl and the ghost of a mouse, chris riddell
 gothic tales, elizabeth gaskell
 gott, hilf dem kind, toni morrison
+gottes werk und teufels beitrag, john irving
 grace (eventually), anne lamott
 grace and fury, tracy banghart
 grace and the fever, zan romanoff
@@ -9539,6 +9677,7 @@ green but for a season, c.s. pacat
 green city in the sun, barbara wood
 green darkness, anya seton
 green eggs and ham and other servings of dr. seuss, dr. seuss
+green eyes, karen robards
 green girl, kate zambreno
 green hills of africa, ernest hemingway
 green island, shawna yang ryan
@@ -9760,6 +9899,7 @@ happy-go-lucky, david sedaris
 happyslapped by a jellyfish, karl pilkington
 harbingers, f. paul wilson
 harbor lights, sherryl woods
+harbored by the seal, amy gamet
 harbour street, ann cleeves
 hard & reckless, victoria ashley
 hard and fast, erin mccarthy
@@ -9768,6 +9908,7 @@ hard as you can, laura kaye
 hard day's knight, john g. hartness
 hard eight, janet evanovich
 hard evidence, pamela clare
+hard girls, martina cole
 hard knox, nicole williams
 hard landing, stephen leather
 hard limit, meredith wild
@@ -9794,6 +9935,7 @@ harleen, stjepan šejić
 harlem shuffle, colson whitehead
 harlequin, bernard cornwell
 harley quinn, volume 1, amanda conner
+harmless, ernie lindsey
 harmony's way, lora leigh
 harmony, carolyn parkhurst
 harold and maude, colin higgins
@@ -9824,6 +9966,7 @@ harry potter e as relíquias da morte, j.k. rowling
 harry potter e i doni della morte, j.k. rowling
 harry potter e il principe mezzosangue, j.k. rowling
 harry potter e l'ordine della fenice, j.k. rowling
+harry potter e la camera dei segreti, j.k. rowling
 harry potter e o cálice de fogo, j.k. rowling
 harry potter e o enigma do príncipe, j.k. rowling
 harry potter e o prisioneiro de azkaban, j.k. rowling
@@ -9850,6 +9993,7 @@ harry potter, brian sibley
 harry potter, british library
 harry potter, jody revenson
 harry the dirty dog, gene zion
+harvard hottie, annabelle costa
 harvest home, thomas tryon
 harvest moon, robyn carr
 harvest of gold, tessa afshar
@@ -9887,6 +10031,7 @@ have my baby, taryn quinn
 have space suit—will travel, robert a. heinlein
 have you found her, janice erlbaum
 have you seen her?, karen rose
+haven lake, holly robinson
 haven, elle casey
 haven, kay hooper
 haven, kristi cook
@@ -10089,6 +10234,7 @@ her forbidden hero, laura kaye
 her gentle giant, part 1, heather rainier
 her grave secrets, kendra elliot
 her highness, the traitor, susan higginbotham
+her husband's secret, janice frost*
 her last breath, linda castillo
 her last goodbye, melinda leigh
 her last whisper, karen robards
@@ -10124,6 +10270,7 @@ here if you need me, kate braestrup
 here kitty, kitty!, shelly laurenston
 here lies the librarian, richard peck
 here on earth, alice hoffman
+here there be monsters, meljean brook
 here we are now, jasmine warga
 here we are, kelly jensen
 here we go again, betty white
@@ -10159,6 +10306,7 @@ herr der diebe, cornelia funke
 hersenschimmen, j. bernlef
 herz aus schatten, laura kneidl
 hester, laurie lico albanese
+het beste wat we hebben, griet op de beeck
 het diner, herman koch
 het leven van pi, yann martel
 het wordt spectaculair. beloofd., zita theunynck
@@ -10180,6 +10328,7 @@ hidden blade, pippa dacosta
 hidden bodies, caroline kepnes
 hidden cities, moses gates
 hidden currents, christine feehan
+hidden darkness, amy patrick
 hidden deep, amy patrick
 hidden depths, ann cleeves
 hidden enemy, pittacus lore
@@ -10234,6 +10383,7 @@ highland laddie gone, sharyn mccrumb
 highland storms, christina courtenay
 highland surrender, tracy brogan
 highland velvet, jude deveraux
+highland warrior, monica mccarty
 highlander untamed, monica mccarty
 highly illogical behavior, john corey whaley
 highly sensitive people in an insensitive world, ilse sand
@@ -10272,6 +10422,7 @@ his majesty's dragon, naomi novik
 his majesty's hope, susan elia macneal
 his name was death, fredric brown
 his princess, alexa riley
+his proposed deal, sandi lynn
 his secretary, melanie marchande
 his truth is marching on, jon meacham
 his turn, j.a. huss
@@ -10313,6 +10464,7 @@ hold on tight, abbi glines
 hold still, lisa regan
 hold tight, harlan coben
 hold your breath, katie ruggle
+holding fast, karen james
 holding on to chaos, lucy score
 holding on, emma hart
 holding onto forever, heidi mclaughlin
@@ -10431,12 +10583,14 @@ hope harbor, irene hannon
 hope in a jar, beth harbison
 hope in the dark, rebecca solnit
 hope never dies, andrew shaffer
+hope of earth, piers anthony
 hope rides again, andrew shaffer
 hope to die, james patterson
 hope was here, joan bauer
 hope(less), melissa haag
 hope, shalom auslander
 hopeful, louise bay
+hopeless magic, rachel higginson
 hopeless, colleen hoover
 hopelessly devoted, a.m. myers
 horde, ann aguirre
@@ -10695,6 +10849,7 @@ how to understand israel in 60 days or less, sarah glidden
 how to walk away, katherine center
 how to win at high school, owen matthews
 how to win at the sport of business, mark cuban
+how to win every argument, madsen pirie
 how to win friends & influence people, dale carnegie
 how to win friends and influence people, dale carnegie
 how to write a lot, paul j. silvia
@@ -10757,6 +10912,7 @@ hunted, karen robards
 hunted, kevin hearne
 hunted, p.c. cast
 hunter of stories, eduardo galeano
+hunter x hunter, tome 10, yoshihiro togashi
 hunter x hunter, vol. 01, yoshihiro togashi
 hunter x hunter, vol. 03, yoshihiro togashi
 hunter x hunter, vol. 04, yoshihiro togashi
@@ -10798,6 +10954,7 @@ hyde and seek, layla frost
 hyperbole and a half, allie brosh
 hyperion, dan simmons
 hyperspace, michio kaku
+hypnotizing maria, richard bach
 hypocrite in a pouffy white dress, susan jane gilman
 i almost forgot about you, terry mcmillan
 i always loved you, robin oliveira
@@ -10921,6 +11078,7 @@ i must say, martin short
 i never had it made, jackie robinson
 i nie było już nikogo, agatha christie
 i only have eyes for you, bella andre
+i promise you this, patricia sands
 i racconti di pietroburgo, nikolai gogol
 i remember beirut, zeina abirached
 i remember nothing and other reflections, nora ephron
@@ -11047,6 +11205,7 @@ idol dreams, vol. 1, arina tanemura
 idol, kristen callihan
 idoru, william gibson
 idylls of the king, alfred tennyson
+idéal standard, aude picault
 if angels burn, lynn viehl
 if beale street could talk, james baldwin
 if forever comes, a.l. jackson
@@ -11058,6 +11217,7 @@ if i could turn back time, beth harbison
 if i did it, o.j. simpson
 if i die before i wake, emily koch
 if i die before i wake, jean little
+if i die in juárez, stella pope duarte
 if i die, rachel vincent
 if i fix you, abigail johnson
 if i have a wicked stepmother, where's my prince?, melissa kantor
@@ -11132,17 +11292,24 @@ il cavaliere inesistente, italo calvino
 il conte di montecristo, alexandre dumas
 il deserto dei tartari, dino buzzati
 il dottor živago, boris pasternak
+il figlio di nettuno, rick riordan
 il fu mattia pascal, luigi pirandello
+il garofano rosso, elio vittorini
 il gattopardo, giuseppe tomasi di lampedusa
 il giorno della civetta, leonardo sciascia
 il grande gatsby, f. scott fitzgerald
+il labirinto, james dashner
+il marchio di atena, rick riordan
 il mondo di ieri, stefan zweig
 il nome della rosa, umberto eco
+il paese delle nevi, yasunari kawabata
 il processo, franz kafka
 il racconto dell'ancella, margaret atwood
 il rumore dei tuoi passi, valentina d'urbano
+il sangue dell'olimpo, rick riordan
 il sentiero dei nidi di ragno, italo calvino
 il signore delle mosche, william golding
+il soccombente, thomas bernhard
 il suggeritore, donato carrisi
 il tallone di ferro, jack london
 il trono di ghiaccio, sarah j. maas
@@ -11254,6 +11421,7 @@ in defense of food, michael pollan
 in der brandwüste, james dashner
 in der todeszone, james dashner
 in dubious battle, john steinbeck
+in einer kleinen stadt, stephen king
 in eisige höhen, jon krakauer
 in enemy hands, david weber
 in every moment we are still alive, tom malmquist
@@ -11292,6 +11460,7 @@ in pursuit of justice, radclyffe
 in pursuit of the green lion, judith merkle riley
 in real life, cory doctorow
 in real life, jessica love
+in real life, lawrence tabak
 in rude health, robbie guillory
 in search of lost time, marcel proust
 in search of schrödinger's cat, john gribbin
@@ -11383,6 +11552,7 @@ in twenty years, allison winn scotch
 in watermelon sugar, richard brautigan
 in xanadu, william dalrymple
 in zanesville, jo ann beard
+ina may's guide to breastfeeding, ina may gaskin
 ina may's guide to childbirth, ina may gaskin
 inadvertent disclosure, melissa f. miller
 inamorata, megan chance
@@ -11409,6 +11579,7 @@ independence day, richard ford
 indexing, seanan mcguire
 india since independence, bipan chandra
 indian burial ground, nick medina
+indian camp, ernest hemingway
 indian horse, richard wagamese
 indian killer, sherman alexie
 indian-ish, priya krishna
@@ -11416,6 +11587,7 @@ indigo blue, cathy cassidy
 indigo slam, robert crais
 indistractable, nir eyal
 indonesia, etc, elizabeth pisani
+inescapable desire, danielle jamie
 inescapable, amy a. bartol
 inevitable conclusions, christina c. jones
 inevitable seductions, christina c. jones
@@ -11472,6 +11644,7 @@ inkspell, cornelia funke
 inkspell, volume 1, cornelia funke
 inmune a ti, elle kennedy
 inner circle, kate brian
+inner compass, margaret silf
 inner demons, sarra cannon
 inner engineering, sadhguru*
 innocence, dean koontz
@@ -11647,6 +11820,7 @@ iron crowned, richelle mead
 iron dragoons, richard fox
 iron fist, aaron allston
 iron house, john hart
+iron man, peter david
 iron orchid, stuart woods
 iron sunrise, charles stross
 iron widow, xiran jay zhao
@@ -11655,7 +11829,9 @@ ironside, holly black
 ironweed, william kennedy
 irrational exuberance, robert j. shiller
 irrationally yours , dan ariely
+irresistible desire, danielle jamie
 irresistible, adam alter
+irresistible, karen robards
 irresistible, mary balogh
 irresistible, susan mallery
 irresistibly yours, lauren layne
@@ -11736,6 +11912,7 @@ it's always something, gilda radner
 it's always the husband, michele campbell
 it's called a breakup because it's broken, greg behrendt
 it's classified, nicolle wallace
+it's in his heart, shelly alexander
 it's in his kiss, julia quinn
 it's just a dog, russ ryan
 it's kind of a funny story, ned vizzini
@@ -11773,6 +11950,7 @@ i’m glad my mom died, jennette mccurdy
 j r, william gaddis
 j.r.r. tolkien, humphrey carpenter
 j.r.r. tolkien, wayne g. hammond
+ja, inkwizytor. wieże do nieba, jacek piekara
 jabari jumps, gaia cornwall
 jabril, d.b. reynolds
 jacinto's remnant, karen traviss
@@ -11781,6 +11959,7 @@ jack and kill, diane capri
 jack frusciante è uscito dal gruppo, enrico brizzi
 jack kennedy, chris matthews
 jack maggs, peter carey
+jack of eagles, james blish
 jack of fables, vol. 1, bill willingham
 jack of fables, vol. 2, bill willingham
 jack of fables, vol. 3, bill willingham
@@ -11879,6 +12058,7 @@ jewels of the sun, nora roberts
 jhereg, steven brust
 jigsaw, ed mcbain
 jim henson's tale of sand, jim henson
+jim henson, christopher finch
 jim knopf und lukas der lokomotivführer, michael ende
 jimmy corrigan, chris ware
 jimmy stewart, michael munn
@@ -11953,6 +12133,7 @@ joy in the morning, betty smith
 joy in the morning, p.g. wodehouse
 joy of cooking, irma s. rombauer
 joy the baker cookbook, joy wilson
+joyfully his, jamie beck
 joyland, stephen king
 joyride, anna banks
 jpod, douglas coupland
@@ -12003,6 +12184,7 @@ juniper, monica furlong
 junjo romantica, volume 01, shungiku nakamura
 junk, melvin burgess
 junky, william s. burroughs
+juntos, nada más, anna gavalda
 jupiter's travels, ted simon
 just a bit confusing, alessandra hazard
 just a bit obsessed, alessandra hazard
@@ -12056,6 +12238,7 @@ just so stories, rudyard kipling
 just take my heart, mary higgins clark
 just the sexiest man alive, julie james
 just this once, rosalind james
+just to be with you, bella andre
 just too good to be true, e. lynn harris
 just walk across the room, bill hybels
 just what kind of mother are you?, paula daly
@@ -12112,6 +12295,7 @@ kaputt, curzio malaparte
 kare kano, masami tsuda
 karen's kittycat club, ann m. martin
 karen's new year, ann m. martin
+karen's school picture, ann m. martin
 karen's witch, ann m. martin
 kartonnen dozen, tom lanoye
 kasieńka, sarah crossan
@@ -12121,10 +12305,12 @@ katherine swynford, alison weir
 katherine, anya seton
 katrina, gary rivlin
 katwalk, karen kijewski
+katy, jacqueline wilson
 kazunomiya, kathryn lasky
 keep a quiet heart, elisabeth elliot
 keep her safe, sophie hannah
 keep holding on, susane colasanti
+keep me still, caisey quinn
 keep me, anna zaires
 keep quiet, lisa scottoline
 keep the aspidistra flying, george orwell
@@ -12144,9 +12330,11 @@ keeping you a secret, julie anne peters
 keepsake, sarina bowen
 kellie's diary #2, thomas jenner
 kennedy wives, amber hunt
+kennedy's brain, henning mankell
 kenobi, john jackson miller
 kensuke's kingdom, michael morpurgo
 ketika cinta bertasbih, habiburrahman el-shirazy
+ketten, laura leiner
 keturah and lord death, martine leavitt
 key lime pie murder, joanne fluke
 key of light, nora roberts
@@ -12235,6 +12423,7 @@ kimchi & calamari, rose kent
 kimi ni todoke, karuho shiina
 kind of cruel, sophie hannah
 kinder than solitude, yiyun li
+kindle fire hd user manual, jake jacobs
 kindling the moon, jenn bennett
 kindness goes unpunished, craig johnson
 kindred spirits, mark anthony
@@ -12258,6 +12447,7 @@ king kelson's bride, katherine kurtz
 king kong théorie, virginie despentes
 king lear, william shakespeare
 king leopold's ghost, adam hochschild
+king matt the first, janusz korczak
 king of campus, jennifer sucevic
 king of capital, david carey
 king of code, c.d. reiss
@@ -12329,6 +12519,7 @@ kiss the girls, james patterson
 kiss the morning star, elissa janine hoole
 kiss the sky, krista ritchie
 kiss, jacqueline wilson
+kiss, jill mansell
 kiss, ted dekker
 kissani jugoslavia, pajtim statovci
 kisscut, karin slaughter
@@ -12440,7 +12631,9 @@ l'arabe du futur 2 , riad sattouf
 l'arabe du futur 3 , riad sattouf
 l'arminuta, donatella di pietrantonio
 l'arte della gioia, goliarda sapienza
+l'autre fille, annie ernaux
 l'empire des mille planètes, pierre christin
+l'eroe perduto, rick riordan
 l'estate che sciolse ogni cosa, tiffany mcdaniel
 l'insostenibile leggerezza dell'essere, milan kundera
 l'instant présent, guillaume musso
@@ -12457,6 +12650,7 @@ l.a. requiem, robert crais
 l8r, g8r, lauren myracle
 la abadía de northanger, jane austen
 la amiga estupenda, elena ferrante
+la battaglia del labirinto, rick riordan
 la bella estate, cesare pavese
 la belle sauvage, philip pullman
 la biblia de los caídos. tomo 0, fernando trujillo sanz
@@ -12465,9 +12659,11 @@ la campana de cristal, sylvia plath
 la canción de aquiles, madeline miller
 la canzone di achille, madeline miller
 la carte et le territoire, michel houellebecq
+la casa de hades, rick riordan
 la casa de los conejos, laura alcoba
 la casa de los espíritus, isabel allende
 la casa degli spiriti, isabel allende
+la casa di ade, rick riordan
 la casa in collina, cesare pavese
 la casa torcida, agatha christie
 la casa, paco roca
@@ -12512,6 +12708,7 @@ la isla del tesoro, robert louis stevenson
 la joven de las naranjas, jostein gaarder
 la ladrona de libros, markus zusak
 la lama dell'assassina, sarah j. maas
+la lama sottile, philip pullman
 la lección de august, r.j. palacio
 la leggenda del santo bevitore, joseph roth
 la ley del espejo, yoshinori noguchi
@@ -12528,6 +12725,7 @@ la macchina del tempo, h.g. wells
 la main gauche de la nuit, ursula k. le guin
 la maldición de hill house, shirley jackson
 la maledizione del titano, rick riordan
+la marca de atenea, rick riordan
 la marcia di radetzky, joseph roth
 la mennulara, simonetta agnello hornby
 la metamorfosis, franz kafka
@@ -12555,12 +12753,15 @@ la ragazza di bube, carlo cassola
 la reina roja, victoria aveyard
 la ridícula idea de no volver a verte, rosa montero
 la sangre de los libros, santiago posteguillo
+la sangre del olimpo, rick riordan
 la selección, kiera cass
 la setta degli assassini, licia troisi
 la señora dalloway, virginia woolf
 la signorina else, arthur schnitzler
 la sociedad de la rosa, marie lu
+la spada del guerriero, rick riordan
 la strada, cormac mccarthy
+la sélection, kiera cass
 la tempestad, william shakespeare
 la traición de roma, santiago posteguillo
 la tregua, mario benedetti
@@ -12640,6 +12841,7 @@ land of the buffalo bones, marion dane bauer
 land of the living, nicci french
 land of the lustrous, vol. 1, haruko ichikawa
 landline, rainbow rowell
+lando, louis l'amour
 lanzarote, michel houellebecq
 lara, anna pasternak
 lara, bertrice small
@@ -12721,6 +12923,7 @@ lattes, ladyfingers, and lies, harper lin
 laughable loves, milan kundera
 laughed 'til he died, carolyn g. hart
 laughter in the dark, vladimir nabokov
+laughter in the rain, debbie macomber
 laundry day, maurie j. manning
 laura dean keeps breaking up with me, mariko tamaki
 laura lamont's life in pictures, emma straub
@@ -12741,6 +12944,7 @@ lawman, diana palmer
 lawn boy, gary paulsen
 lawn boy, jonathan evison
 lay down my sword and shield, james lee burke
+lay siege to heaven, louis de wohl
 lay that trumpet in our hands, susan carol mccarthy
 lazarillo de tormes, anonymous
 ldk 1, ayu watanabe
@@ -12748,6 +12952,7 @@ le affinità elettive, johann wolfgang von goethe
 le anime morte, nikolai gogol
 le città invisibili, italo calvino
 le couple d'à côté, shari lapena
+le cronache di magnus bane, cassandra clare
 le due guerriere, licia troisi
 le jeu de l'amour et du hasard, pierre de marivaux
 le maître des illusions, donna tartt
@@ -12810,6 +13015,7 @@ left-wing communism, an infantile disorder, vladimir lenin
 legacies, f. paul wilson
 legacy of ashes, tim weiner
 legacy of lies, elizabeth chandler
+legacy of silence, belva plain
 legacy of the dead, charles todd
 legacy, c.j. daugherty
 legacy, danielle steel
@@ -12836,6 +13042,7 @@ legion, brandon sanderson
 legion, dan abnett
 legion, julie kagawa
 legionnaire, jason anspach
+leif the lucky, ingri d'aulaire
 leisure, josef pieper
 lemmy, mick wall
 lemon meringue pie murder, joanne fluke
@@ -12858,6 +13065,7 @@ leopard at the door, jennifer mcveigh
 leprechauns don't play basketball, debbie dadey
 les belles-soeurs, michel tremblay
 les disparus du clairdelune, christelle dabos
+les enfants de la liberté, marc levy
 les fiancés de l'hiver, christelle dabos
 les fleurs du mal, charles baudelaire
 les justes, albert camus
@@ -12901,6 +13109,7 @@ lethally blond, kate white
 letter from birmingham jail, martin luther king jr.
 letter perfect, cathy marie hake
 letter to his father, franz kafka
+letters from a slave girl, mary e. lyons
 letters from father christmas, j.r.r. tolkien
 letters from home, kristina mcmorris
 letters from skye, jessica brockmole
@@ -12976,6 +13185,7 @@ life after wife, carolyn brown
 life and death, stephenie meyer
 life as we knew it, susan beth pfeffer
 life before man, margaret atwood
+life between buildings, jan gehl
 life by committee, corey ann haydu
 life doesn't frighten me, maya angelou
 life expectancy, dean koontz
@@ -12995,6 +13205,7 @@ life on the edge, jennifer comeaux
 life on the mississippi, mark twain
 life on the refrigerator door, alice kuipers
 life or death, michael robotham
+life sentence, christie blatchford
 life sentences, laura lippman
 life together, dietrich bonhoeffer
 life will be the death of me, chelsea handler
@@ -13022,6 +13233,7 @@ light, michael grant
 lightborn, tricia sullivan
 lighter than my shadow, katie green
 lightning, danielle steel
+like a house on fire, cate kennedy
 like a memory, abbi glines
 like a river glorious, rae carson
 like a watered garden, patti hill
@@ -13033,6 +13245,7 @@ like the red panda, andrea seigel
 like vanessa, tami charles
 like water for chocolate, laura esquivel
 likely to die, linda fairstein
+lila and ethan, jessica sorensen
 lila, marilynne robinson
 lila, robert m. pirsig
 lilac girls, martha hall kelly
@@ -13166,6 +13379,7 @@ llama llama red pajama, anna dewdney
 llévame a cualquier lugar, alice kellen
 lmno peas, keith baker
 lo hobbit, j.r.r. tolkien
+lo scontro finale, rick riordan
 lo straniero, albert camus
 loamhedge, brian jacques
 lobster is the best medicine, liz climo
@@ -13200,6 +13414,7 @@ logan's world, william f. nolan
 loitering with intent, stuart woods
 loki's wolves, k.l. armstrong
 lola and the boy next door, stephanie perkins
+lola i chłopak z sąsiedztwa, stephanie perkins
 lola rose, jacqueline wilson
 lola's secret, monica mcinerney
 lola, melissa scrivner love
@@ -13218,6 +13433,7 @@ lone survivor, marcus luttrell
 lone wolf, jodi picoult
 lone wolf, kathryn lasky
 lone wolf, sara driscoll
+lone wolfe protector, kaylie newell
 lone women, victor lavalle
 lonely on the mountain, louis l'amour
 lonely souls, karice bolton
@@ -13399,7 +13615,9 @@ love always, kate, d. nichole king
 love amid the ashes, mesu andrews
 love and confess, colleen hoover
 love and hate in jamestown, david a. price
+love and houses, marti leimbach
 love and lists, tara sivec
+love and living, thomas merton
 love and mr. lewisham, h.g. wells
 love and other consolation prizes, jamie ford
 love and other impossible pursuits, ayelet waldman
@@ -13505,6 +13723,7 @@ love's enduring promise, janette oke
 love's executioner and other tales of psychotherapy, irvin d. yalom
 love's long journey, janette oke
 love's providence, jennifer h. westall
+love's pursuit, siri mitchell
 love's reckoning, laura frantz
 love's sacred song, mesu andrews
 love's unending legacy, janette oke
@@ -13520,6 +13739,7 @@ love, in english, karina halle
 love, in spanish, karina halle
 love, janis, laura joplin
 love, leo f. buscaglia
+love, lies & high heels, debby conrad
 love, lies, and hocus pocus, lydia sherrer
 love, life, and the list, kasie west
 love, loss, and what we ate, padma lakshmi
@@ -13529,11 +13749,13 @@ love, nina, nina stibbe
 love, rosie, cecelia ahern
 love, ruby lavender, deborah wiles
 love, stargirl, jerry spinelli
+love, tanya, tanya burr
 love, theoretically, ali hazelwood
 love, toni morrison
 love? maybe., heather hepler
 lovecraft country, matt ruff
 lovecraft's monsters, ellen datlow
+loved by a duke, christi caldwell
 lovely trigger, r.k. lilley
 lovely vicious, sara wolf
 lovely war, julie berry
@@ -13556,6 +13778,7 @@ loving day, mat johnson
 loving eleanor, susan wittig albert
 loving kalvin, siobhan davis
 loving lies, lora leigh
+loving summer, kailin gow
 loving the little years, rachel jankovic
 loving war, c.m. owens
 loving what is, byron katie
@@ -13603,6 +13826,7 @@ lucky's choice, jamie begley
 lucky's lady, tami hoag
 lucky, alice sebold
 lucky, jackie collins
+lucky, lilly atlas
 lucrezia borgia, sarah bradford
 lucy in the sky, anonymous
 lucy in the sky, paige toon
@@ -13663,6 +13887,8 @@ macbeth, a.j. hartley
 machete season, jean hatzfeld
 machinal, sophie treadwell
 machine of death, ryan north
+machine world, b.v. larson
+machineries of joy, ray bradbury
 mack daddy, penelope ward
 mackenzie fire, elle casey
 mackenzie's magic, linda howard
@@ -13827,6 +14053,7 @@ malice, keigo higashino
 malice, lisa jackson
 malleus, dan abnett
 malorie, josh malerman
+malory, thomas malory
 malowany człowiek. księga i, peter v. brett
 mama makes up her mind and other dangers of southern living, bailey white
 mama, terry mcmillan
@@ -13874,6 +14101,7 @@ maplecroft, cherie priest
 mapping the edge, sarah dunant
 mapping the interior, stephen graham jones
 maps of meaning, jordan b. peterson
+mar morto, jorge amado
 mara, brian wood
 mara, daughter of the nile, eloise jarvis mcgraw
 mara, ioan slavici
@@ -13881,6 +14109,7 @@ marathon man, william goldman
 marathon, hal higdon
 maravilla, lavyrle spencer
 marbles, ellen forney
+marc, jeanne st. james
 marcelo in the real world, francisco x. stork
 march, audrey carlan
 march, geraldine brooks
@@ -13922,6 +14151,7 @@ marriage of inconvenience, penny reid
 married by morning, lisa kleypas
 married in green, seanan mcguire
 married to a bedouin, marguerite van geldermalsen
+married to the mouse, richard e. foglesong
 married to the viscount, sabrina jeffries
 marrow island, alexis m. smith
 marrow, tarryn fisher
@@ -14073,6 +14303,7 @@ meant to be, tiffany king
 measure for measure, william shakespeare
 measures of absolution, marko kloos
 mecburiyet, stefan zweig
+mechanic with benefits, mickey miller
 mechanics of materials, ferdinand p. beer
 mechanicum, graham mcneill
 medallion status, john hodgman
@@ -14178,6 +14409,7 @@ merupuri, vol. 2, matsuri hino
 merupuri, vol. 3, matsuri hino
 message from nam, danielle steel
 message in a bottle, nicholas sparks
+messages from spirit, colette baron-reid
 messages from the masters, brian l. weiss
 messenger's legacy, peter v. brett
 messenger, lois lowry
@@ -14193,6 +14425,7 @@ metro 2034, dmitry glukhovsky
 metro girl, janet evanovich
 metzengerstein, edgar allan poe
 mexican gothic, silvia moreno-garcia
+mi país inventado, isabel allende
 michael gresham, john ellsworth
 michael jordan, roland lazenby
 michael, lisa renee jones
@@ -14326,6 +14559,7 @@ mio, my son, astrid lindgren
 miracle creek, angie kim
 miracle cure, harlan coben
 miracle in a dry season, sarah loudin thomas
+miracle morning, hal elrod
 miracle's boys, jacqueline woodson
 miracles, c.s. lewis
 miracles, judith mcnaught
@@ -14347,6 +14581,7 @@ misadventures of a college girl, lauren rowe
 misbehaved, charleigh rose
 misbehaving, abbi glines
 misbehaving, richard h. thaler
+mischief in maggody, joan hess
 mischief in mudbug, jana deleon
 mischling, affinity konar
 misconceptions, naomi wolf
@@ -14385,6 +14620,7 @@ miss tonks turns to crime, marion chesney
 miss wonderful, loretta chase
 miss you, kate eberlen
 missing angel juan, francesca lia block
+missing child, patricia macdonald
 missing in death, j.d. robb
 missing microbes, martin j. blaser
 missing parts, lucinda berry
@@ -14486,7 +14722,9 @@ moneyball, michael lewis
 monk's hood, ellis peters
 monkeewrench, p.j. tracy
 monkey beach, eden robinson
+monkey business, john rolfe
 monkey grip, helen garner
+monkey puzzle, julia donaldson
 monsieur le commandant, romain slocombe
 monsignor quixote, graham greene
 monsoon, robert d. kaplan
@@ -14548,6 +14786,7 @@ moonwalking with einstein, joshua foer
 moosewood restaurant low-fat favorites, the moosewood collective
 moral defense, marcia clark
 moral disorder and other stories, margaret atwood
+moral revolution, kris vallotton
 moral tribes, joshua d. greene
 morality for beautiful girls, alexander mccall smith
 moralność pani dulskiej, gabriela zapolska
@@ -14578,9 +14817,11 @@ more than this, patrick ness
 more than water, renee ericson
 more than you'll ever know, katie gutierrez
 more time to think, nancy kline
+more to life than this, carole matthews
 more, now, again, elizabeth wurtzel
 morella, edgar allan poe
 morgan and me, stephen cosgrove
+morgan's surprise, jayne rylon
 morgawr, terry brooks
 morgentau - die auserwählte der jahreszeiten, jennifer wolf
 moriarty, anthony horowitz
@@ -14628,6 +14869,7 @@ mother courage and her children, bertolt brecht
 mother earth and her children, sibylle von olfers
 mother earth father sky, sue harrison
 mother of eden, chris beckett
+mother of kings, poul anderson
 mother of pearl, melinda haynes
 mother of storms, john barnes
 mother teresa, mother teresa
@@ -14635,6 +14877,7 @@ mother's day out, karen macinerney
 mother, can you not?, kate siegel
 mother, maxim gorky
 mother, mother, koren zailckas
+motherhood is murder, diana orgain
 mothering sunday, graham swift
 motherless brooklyn, jonathan lethem
 mothers and other liars, amy bourret
@@ -14648,6 +14891,7 @@ mountain man, keith c. blackmore
 mountain of black glass, tad williams
 mountains beyond mountains, tracy kidder
 mourn not your dead, deborah crombie
+mourning the little dead, jane a. adams
 mouse guard, david petersen
 mouse soup, arnold lobel
 mouse tales, arnold lobel
@@ -14663,6 +14907,7 @@ moxie, jennifer mathieu
 moxyland, lauren beukes
 mr norris changes trains, christopher isherwood
 mr palomar, italo calvino
+mr sparks, danny weston
 mr stink, david walliams
 mr. and miss anonymous, fern michaels
 mr. brown can moo! can you?, dr. seuss
@@ -14678,6 +14923,7 @@ mr. darcy, vampyre, amanda grange
 mr. dickens and his carol, samantha silva
 mr. fitzwilliam darcy, abigail reynolds
 mr. fixer upper, lucy score
+mr. fixit, lauren landish
 mr. fox, helen oyeyemi
 mr. funny pants, michael showalter
 mr. granite is from another planet!, dan gutman
@@ -14740,6 +14986,7 @@ ms. marvel, vol. 6, g. willow wilson
 ms. marvel, vol. 7, g. willow wilson
 ms. marvel, vol. 8, g. willow wilson
 much ado about you, eloisa james
+much ado in maggody, joan hess
 muchas vidas, muchos maestros, brian l. weiss
 mucho mojo, joe r. lansdale
 mud vein, tarryn fisher
@@ -14760,6 +15007,7 @@ multitudes, lucy caldwell
 mum's the word, kate collins
 mummies don't coach softball, debbie dadey
 mummies in the morning, mary pope osborne
+mummy's favourite, sarah flint
 munich, robert harris
 murder and mayhem, rhys ford
 murder as a fine art, david morrell
@@ -14776,10 +15024,12 @@ murder game, christine feehan
 murder games, james patterson
 murder in amsterdam, ian buruma
 murder in lamut, raymond e. feist
+murder in mind, cheryl bradshaw
 murder in mississippi, john safran
 murder in my backyard, ann cleeves
 murder in pastel, josh lanyon
 murder in saint-germain, cara black
+murder in the boonies, maggie pill
 murder in the cathedral, t.s. eliot
 murder in the mews, agatha christie
 murder in the mystery suite, ellery adams
@@ -14795,6 +15045,7 @@ murder list, julie garwood
 murder most howl, krista davis
 murder most royal, jean plaidy
 murder most unladylike, robin stevens
+murder most witchy, amanda m. lee
 murder must advertise, dorothy l. sayers
 murder of a small-town honey, denise swanson
 murder of crows, anne bishop
@@ -14883,6 +15134,7 @@ my familiar stranger, victoria danann
 my family and other animals, gerald durrell
 my fat, mad teenage diary, rae earl
 my father's dragon, ruth stiles gannett
+my father's wives, mike greenberg
 my father's world, michael r. phillips
 my favorite mistake, chelsea m. cameron
 my favorite thing is monsters, vol. 1, emil ferris
@@ -14935,6 +15187,7 @@ my life with bob, pamela paul
 my life with the liars, caela carter
 my life, bill clinton
 my little monster, vol. 1, robico
+my little pony, magnolia belle
 my lobotomy, howard dully
 my lord john, georgette heyer
 my lovely wife, samantha downing
@@ -15115,6 +15368,7 @@ natural born heroes, christopher mcdougall
 natural causes, james oswald
 natural childbirth the bradley way, susan mccutcheon
 natural hospital birth, cynthia gabriel
+natural running, danny abshire
 nature anatomy, julia rothman
 nature and selected essays, ralph waldo emerson
 nature girl, carl hiaasen
@@ -15129,6 +15383,7 @@ nausea, jean-paul sartre
 nausicaä of the valley of the wind, vol. 1, hayao miyazaki
 nauti and wild, lora leigh
 nauti boy, lora leigh
+nauti deceptions, lora leigh
 nauti dreams, lora leigh
 nauti nights, lora leigh
 navel gazing, michael ian black
@@ -15140,12 +15395,14 @@ near the bone, christina henry
 near to the wild heart, clarice lispector
 nearly departed in deadwood, ann charles
 nearly normal, cea sunrise person
+nebraska nightcrawlers, johnathan rand
 necessary as blood, deborah crombie
 necessary lies, diane chamberlain
 necessary losses, judith viorst
 necessity's child, sharon lee
 necklace of kisses, francesca lia block
 necro files, cheryl mullenax
+necronomicon, h.r. giger
 necropolis, anthony horowitz
 necroscope, brian lumley
 need me, tessa bailey
@@ -15155,6 +15412,7 @@ needful things, stephen king
 neferet's curse, p.c. cast
 negative dialectics, theodor w. adorno
 negeri 5 menara, ahmad fuadi
+negeri para bedebah, tere liye
 neighbor dearest, penelope ward
 neil flambé and the marco polo murders, kevin sylvester
 neil gaiman/chris riddell 3-book box set, neil gaiman
@@ -15177,6 +15435,7 @@ nerilka's story, anne mccaffrey
 nero, sarah brianne
 nerve, jeanne ryan
 nervous conditions, tsitsi dangarembga
+nervous, zane*
 nest, esther ehrlich
 net force, steve perry
 netherland, joseph o'neill
@@ -15282,6 +15541,7 @@ nick and norah's infinite playlist, rachel cohn
 nickel and dimed, barbara ehrenreich
 nicomachean ethics, aristotle
 nicotine, nell zink
+nie poddawaj się, rainbow rowell
 nietzsche and philosophy, gilles deleuze
 nietzsche, walter kaufmann
 niezgodna, veronica roth
@@ -15453,10 +15713,12 @@ no one lives twice, julie moffett
 no one needs to know, kevin o'brien
 no one to trust, katie reus
 no one's home, d.m. pulley
+no ordinary billionaire, j.s. scott
 no ordinary life, suzanne redfearn
 no ordinary time, doris kearns goodwin
 no other duke will do, grace burrowes
 no other will do, karen witemeyer
+no place for a lady, maggie brendan
 no place for magic, e.d. baker
 no place like home, barbara o'neal
 no place like home, fern michaels
@@ -15483,6 +15745,7 @@ no time like the past, jodi taylor
 no time to cry, lurlene mcdaniel
 no time to lose, peter piot
 no time to run, j.d. trafford
+no time to wave goodbye, jacquelyn mitchard
 no turning back, tiffany snow
 no turning back, tracy buchanan
 no virgin, anne cassidy
@@ -15492,7 +15755,9 @@ no way to treat a first lady, christopher buckley
 no-drama discipline, daniel j. siegel
 no-no boy, john okada
 no. 6, atsuko asano
+noa's ark, c. gockel
 noah primeval, brian godawa
+noah webster and his words, jeri chase ferris
 noah's compass, anne tyler
 noah, elizabeth reyes
 noah, jacquelyn frank
@@ -15515,6 +15780,7 @@ nobody's hero, kallypso masters
 nobody's perfect, kallypso masters
 nobody's princess, esther m. friesner
 nobody, jennifer lynn barnes
+nocturnal animals, austin wright
 nocturnal, scott sigler
 nocturnes for the king of naples, edmund white
 nod, adrian barnes
@@ -15703,6 +15969,7 @@ o pioneers!, willa cather
 o prenúncio das águas, rosa lobato de faria
 o rapaz do pijama às riscas, john boyne
 o roteiro inesperado de fani, paula pimenta
+o sangue do olimpo, rick riordan
 o teorema katherine, john green
 o vilarejo, raphael montes
 o visconde que me amava, julia quinn
@@ -15793,6 +16060,7 @@ off the record, k.a. linde
 off to be the wizard, scott meyer
 officer buckle and gloria, peggy rathmann
 official and confidential, anthony summers
+offside, alison hendricks
 ofrenda a la tormenta, dolores redondo
 ogni mattina a jenin, susan abulhawa
 oh crap! potty training, jamie glowacki
@@ -15804,6 +16072,7 @@ oh! you pretty things, shanna mahin
 oh, cherry ripe, claudette williams
 oh, play that thing, roddy doyle
 oh, the places you’ll go!, dr. seuss
+oh, the weather outside is frightful, susan may warren
 ojos de agua, domingo villar
 okay for now, gary d. schmidt
 olalla, robert louis stevenson
@@ -15822,6 +16091,7 @@ olhai os lírios do campo, erico verissimo
 olive kitteridge, elizabeth strout
 olive, again, elizabeth strout
 oliver twist, charles dickens
+oliver twist, kathleen olmstead
 olivia joules and the overactive imagination, helen fielding
 olivia, ian falconer
 oltre il confine, cormac mccarthy
@@ -15846,7 +16116,9 @@ on boxing, joyce carol oates
 on call in hell, richard jadick
 on certainty, ludwig wittgenstein
 on chesil beach, ian mcewan
+on christian liberty, martin luther
 on doubt, leigh sales
+on dragonwings, anne mccaffrey
 on dublin street, samantha young
 on every side, karen kingsbury
 on every street, karina halle
@@ -15890,6 +16162,8 @@ on the run, alice goffman
 on the shortness of life, seneca
 on the shoulders of giants, stephen hawking
 on the trail of the assassins, jim garrison
+on the trail of the nephilim, volume one, l.a. marzulli
+on the tycoon's terms, sandra field
 on the way home, laura ingalls wilder
 on the way to the wedding, julia quinn
 on the way to you, kandi steiner
@@ -15974,11 +16248,13 @@ one good dragon deserves another, rachel aaron
 one good earl deserves a lover, sarah maclean
 one good turn, kate atkinson
 one grave at a time, jeaniene frost
+one half from the east, nadia hashimi
 one haunted evening, ava stone
 one hundred birds taught me to fly, ashley mae hoiland
 one is a promise, pam godwin
 one kick, chelsea cain
 one king's way, samantha young
+one knight only, peter david
 one l, scott turow
 one last strike, tony la russa
 one last thing before i go, jonathan tropper
@@ -16224,6 +16500,7 @@ out of darkness, anna carven
 out of my mind, sharon m. draper
 out of our minds, ken robinson
 out of oz, gregory maguire
+out of phaze, piers anthony
 out of practice aphrodite, s.e. babin
 out of range, c.j. box
 out of sight, out of time, ally carter
@@ -16286,6 +16563,7 @@ owls well that ends well, donna andrews
 owlsight, mercedes lackey
 own the moment, carl lentz
 own the wind, kristen ashley
+owned by the bastard, sam crescent
 owned, lauren landish
 ox-cart man, donald hall
 ozma of oz, l. frank baum
@@ -16315,6 +16593,7 @@ pago pago tango, john enright
 paint it all red, s.t. abby
 paint it black, janet fitch
 paint the town red, shanna swendson
+paint the wind, cathy cash spellman
 painted faces, l.h. cosway
 painted ladies, robert b. parker
 palabras radiantes, brandon sanderson
@@ -16434,6 +16713,7 @@ passion unleashed, larissa ione
 passion, lisa valdez
 passion, louise bagshawe
 passionate marriage, david schnarch
+passive aggressive notes, kerry miller
 password to larkspur lane, carolyn keene
 passé décomposé, robert kirkman
 past mortem, ben elton
@@ -16484,6 +16764,7 @@ paying daddy’s debt, alexa riley
 paying for it, chester brown
 paying the piper, simon wood
 payment in blood, elizabeth george
+peace at last, jill murphy
 peace child, don richardson
 peace is every step, thich nhat hanh
 peace like a river, leif enger
@@ -16653,6 +16934,7 @@ philosophy, ayn rand
 phishing for phools, george a. akerlof
 phoebe and her unicorn, dana simpson
 phoenix rising, pip ballantine
+phoenix, autumn reed
 phoenix, chuck palahniuk
 physics and philosophy, werner heisenberg
 physics of the future, michio kaku
@@ -16784,6 +17066,7 @@ playlist for the dead, michelle falkoff
 playmates, robert b. parker
 please do not taunt the octopus, mira grant
 please don't sit on my bed in your outside clothes, phoebe robinson
+please don't tell my parents i have a nemesis, richard roberts
 please kill me, legs mcneil
 please look after mom, kyung-sook shin
 please mrs. butler, allan ahlberg
@@ -16892,11 +17175,13 @@ posdata, cecelia ahern
 positioning, al ries
 positive psychology, bridget grenville-cleave
 positive, paige rawl
+positivity, barbara l. fredrickson
 possessing the secret of joy, alice walker
 possession in death, j.d. robb
 possession, a.s. byatt
 possession, elana johnson
 possession, jessica hawkins
+possession, peter james
 possible side effects, augusten burroughs
 post captain, patrick o'brian
 post office, charles bukowski
@@ -16966,6 +17251,7 @@ predator, patricia cornwell
 predatory game, christine feehan
 predestined, abbi glines
 predictably irrational, dan ariely
+pregnant by the greek tycoon, kim lawrence
 preloved, shirley marr
 prelude to foundation, isaac asimov
 premonition, leigh walker
@@ -17083,6 +17369,7 @@ privilege, kate brian
 prodigal son, danielle steel
 prodigal son, dean koontz
 prodigy, marie lu
+professional boundaries, jennifer peel
 professional integrity, michael j. sullivan
 professor unrat, heinrich mann
 profiles in courage, john f. kennedy
@@ -17114,8 +17401,10 @@ promised, caragh m. o'brien
 promised, jodi ellen malpas
 promises prevail, sarah mccarty
 promises to keep, kathryn shay
+promises to keep, patricia sands
 promises, marie sexton
 promises, promises, josie bordeaux
+promising you, allie everhart
 pronto, elmore leonard
 proof of forever, lexa hillyer
 proof of life, j.a. jance
@@ -17187,12 +17476,15 @@ pulp, charles bukowski
 pulphead, john jeremiah sullivan
 pulse, gail mchugh
 pulse, jeremy robinson
+pulse, patrick carman
+pumpkin trouble, jan thomas
 pumpkinflowers, matti friedman
 pumpkinheads, rainbow rowell
 pumpkins in paradise, kathi daley
 punching the air, ibi zoboi
 punish the sinners, john saul
 punisher, garth ennis
+punishing his ward, golden angel
 punk 57, penelope douglas
 punk rock jesus, sean gordon murphy
 puppet on a chain, alistair maclean
@@ -17218,6 +17510,7 @@ pursuit, thomas perry
 push and shove, c.l. stone
 push, sapphire*
 pushed, jennifer block
+pushin' up daisies, carolyn brown
 pushing ice, alastair reynolds
 pushing patrick, megyn ward
 pushing the limits, brooke cumberland
@@ -17290,6 +17583,7 @@ questionable content, vol. 1, jeph jacques
 questions for ada, ijeoma umebinyuo
 questions of life, nicky gumbel
 quests for glory, soman chainani
+quickie, penny wylder
 quicksand, malin persson giolito
 quicksand, nella larsen
 quicksilver, amanda quick
@@ -17311,6 +17605,7 @@ rabbit redux, john updike
 rabbit, patricia williams
 rabbit, run, john updike
 rabbits, terry miles
+racconti, anton chekhov
 race matters, cornel west
 race to the sun, rebecca roanhorse
 raced, k. bromberg
@@ -17369,6 +17664,7 @@ raise high the roof beam, carpenters & seymour, j.d. salinger
 raise the titanic!, clive cussler
 raised by wolves, jennifer lynn barnes
 raised in fire, k.f. breene
+raising boys, steve biddulph
 raising cain, dan kindlon
 raising fences, michael datcher
 raising steam, terry pratchett
@@ -17484,6 +17780,7 @@ realismo capitalista, mark fisher
 reality 36, guy haley
 reality boy, a.s. king
 reality is broken, jane mcgonigal
+really professional internet person, jenn mcallister
 realm breaker, victoria aveyard
 reamde, neal stephenson
 reap, tillie cole
@@ -17589,6 +17886,7 @@ redemption, karen kingsbury
 redemption, leon uris
 redeployment, phil klay
 redesigned, denise grover swank
+rediscovering catholicism, matthew kelly
 redneck romeo, lorelei james
 redoubt, mercedes lackey
 redshirts, john scalzi
@@ -17648,6 +17946,7 @@ remembrance, danielle steel
 remembrance, meg cabot
 reminders of him, colleen hoover
 reminiscences of the cuban revolutionary war, ernesto che guevara
+remnants, carolyn arnold
 remnants, rosemarie freeney harding
 remote control, andy mcnab
 remote control, nnedi okorafor
@@ -17722,6 +18021,7 @@ return of the mummy, r.l. stine
 return of the thief, megan whalen turner
 return to del, emily rodda
 return to me, lynn austin
+return to paradise, james a. michener
 return to paradise, simone elkeles
 return to the clans, erin hunter
 return to the isle of the lost, melissa de la cruz
@@ -17744,6 +18044,7 @@ revenge of the tipping point, malcolm gladwell
 revenge of the witch, joseph delaney
 revenge of the wrought-iron flamingos, donna andrews
 revenge wears prada, lauren weisberger
+revenge, lisa jackson
 revenge, stephen fry
 revenger, alastair reynolds
 reverence, shelly crane
@@ -17773,6 +18074,7 @@ rich man, poor man, irwin shaw
 rich people problems, kevin kwan
 richard ii, william shakespeare
 richard iii, william shakespeare
+richard scarry's please and thank you book, richard scarry
 ricky gervais presents, karl pilkington
 ricochet, krista ritchie
 ricochet, sandra brown
@@ -17783,6 +18085,7 @@ ride, harper dallas
 ride, j.c. emery
 riders of the purple sage, zane grey
 riders, jilly cooper
+ridin' her rough, jenika snow
 rift, andrea cremer
 right behind you, lisa gardner
 rights of man, thomas paine
@@ -17801,10 +18104,12 @@ riot, shashi tharoor
 riot, tillie cole
 rip tide, kat falls
 rip van winkle, washington irving
+rip, rachel van dyken
 ripley under ground, patricia highsmith
 ripley under water, patricia highsmith
 ripley's game, patricia highsmith
 ripper, stefan petrucha
+ripple effect, l.t. ryan
 ripple of secrets, denise grover swank
 riptide, catherine coulter
 rise & fall, charlie cochet
@@ -18124,6 +18429,7 @@ rywalki, kiera cass
 s is for silence, sue grafton
 s., j.j. abrams
 s.e.c.r.e.t., l. marie adeline
+s.h.i.e.l.d., jonathan hickman
 s.t.a.g.s, m.a. bennett
 sabbath's theater, philip roth
 sabotaged, margaret peterson haddix
@@ -18144,6 +18450,7 @@ sacred sins, nora roberts
 sacred, dennis lehane
 sacrifice, adriana locke
 sacrifice, k.m. shea
+sacrifice, lora leigh
 sacrifice, wrath james white
 sacrificed to the dragon, jessie donovan
 sacrificial magic, stacia kane
@@ -18154,6 +18461,7 @@ saddled and spurred, lorelei james
 sadie, courtney summers
 safe haven, nicholas sparks
 safe keeping, barbara taylor sissel
+safe people, henry cloud
 safe with me, amy hatvany
 safe with me, k.l. slater
 safe with me, kristen proby
@@ -18288,12 +18596,15 @@ save the cat, blake snyder
 save the date, jen doll
 save the date, mary kay andrews
 save the date, morgan matson
+save the date, tamara summers
 saved at sunrise, c.c. hunter
+saved in hope, pope benedict xvi
 saving abby, steena holmes
 saving amelie, cathy gohlke
 saving angel, j.l. weil
 saving capitalism, robert b. reich
 saving ceecee honeycutt, beth hoffman
+saving daisy, phil earle
 saving faith, david baldacci
 saving fish from drowning, amy tan
 saving grace - bis dein tod uns scheidet, b.a. paris
@@ -18448,6 +18759,7 @@ searching for disaster, jennifer probst
 searching for dragons, patricia c. wrede
 searching for god knows what, donald miller
 searching for mercy street, linda gray sexton
+searching for mine, jennifer probst
 searching for perfect, jennifer probst
 searching for someday, jennifer probst
 searching for sylvie lee, jean kwok
@@ -18510,6 +18822,7 @@ secrets and lies, selena montgomery
 secrets and shadows, bryan chick
 secrets and shadows, shannon delany
 secrets in summer, nancy thayer
+secrets of a proper lady, victoria alexander
 secrets of a side bitch - the simone campbell story, jessica n. watkins
 secrets of a side bitch 2, jessica n. watkins
 secrets of a side bitch 4, jessica n. watkins
@@ -18533,6 +18846,7 @@ seda, alessandro baricco
 seducción al amanecer, lisa kleypas
 seduce me at sunrise, lisa kleypas
 seduced by a highlander, paula quinn
+seduced by innocence, karpov kinrade
 seduced by moonlight, laurell k. hamilton
 seduced by sunday, catherine bybee
 seduciendo a mr. bridgerton, julia quinn
@@ -18540,6 +18854,8 @@ seducing destiny, amelia hutchins
 seducing stag, laurann dohner
 seduction and snacks, tara sivec
 seduction in death, j.d. robb
+seduction of a proper gentleman, victoria alexander
+seduction, lora leigh
 seductive secrets, carrie james haynes
 see how they run, ally carter
 see how they run, james patterson
@@ -18566,6 +18882,7 @@ seeds of yesterday, v.c. andrews
 seeds planted in concrete, bianca sparacino
 seeing a large cat, elizabeth peters
 seeing me naked, liza palmer
+seeing red, patty jansen
 seeing stars, j. sterling
 seeing voices, oliver sacks
 seek you, kristen radtke
@@ -18656,6 +18973,7 @@ serpent, kathryn le veque
 serraria baixo-astral, lemony snicket
 servant of the empire, raymond e. feist
 serve it forth, m.f.k. fisher
+sessanta racconti, dino buzzati
 set free, anthony bidulka
 set in darkness, ian rankin
 set me free, jennifer collin
@@ -18726,6 +19044,7 @@ shadow & claw, gene wolfe
 shadow and bone & siege and storm, leigh bardugo
 shadow and bone, leigh bardugo
 shadow blessed, d.k. holmberg
+shadow creek, joy fielding
 shadow dance, julie garwood
 shadow demons, sarra cannon
 shadow divers, robert kurson
@@ -18762,9 +19081,11 @@ shadow spell, nora roberts
 shadow study, maria v. snyder
 shadow tag, louise erdrich
 shadow touch, marjorie m. liu
+shadow wolf, kathryn lasky
 shadow woman, linda howard
 shadow woman, thomas perry
 shadow's claim, kresley cole
+shadow's edge, j.t. geissinger
 shadow, jenny moss
 shadow, laurann dohner
 shadow, michael morpurgo
@@ -18816,6 +19137,7 @@ shall we tell the president?, jeffrey archer
 shallow end, brenda chapman
 shallow graves, patrick logan
 shaman king, vol. 1, hiroyuki takei
+shaman's revenge, vasily mahanenko
 shaman, healer, sage, alberto villoldo
 shaman, noah gordon
 shame on me, tara sivec
@@ -18858,6 +19180,7 @@ sharpe's waterloo, bernard cornwell
 sharper than a serpent's tooth, simon r. green
 shatter, michael robotham
 shattered dreams, irene spencer
+shattered emotions, carrie ann ryan
 shattered glass, dani alexander
 shattered mirror, amelia atwater-rhodes
 shattered peace, erin hunter
@@ -18900,6 +19223,7 @@ shelter from the storm, tony dunbar
 shelter me, juliette fay
 shelter mountain, robyn carr
 shelter, jung yun
+sheltered by the seal, amy gamet
 sheltered, charlotte stein
 sheltering hearts, robyn carr
 sheltering rain, jojo moyes
@@ -18961,6 +19285,7 @@ shopaholic takes manhattan, sophie kinsella
 shopaholic ties the knot, sophie kinsella
 shopaholic to the rescue, sophie kinsella
 shopgirl, steve martin
+short & shivery, robert d. san souci
 short cuts, raymond carver
 short stories from hogwarts of heroism, hardship and dangerous hobbies, j.k. rowling
 shortcomings, adrian tomine
@@ -18996,6 +19321,7 @@ shutter island, dennis lehane
 shutter, courtney alameda
 shy boy, monty roberts
 shōgun, james clavell
+si c'était à refaire, marc levy
 si esto es un hombre, primo levi
 si tú me dices ven lo dejo todo... pero dime ven, albert espinosa
 si-cology 1, si robertson
@@ -19057,6 +19383,7 @@ silent lies, kathryn croft
 silent night / holy night, colleen coble
 silent night, colleen coble
 silent night, deanna raybourn
+silent night, natasha preston
 silent night, robert b. parker
 silent on the moor, deanna raybourn
 silent partner, jonathan kellerman
@@ -19099,6 +19426,7 @@ simple perfection, abbi glines
 simple steps to foot pain relief, katy bowman
 simplesmente acontece, cecelia ahern
 simplicity parenting, kim john payne
+simplify, carolyn j. rasmus
 simply christian, n.t. wright
 simply divine, wendy holden
 simply fly, g.r. gopinath
@@ -19114,6 +19442,7 @@ sin city, vol. 5, frank miller
 sin city, vol. 6, frank miller
 sin undone, larissa ione
 sin with me, j.t. geissinger
+since last summer, joanna philbin
 since the sirens, e.e. isherwood
 since we fell, dennis lehane
 since you went away, dean hughes
@@ -19258,6 +19587,7 @@ sky in the deep, adrienne young
 sky raiders, brandon mull
 skybreaker, kenneth oppel
 skyclan's destiny, erin hunter
+skylark, jo beverley
 skylark, patricia maclachlan
 skylight confessions, alice hoffman
 skysworn, will wight
@@ -19273,6 +19603,7 @@ slated, teri terry
 slaughterhouse, stephen knight
 slave to sensation, nalini singh
 slave, mende nazer
+slave, warrior, queen, morgan rice
 slavery by another name, douglas a. blackmon
 slaves of socorro, john flanagan
 slawter, darren shan
@@ -19310,6 +19641,7 @@ slide, jill hathaway
 slightly dangerous, mary balogh
 slightly married, mary balogh
 slightly scandalous, mary balogh
+slightly settled, wendy markham
 slightly sinful, mary balogh
 slightly single, wendy markham
 slightly south of simple, kristy woodson harvey
@@ -19347,6 +19679,7 @@ small medium at large, joanne levy
 small pleasures, clare chambers
 small spaces, katherine arden
 small steps, louis sachar
+small town girl, ann h. gabhart
 small victories, anne lamott
 small wars, lee child
 small wonder, barbara kingsolver
@@ -19462,6 +19795,7 @@ sofia khan is not obliged, ayisha malik
 sofies welt, jostein gaarder
 soft magic., upile chisala
 soft targets, john gilstrap
+softly and tenderly, sara evans
 softly at sunrise, maya banks
 sogno di una notte di mezza estate, william shakespeare
 solace of the road, siobhan dowd
@@ -19570,6 +19904,8 @@ somewhere inside, laura ling
 somewhere out there, amy hatvany
 sommersgate house, kristen ashley
 son of a trickster, eden robinson
+son of man, augusto roa bastos
+son of spellsinger, alan dean foster
 son of the mob, gordon korman
 son of the morning star, evan s. connell
 son of the morning, linda howard
@@ -19675,6 +20011,7 @@ space, stephen baxter
 spaceman, mike massimino
 spacer and rat, margaret bechard
 spade & archer, joe gores
+spaghetti in a hot dog bun, maria dismondy
 spandau phoenix, greg iles
 spanking shakespeare, jake wizner
 spare, prince harry
@@ -19707,6 +20044,7 @@ spectacle, rachel vincent
 spectacles, sue perkins
 spectred isle, k.j. charles
 speechless, hannah harrington
+speed mating, jessica sims
 spell of the highlander, karen marie moning
 spell or high water, scott meyer
 spellbound, blake charlton
@@ -19748,6 +20086,7 @@ spinning, tillie walden
 spinster, kate bolick
 spioana, paulo coelho
 spiraled, kendra elliot
+spirit ascendancy, e.e. holmes
 spirit babies, walter makichen
 spirit bound, christine feehan
 spirit bound, richelle mead
@@ -19757,6 +20096,7 @@ spirit hunters, ellen oh
 spirit legacy, e.e. holmes
 spirit of steamboat, craig johnson
 spirit of the stone, maggie furey
+spirit prophecy, e.e. holmes
 spirit's end, rachel aaron
 spirit's oath, rachel aaron
 spirited, c.m. stunich
@@ -19844,12 +20184,14 @@ star of the sea, joseph o'connor
 star trek 2, james blish
 star trek 3, james blish
 star trek 5, james blish
+star trek 9, james blish
 star trek ii, vonda n. mcintyre
 star trek into darkness, alan dean foster
 star trek memories, william shatner
 star trek vi, j.m. dillard
 star trek, alan dean foster
 star trek, gene roddenberry
+star trek, rick sternbach
 star wars, alan dean foster
 star wars, alessandro ferrari
 star wars, barbara hambly
@@ -19987,6 +20329,7 @@ stepbrother dearest, penelope ward
 stepbrother unsealed, nicole snow
 stepbrother untouchable, colleen masters
 stepdaddy savage, charleigh rose
+stephen curry, jon m. fishman
 stephen king goes to the movies, stephen king
 stephen king the stand, roberto aguirre-sacasa
 stephen king's n., marc guggenheim
@@ -20002,6 +20345,7 @@ stick man, julia donaldson
 sticks & scones, diane mott davidson
 sticks & stones, abigail roux
 sticks and stones, susie tate
+stiff competition, annelise ryan
 stiff upper lip, jeeves, p.g. wodehouse
 stiff, mary roach
 stiletto, daniel o'malley
@@ -20063,6 +20407,7 @@ stones from the river, ursula hegi
 stones into schools, greg mortenson
 stop dressing your six-year-old like a skank, celia rivenbark
 stop pretending, sonya sones
+stop saying you're fine, mel robbins
 stop walking on eggshells, paul t. mason
 stopping by woods on a snowy evening, robert frost
 stori telling, tori spelling
@@ -20071,6 +20416,7 @@ storia della bambina perduta, elena ferrante
 storia di chi fugge e di chi resta, elena ferrante
 storia di una ladra di libri, markus zusak
 storie di ordinaria follia, charles bukowski
+storie naturali, primo levi
 stories behind the best-loved songs of christmas, ace collins
 stories for nighttime and some for the day, ben loory
 stories i only tell my friends, rob lowe
@@ -20148,6 +20494,7 @@ strata, terry pratchett
 strawberry shortcake murder, joanne fluke
 strawberry spring, stephen king
 stray bullets, robert rotenberg
+stray, rachael craw
 stray, rachel vincent
 streams of silver, r.a. salvatore
 street game, christine feehan
@@ -20159,6 +20506,7 @@ strictly no elephants, lisa mantchev
 striker, lilly atlas
 strip jack, ian rankin
 strip tease, carl hiaasen
+stripped from you, marissa carmel
 stripped, jasinda wilder
 stroked hard, meghan quinn
 stroked long, meghan quinn
@@ -20207,6 +20555,7 @@ such good girls, r.d. rosen
 such sharp teeth, rachel harrison
 such sweet sorrow, jenny trout
 such wicked intent, kenneth oppel
+suck it up, brian meehl
 sucks to be me, kimberly pauley
 sudden prey, john sandford
 sudden response, r.l. mathewson
@@ -20303,6 +20652,7 @@ sunrunner's fire, melanie rawn
 sunset bay, susan mallery
 sunset embrace, sandra brown
 sunset express, robert crais
+sunset limited, james lee burke
 sunset of the sabertooth, mary pope osborne
 sunset park, paul auster
 sunset song, lewis grassic gibbon
@@ -20354,6 +20704,7 @@ surrender, melody anne
 surrender, pamela clare
 survival in auschwitz, primo levi
 survival in the killing fields, haing ngor
+survival instinct, janie crouch
 survival of the fittest, jonathan kellerman
 survival of the sickest, sharon moalem
 survive, alex morel
@@ -20547,6 +20898,7 @@ take a chance, abbi glines
 take a hint, dani brown, talia hibbert
 take a look at me now, miranda dickinson
 take a thief, mercedes lackey
+take care, sara, lindy zart
 take it like a man, boy george
 take me back, meghan march
 take me on, katie mcgarry
@@ -20560,6 +20912,7 @@ take me, olivia cunning
 take no prisoners, cindy gerard
 take the key and lock her up, ally carter
 take the lead, alexis daria
+take the monkeys and run, karen cantwell
 take three, karen kingsbury
 take your last breath, lauren child
 take, ella frank
@@ -20626,6 +20979,7 @@ tall poppies, louise bagshawe
 tall, dark & hungry, lynsay sands
 tall, dark & lonely, r.l. mathewson
 tall, tatted and tempting, tammy falkner
+tall, thin and blonde, dyan sheldon
 tallgrass, sandra dallas
 tallstar's revenge, erin hunter
 talon, carian cole
@@ -20642,6 +20996,7 @@ taming a sea-horse, robert b. parker
 taming mad max, theresa ragan
 taming teddy, lucy lennox
 taming the star runner, s.e. hinton
+tammy and ringo, n.c. reed
 tampa, alissa nutting
 tamsin, peter s. beagle
 tan poca vida, hanya yanagihara
@@ -20680,18 +21035,21 @@ taste of darkness, maria v. snyder
 taste of home, janet briggs
 taste of torment, suzanne wright
 taste, stanley tucci
+tasting fear, shannon mckenna
 tatiana and alexander, paullina simons
 tattered on my sleeve, autumn jones lake
 tattoo thief, heidi joy tretheway
 tattoos on the heart, gregory boyle
 tau zero, poul anderson
 taunting destiny, amelia hutchins
+tausend strahlende sonnen, khaled hosseini
 taut, j.a. huss
 tawny scrawny lion, kathryn jackson
 tea with the black dragon, r.a. macavoy
 teach like a pirate, dave burgess
 teach like your hair's on fire, rafe esquith
 teach your child to read in 100 easy lessons, siegfried engelmann
+teacher's pet, francine pascal
 teaching from rest, sarah mackenzie
 teaching to transgress, bell hooks
 teaching with love and logic, jim fay
@@ -20748,6 +21106,7 @@ temptation, nora roberts
 tempting boundaries, carrie ann ryan
 tempting evil, keri arthur
 tempting fate, jane green
+tempting miss allender, wendy vella
 tempting the beast, lora leigh
 tempting the best man, j. lynn
 tempting the bodyguard, j. lynn
@@ -20782,6 +21141,7 @@ tequila for two, tricia o'malley
 tequila four, tricia o'malley
 tequila mockingbird, tim federle
 terapia, sebastian fitzek
+tereza batista, jorge amado
 term limits, vince flynn
 terminal freeze, lincoln child
 terminal, robin cook
@@ -21015,6 +21375,7 @@ the ambassadors, henry james
 the amber fury, natalie haynes
 the amber room, steve berry
 the ambler warning, robert ludlum
+the ambushers, donald hamilton
 the american heiress, daisy goodwin
 the american lady, petra durst-benning
 the american revolution, gordon s. wood
@@ -21118,6 +21479,7 @@ the art of fielding, chad harbach
 the art of happiness at work, dalai lama xiv
 the art of happiness, dalai lama xiv
 the art of hearing heartbeats, jan-philipp sendker
+the art of keeping secrets, patti callahan henry
 the art of learning, josh waitzkin
 the art of life, sarah kay carter
 the art of living, epictetus
@@ -21161,6 +21523,7 @@ the assassination option, w.e.b. griffin
 the assassins of altis, jack campbell
 the assault on reason, al gore
 the assistant, bernard malamud
+the assistant, elle brace
 the associate, john grisham
 the association of small bombs, karan mahajan
 the association, bentley little
@@ -21233,6 +21596,7 @@ the bad mood and the stick, lemony snicket
 the bad ones, stylo fantome
 the bad quarto, jill paton walsh
 the bad seed, jory john
+the baker's dozen, aaron shepard
 the balkans, misha glenny
 the ballad of black tom, victor lavalle
 the ballad of never after, stephanie garber
@@ -21256,6 +21620,7 @@ the barrytown trilogy, roddy doyle
 the bartender's tale, ivan doig
 the basement, chad p. brown
 the basic eight, daniel handler
+the basic kafka, franz kafka
 the basketball diaries, jim carroll
 the bastard of istanbul, elif shafak
 the battle for skandia, john flanagan
@@ -21316,6 +21681,7 @@ the beginning of spring, penelope fitzgerald
 the beginning, c.c. hunter
 the belgariad boxed set, david eddings
 the belgariad, vol. 1, david eddings
+the belgariad, vol. two, david eddings
 the belial stone, r.d. brady
 the believing brain, michael shermer
 the bell curve, richard j. herrnstein
@@ -21323,11 +21689,13 @@ the bell, iris murdoch
 the belles, dhonielle clayton
 the bells, richard harvell
 the beloved one, danelle harmon
+the berenstain bears accept no substitutes, stan berenstain
 the berenstain bears and baby makes five, stan berenstain
 the berenstain bears and mama's new job, stan berenstain
 the berenstain bears and the big road race, stan berenstain
 the berenstain bears and the bully, stan berenstain
 the berenstain bears and the double dare, stan berenstain
+the berenstain bears and the eager beavers, stan berenstain
 the berenstain bears and the ghost of the forest, stan berenstain
 the berenstain bears and the golden rule, stan berenstain
 the berenstain bears and the messy room, stan berenstain
@@ -21379,6 +21747,7 @@ the best christmas pageant ever, barbara robinson
 the best friend, r.l. stine
 the best friend, shalini boland
 the best goodbye, abbi glines
+the best interface is no interface, golden krishna
 the best kind of people, zoe whittall
 the best laid plans, sidney sheldon
 the best life diet, bob greene
@@ -21426,17 +21795,20 @@ the big umbrella, amy june bates
 the big year, mark obmascik
 the bigamist, mary turner thomson
 the bigfoot blunder, amanda m. lee
+the biggest mouse in the world, charles house
 the bighead, edward lee
 the bike lesson, stan berenstain
 the billion-were needs a mate, georgette st. clair
 the billionaire next door, jessica bird
 the billionaire takes all, j.s. scott
 the billionaire's christmas, j.s. scott
+the billionaire's forgotten fiancée, nadia lee*
 the billionaire's inconvenient obsession, nadia lee*
 the billionaire's obsession, j.s. scott
 the billionaire's secret love, ivy layne
 the billionaire's secret, jeannette winters
 the billionaire's touch, j.s. scott
+the billionaire's virgin, penny wylder
 the billionaire's voice, j.s. scott
 the biology of belief, bruce h. lipton
 the biology of desire, marc lewis
@@ -21529,6 +21901,7 @@ the blood-tainted winter, t.l. greylock
 the bloodline feud, charles stross
 the bloody chamber and other stories, angela carter
 the bloody crown of conan, robert e. howard
+the blue balloon, mick inkpen
 the blue bistro, elin hilderbrand
 the blue castle, l.m. montgomery
 the blue edge of midnight, jonathon king
@@ -21563,6 +21936,7 @@ the bodyguard, katherine center
 the bodyguard, penelope bloom
 the bomb, theodore taylor
 the bone box, gregg olsen
+the bone church, victoria dougherty
 the bone clocks, david mitchell
 the bone collector, jeffery deaver
 the bone doll's twin, lynn flewelling
@@ -21613,6 +21987,7 @@ the book of lost friends, lisa wingate
 the book of lost things, john connolly
 the book of love, kathleen mcgowan
 the book of luke, jenny o'connell
+the book of mormon, grant hardy
 the book of mormon, joseph smith jr.
 the book of mysteries, jonathan cahn
 the book of negroes, lawrence hill
@@ -21678,6 +22053,7 @@ the boy in the striped pyjamas, john boyne
 the boy is back, meg cabot
 the boy next door, meg cabot
 the boy on the wooden box, leon leyson
+the boy project, kami kinard
 the boy they tried to hide, shane dunphy
 the boy who came back from heaven, kevin malarkey
 the boy who dared, susan campbell bartoletti
@@ -21704,6 +22080,7 @@ the boys, volume 6, garth ennis
 the boys, volume 8, garth ennis
 the boys, volume 9, garth ennis
 the brand gap, marty neumeier
+the branded =, laxman gaikwad
 the brandons, angela thirkell
 the brass verdict, michael connelly
 the brave line, kate stewart
@@ -21715,6 +22092,7 @@ the breakdown, b.a. paris
 the breaks of the game, david halberstam
 the breast, philip roth
 the breed next door, lora leigh
+the brethren / a painted house, john grisham
 the brethren, bob woodward
 the brethren, john grisham
 the briar club, kate quinn
@@ -21722,6 +22100,7 @@ the bridal chair, gloria goldreich
 the bride and the brute, laurel o'donnell
 the bride collector, ted dekker
 the bride says no, cathy maxwell
+the bride who wouldn't, carol marinelli
 the bride wore blue, cheryl bolen
 the bride wore size 12, meg cabot
 the bride, julie garwood
@@ -21865,6 +22244,7 @@ the card catalog, library of congress
 the cardinal of the kremlin, tom clancy
 the cardturner, louis sachar
 the care and handling of roses with thorns, margaret dilloway
+the care and keeping of you 1, valorie schaefer
 the care and management of lies, jacqueline winspear
 the caretaker's guide to fablehaven, brandon mull
 the carlyles, cecily von ziegesar
@@ -21891,6 +22271,7 @@ the case of the missing marquess, nancy springer
 the case of the missing servant, tarquin hall
 the case of the missing will, agatha christie
 the case of the murdered muckraker, carola dunn
+the case of the screaming beauty, alison golden
 the case-book of sherlock holmes, arthur conan doyle
 the cases that haunt us, john e. douglas
 the cask of amontillado, edgar allan poe
@@ -21973,6 +22354,7 @@ the child garden, catriona mcpherson
 the child in time, ian mcewan
 the child thief, brom*
 the child, fiona barton
+the childhood roots of adult happiness, edward m. hallowell
 the children act, ian mcewan
 the children of hamlin, carmen carter
 the children of henry viii, alison weir
@@ -22251,6 +22633,7 @@ the cossacks, leo tolstoy
 the cost of betrayal, david dalglish
 the cost of discipleship, dietrich bonhoeffer
 the cosy teashop in the castle, caroline roberts
+the cottage at glass beach, heather barbieri
 the council of mirrors, michael buckley
 the council, k.f. breene
 the count of monte cristo, alexandre dumas
@@ -22369,6 +22752,7 @@ the curse of the house of foskett, m.r.c. kasasian
 the curse of the kings, victoria holt
 the curse of the mummy's tomb, r.l. stine
 the curse of the pharaohs, elizabeth peters
+the curse of the silver pharaoh, pip ballantine
 the curse of the wendigo, rick yancey
 the custodian of marvels, rod duncan
 the custom of the army, diana gabaldon
@@ -22389,6 +22773,7 @@ the dangerous book for boys, conn iggulden
 the dangerous days of daniel x, james patterson
 the danish girl, david ebershoff
 the dante club, matthew pearl
+the darcys & the bingleys, marsha altman
 the dare game, jacqueline wilson
 the dark and hollow places, carrie ryan
 the dark between stars, atticus poetry
@@ -22457,6 +22842,7 @@ the daughter of sherlock holmes, leonard goldberg
 the daughter of time, josephine tey
 the daughter of union county, francine thomas howard
 the daughters of cain, colin dexter
+the daughters, joanna philbin
 the davinci code, josh mcdowell
 the day after tomorrow, allan folsom
 the day diana died, christopher andersen
@@ -22502,6 +22888,7 @@ the death factory, greg iles
 the death of achilles, boris akunin
 the death of bees, lisa o'donnell
 the death of bunny munro, nick cave
+the death of chaos, l.e. modesitt jr.
 the death of dulgath, michael j. sullivan
 the death of expertise, thomas m. nichols
 the death of grass, john christopher
@@ -22511,6 +22898,7 @@ the death of ivan ilyich, leo tolstoy
 the death of mrs. westaway, ruth ware
 the death of my country, maxine trottier
 the death of promises, david dalglish
+the death of sleep, anne mccaffrey
 the death of superman, dan jurgens
 the death of the heart, elizabeth bowen
 the death of vivek oji, akwaeke emezi
@@ -22943,6 +23331,7 @@ the enlightenment of the greengage tree, shokoofeh azar
 the enneagram made easy, renee baron
 the enormous crocodile, roald dahl
 the enormous radio, john cheever
+the enormous turnip, vera southgate
 the entrepreneurial state, mariana mazzucato
 the epic crush of genie lo, f.c. yee
 the epic fail of arturo zamora, pablo cartaya
@@ -22978,6 +23367,7 @@ the ever after of ella and micha, jessica sorensen
 the everafter war, michael buckley
 the everlasting man, g.k. chesterton
 the everything store, brad stone
+the evidential power of beauty, thomas dubay
 the evil we love, cassandra clare
 the evolution of beauty, richard o. prum
 the evolution of calpurnia tate, jacqueline kelly
@@ -23015,6 +23405,7 @@ the eye of the world, robert jordan
 the eyes are the best part, monika kim
 the eyes of darkness, leigh nichols
 the eyes of the dragon, stephen king
+the eyes of the skin, juhani pallasmaa
 the fabric of sin, phil rickman
 the fabric of the cosmos, brian greene
 the fabulous clipjoint, fredric brown
@@ -23262,6 +23653,7 @@ the flame and the flower, kathleen e. woodiwiss
 the flame trees of thika, elspeth huxley
 the flatshare, beth o'leary
 the flavour thesaurus, niki segnit
+the flea palace, elif shafak
 the fledgling handbook 101, p.c. cast
 the fleet street murders, charles finch
 the flicker of old dreams, susan henderson
@@ -23317,6 +23709,7 @@ the fountain, darren aronofsky
 the fountainhead, ayn rand
 the fountains of silence, ruta sepetys
 the four agreements, miguel ruiz
+the four bad boys and me, blue_maiden*
 the four loves, c.s. lewis
 the four obsessions of an extraordinary executive, patrick lencioni
 the four seasons, mary alice monroe
@@ -23435,6 +23828,7 @@ the geography of bliss, eric weiner
 the geography of genius, eric weiner
 the geography of you and me, jennifer e. smith
 the geometry of sisters, luanne rice
+the german bride, joanna hershon
 the german girl, armando lucas correa
 the getaway god, richard kadrey
 the getting of wisdom, henry handel richardson
@@ -23453,6 +23847,7 @@ the ghost hunter next door, danielle garrett
 the ghost hunter, lori brighton
 the ghost hunters, neil spring
 the ghost in love, jonathan carroll
+the ghost in my brain, clark elliott
 the ghost king, r.a. salvatore
 the ghost map, steven johnson
 the ghost next door, r.l. stine
@@ -23466,6 +23861,7 @@ the ghost, jefferson morley
 the ghostfaces, john flanagan
 the ghosts of belfast, stuart neville
 the ghosts of bourbon street, seanan mcguire
+the ghosts of sleath, james herbert
 the ghosts of varner creek, michael weems
 the ghostwriter, a.r. torre
 the gift of change, marianne williamson
@@ -23477,6 +23873,7 @@ the gift, cecelia ahern
 the gift, danielle steel
 the gift, james patterson
 the gift, julie garwood
+the gift, margaret mcheyzer
 the gilded hour, sara donati
 the gilded ones, namina forna
 the gilded web, mary balogh
@@ -23918,6 +24315,7 @@ the heiress, jude deveraux
 the heiresses, sara shepard
 the heist, daniel silva
 the hellbound heart, clive barker
+the hellion and the heartbreaker, jennifer mcnare
 the hellion, lavyrle spencer
 the hello, goodbye window, norton juster
 the help, kathryn stockett
@@ -23983,6 +24381,7 @@ the hobbit, daniel falconer
 the hobbit, michael kilgarriff
 the hobbit, or there and back again, j.r.r. tolkien
 the hobbit, part one, j.r.r. tolkien
+the hodgeheg, dick king-smith
 the hogwarts library, j.k. rowling
 the hole, hye-young pyun
 the holiness of god, r.c. sproul
@@ -24236,6 +24635,7 @@ the inheritance, tamera alexander
 the initiate, veronica roth
 the initiation / the captive part i, l.j. smith
 the initiation and the captive, part i, l.j. smith
+the initiation of ms. holly, k.d. grace
 the initiation, l.j. smith
 the initiation, ridley pearson
 the inmates are running the asylum, alan cooper
@@ -24389,6 +24789,8 @@ the kalahari typing school for men, alexander mccall smith
 the kane chronicles survival guide, rick riordan
 the kappa child, hiromi goto
 the karma club, jessica brody
+the karmadont chess set, vasily mahanenko
+the kartoss gambit, vasily mahanenko
 the kashmir shawl, rosie thomas
 the keep, f. paul wilson
 the keep, jennifer egan
@@ -24535,6 +24937,7 @@ the land of the silver apples, nancy farmer
 the land that time forgot, edgar rice burroughs
 the land, aleron kong
 the landmark xenophon's hellenika, xenophon
+the landower legacy, victoria holt
 the language instinct, steven pinker
 the language of dying, sarah pinborough
 the language of flowers, vanessa diffenbaugh
@@ -24713,6 +25116,7 @@ the laws of medicine, siddhartha mukherjee
 the laws of murder, charles finch
 the laws, plato
 the lay of aotrou and itroun, j.r.r. tolkien
+the lays of beleriand, j.r.r. tolkien
 the lazarus project, aleksandar hemon
 the leadership challenge, james m. kouzes
 the league of extraordinary gentlemen, alan moore
@@ -24742,6 +25146,7 @@ the legend of the bluebonnet, tomie depaola
 the legend of the holy drinker, joseph roth
 the legend of the seventh virgin, victoria holt
 the legend of zelda, akira himekawa
+the legend trilogy collection, marie lu
 the legion of flame, anthony ryan
 the leisure seeker, michael zadoorian
 the lemesurier inheritance, agatha christie
@@ -24781,6 +25186,7 @@ the life intended, kristin harmel
 the life list, lori nelson spielman
 the life of charlotte brontë, elizabeth gaskell
 the life of elizabeth i, alison weir
+the life of john wesley hardin, john wesley hardin
 the life of lee, lee evans
 the life of our lord, charles dickens
 the life of rylan, rylan clark-neal
@@ -24788,6 +25194,7 @@ the life of the world to come, kage baker
 the life she was given, ellen marie wiseman
 the life to come, michelle de kretser
 the life we bury, allen eskens
+the life you were born to live, dan millman
 the life you've always wanted, john ortberg
 the life-changing magic of not giving a f*ck, sarah knight
 the life-changing magic of tidying up, marie kondo
@@ -24811,6 +25218,7 @@ the light we lost, jill santopolo
 the light years, elizabeth jane howard
 the lighthouse at the end of the world, jules verne
 the lighthouse keeper, cynthia ellingsen
+the lightkeeper, susan wiggs
 the lightning thief, rick riordan
 the lightning tree, patrick rothfuss
 the lightning-struck heart, t.j. klune
@@ -25006,6 +25414,7 @@ the loved one, evelyn waugh
 the loveliest chocolate shop in paris, jenny colgan
 the lovely bones, alice sebold
 the lover's dictionary, david levithan
+the lover's portrait, jennifer s. alderson
 the lover, robin schone
 the lovesick cure, pamela morsi
 the loving spirit, daphne du maurier
@@ -25128,6 +25537,7 @@ the man who smiled, henning mankell
 the man who walked between the towers, mordicai gerstein
 the man who was thursday, g.k. chesterton
 the man who wasn't there, anil ananthaswamy
+the man who would be king and other stories, rudyard kipling
 the man who would be king, rudyard kipling
 the man with the golden arm, nelson algren
 the man with the golden gun, ian fleming
@@ -25216,6 +25626,7 @@ the master switch, tim wu
 the master, kresley cole
 the masterharper of pern, anne mccaffrey
 the mastery of love, miguel ruiz
+the mastery of self, miguel ruiz jr.
 the matchmaker's playbook, rachel van dyken
 the matchmaker's replacement, rachel van dyken
 the matchmaker, elin hilderbrand
@@ -25446,6 +25857,7 @@ the mosquito coast, paul theroux
 the most dangerous game, richard connell
 the most dangerous thing, laura lippman
 the most fun we ever had, claire lombardo
+the most important thing illuminated, howard marks
 the most important thing, howard marks
 the most magnificent thing, ashley spires
 the most of nora ephron, nora ephron
@@ -25503,6 +25915,7 @@ the murders at astaire castle, lauren carr
 the museum of extraordinary things, alice hoffman
 the museum of intangible things, wendy wunder
 the mushroom at the end of the world, anna lowenhaupt tsing
+the mushroom hunters, langdon cook
 the music of chance, paul auster
 the music shop, rachel joyce
 the musician's daughter, susanne dunlap
@@ -25685,6 +26098,7 @@ the nine tailors, dorothy l. sayers
 the nine, jeffrey toobin
 the nineties, chuck klosterman
 the ninth life of louis drax, liz jensen
+the ninth nugget, ron roy
 the ninth rain, jen williams
 the no. 1 ladies' detective agency, alexander mccall smith
 the nonesuch, georgette heyer
@@ -25831,6 +26245,7 @@ the other girl, erica spindler
 the other gods, h.p. lovecraft
 the other language, francesca marciano
 the other life, ellen meister
+the other man, nancy adams
 the other miss bridgerton, julia quinn
 the other mr. darcy, monica fairview
 the other queen, philippa gregory
@@ -26004,6 +26419,7 @@ the persecution of mildred dunlap, paulette mahurin
 the persian expedition, xenophon
 the personal librarian, marie benedict
 the petrified flesh, cornelia funke
+the phantom castle, vasily mahanenko
 the phantom of the opera, andrew lloyd webber
 the phantom of the opera, gaston leroux
 the phantom prince, elizabeth kendall
@@ -26070,6 +26486,7 @@ the playboy, carly phillips
 the player of games, iain m. banks
 the player, denise grover swank
 the player, k. bromberg
+the plays of anton chekhov, anton chekhov
 the plea, steve cavanagh
 the pleasing hour, lily king
 the pleasure of finding things out, richard feynman
@@ -26129,6 +26546,7 @@ the pout-pout fish, deborah diesen
 the power broker, robert a. caro
 the power of a praying wife, stormie omartian
 the power of art, simon schama
+the power of awareness, neville goddard
 the power of broke, daymond john
 the power of everyday missionaries, clayton m. christensen
 the power of habit, charles duhigg
@@ -26337,6 +26755,7 @@ the quiet book, deborah underwood
 the quiet game, greg iles
 the quiet gentleman, georgette heyer
 the quiet light, louis de wohl
+the quiet professor, betty neels
 the quilt, t. davis bunn
 the quilter's homecoming, jennifer chiaverini
 the quilter's legacy, jennifer chiaverini
@@ -26353,9 +26772,11 @@ the ragamuffin gospel, brennan manning
 the rage of dragons, evan winter
 the ragged trousered philanthropists, robert tressell
 the raid, leo tolstoy
+the raider, monica mccarty
 the railway children, e. nesbit
 the rain, virginia bergin
 the rainbow comes and goes, anderson cooper
+the rainbow goblins, ul de rico
 the rainbow troops, andrea hirata
 the rainmaker, john grisham
 the rake, mary jo putney
@@ -26500,6 +26921,7 @@ the return, hisham matar
 the return, jennifer l. armentrout
 the returning, christine hinwood
 the reunion, dan walsh
+the revelation, beverly lewis
 the revenant, michael punke
 the revenge of the baby-sat, bill watterson
 the revenge of the dwarves, markus heitz
@@ -26670,6 +27092,7 @@ the running dream, wendelin van draanen
 the running man, richard bachman
 the rural diaries, hilarie burton morgan
 the russian debutante's handbook, gary shteyngart
+the ruthless romans, terry deary
 the saboteur, andrew gross
 the sackett brand, louis l'amour
 the sacred mushroom and the cross, john marco allegro
@@ -26775,6 +27198,7 @@ the sea, john banville
 the sea, the sea, iris murdoch
 the seagull, ann cleeves
 the search for sam, pittacus lore
+the search for significance, robert s. mcgee
 the search, iris johansen
 the search, nora roberts
 the searcher, tana french
@@ -26881,6 +27305,7 @@ the seduction, roxy sloane
 the seeing stone, tony diterlizzi
 the selected poetry of rainer maria rilke, rainer maria rilke
 the selected stories of patricia highsmith, patricia highsmith
+the selection series 0.5, 1-2 box set, kiera cass
 the selection stories, kiera cass
 the selfish gene, richard dawkins
 the selfish giant, oscar wilde
@@ -26909,6 +27334,7 @@ the serpent's shadow, mercedes lackey
 the servants of the storm, jack campbell
 the servants of twilight, leigh nichols
 the setting sun, osamu dazai
+the seven chinese brothers, margaret mahy
 the seven daughters of eve, bryan sykes
 the seven deadly sins, vol. 2, nakaba suzuki
 the seven deaths of evelyn hardcastle, stuart turton
@@ -26953,6 +27379,7 @@ the shadow thieves, anne ursu
 the shadow throne, django wexler
 the shadow year, hannah richell
 the shadowed sun, n.k. jemisin
+the shadowers, donald hamilton
 the shadowhunter's codex, cassandra clare
 the shadowlands, emily rodda
 the shadows between us, tricia levenseller
@@ -26971,6 +27398,7 @@ the shaping of middle-earth, j.r.r. tolkien
 the shark, mary burton
 the sharper your knife, the less you cry, kathleen flinn
 the shattering, karen healey
+the shawshank redemption, frank darabont
 the shawshank redemption, stephen king
 the shell collector, anthony doerr
 the shell seekers, rosamunde pilcher
@@ -27035,6 +27463,7 @@ the silence of the library, miranda james
 the silence of trees, valya dudycz lupescu
 the silence, tim lebbon
 the silenced, brett battles
+the silencers, donald hamilton
 the silent blade, r.a. salvatore
 the silent corner, dean koontz
 the silent girl, tess gerritsen
@@ -27213,6 +27642,8 @@ the soul mate, kendall ryan
 the soul of america, jon meacham
 the soul of an octopus, sy montgomery
 the soul of discretion, susan hill
+the soul of leadership, deepak chopra
+the soul of sex, thomas moore
 the soul thief, cecelia holland
 the soulmate equation, christina lauren
 the sound and the furry, spencer quinn
@@ -27659,6 +28090,7 @@ the third option, vince flynn
 the third plate, dan barber
 the third policeman, flann o'brien
 the third reich in power, richard j. evans
+the third reich of dreams, charlotte beradt
 the third rule of ten, gay hendricks
 the third secret, steve berry
 the third twin, c.j. omololu
@@ -27768,6 +28200,7 @@ the tradition, jericho brown
 the tragedy at marsdon manor, agatha christie
 the tragedy paper, elizabeth laban
 the traitor baru cormorant, seth dickinson
+the traitor game, b.r. collins
 the traitor in the tunnel, y.s. lee
 the traitor queen, trudi canavan
 the traitor's game, jennifer a. nielsen
@@ -27807,6 +28240,8 @@ the tropic of serpents, marie brennan
 the trouble with being born, emil m. cioran
 the trouble with cowboys, denise hunter
 the trouble with dukes, grace burrowes
+the trouble with faking, rochelle morgan
+the trouble with falling, rochelle morgan
 the trouble with flirting, claire lazebnik
 the trouble with flirting, rachel morgan
 the trouble with flying, rochelle morgan
@@ -27940,6 +28375,7 @@ the unfairest of them all, shannon hale
 the unfinished angel, sharon creech
 the unfinished child, theresa shea
 the unfinished clue, georgette heyer
+the unflappable miss fairchild, regina scott
 the unforgiving minute, craig m. mullaney
 the unhoneymooners, christina lauren
 the unicorn, iris murdoch
@@ -27977,6 +28413,7 @@ the unrequited, saffron a. kent
 the unseen realm, michael s. heiser
 the unseen world, liz moore
 the unstrung harp, edward gorey
+the unsung hero, melur jelita
 the untamed mackenzie, jennifer ashley
 the unteachables, gordon korman
 the unthinkable, amanda ripley
@@ -28016,6 +28453,7 @@ the valley of amazement, amy tan
 the valley of fear, arthur conan doyle
 the vampire and the virgin, kerrelyn sparks
 the vampire armand, anne rice
+the vampire bunny, james howe
 the vampire coalition, j.s. scott
 the vampire diaries #1, colleen doran
 the vampire huntress legends, l.a. banks
@@ -28074,6 +28512,8 @@ the view from rainshadow bay, colleen coble
 the view from the cheap seats, neil gaiman
 the vig, john lescroart
 the viking symbol mystery, franklin w. dixon
+the viking, marti talbott
+the vikings, tony allan
 the villa, nora roberts
 the villa, rachel hawkins
 the village effect, susan pinker
@@ -28128,9 +28568,11 @@ the vows of silence, susan hill
 the voyage of the basilisk, marie brennan
 the voyages of doctor dolittle, hugh lofting
 the wager, carolyn brown
+the wages of sin, kaite welsh
 the wake of the lorelei lee, l.a. meyer
 the waking land, callie bates
 the walk, richard paul evans
+the walking dead #1, robert kirkman
 the walking dead, book eight, robert kirkman
 the walking dead, book eleven, robert kirkman
 the walking dead, book five, robert kirkman
@@ -28238,6 +28680,7 @@ the way through the woods, colin dexter
 the way to a duke's heart, caroline linden
 the way to cook, julia child
 the way to rainy mountain, n. scott momaday
+the way to stay in destiny, augusta scattergood
 the way we live now, anthony trollope
 the way we never were, stephanie coontz
 the way you look tonight, bella andre
@@ -28286,6 +28729,7 @@ the well-wishers, edward eager
 the wellness project, phoebe lapine
 the wench is dead, colin dexter
 the wendigo, algernon blackwood
+the werepuppy, jacqueline wilson
 the werewolf meets his match, kristen painter
 the werewolf of fever swamp, r.l. stine
 the werewolf of paris, guy endore
@@ -28362,6 +28806,7 @@ the widow, fiona barton
 the widower's tale, julia glass
 the widows of malabar hill, sujata massey
 the wife between us, greer hendricks
+the wife of bath and other canterbury tales, geoffrey chaucer
 the wife upstairs, rachel hawkins
 the wife, alafair burke
 the wife, meg wolitzer
@@ -28473,6 +28918,7 @@ the wolves of midwinter, anne rice
 the wolves of willoughby chase, joan aiken
 the wolves of winter, tyrell johnson
 the woman destroyed, simone de beauvoir
+the woman from paris, santa montefiore
 the woman he loved before, dorothy koomson
 the woman he wanted, k. alex walker
 the woman i wanted to be, diane von furstenberg
@@ -28529,6 +28975,7 @@ the world of chas addams, charles addams
 the world of ice & fire, george r.r. martin
 the world of poo, terry pratchett
 the world of robert jordan's the wheel of time, robert jordan
+the world of the dark crystal, brian froud
 the world of winnie-the-pooh, a.a. milne
 the world of yesterday, stefan zweig
 the world record book of racist stories, amber ruffin
@@ -28544,10 +28991,13 @@ the world's worst assistant, sona movsesian
 the worldly philosophers, robert l. heilbroner
 the worry website, jacqueline wilson
 the worst hard time, timothy egan
+the worst witch at school, jill murphy
+the worst witch saves the day, jill murphy
 the worst witch strikes again, jill murphy
 the worst witch, jill murphy
 the worst years of my life, james patterson
 the wounded sky, diane duane
+the wrangler's inconvenient wife, lacy williams
 the wrath and the dawn, renee ahdieh
 the wrath of the great guilds, jack campbell
 the wreath, sigrid undset
@@ -28660,6 +29110,7 @@ there's a spiritual solution to every problem, wayne w. dyer
 there's a wocket in my pocket!, dr. seuss
 there's always this year, hanif abdurraqib
 there's more to life than this, theresa caputo
+there's no place like here, cecelia ahern
 there's someone inside your house, stephanie perkins
 there's something about christmas, debbie macomber
 there's treasure everywhere, bill watterson
@@ -28680,6 +29131,7 @@ these twisted bonds, lexi ryan
 these vicious masks, tarun shanker
 these violent delights, chloe gong
 they both die at the end, adam silvera
+they called her mrs. doc, janette oke
 they called me number one, bev sellars
 they called themselves the k.k.k., susan campbell bartoletti
 they called us exceptional, prachi gupta
@@ -28707,6 +29159,7 @@ thief!, malorie blackman
 thief's magic, trudi canavan
 thief, c.l. stone
 thief, tarryn fisher
+thieves' paradise, eric jerome dickey
 thimble summer, elizabeth enright
 thin air, michelle paver
 thin air, robert b. parker
@@ -28808,6 +29261,7 @@ this is not my hat, jon klassen
 this is not the end, chandler baker
 this is not your city, caitlin horrocks
 this is our story, ashley elston
+this is our youth, kenneth lonergan
 this is reckless, kennedy fox
 this is the story of a happy marriage, ann patchett
 this is war, baby, k. webster
@@ -28820,6 +29274,7 @@ this is why i hate you, onision
 this is your brain on music, daniel j. levitin
 this is your life, john o'farrell
 this isn't what it looks like, pseudonymous bosch
+this kind of war, t.r. fehrenbach
 this life is in your hands, melissa coleman
 this lullaby, sarah dessen
 this lullaby/the truth about forever, sarah dessen
@@ -28911,6 +29366,7 @@ three kingdoms, luo guanzhong
 three little words, ashley rhodes-courter
 three maids for a crown, ella march chase
 three men in a boat, jerome k. jerome
+three nights..., debra mullins
 three parts dead, glynn james
 three parts dead, max gladstone
 three past midnight, stephen king
@@ -28982,6 +29438,7 @@ thursdays in the park, hilary boyd
 thursdays with the crown, jessica day george
 thurston house, danielle steel
 thuvia, maid of mars, edgar rice burroughs
+ti aspettavo, j. lynn
 tiamat's wrath, james s.a. corey
 tiberius, suetonius
 tibetan peach pie, tom robbins
@@ -28996,8 +29453,10 @@ tied, emma chase
 tiempo de odio, andrzej sapkowski
 tier one, brian andrews
 ties that bind, carolyn arnold
+ties that bind, jaid black
 ties, domenico starnone
 tigana, guy gavriel kay
+tiger by the tail, jessica sims
 tiger eye, marjorie m. liu
 tiger lily, jodi lynn anderson
 tiger prince, erin st. claire
@@ -29073,6 +29532,7 @@ to defy a king, elizabeth chadwick
 to die for, joyce maynard
 to die for, linda howard
 to die for, sandra byrd
+to dream, carolyn brown
 to dwell in darkness, deborah crombie
 to green angel tower, part 1, tad williams
 to green angel tower, part 2, tad williams
@@ -29097,6 +29557,7 @@ to love again, danielle steel
 to love and to cherish, lauren layne
 to make men free, heather cox richardson
 to marry a scottish laird, lynsay sands
+to own a dragon, donald miller
 to pleasure a lady, nicole jordan
 to professor, with love, linda kage
 to refuse such a man, p.o. dixon
@@ -29129,6 +29590,7 @@ to the rescue, heidi s. swinton
 to the stars, george takei
 to touch you, cardeno c.
 to trust a stranger, karen robards
+to trust, carolyn brown
 to wed a wicked earl, olivia parker
 to wed a wicked prince, jane feather
 to win her heart, karen witemeyer
@@ -29276,12 +29738,14 @@ trade me, courtney milan
 trade secret, sharon lee
 trading faces, julia devillers
 trading in danger, elizabeth moon
+traditional irish fairy tales, james stephens
 traffic, tom vanderbilt
 trail of broken wings, sejal badani
 trail of lightning, rebecca roanhorse
 trail of the lost, andrea lankford
 trail of the spellmans, lisa lutz
 trailer park virgin, alexa riley
+trailer trash, denise grover swank
 train i ride, paul mosier
 train to pakistan, khushwant singh
 train's clash, jamie begley
@@ -29327,6 +29791,7 @@ traveling light, katrina kittle
 traveling mercies, anne lamott
 traveling with pomegranates, sue monk kidd
 travelling light, tove jansson
+travels in hyperreality, umberto eco
 travels in the scriptorium, paul auster
 travels with charley, john steinbeck
 travels with my aunt, graham greene
@@ -29338,6 +29803,7 @@ treasure island!!!, sara levine
 treasure island, robert louis stevenson
 treasure mountain, louis l'amour
 treasure of khan, clive cussler
+treasure on lilac lane, donna alward
 treasure, clive cussler
 treasures lost, treasures found, nora roberts
 treat your own back, robin mckenzie
@@ -29402,6 +29868,8 @@ trono de vidro, sarah j. maas
 trophy hunt, c.j. box
 tropic of cancer, henry miller
 tropic of capricorn, henry miller
+tropical depression, laurence shames
+trouble comes in threes, m.a. church
 trouble is a friend of mine, stephanie tromly
 trouble is my business, raymond chandler
 trouble makes a comeback, stephanie tromly
@@ -29494,7 +29962,10 @@ tunnel of bones, victoria schwab
 tunnels of blood, darren shan
 turbulence, e.j. noyes
 turbulence, whitney g.
+turbulent desires, melody anne
+turbulent intentions, melody anne
 turbulent sea, christine feehan
+turbulent waters, melody anne
 turks fruit, jan wolkers
 turn of mind, alice laplante
 turn to me, tiffany snow
@@ -29623,6 +30094,7 @@ um perfeito cavalheiro, julia quinn
 uma vida pequena, hanya yanagihara
 umberland, wendy spinale
 un appartement à paris, guillaume musso
+un día más, mitch albom
 un mal nombre, elena ferrante
 un mundo sin fin, ken follett
 un nuovo regno, licia troisi
@@ -29694,6 +30166,7 @@ undeniably you, jewel e. ann
 undeniably yours, becky wade
 undeniably yours, shannon stacey
 undenied, sara humphreys
+under a duke's hand, annabel joseph
 under a falling star, jae*
 under a flaming sky, daniel james brown
 under a graveyard sky, john ringo
@@ -29771,6 +30244,7 @@ unfinished portrait, mary westmacott
 unfinished tales of númenor and middle-earth, j.r.r. tolkien
 unfinished, priyanka chopra jonas
 unfixable, tessa bailey
+unforgettable, maya banks
 unforgivable, laura griffin
 unforgiven, d.b. reynolds
 unforgiven, lauren kate
@@ -29782,6 +30256,7 @@ unholy magic, stacia kane
 unholy night, seth grahame-smith
 unholy war, david hair
 unhooked, lisa maxwell
+unicorn point, piers anthony
 unintended consequences, stuart woods
 uninvited, lysa terkeurst
 uninvited, sophie jordan
@@ -29920,6 +30395,7 @@ uprising, margaret peterson haddix
 uprooted, naomi novik
 upsetting the balance, harry turtledove
 upside down in the middle of nowhere, julie t. lamana
+upside, jim rendon
 upside-down magic, sarah mlynowski
 upstairs at the white house, j.b. west
 upstream, mary oliver
@@ -30063,9 +30539,11 @@ venom & vanilla, shannon mayer
 venom, fiona paul
 venom, jennifer estep
 venomous, penelope fletcher
+ventoux, bert wagendorp
 venus in copper, lindsey davis
 venus in furs, leopold von sacher-masoch
 verbrechen, ferdinand von schirach
+veritas, m.j. duncan
 verity, claire farrell
 verişoara mea rachel, daphne du maurier
 vermeer to eternity, anthony horowitz
@@ -30126,6 +30604,7 @@ violeta, isabel allende
 virals, kathy reichs
 virgin earth, philippa gregory
 virgin river, robyn carr
+virgin to conquer, melody anne
 virgin, jenika snow
 virgin, radhika sanghani
 virtual light, william gibson
@@ -30140,6 +30619,7 @@ visions of heat, nalini singh
 visions of heaven and hell, clive barker
 visions, kelley armstrong
 vitro, jessica khoury
+viva, e.e. cummings
 viver depois de ti, jojo moyes
 vixen 03, clive cussler
 vixen, jillian larkin
@@ -30320,6 +30800,7 @@ wasteland, frank tayell
 watch me disappear, janelle brown
 watch me, james carol
 watch over me, tara sivec
+watch wolf, kathryn lasky
 watch your back, karen rose
 watch, robert j. sawyer
 watchers of time, charles todd
@@ -30424,6 +30905,7 @@ web of lies, jennifer estep
 web of the romulans, m.s. murdock
 wed him before you bed him, sabrina jeffries
 wedded bliss, barbara metzger
+wedded to war, jocelyn green
 wedding night, sophie kinsella
 wedding of the season, laura lee guhrke
 wedding ring, emilie richards
@@ -30467,6 +30949,7 @@ wer bin ich – und wenn ja, wie viele?, richard david precht
 wer die nachtigall stört, harper lee
 were she belongs, dixie lynn dwyer
 werewolf cop, andrew klavan
+werewolf smackdown, mario acevedo
 werewolves don't go to summer camp, debbie dadey
 werewolves in their youth, michael chabon
 wesa and the lumber king, faith hunter
@@ -30540,6 +31023,7 @@ what lies between us, nayomi munaweera
 what lies in the woods, kate alice marshall
 what light, jay asher
 what looks like crazy on an ordinary day, pearl cleage
+what looks like crazy, charlotte hughes
 what makes olga run?, bruce grierson
 what makes sammy run?, budd schulberg
 what matters most is how well you walk through the fire, charles bukowski
@@ -30591,11 +31075,13 @@ what's the matter with kansas? how conservatives won the heart of america, thoma
 whatever happened to janie?, caroline b. cooney
 whatever makes you happy, william sutcliffe
 whatever mother says..., wensley clarkson
+whatever next!, jill murphy
 whatever you do, don't run, peter allison
 wheat belly, william davis
 when a crocodile eats the sun, peter godwin
 when a scot ties the knot, tessa dare
 when all is said, anne griffin
+when angels fall, meagan mckinney
 when bad things happen to good people, harold s. kushner
 when breaks the dawn, janette oke
 when breath becomes air, paul kalanithi
@@ -30615,6 +31101,7 @@ when god was a rabbit, sarah winman
 when god whispers loudly, chris m. hibbard
 when god whispers your name, max lucado
 when gods die, c.s. harris
+when harry met sally, nora ephron
 when he was bad, shelly laurenston
 when he was wicked, julia quinn
 when heaven weeps, ted dekker
@@ -30781,6 +31268,7 @@ whipping girl, julia serano
 whipping star, frank herbert
 whirlwind, james clavell
 whirlwind, john ferling
+whirlwind, rick mofina
 whisker of evil, rita mae brown
 whiskey in a teacup, reese witherspoon
 whiskey island, emilie richards
@@ -30863,7 +31351,10 @@ who was rosa parks?, yona zeldis mcdonough
 who was wolfgang amadeus mozart?, yona zeldis mcdonough
 who we are and how we got here, david reich
 who we truly are, victoria sue
+who will comfort toffle?, tove jansson
 who's afraid of virginia woolf?, edward albee
+who, what, where, when, die, amanda m. lee
+whole new you, tia mowry
 whoops! but it wasn't me, lauren child
 whoreson, donald goines
 whose body?, dorothy l. sayers
@@ -30894,6 +31385,7 @@ why read moby-dick?, nathaniel philbrick
 why shoot a butler?, georgette heyer
 why the jews?, dennis prager
 why the west rules—for now, ian morris
+why the world does not exist, markus gabriel
 why we broke up, daniel handler
 why we buy, paco underhill
 why we can't sleep, ada calhoun
@@ -30982,6 +31474,7 @@ wild ones, jon mooallem
 wild rain, christine feehan
 wild reckless, ginger scott
 wild seed, octavia e. butler
+wild space, karen miller
 wild strawberries, angela thirkell
 wild swans, jung chang
 wild tales, graham nash
@@ -31021,6 +31514,7 @@ willful machines, tim floreen
 william shakespeare's the empire striketh back, ian doescher
 william shakespeare's, bruce coville
 william tell told again, p.g. wodehouse
+william walker's first year of marriage, matt rudd
 william wilson, edgar allan poe
 willie mays, james s. hirsch
 willing captive, belle aurora
@@ -31050,12 +31544,15 @@ winging it, ashlyn kane
 wings of fire, caris roane
 wings of fire, tui t. sutherland
 wings of refuge, lynn austin
+wings of sorrow, iain rob wright
 wings of the wind, connilyn cossette
 wings, aprilynne pike
 wings, danielle steel
 wings, terry pratchett
 winner-take-all politics, jacob s. hacker
 winnetou i, karl may
+winnetou ii, karl may
+winnetou iii, karl may
 winnie the witch, valerie thomas
 winnie-the-pooh, a.a. milne
 winning with people, john c. maxwell
@@ -31128,6 +31625,7 @@ witch and wizard, james patterson
 witch baby, francesca lia block
 witch child, celia rees
 witch is when it all began, adele abbott
+witch is when life got complicated, adele abbott
 witch king, martha wells
 witch me luck, amanda m. lee
 witch slapped, danielle garrett
@@ -31142,6 +31640,7 @@ witches' bane, pippa dacosta
 witches' brew, terry brooks
 witches, midwives and nurses, barbara ehrenreich
 witching on a star, amanda m. lee
+witching you were here, amanda m. lee
 witchlanders, lena coakley
 witchlings, claribel a. ortega
 with a name like love, tess hilmo
@@ -31182,6 +31681,7 @@ wittgenstein jr, lars iyer
 wives and daughters, elizabeth gaskell
 wizard and glass, stephen king
 wizard at large, terry brooks
+wizard's bane, rick cook
 wizard's first rule, terry goodkind
 wizard, john varley
 wobegon boy, garrison keillor
@@ -31247,6 +31747,7 @@ wonders of the universe, brian cox
 wondrous strange, lesley livingston
 wooden, john wooden
 woodsburner, john pipkin
+wooing the schoolmarm, dorothy clark
 wool omnibus, hugh howey
 woolgathering, patti smith
 woom, duncan ralston
@@ -31278,6 +31779,7 @@ world without end, ken follett
 world's fair, e.l. doctorow
 worlds apart, joe haldeman
 worlds collide, chris colfer
+worlds enough and time, joe haldeman
 worlds of ink and shadow, lena coakley
 worlds, joe haldeman
 wormwood, poppy z. brite
@@ -31401,6 +31903,7 @@ you against me, jenny downham
 you and everything after, ginger scott
 you and me forever, francis chan
 you and me, always, jill mansell
+you are here, hiawatha bray
 you are here, thich nhat hanh
 you are mine, max lucado
 you are not alone, greer hendricks
@@ -31493,6 +31996,7 @@ your captivating love, layla hagen
 your dreams are mine now, ravinder singh
 your fathers, where are they? and the prophets, do they live forever?, dave eggers
 your heart is a muscle the size of a fist, sunil yapa
+your heart's desire, sonia choquette
 your inner fish, neil shubin
 your lie in april, vol. 1, naoshi arakawa
 your money or your life, joe dominguez
@@ -31511,6 +32015,7 @@ za zamkniętymi drzwiami, b.a. paris
 zack, sawyer bennett
 zaczyn. o zofii i oskarze hansenach, filip springer
 zakon mimów, samantha shannon
+zane, jo raven
 zane, nicole edwards
 zathura, chris van allsburg
 zdążyć przed panem bogiem, hanna krall

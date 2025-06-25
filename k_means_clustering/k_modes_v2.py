@@ -107,7 +107,7 @@ def str_to_feat(input):
     return output
 
 # Importing feature data.
-feature_df = pd.read_csv('books_with_vectors_and_sums.csv')
+feature_df = pd.read_csv('books_with_vectors_and_sums_and_ratings.csv')
 # Various sizes of data.
 num_rows = len(feature_df) # Do not count column names as a row.
 num_keywords = len(str_to_feat(feature_df.at[0,"keyword_vector"]))
@@ -122,11 +122,11 @@ for i in range(num_rows):
 data = np.array(data_list, dtype=float) # Ensure data is float type for cosine similarity.
 
 # Specifying number of clusters.
-num_clusters = 1000
+num_clusters = 200
 # Optimal is ~1/20 of number of books according to elbow chart. Probably less is better for our purposes.
 
 # Running k-modes algorithm with custom dissimilarity metric (hamming_dist, cosine_dissim, matching_dissim, euclidean_dissim).
-kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1, cat_dissim=hamming_dist)
+kmode = KModes(n_clusters=num_clusters, init = "random", n_init = 1, max_iter = 20, verbose=1, cat_dissim=cosine_dissim)
 """
 Initializes a K-Modes clustering model.
 Parameters:

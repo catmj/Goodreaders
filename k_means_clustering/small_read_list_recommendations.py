@@ -70,3 +70,41 @@ for rated_book in sample_user_books:
 for item in clusters_to_use:
     if item not in clusters_to_use_unique:
         clusters_to_use_unique.append(item)
+
+# Remove books not in a cluster containing a rated book from the dataframe.
+rows_to_remove = []
+for row in range(num_rows):
+    if feature_df.at[row, "cluster"] not in clusters_to_use_unique:
+        rows_to_remove.append(row)
+if rows_to_remove: # Only try to drop if there are rows to remove.
+    feature_df.drop(rows_to_remove, inplace=True)
+    # Reset the index to have a clean, sequential index after dropping rows.
+    feature_df.reset_index(drop=True, inplace=True)
+
+# Keep the top N most popular books, and then keep the top M highest rated books. Vice versa if N<M (worse results).
+highest_hits_to_keep = 100 # N
+highest_ratings_to_keep = 20 # M
+if highest_hits_to_keep >= highest_ratings_to_keep:
+    # Keep the top N most popular books.
+    sorted_hits_feature_df = feature_df.sort_values(by='num_ratings', ascending=False)
+    sorted_hits_feature_df.reset_index(drop=True, inplace=True)
+    low_hits_to_drop = range(highest_hits_to_keep,len(sorted_hits_feature_df))
+    sorted_hits_feature_df.drop(low_hits_to_drop, inplace=True)
+    # Keep the top M highest rated books.
+    final_feature_df = sorted_hits_feature_df.sort_values(by='rating', ascending=False)
+    final_feature_df.reset_index(drop=True, inplace=True)
+    low_ratings_to_drop = range(highest_ratings_to_keep,len(final_feature_df))
+    final_feature_df.drop(low_ratings_to_drop, inplace=True)
+if highest_hits_to_keep < highest_ratings_to_keep:
+    # Keep the top M highest rated books.
+    sorted_ratings_feature_df = feature_df.sort_values(by='rating', ascending=False)
+    sorted_ratings_feature_df.reset_index(drop=True, inplace=True)
+    low_ratings_to_drop = range(highest_ratings_to_keep,len(sorted_ratings_feature_df))
+    sorted_ratings_feature_df.drop(low_ratings_to_drop, inplace=True)
+    # Keep the top N most popular books.
+    final_feature_df = sorted_ratings_feature_df.sort_values(by='num_ratings', ascending=False)
+    final_feature_df.reset_index(drop=True, inplace=True)
+    low_hits_to_drop = range(highest_hits_to_keep,len(final_feature_df))
+    final_feature_df.drop(low_hits_to_drop, inplace=True)
+
+final_feature_df.to_csv('recommendations.csv', index=True)

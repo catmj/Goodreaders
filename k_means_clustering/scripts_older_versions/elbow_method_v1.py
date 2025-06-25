@@ -4,12 +4,8 @@
 # Importing necessary packages.
 import pandas as pd
 import numpy as np
-# import random
-# import csv
 from kmodes.kmodes import KModes
 import matplotlib.pyplot as plt
-# Setting random seed.
-# random.seed(38)
 
 # Defining a method that converts strings of feature vectors to actual feature vectors.
 def str_to_feat(input):

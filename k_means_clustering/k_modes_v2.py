@@ -5,13 +5,9 @@
 # Importing necessary packages.
 import pandas as pd
 import numpy as np
-# import random
-# import csv
 from kmodes.kmodes import KModes
 from kmodes.util.dissim import matching_dissim, euclidean_dissim
 from sklearn.metrics.pairwise import cosine_similarity
-# Setting random seed.
-# random.seed(38)
 
 # Important global variable placeholders for Hamming distance and cosine dissimilarity.
 num_keywords = 0

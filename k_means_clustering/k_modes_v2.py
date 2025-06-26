@@ -13,7 +13,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 num_keywords = 0
 num_genres = 0
 # Weight of keywords relative to genres.
-keyword_weight = 1.0 # 0.8 # CHANGE BACK 
+keyword_weight = 0.8
 
 # Defining weighted Hamming distance.
 def hamming_dist(X_array, Y_array, **kw):
@@ -106,14 +106,14 @@ def str_to_feat(input):
 feature_df = pd.read_csv('books_with_vectors_and_sums_and_ratings.csv')
 # Various sizes of data.
 num_rows = len(feature_df) # Do not count column names as a row.
-num_keywords = 0 # len(str_to_feat(feature_df.at[0,"keyword_vector"])) # CHANGE BACK 
+num_keywords = len(str_to_feat(feature_df.at[0,"keyword_vector"]))
 num_genres = len(str_to_feat(feature_df.at[0,"genre_vector"])) 
 num_features = num_keywords + num_genres
 
 # Isolating feature data into an array (keywords and genres). Ensure 'data' is float for cosine similarity.
 data_list = []
 for i in range(num_rows):
-    row_data = np.array(str_to_feat(feature_df.at[i,"genre_vector"])) # np.hstack((np.array(str_to_feat(feature_df.at[i,"keyword_vector"])),np.array(str_to_feat(feature_df.at[i,"genre_vector"])))) # CHANGE BACK 
+    row_data = np.hstack((np.array(str_to_feat(feature_df.at[i,"keyword_vector"])),np.array(str_to_feat(feature_df.at[i,"genre_vector"]))))
     data_list.append(row_data)
 data = np.array(data_list, dtype=float) # Ensure data is float type for cosine similarity.
 

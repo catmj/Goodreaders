@@ -51,6 +51,8 @@ def str_to_feat(input):
 
 # Sample user input (these should be consistent with how they appear in your book_list_features.txt).
 sample_user_books = [
+    "lot lizards, ray garton"
+]
     # "gideon the ninth, tamsyn muir",
     # "flight of magpies, k.j. charles",
     # "she who became the sun, shelley parker-chan",
@@ -65,17 +67,15 @@ sample_user_books = [
     # "the girl on the train, paula hawkins",
     # "things fall apart, chinua achebe",
     # "anthem, ayn rand",
-    "lot lizards, ray garton" #,
     # "the hunger games, suzanne collins"
-]
 
 # Get the length of the list of rated books.
 num_ratings = len(sample_user_books)
 # print(f"The number of ratings is: {num_ratings}")
 
 # Importing feature data.
-cluster_df = pd.read_csv('cluster_results_only_keywords/books_by_cluster_keywords_cosine_300_init1_ratings.csv')
-feature_df = pd.read_csv('cluster_results_only_keywords/books_clustered_keywords_cosine_300_init1_ratings.csv')
+cluster_df = pd.read_csv('cluster_results_both_cosine_dissim/books_by_cluster_both_cosine_300_init1_ratings.csv')
+feature_df = pd.read_csv('cluster_results_both_cosine_dissim/books_clustered_both_cosine_300_init1_ratings.csv')
 # Various sizes of data.
 num_clusters = len(cluster_df)
 num_rows = len(feature_df) # Do not count column names as a row.
@@ -189,9 +189,9 @@ else:
 # data = np.array(data_list_after_outlier_removal, dtype=float)
 
 # Remove books the user has already rated from the recommendation pool
-# feature_df = feature_df[~feature_df['titles_authors'].isin(sample_user_books)].copy()
-# if feature_df.empty:
-#     print("All potential recommendations were books the user has already rated. No new recommendations.")
+feature_df = feature_df[~feature_df['titles_authors'].isin(sample_user_books)].copy()
+if feature_df.empty:
+    print("All potential recommendations were books the user has already rated. No new recommendations.")
     
 # Keep the top N most popular books, and then keep the top M highest rated books. Vice versa if N<M (worse results).
 highest_hits_to_keep = round(len(feature_df)*0.9) # N

@@ -70,22 +70,24 @@ Procedural order from data collection to book recommendations and verification:
 
             Returns:
 
-    7. K-MODES BOOK CLUSTERING: Create clusters of similar books using their feature vectors and the k-modes algorithm (a variant of k-means for categorical data). Use these clusters to reduce runtime when making book recommendations.
+    7. K-MODES BOOK CLUSTERING (optional): Create clusters of similar books using their feature vectors and the k-modes algorithm (a variant of k-means for categorical data). Use these clusters to reduce runtime when making book recommendations.
         k_means_clustering\k_modes_v2.py
             Generates a fixed number of book clusters using k-modes, using feature vectors of genres and (clustered) keywords for each book. This updated version uses custom dissimilarity metrics with different weights given to keywords and genres.
             Parameters:
-                num_clusters: int
+                num_clusters : int
                     The predetermined number of clusters to form using KModes.
-                cat_dissim: callable
+                cat_dissim : callable
                     Specifies the function to use as the dissimilarity metric (e.g., hamming_dist, cosine_dissim).
-                "books_with_vectors_and_sums.csv": str (CSV file)
-                    CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided.
+                "books_with_vectors_and_sums_and_ratings.csv" : str (CSV file)
+                    CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided. Also includes number of ratings and average rating for each book.
+                keyword_weight : float
+                    How much keywords should be weighted relative to genres when measuring similarities. The optimal is somewhere around 0.8.
                 Additional parameters used by KModes (e.g., init, n_init, max_iter, verbose).
             Returns:
-                "books_clustered.csv": CSV file
+                "books_clustered.csv" : CSV file
                     The input CSV file with an additional column indicating the assigned cluster for each book.
-                "books_by_cluster.csv": CSV file
-                    A CSV file containing lists of books, grouped by their assigned cluster.
+                "books_by_cluster.csv" : CSV file
+                    CSV file containing lists of books, grouped by their assigned cluster.
         k_means_clustering\elbow_method_v2.py
             Determines optimal number of book clusters for k-modes, using feature vectors of genres and (clustered) keywords for each book. This updated version uses custom dissimilarity metrics with different weights given to keywords and genres.
             Parameters:
@@ -95,10 +97,32 @@ Procedural order from data collection to book recommendations and verification:
                     Specifies the function to use as the dissimilarity metric (e.g., hamming_dist, cosine_dissim).
                 "books_with_vectors_and_sums.csv" : str (CSV file)
                     CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided.
+                keyword_weight : float
+                    How much keywords should be weighted relative to genres when measuring similarities. The optimal is somewhere around 0.8.
                 Additional parameters used by KModes (e.g., init, n_init, max_iter, verbose).
             Returns:
                 "elbow_graph.png" : PNG file
                     The bend in the elbow plot is approximately the optimal number of book clusters in terms of costs.
+        k_means_clustering\small_read_list_recommendations.py
+            Given a list of books that a user has read and enjoyed (no ratings are required to be specified), generates a list of popular books that share a k-modes cluster with any book in the list. Designed to be a simpler recommendation system for readers who want to provide a shorter list of books they have read. 
+            Parameters:
+                sample_user_books : str list
+                    An unrated list of books (titles and authors) that a user has read before.
+                "books_clustered_ratings.csv" : str (CSV file)
+                    CSV file containing books (titles and authors) and their feature vectors, with an additional column indicating the assigned cluster for each book. Also includes number of ratings and average rating for each book.
+                "books_by_cluster_ratings.csv" : str (CSV file)
+                    CSV file containing lists of books, grouped by their assigned cluster. Must correspond to the clusters in "books_clustered_ratings.csv".
+                std_num_outlier : float
+                    The number of standard deviations below the mean similarity that serves as the threshold for outliers.
+                highest_hits_to_keep : int
+                    The number of books with the highest number of ratings to keep. Should be very high relative to the number of books left after filtering for outliers.
+                highest_ratings_to_keep : int
+                    The number of the most highly rated books (in terms of average rating) to keep. Should be less than "highest_hits_to_keep".
+                keyword_weight : float
+                    How much keywords should be weighted relative to genres when measuring similarities. The optimal is somewhere around 0.8.
+            Returns:
+                "recommendations.csv" : CSV file
+                    Popular books that share a k-modes cluster with a book the user has read before, sorted by average rating.
     8A. CONTENT-BASED FILTERING: Generate book recommendation lists using content-based filtering (option A).
         content_filtering\train_similarity_v2.py
 
@@ -156,7 +180,7 @@ Other important scripts:
     cleaning\create_fake_data.py
         Generates fake feature vectors for a list of title-author pairs (for testing purposes).
     app\streamlit.py
-        Creates an app to make the recommendation process easier.
+        Creates an app with a user interface that makes the recommendation process easier.
 
 Other scripts not used:
     big_data_set\scripts_older_versions\author_names.py

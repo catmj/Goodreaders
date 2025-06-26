@@ -7,18 +7,33 @@ import pandas as pd
 import numpy as np
 import ast
 
+# Important global variable placeholders for Hamming distance and cosine dissimilarity.
+num_keywords = 0
+num_genres = 0
+# Weight of keywords relative to genres.
+keyword_weight = 0.8
+
 def cosine_sim(vec1, vec2):
     # Convert lists to NumPy arrays for efficient computation.
-    vec1 = np.array(vec1)
-    vec2 = np.array(vec2)
+    vec1 = np.array(vec1, dtype=float) # Ensure float type.
+    vec2 = np.array(vec2, dtype=float) # Ensure float type.
     # Check if vectors have the same length.
     if len(vec1) != len(vec2):
         raise ValueError("Vectors must have the same length to compute cosine similarity.")
-    # Calculate the dot product.
-    dot_product = np.dot(vec1, vec2)
-    # Calculate the l2 norm (Euclidean norm) of each vector.
-    norm_vec1 = np.linalg.norm(vec1)
-    norm_vec2 = np.linalg.norm(vec2)
+    # Check num_keywords > 0 to prevent issues if num_keywords ends up being 0.
+    if num_keywords > 0 and keyword_weight != 1.0:
+        vec1_weighted = vec1.copy()
+        vec2_weighted = vec2.copy()
+        vec1_weighted[:num_keywords] *= keyword_weight
+        vec2_weighted[:num_keywords] *= keyword_weight
+        # Use vec1_weighted and vec2_weighted for dot product and norms.
+        dot_product = np.dot(vec1_weighted, vec2_weighted)
+        norm_vec1 = np.linalg.norm(vec1_weighted)
+        norm_vec2 = np.linalg.norm(vec2_weighted)
+    else:
+        dot_product = np.dot(vec1, vec2)
+        norm_vec1 = np.linalg.norm(vec1)
+        norm_vec2 = np.linalg.norm(vec2)
     # Handle division by zero if either norm is zero.
     if norm_vec1 == 0 or norm_vec2 == 0:
         return 0.0
@@ -37,37 +52,35 @@ def str_to_feat(input):
 # Sample user input (these should be consistent with how they appear in your book_list_features.txt).
 sample_user_books = [
     "gideon the ninth, tamsyn muir",
-    "the fifth season, n.k. jemisin",
-    "the king of attolia, megan whalen turner",
-    "iron widow, xiran jay zhao",
-    "all systems red, martha wells"
+    "flight of magpies, k.j. charles",
+    "she who became the sun, shelley parker-chan",
+    "boyfriend material, alexis hall",
+    "summer sons, lee mandelo" # ,
+    # "this is how you lose the time war, amal el-mohtar",
+    # "the fifth season, n.k. jemisin",
+    # "the king of attolia, megan whalen turner",
+    # "iron widow, xiran jay zhao",
+    # "all systems red, martha wells",
+    # "the hobbit, or there and back again, j.r.r. tolkien",
+    # "the girl on the train, paula hawkins",
+    # "things fall apart, chinua achebe",
+    # "anthem, ayn rand",
+    # "the hunger games, suzanne collins"
 ]
-sample_user_ratings = [5, 5, 5, 3, 4]
-# sample_user_books = [
-#     "the hobbit, or there and back again, j.r.r. tolkien",
-#     "the girl on the train, paula hawkins",
-#     "things fall apart, chinua achebe",
-#     "anthem, ayn rand",
-#     "the hunger games, suzanne collins"
-#     ]
-# sample_user_ratings = [4, 3, 5, 1, 4]
 
 # Get the length of the list of rated books.
-if len(sample_user_books) != len(sample_user_ratings):
-    raise ValueError("Error: The number of books does not match the number of ratings.")
-else:
-    num_ratings = len(sample_user_ratings)
-    # print(f"The number of ratings is: {num_ratings}")
+num_ratings = len(sample_user_books)
+# print(f"The number of ratings is: {num_ratings}")
 
 # Importing feature data.
-cluster_df = pd.read_csv('cluster_results_both_cosine_dissim/books_by_cluster_both_cosine_300_init1_ratings.csv')
-feature_df = pd.read_csv('cluster_results_both_cosine_dissim/books_clustered_both_cosine_300_init1_ratings.csv')
+cluster_df = pd.read_csv('cluster_results_only_keywords/books_by_cluster_keywords_cosine_300_init1_ratings.csv')
+feature_df = pd.read_csv('cluster_results_only_keywords/books_clustered_keywords_cosine_300_init1_ratings.csv')
 # Various sizes of data.
 num_clusters = len(cluster_df)
 num_rows = len(feature_df) # Do not count column names as a row.
-# num_keywords = len(str_to_feat(feature_df.at[0,"keyword_vector"]))
-# num_genres = len(str_to_feat(feature_df.at[0,"genre_vector"]))
-# num_features = num_keywords + num_genres
+num_keywords = len(str_to_feat(feature_df.at[0,"keyword_vector"]))
+num_genres = len(str_to_feat(feature_df.at[0,"genre_vector"]))
+num_features = num_keywords + num_genres
 
 # Finding the clusters for each book in the rated list.
 clusters_to_use = []
@@ -175,8 +188,8 @@ else:
 # data = np.array(data_list_after_outlier_removal, dtype=float)
 
 # Keep the top N most popular books, and then keep the top M highest rated books. Vice versa if N<M (worse results).
-highest_hits_to_keep = 100 # N
-highest_ratings_to_keep = 20 # M
+highest_hits_to_keep = round(len(feature_df)*0.9) # N
+highest_ratings_to_keep = min(50,highest_hits_to_keep) # M
 if highest_hits_to_keep >= highest_ratings_to_keep:
     # Keep the top N most popular books.
     sorted_hits_feature_df = feature_df.sort_values(by='num_ratings', ascending=False)
@@ -200,4 +213,7 @@ if highest_hits_to_keep < highest_ratings_to_keep:
     low_hits_to_drop = range(highest_hits_to_keep,len(final_feature_df))
     final_feature_df.drop(low_hits_to_drop, inplace=True)
 
+# Results and testing.
+# for index, row in final_feature_df.iterrows():
+#     print(f"- Title: {row['title']}, Author: {row['author_name']}")
 final_feature_df.to_csv('recommendations.csv', index=True)

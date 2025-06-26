@@ -5,7 +5,7 @@ import io
 import random # Import random for shuffling
 from tqdm import tqdm # Import tqdm for progress bars
 import sys # Import sys for stdout/stderr redirection
-from contextlib import redirect_stdout, redirect_stderr # Import redirect_stdout, redirect_stderr
+from contextlib import redirect_stdout, redirect_stderr 
 
 # --- Import functions from your content-based and collaborative filtering modules ---
 try:
@@ -15,7 +15,7 @@ try:
 except ImportError as e:
     tqdm.write(f"Error importing modules: {e}")
     tqdm.write("Please ensure 'cb_get_recs.py' and 'cf_get_recs.py' are in the same directory or correctly configured in your Python path.")
-    sys.exit(1) # Use sys.exit for a cleaner exit than bare exit()
+    sys.exit(1) 
 
 # --- Configuration Constants ---
 # These constants are primarily for defining default behavior or for cases where not passed.
@@ -94,7 +94,7 @@ def _get_unrated_books(combined_df: pd.DataFrame) -> pd.DataFrame:
         tqdm.write("Warning: 'Rated by User' column missing in combined_df. Assuming all books are unrated.")
         return combined_df.copy() # Return a copy to avoid modifying the original DataFrame
 
-    # Convert to boolean and fill NaNs (if any, though `get_combined_recommendations` should handle this)
+    # Convert to boolean and fill NaNs (if any)
     combined_df['Rated by User'] = combined_df['Rated by User'].astype('boolean').fillna(False)
     unrated_books = combined_df[~combined_df['Rated by User']].copy()
     if unrated_books.empty:
@@ -234,8 +234,6 @@ def _split_user_data_for_testing(user_data_df: pd.DataFrame, validation_split_ra
     training_df = pd.DataFrame(training_data_rows)
     validation_df = pd.DataFrame(validation_data_rows)
 
-    # CRITICAL FIX: Ensure consistent column order and handle empty DataFrames correctly
-    # Assign back to the original DataFrame variables after creation
     expected_cols = ['User_id', 'Book_Identifications_List', 'Ratings_List']
     
     if training_df.empty:
@@ -253,7 +251,6 @@ def _split_user_data_for_testing(user_data_df: pd.DataFrame, validation_split_ra
     tqdm.write(f"Total users in original data: {len(user_data_df)}")
     tqdm.write(f"Users with enough data for split (Training): {len(training_df)}")
     tqdm.write(f"Users with enough data for split (Validation): {len(validation_df)}")
-    # Provide total number of ratings split
     total_original_ratings = user_data_df['Book_Identifications_List'].apply(len).sum()
     total_split_ratings = training_df['Book_Identifications_List'].apply(len).sum() + \
                           validation_df['Book_Identifications_List'].apply(len).sum()
@@ -333,7 +330,6 @@ def get_combined_recommendations(
     temp_stderr = io.StringIO()
 
     with redirect_stdout(temp_stdout), redirect_stderr(temp_stderr):
-        # All print/tqdm.write calls within this block and its sub-functions will be captured
         tqdm.write(f"--- Starting Combined Recommendation Generation for Settings ---")
         tqdm.write(f"  User Reg Strength: {new_user_regularization_strength}")
 
@@ -345,7 +341,7 @@ def get_combined_recommendations(
         if (cb_similarity_matrix_npy_filepath is None or
             book_features_loaded is None): # Check for any None indicating failure from loaded tuple
             tqdm.write("Provided loaded_data_tuple indicates failure or incomplete data. Exiting.")
-            return None # This return is outside the redirection, so it exits the function.
+            return None 
 
         # --- 1. Get Content-Based Recommendations ---
         tqdm.write("--- Generating Content-Based Recommendations ---")
@@ -358,7 +354,6 @@ def get_combined_recommendations(
 
         if cb_df is None or cb_df.empty:
             tqdm.write("Content-based recommendation generation failed or returned an empty DataFrame.")
-            # Even if CB fails, we want to try CF, so don't return None immediately
             cb_df = pd.DataFrame(columns=['Book Identifier', 'Weighted Similarity Score'])
         
         # Rename columns for clarity in the combined DataFrame
@@ -374,7 +369,7 @@ def get_combined_recommendations(
             item_bias_loaded,
             mean_book_ratings_loaded,
             all_book_identifiers_cf,
-            total_books_loaded, # Corrected: Changed from total_books to total_books_loaded
+            total_books_loaded, 
             user_books,
             user_ratings,
             new_user_regularization_strength
@@ -398,7 +393,7 @@ def get_combined_recommendations(
             cf_df,
             on='Book Identifier',
             how='outer',
-            suffixes=('_CB', '_CF') # Suffixes are implicitly handled by direct column renaming above
+            suffixes=('_CB', '_CF') 
         )
 
         # --- Fill NaN scores with 0 and ensure 'Rated by User' and 'Original Rating' are present ---
@@ -434,8 +429,6 @@ def get_combined_recommendations(
         tqdm.write("--- Combined Recommendations Generated Successfully ---")
         return combined_df
 
-    # Any captured output is simply discarded as the context manager exits.
-    # We do not re-print temp_stdout.getvalue() or temp_stderr.getvalue() here.
 
 
 def recommend_fraction_of_top_n(
@@ -458,7 +451,7 @@ def recommend_fraction_of_top_n(
     Returns:
         list[str]: A list of recommended book identifiers, sorted with duplicates prioritized.
     """
-    unrated_books = _get_unrated_books(combined_df) # Use helper
+    unrated_books = _get_unrated_books(combined_df) 
     if unrated_books.empty:
         return []
 
@@ -520,7 +513,7 @@ def recommend_cb_filtered_by_cf(
         list[str]: A list of recommended book identifiers, sorted by CF_Predicted_Rating
                    from the initially CB-filtered list.
     """
-    unrated_books = _get_unrated_books(combined_df) # Use helper
+    unrated_books = _get_unrated_books(combined_df) 
     if unrated_books.empty:
         return []
 
@@ -552,7 +545,7 @@ def recommend_by_multiplying_scores(
     Returns:
         list[str]: A list of recommended book identifiers, sorted by the new multiplied score.
     """
-    unrated_books = _get_unrated_books(combined_df) # Use helper
+    unrated_books = _get_unrated_books(combined_df) 
     if unrated_books.empty:
         return []
 
@@ -572,7 +565,7 @@ def recommend_by_multiplying_scores(
 
 def recommend_hybrid_strategy_2_and_1(
     combined_df: pd.DataFrame,
-    n: int = 100, # This parameter is still 'n' as it's an internal calculation limit for the strategy
+    n: int = 100, 
     cb_fraction: float = 0.5,
     cb_initial_top_n_for_filtered_list: int = 200,
     output_limit: int = 30
@@ -596,7 +589,7 @@ def recommend_hybrid_strategy_2_and_1(
     Returns:
         list[str]: A list of recommended book identifiers.
     """
-    unrated_books = _get_unrated_books(combined_df) # Use helper
+    unrated_books = _get_unrated_books(combined_df)
     if unrated_books.empty:
         return []
 
@@ -610,7 +603,7 @@ def recommend_hybrid_strategy_2_and_1(
     ).head(num_to_take_pure_cb)
 
     # --- 2. Get Filtered List (Strategy 2's output) ---
-    # Re-use the logic from recommend_cb_filtered_by_cf but apply it to the unrated_books subset
+
     top_cb_initial_for_filter = unrated_books.sort_values(
         by='CB_Weighted_Similarity_Score', ascending=False
     ).head(cb_initial_top_n_for_filtered_list)
@@ -736,7 +729,7 @@ def generate_all_recommendations_for_users(
             user_recs['Rec_CF_Only'] = []
             user_recs['Rec_CB_Filtered_by_CF'] = []
             user_recs['Rec_By_Multiplying_Scores'] = []
-            user_recs['Rec_Random'] = [] # Populate with empty list for consistency
+            user_recs['Rec_Random'] = [] 
         else:
             user_recs['Rec_CB_Only'] = recommend_fraction_of_top_n(
                 combined_df, output_limit=output_limit_per_strategy, cb_fraction=1.0
@@ -750,7 +743,7 @@ def generate_all_recommendations_for_users(
             user_recs['Rec_By_Multiplying_Scores'] = recommend_by_multiplying_scores(
                 combined_df, output_limit=output_limit_per_strategy
             )
-            user_recs['Rec_Random'] = recommend_random_books( # Call the new function
+            user_recs['Rec_Random'] = recommend_random_books( 
                 combined_df, output_limit=output_limit_per_strategy
             )
         

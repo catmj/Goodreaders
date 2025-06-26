@@ -21,9 +21,9 @@ class Config:
     CROSS_VAL_RATINGS_FILE = DATA_PATH + 'cross_val_ratings.csv'
     LEARNING_RATE = 0.005
     ITERATIONS = 1000
-    TOP_N_RECOMMENDATIONS = 20 # Not directly used in this training script, but kept for consistency
+    TOP_N_RECOMMENDATIONS = 20 
     TRAINED_DATA_FOLDER = 'trained_data/'
-    # Dynamically set checkpoint filename using os.path.join for path robustness
+    
     TRAINING_CHECKPOINT_FILENAME = os.path.join(TRAINED_DATA_FOLDER, 'training_progress_checkpoint.pkl')
 
     # Final model parameters

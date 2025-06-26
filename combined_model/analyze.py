@@ -32,8 +32,6 @@ def _calculate_descriptive_stats(column_data):
         column_data = pd.to_numeric(column_data, errors='coerce')
         column_data.dropna(inplace=True) # Drop NaNs resulting from coercion
         if len(column_data) < original_rows:
-            # This warning is suppressed by redirect_stdout in higher-level calls,
-            # but kept for direct function use.
             tqdm.write(f"    Warning: Non-numeric values found and removed during stats calculation.")
 
         if column_data.empty:
@@ -255,7 +253,7 @@ def _export_results(all_results, output_file_path=None):
                 output_lines.append("  --- Overall Statistics ---")
                 print("  --- Overall Statistics ---")
                 for column, stats_dict in overall_stats.items():
-                    # Only print for columns other than 'Total_Relevant_Books'
+                    
                     if column != 'Total_Relevant_Books':
                         output_lines.append(f"  Column: {column}")
                         output_lines.append(f"    Mean: {stats_dict.get('mean', np.nan):.4f}")
@@ -275,8 +273,7 @@ def _export_results(all_results, output_file_path=None):
                         output_lines.append(f"    Kurtosis: {stats_dict.get('kurtosis', np.nan):.4f}")
                         output_lines.append("-" * 30)
 
-                        # Print to console as well
-                        # Adjusted slicing to print newly added lines
+                        
                         for line in output_lines[-14:]:
                             print(line)
             else:
@@ -337,7 +334,7 @@ def _generate_and_save_plots(all_results, checkpoint_root_dir, parameters_list):
     """
     print("\n--- Generating and Saving Plots ---")
 
-    # Set seaborn style for better aesthetics
+    
     sns.set_theme(style="whitegrid")
 
     for params in parameters_list:
@@ -377,7 +374,7 @@ def _generate_and_save_plots(all_results, checkpoint_root_dir, parameters_list):
             plt.tight_layout()
             plot_filename = os.path.join(plots_output_dir, f'overall_mean_overlap_nf{nf}_rs{rs}_gw{gw}.png')
             plt.savefig(plot_filename)
-            plt.close() # Close plot to free up memory
+            plt.close() 
             print(f"    Saved: {plot_filename}")
         else:
             print(f"    No overall mean overlap data to plot for config: nf={nf}, rs={rs}, gw={gw}")
@@ -443,19 +440,15 @@ def _plot_overlap_distributions(df, config_output_dir, params):
         print("    No 'Overlap_Rec_' columns found for distribution plots.")
         return
 
-    # Determine a reasonable max value for x-axis to keep plots consistent
-    # Max possible overlap is usually output_limit_per_strategy (default 60 from pipeline)
     max_overlap = df[overlap_columns].max().max() if not df[overlap_columns].empty else 60
-    # Add a small buffer and ensure it's at least 10 for small datasets
     x_limit = max(10, int(max_overlap * 1.1))
 
 
     for col in overlap_columns:
         plt.figure(figsize=(8, 5))
-        # Use kdeplot for the smooth "bell curve" and a histogram for context
+        
         sns.histplot(df[col], kde=True, bins=range(int(max_overlap) + 2), stat='density', color='skyblue', edgecolor='black', alpha=0.7)
-        # Overlay KDE for a smoother curve, if desired, without the histogram density
-        # sns.kdeplot(df[col], color='red', linestyle='--', linewidth=2)
+     
         
         plt.title(f'Distribution of {col.replace("Overlap_", "")} Overlap (NF={nf}, RS={rs}, GW={gw})')
         plt.xlabel('Number of Overlapping Books')

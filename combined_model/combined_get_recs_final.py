@@ -47,7 +47,7 @@ def _load_recommendation_data(
     # Only verify the TXT file existence here, as HDF5 chunk loading is handled internally by cb_get_recs_new
     if not os.path.exists(cb_book_identifiers_txt_filepath):
         print(f"Content-based book identifiers file not found: {cb_book_identifiers_txt_filepath}")
-        # Updated return to match the new tuple structure, dropping H5-specific paths
+        
         return (None, None, None, None, None, None) 
 
     # --- Load Collaborative Filtering Pre-trained Data ---
@@ -60,10 +60,10 @@ def _load_recommendation_data(
         all_book_identifiers_cf is None or mean_book_ratings_loaded is None or
         total_books_loaded is None):
         print("Failed to load all necessary pre-trained data for collaborative filtering within helper.")
-        return (None, None, None, None, None, None) # Updated return
+        return (None, None, None, None, None, None) 
 
     print("--- All Data Loaded Successfully ---")
-    # Updated return to match the new tuple structure
+    
     return (cb_book_identifiers_txt_filepath,
             book_features_loaded, item_bias_loaded, all_book_identifiers_cf,
             mean_book_ratings_loaded, total_books_loaded)
@@ -92,7 +92,7 @@ def get_combined_recommendations(
     genre_weight: int = DEFAULT_GENRE_WEIGHT,
     num_features: int = DEFAULT_NUM_FEATURES,
     new_user_regularization_strength: int = DEFAULT_NEW_USER_REGULARIZATION_STRENGTH
-) -> pd.DataFrame | None: # Updated return type hint
+) -> pd.DataFrame | None: 
     """
     Generates combined book recommendations using both content-based similarity
     and collaborative filtering prediction models.
@@ -113,14 +113,14 @@ def get_combined_recommendations(
     print(f"  Genre Weight: {genre_weight}, Num Features: {num_features}, User Reg Strength: {new_user_regularization_strength}")
 
     # --- Load all necessary data using the helper function ---
-    # The tuple returned by _load_recommendation_data is now shorter
+    
     (cb_book_identifiers_txt_filepath,
      book_features_loaded, item_bias_loaded, all_book_identifiers_cf,
      mean_book_ratings_loaded, total_books_loaded) = _load_recommendation_data(
         genre_weight, num_features, new_user_regularization_strength
     )
 
-    # Check for failure in loading content-based data (only need to check txt file path now)
+    # Check for failure in loading content-based data 
     if (cb_book_identifiers_txt_filepath is None or book_features_loaded is None):
         print("Failed to load necessary data for combined recommendations. Exiting.")
         return None
@@ -176,8 +176,6 @@ def get_combined_recommendations(
     )
 
     # --- Convert 'Rated by User' to boolean and handle NaNs ---
-    # This addresses the FutureWarning regarding implicit downcasting by explicitly
-    # converting to the nullable boolean dtype first, then filling NaNs.
     combined_df['Rated by User'] = combined_df['Rated by User'].astype('boolean').fillna(False)
 
     # --- Fill NaN scores with 0 ---
@@ -213,7 +211,7 @@ def recommend_fraction_of_top_n(
     Returns:
         list[str]: A list of recommended book identifiers, sorted with duplicates prioritized.
     """
-    unrated_books = _get_unrated_books(combined_df) # Use helper
+    unrated_books = _get_unrated_books(combined_df) 
     if unrated_books.empty:
         return []
 
@@ -275,7 +273,7 @@ def recommend_cb_filtered_by_cf(
         list[str]: A list of recommended book identifiers, sorted by CF_Predicted_Rating
                    from the initially CB-filtered list.
     """
-    unrated_books = _get_unrated_books(combined_df) # Use helper
+    unrated_books = _get_unrated_books(combined_df) 
     if unrated_books.empty:
         return []
 
@@ -307,7 +305,7 @@ def recommend_by_multiplying_scores(
     Returns:
         list[str]: A list of recommended book identifiers, sorted by the new multiplied score.
     """
-    unrated_books = _get_unrated_books(combined_df) # Use helper
+    unrated_books = _get_unrated_books(combined_df) 
     if unrated_books.empty:
         return []
 
@@ -351,7 +349,7 @@ def recommend_hybrid_strategy_2_and_1(
     Returns:
         list[str]: A list of recommended book identifiers.
     """
-    unrated_books = _get_unrated_books(combined_df) # Use helper
+    unrated_books = _get_unrated_books(combined_df) 
     if unrated_books.empty:
         return []
 
@@ -365,7 +363,7 @@ def recommend_hybrid_strategy_2_and_1(
     ).head(num_to_take_pure_cb)
 
     # --- 2. Get Filtered List (Strategy 2's output) ---
-    # Re-use the logic from recommend_cb_filtered_by_cf but apply it to the unrated_books subset
+    
     top_cb_initial_for_filter = unrated_books.sort_values(
         by='CB_Weighted_Similarity_Score', ascending=False
     ).head(cb_initial_top_n_for_filtered_list)
@@ -400,7 +398,7 @@ def recommend_hybrid_strategy_2_and_1(
     return hybrid_recommendations['Book Identifier'].head(output_limit).tolist()
 
 
-###For display only:
+# --- For Display Only ---
 
 def print_as_numbered_list(input_list):
     """
@@ -419,7 +417,6 @@ def print_as_numbered_list(input_list):
 
     print("--- Rec List ---")
     for i, item in enumerate(input_list):
-        # enumerate starts counting from 0 by default, so we add 1 for user-friendly numbering
         print(f"{i + 1}. {item}")
     print("---------------------\n")
 
@@ -427,7 +424,7 @@ def print_as_numbered_list(input_list):
 
 # --- Example Usage ---
 if __name__ == "__main__":
-    # Sample user input (these should be consistent with how they appear in your book_list_features.txt)
+    
     sample_user_books = [
         "gideon the ninth, tamsyn muir",
         "the fifth season, n.k. jemisin",
@@ -480,9 +477,9 @@ if __name__ == "__main__":
 
 
     # Define multiple settings to test
-    genre_weights = [0.8] # Example genre weights
-    num_features_settings = [600] # Example number of features
-    user_reg_strengths = [5] # Example regularization strengths
+    genre_weights = [0.8] 
+    num_features_settings = [600] 
+    user_reg_strengths = [5] 
 
     # Iterate through different combinations of settings
     for gw in genre_weights:

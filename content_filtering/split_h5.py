@@ -6,7 +6,7 @@ import os
 LARGE_H5_FILEPATH = 'book_similarity_matrix.h5'
 LARGE_H5_DATASET_NAME = 'similarity_matrix'
 OUTPUT_DIR = 'split_h5_chunks'
-CHUNK_SIZE_ROWS = 3000 # Define how many rows each chunk file should contain. Adjust as needed.
+CHUNK_SIZE_ROWS = 3000 
 
 def split_h5_file(input_h5_path, input_dataset_name, output_directory, chunk_size_rows):
     """

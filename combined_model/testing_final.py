@@ -8,9 +8,7 @@ import pickle
 from tqdm import tqdm
 import pyarrow.parquet as pq
 
-# Explicitly import functions from your combined_recs_testing_3.py file
-# IMPORTANT: Please ensure 'combined_recs_testing_3.py' is the correct file on your system
-# and is accessible from this script's location.
+
 from combined_recs_testing_final import (
     _load_recommendation_data,
     _process_user_ratings_file,
@@ -21,7 +19,6 @@ from combined_recs_testing_final import (
 )
 
 # --- Configuration for the Test Run ---
-# Now contains only a single configuration, as requested
 test_config = {'num_features': 600, 'lambda_val': 5, 'genre_weight': 0.8}
 
 
@@ -114,7 +111,7 @@ else:
     print(f"### Running Config: Features={nf}, Reg Strength={rs}, Genre Weight={gw} ###")
     print(f"################################################################################")
     
-    # Initialize variables for the current run. They will be populated as steps complete or loaded.
+    # Initialize variables for the current run. 
     loaded_rec_data = None
     user_data_processed_df = pd.DataFrame()
     training_df = pd.DataFrame()

@@ -96,9 +96,9 @@ def load_pretrained_data(
 
 # --- Prepare User Ratings ---
 def prepare_user_ratings(
-    user_rated_book_identifiers: list[str], # Renamed from user_rated_books
+    user_rated_book_identifiers: list[str], 
     user_book_ratings: list[float],
-    all_book_identifiers: list[str],        # Renamed from all_book_titles
+    all_book_identifiers: list[str],        
     total_books: int
 ) -> tuple[np.ndarray, list[int]]:
     """
@@ -155,9 +155,7 @@ def train_user_preference_model(
                user_bias (float): Learned bias (intercept) for the user.
                Returns (None, None) if training fails due to insufficient data.
     """
-    # Calculate target for regression: (user_rating - book_mean - item_bias)
-    # This is what the user's personal (dot product + user bias) model should predict.
-    # Flatten item_bias to ensure shape compatibility for element-wise subtraction.
+
     target_for_regression = user_ratings_array - mean_book_ratings - item_bias.flatten()
 
     # Create a mask for rated books (where target_for_regression is not NaN)
@@ -180,8 +178,8 @@ def train_user_preference_model(
     # alpha is the regularization strength (lambda)
     ridge_model = Ridge(alpha=regularization_strength).fit(features_for_rated_books, target_for_rated_books)
 
-    user_weights = ridge_model.coef_  # These are the user's feature weights
-    user_bias = ridge_model.intercept_ # This is the user's personal bias
+    user_weights = ridge_model.coef_  
+    user_bias = ridge_model.intercept_ 
 
     return user_weights, user_bias
 
@@ -190,12 +188,12 @@ def generate_user_predictions(
     book_features: np.ndarray,
     item_bias: np.ndarray,
     mean_book_ratings: np.ndarray,
-    all_book_identifiers: list[str],  # Renamed from all_book_titles
+    all_book_identifiers: list[str],  
     total_books: int,
-    user_rated_book_identifiers: list[str], # Renamed from user_rated_books
+    user_rated_book_identifiers: list[str], 
     user_book_ratings: list[float],
     new_user_regularization_strength: float
-) -> pd.DataFrame | None: # Changed return type to just DataFrame
+) -> pd.DataFrame | None: 
     """
     Prepares user ratings, trains the user's linear regression model,
     and calculates predicted ratings for all books, including user-rated books
@@ -263,7 +261,6 @@ def generate_user_predictions(
 
     predicted_ratings_df = pd.DataFrame(predictions_data)
     
-    # Sort by 'Predicted Rating' in descending order for better readability
     predicted_ratings_df = predicted_ratings_df.sort_values(
         by='Predicted Rating', ascending=False
     ).reset_index(drop=True)

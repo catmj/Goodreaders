@@ -3,16 +3,8 @@ import h5py
 import os
 
 # --- Configuration ---
-# Define the path to your original 8GB NumPy array
-# This path is relative to where you run this conversion script.
-# Ensure this file exists at the specified location.
-ORIGINAL_NPY_FILEPATH = 'book_similarity_matrix_0-8.npy' # Adjust if your filename is different
-
-# Define the output HDF5 file path
+ORIGINAL_NPY_FILEPATH = 'book_similarity_matrix_0-8.npy' 
 OUTPUT_H5_FILEPATH = 'book_similarity_matrix.h5'
-
-# Define the dataset name within the HDF5 file
-# You can choose any name, but 'similarity_matrix' is descriptive.
 H5_DATASET_NAME = 'similarity_matrix'
 
 # --- Conversion Logic ---

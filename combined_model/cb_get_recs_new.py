@@ -6,10 +6,10 @@ import os
 # --- Define file paths ---
 # BASE_FILE_NAME is now primarily for the book identifiers TXT file
 BASE_FILE_NAME = '../content_filtering/book_similarity_matrix' 
-GENRE_WEIGHT = 0.8 # This is still used to form the book identifier list filename
+GENRE_WEIGHT = 0.8 
 
 # Constants for the HDF5 chunks
-H5_CHUNKS_DIR = '../content_filtering/split_h5_chunks' # Directory where the chunks are stored
+H5_CHUNKS_DIR = '../content_filtering/split_h5_chunks' 
 H5_CHUNK_FILE_PREFIX = 'chunk_' # Prefix for chunk filenames (e.g., chunk_000.h5)
 H5_CHUNK_DATASET_PREFIX = 'chunk_data_' # Prefix for dataset names inside chunk files (e.g., chunk_data_000)
 CHUNK_SIZE_ROWS = 3000 # IMPORTANT: This must match the chunking size used during file splitting.
@@ -36,13 +36,13 @@ def _get_h5_file_handle(filepath):
 
 def _close_all_h5_file_handles():
     """Closes all cached HDF5 file handles."""
-    for filepath, f_handle in list(_H5_FILE_CACHE.items()): # Use list to modify dict during iteration
+    for filepath, f_handle in list(_H5_FILE_CACHE.items()): 
         try:
             f_handle.close()
             print(f"Closed HDF5 file: {filepath}")
         except Exception as e:
             print(f"Error closing HDF5 file {filepath}: {e}")
-        del _H5_FILE_CACHE[filepath] # Remove from cache
+        del _H5_FILE_CACHE[filepath] 
 
 def _load_book_identifiers(book_identifiers_txt_filepath):
     """
@@ -66,14 +66,12 @@ def _normalize_ratings(user_ratings):
     If all ratings are identical, they are treated as a positive weight of 1.0.
     """
     user_ratings_np = np.array(user_ratings)
-    # print(f"User's raw ratings: {user_ratings}") # Suppressed for less verbose output
 
     normalized_ratings = []
 
     # Check if all user ratings are identical
     if np.all(user_ratings_np == user_ratings_np[0]):
         normalized_ratings = [1.0] * len(user_ratings)
-        # print(f"All your ratings are identical, treating them as a positive weight of 1 for recommendations.") # Suppressed
     else:
         user_min_rating = user_ratings_np.min()
         user_max_rating = user_ratings_np.max()
@@ -87,7 +85,7 @@ def _normalize_ratings(user_ratings):
                 normalized_ratings.append((rating_val - user_min_rating) / user_rating_range)
     
     normalized_ratings_np = np.array(normalized_ratings)
-    # print(f"Normalized (0-1 scaled based on user's range) ratings: {normalized_ratings_np}") # Suppressed
+ 
     return normalized_ratings_np
 
 def _map_user_books_to_indices(user_books, user_ratings, all_book_identifiers):
@@ -155,7 +153,7 @@ def _calculate_combined_weighted_scores(user_book_indices_np, normalized_user_ra
             if chunk_idx == (global_idx // CHUNK_SIZE_ROWS)
         ]
         
-        # Now, for each relevant user book in this chunk, read its row and add to scores
+        
         for i, user_idx_global in enumerate(user_book_indices_np):
             if chunk_idx == (user_idx_global // CHUNK_SIZE_ROWS):
                 rating_weight = normalized_user_ratings_np[i]
@@ -196,7 +194,6 @@ def _prepare_full_recommendation_list(combined_weighted_scores, all_book_identif
         })
 
     result_df = pd.DataFrame(all_books_data)
-    # Sort by 'Weighted Similarity Score' in descending order
     result_df = result_df.sort_values(by='Weighted Similarity Score', ascending=False).reset_index(drop=True)
     
     print(f"Successfully compiled list of {len(result_df)} books including user-rated books.")
@@ -242,7 +239,6 @@ def find_all_books_with_scores(book_identifiers_txt_filepath, user_books, user_r
         return pd.DataFrame()
 
     # 4. Calculate Combined Weighted Similarity Scores directly from chunks
-    # We pass the necessary info for _calculate_combined_weighted_scores to access chunks itself
     combined_weighted_scores = _calculate_combined_weighted_scores(
         user_book_indices_np, normalized_user_ratings_np, len(all_book_identifiers)
     )
@@ -254,7 +250,6 @@ def find_all_books_with_scores(book_identifiers_txt_filepath, user_books, user_r
         combined_weighted_scores, all_book_identifiers, user_books, user_ratings
     )
     
-    # Ensure all HDF5 file handles are closed after processing is complete
     _close_all_h5_file_handles()
 
     return full_recommendation_df

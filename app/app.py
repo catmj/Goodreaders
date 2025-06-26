@@ -8,16 +8,12 @@ from streamlit_searchbox import st_searchbox
 
 
 # --- Adjust Python Path for Module Discovery ---
-# Get the directory of the current script (e.g., 'your_app_folder' where app.py resides)
 script_dir = os.path.dirname(__file__)
-# Go up one level to reach the project root (e.g., 'your_project_root' folder)
-# os.pardir is equivalent to '..'
 project_root = os.path.abspath(os.path.join(script_dir, os.pardir))
 # Add the project root to sys.path so Python can find 'combined_model' as a top-level package
 sys.path.insert(0, project_root)
 
 # --- IMPORT RECOMMENDATION FUNCTIONS FROM YOUR LOCAL FILE ---
-# Now, 'combined_model' should be discoverable because its parent directory (project_root) is on sys.path.
 try:
     from combined_model.combined_get_recs_final import (
         get_combined_recommendations,
@@ -31,7 +27,6 @@ except ImportError as e:
 
 # --- Predetermined List of Books (Original Lowercase Format for Backend) ---
 # Define the absolute path to the book list file by joining it with the project_root.
-# Assuming 'collab_filtering' is also at the project root level, sibling to 'your_app_folder'.
 book_list_file_path_abs = os.path.join(project_root, "collab_filtering/trained_data/book_list_features_600_lambda_5.txt")
 predetermined_book_list_backend_format = []
 
@@ -167,8 +162,8 @@ def search_books(search_term: str):
 # Configure the Streamlit page settings.
 st.set_page_config(
     page_title="Personalized Book Recommender",
-    layout="centered", # Layout can be 'centered' or 'wide'.
-    initial_sidebar_state="auto" # 'auto', 'expanded', or 'collapsed'.
+    layout="centered", 
+    initial_sidebar_state="auto" 
 )
 
 st.title("📚 Personalized Book Recommender")
@@ -236,19 +231,17 @@ def generate_and_display_recommendations_section(user_books, user_ratings, outpu
 
 
 # --- Book Input Form ---
-# Move st_searchbox outside the form for live reactivity
+
 selected_book_display_title = st_searchbox(
     search_books,
     key="book_search_input",
     placeholder="Type to search for a book...",
-    label="Select a Book You've Read" # Add a label to the searchbox
+    label="Select a Book You've Read" 
 )
 
 with st.form("book_input_form"):
     col1, col2 = st.columns([3, 1])
-    # The searchbox is now outside, so it's not in these columns directly.
-    # We still need the rating slider and the button inside the form.
-    with col2: # Place rating slider in the second column
+    with col2: 
         book_rating = st.slider("Your Rating (1-5)", 1, 5, 3)
 
     add_book_button = st.form_submit_button("Add Book")
@@ -299,8 +292,6 @@ def update_single_book_rating(book_backend_title_to_update):
         if item['title'] == book_backend_title_to_update:
             item['rating'] = new_rating
             break
-    # Clear recommendations and feedback as input has changed.
-    # Do NOT call st.rerun() here. The user will manually trigger new recommendations.
     st.session_state.last_recommendations_display = []
     st.session_state.last_recommendations_backend = []
     st.session_state.feedback_ratings = {}
@@ -346,9 +337,7 @@ if st.session_state.user_books_data:
         st.rerun() # Force a rerun
 
 
-# --- Fixed Model Settings (Backend Configuration) ---
-# These values are now fixed in the backend as per your request.
-# Based on previous analysis, nf600_rs5_gw0.8 seemed to perform best.
+# --- Fixed Model Settings ---
 FIXED_GENRE_WEIGHT = 0.8
 FIXED_NUM_FEATURES = 600
 FIXED_NEW_USER_REGULARIZATION_STRENGTH = 5

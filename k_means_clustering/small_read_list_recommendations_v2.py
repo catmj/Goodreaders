@@ -194,8 +194,9 @@ if feature_df.empty:
     print("All potential recommendations were books the user has already rated. No new recommendations.")
     
 # Keep the top N most popular books, and then keep the top M highest rated books. Vice versa if N<M (worse results).
+maximum_books = 50
 highest_hits_to_keep = round(len(feature_df)*0.9) # N
-highest_ratings_to_keep = min(50,highest_hits_to_keep) # M
+highest_ratings_to_keep = min(maximum_books,highest_hits_to_keep) # M
 if highest_hits_to_keep >= highest_ratings_to_keep:
     # Keep the top N most popular books.
     sorted_hits_feature_df = feature_df.sort_values(by='num_ratings', ascending=False)

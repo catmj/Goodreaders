@@ -19,7 +19,7 @@ sys.path.insert(0, project_root)
 # --- IMPORT RECOMMENDATION FUNCTIONS FROM YOUR LOCAL FILE ---
 # Now, 'combined_model' should be discoverable because its parent directory (project_root) is on sys.path.
 try:
-    from combined_model.combined import (
+    from combined_model.combined_get_recs_final import (
         get_combined_recommendations,
         recommend_by_multiplying_scores, # Only importing this specific recommendation strategy
     )
@@ -65,6 +65,11 @@ def format_book_title_for_display(title_str: str) -> str:
         "on", "or", "so", "the", "to", "up", "yet"
     }
 
+    # Common contractions that should remain lowercase after an apostrophe
+    contractions_after_apostrophe = {
+        "'s", "'t", "'d", "'re", "'ll", "'ve", "'m"
+    }
+
     # Helper function for consistent capitalization logic.
     def _capitalize_part(part: str) -> str:
         words = part.split()
@@ -76,20 +81,32 @@ def format_book_title_for_display(title_str: str) -> str:
             if not word: # Handle empty strings from multiple spaces
                 continue
 
+            formatted_word_candidate = word
+
             # Handle words like '#1Q84' - capitalize after the hash.
             if word.startswith('#') and len(word) > 1:
-                formatted_words.append('#' + word[1:].title())
+                formatted_word_candidate = '#' + word[1:].title()
             # Handle mixed alphanumeric words like '1Q84' - capitalize after the first digit.
             elif word[0].isdigit() and any(c.isalpha() for c in word):
                 if len(word) > 1 and word[1].isalpha():
-                    formatted_words.append(word[0] + word[1:].title())
+                    formatted_word_candidate = word[0] + word[1:].title()
                 else:
-                    formatted_words.append(word) # For purely numeric words
+                    formatted_word_candidate = word # For purely numeric words
             # Apply title case for most words, but lowercase minor words
             elif i == 0 or word.lower() not in minor_words:
-                formatted_words.append(word.title())
+                formatted_word_candidate = word.title()
+                
+                # Special handling for contractions after title case application
+                for contraction in contractions_after_apostrophe:
+                    if formatted_word_candidate.lower().endswith(contraction):
+                        # Find the base word before the apostrophe and append the lowercase contraction
+                        base_word = formatted_word_candidate.rsplit("'", 1)[0]
+                        formatted_word_candidate = base_word + contraction.lower()
+                        break # Assumes only one contraction per word
             else:
-                formatted_words.append(word.lower())
+                formatted_word_candidate = word.lower()
+            
+            formatted_words.append(formatted_word_candidate)
         return ' '.join(formatted_words)
 
     # Split the title string into title and author based on the last comma.

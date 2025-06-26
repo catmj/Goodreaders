@@ -1,8 +1,6 @@
 pandas
 numpy
 scikit-learn
-pyarrow
-tqdm
-scipy
 streamlit
 streamlit-searchbox
+h5py

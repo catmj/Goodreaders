@@ -6,3 +6,4 @@ tqdm
 scipy
 matplotlib
 seaborn
+h5py

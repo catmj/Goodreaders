@@ -1,5 +1,6 @@
 # Goodreaders
-Goodreaders project for Erdos Institute Data Science Bootcamp.
+Goodreaders book recommender project for The Erdos Institute Data Science Bootcamp.
+Catherine Johnston, Yevgeniya “Jonah” Tarasova, Katie Johnston, and Ava Bamforth
 
 Procedural order from data collection to book recommendations and verification:
     1. SCRAPING: Collect data from "https://www.goodreads.com/" using BeautifulSoup web scraping. Scrape data for individual books, as well as data for individual user reviews of books.

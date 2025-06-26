@@ -50,7 +50,6 @@ def _normalize_ratings(user_ratings):
         user_rating_range = user_max_rating - user_min_rating
 
         if user_rating_range == 0: 
-            # This case should ideally be caught by the `np.all` condition
             normalized_ratings = [1] * len(user_ratings) # Fallback to neutral if range is unexpectedly zero
             print(f"Warning: User's rating range is zero despite having varying ratings, normalized to 1. This should have been caught by the 'all identical' check.")
         else:

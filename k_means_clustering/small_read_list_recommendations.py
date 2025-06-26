@@ -51,11 +51,11 @@ def str_to_feat(input):
 
 # Sample user input (these should be consistent with how they appear in your book_list_features.txt).
 sample_user_books = [
-    "gideon the ninth, tamsyn muir",
-    "flight of magpies, k.j. charles",
-    "she who became the sun, shelley parker-chan",
-    "boyfriend material, alexis hall",
-    "summer sons, lee mandelo" # ,
+    # "gideon the ninth, tamsyn muir",
+    # "flight of magpies, k.j. charles",
+    # "she who became the sun, shelley parker-chan",
+    # "boyfriend material, alexis hall",
+    # "summer sons, lee mandelo",
     # "this is how you lose the time war, amal el-mohtar",
     # "the fifth season, n.k. jemisin",
     # "the king of attolia, megan whalen turner",
@@ -65,6 +65,7 @@ sample_user_books = [
     # "the girl on the train, paula hawkins",
     # "things fall apart, chinua achebe",
     # "anthem, ayn rand",
+    "lot lizards, ray garton" #,
     # "the hunger games, suzanne collins"
 ]
 
@@ -187,6 +188,11 @@ else:
 #     data_list_after_outlier_removal.append(row_data_after_removal)
 # data = np.array(data_list_after_outlier_removal, dtype=float)
 
+# Remove books the user has already rated from the recommendation pool
+# feature_df = feature_df[~feature_df['titles_authors'].isin(sample_user_books)].copy()
+# if feature_df.empty:
+#     print("All potential recommendations were books the user has already rated. No new recommendations.")
+    
 # Keep the top N most popular books, and then keep the top M highest rated books. Vice versa if N<M (worse results).
 highest_hits_to_keep = round(len(feature_df)*0.9) # N
 highest_ratings_to_keep = min(50,highest_hits_to_keep) # M

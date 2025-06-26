@@ -21,8 +21,15 @@ try:
     )
 except ImportError as e:
     # If the import fails, display an message and stop the Streamlit application.
-    st.error(f"Error loading recommendation functions: {e}. Please ensure 'combined_model' directory is at the project root level, contains 'combined.py', and potentially has an '__init__.py' file. Also, verify internal imports within 'combined.py' for modules like 'cb_get_recs' and 'cf_get_recs' are relative (e.g., 'from .cb_get_recs import ...'). Error: {e}")
+    st.error(f"Error loading combined recommendation functions: {e}. Please ensure 'combined_model' directory is at the project root level, contains 'combined.py', and potentially has an '__init__.py' file. Also, verify internal imports within 'combined.py' for modules like 'cb_get_recs' and 'cf_get_recs' are relative (e.g., 'from .cb_get_recs import ...'). Error: {e}")
     st.stop() # Stop the app if functions cannot be loaded
+
+try:
+    # Import the new k-means recommendation function
+    from k_means_clustering.small_read_list_recommendations_v2 import get_kmeans_recommendations
+except ImportError as e:
+    st.error(f"Error loading K-Means recommendation functions: {e}. Please ensure 'k_means_clustering/small_read_list_recommendations_v2.py' exists and is correctly structured. Error: {e}")
+    st.stop()
 
 
 # --- Predetermined List of Books (Original Lowercase Format for Backend) ---
@@ -174,7 +181,7 @@ if 'current_page' not in st.session_state:
 
 page_selection = st.radio(
     "Navigation",
-    ("Book Recommender", "Second Recommender (Placeholder)"),
+    ("Book Recommender", "K-Means Recommender"), # Changed placeholder name
     index=0 if st.session_state.current_page == 'Book Recommender' else 1,
     horizontal=True,
     key="main_navigation_radio"
@@ -481,9 +488,109 @@ if st.session_state.current_page == 'Book Recommender':
         if not st.session_state.display_recommendations:
             st.info("Generate recommendations first to provide feedback on them.")
 
-elif st.session_state.current_page == 'Second Recommender (Placeholder)':
-    st.header("Welcome to the Second Recommender!")
+elif st.session_state.current_page == 'K-Means Recommender':
+    st.header("🌟 K-Means Clustering Book Recommender")
     st.markdown("""
-    This section is currently a placeholder. You can build out a new book recommendation system or any other feature here.
+    This recommender uses K-Means clustering to suggest books based on a small list of books you've read.
+    Simply add the books you've enjoyed (or read) and get recommendations!
     """)
-    st.info("Content for the second recommender will go here.")
+
+    # --- K-Means Recommender Session State ---
+    if 'kmeans_user_books_data' not in st.session_state:
+        st.session_state.kmeans_user_books_data = [] # List of dictionaries: {'title': 'Book Title'}
+    if 'kmeans_last_recommendations_display' not in st.session_state:
+        st.session_state.kmeans_last_recommendations_display = []
+    if 'kmeans_run_recommendation_logic_on_rerun' not in st.session_state:
+        st.session_state.kmeans_run_recommendation_logic_on_rerun = False
+    
+    # --- K-Means Book Input Form ---
+    selected_kmeans_book_display_title = st_searchbox(
+        search_books,
+        key="kmeans_book_search_input", # Unique key for K-Means searchbox
+        placeholder="Type to search for a book you've read...",
+        label="Select a Book You've Read" 
+    )
+
+    with st.form("kmeans_book_input_form"):
+        add_kmeans_book_button = st.form_submit_button("Add Book to K-Means List")
+
+        if add_kmeans_book_button:
+            if selected_kmeans_book_display_title:
+                selected_kmeans_book_backend_title = display_to_backend_map.get(selected_kmeans_book_display_title)
+                if selected_kmeans_book_backend_title:
+                    if selected_kmeans_book_backend_title not in [item['title'] for item in st.session_state.kmeans_user_books_data]:
+                        st.session_state.kmeans_user_books_data.append({
+                            'title': selected_kmeans_book_backend_title
+                        })
+                        st.success(f"Added '{selected_kmeans_book_display_title}' to K-Means list!")
+                        if 'kmeans_book_search_input' in st.session_state:
+                            del st.session_state['kmeans_book_search_input']
+                    else:
+                        st.warning(f"'{selected_kmeans_book_display_title}' has already been added to K-Means list.")
+                else:
+                    st.error("Error: Could not find the selected K-Means book in the backend list. Please try again.")
+            else:
+                st.warning("Please select a book from the list for K-Means (type and choose from suggestions).")
+
+    # --- K-Means Function to remove a single book ---
+    def remove_single_kmeans_book(book_backend_title_to_remove):
+        st.session_state.kmeans_user_books_data = [
+            item for item in st.session_state.kmeans_user_books_data
+            if item['title'] != book_backend_title_to_remove
+        ]
+        st.session_state.kmeans_last_recommendations_display = []
+        st.session_state.kmeans_run_recommendation_logic_on_rerun = False
+        st.rerun()
+
+    # Display current list of books for K-Means recommender
+    if st.session_state.kmeans_user_books_data:
+        st.subheader("Books You've Added (K-Means):")
+        for i, book_item in enumerate(st.session_state.kmeans_user_books_data):
+            col_title, col_remove = st.columns([0.8, 0.2])
+            with col_title:
+                st.write(f"- **{format_book_title_for_display(book_item['title'])}**")
+            with col_remove:
+                st.button(
+                    "Remove",
+                    key=f"kmeans_remove_book_{book_item['title']}_{i}",
+                    on_click=remove_single_kmeans_book,
+                    args=(book_item['title'],)
+                )
+        st.markdown("---")
+
+        if st.button("Clear All K-Means Books"):
+            st.session_state.kmeans_user_books_data = []
+            st.session_state.kmeans_last_recommendations_display = []
+            st.session_state.kmeans_run_recommendation_logic_on_rerun = False
+            st.rerun()
+
+    st.markdown("---")
+    kmeans_output_limit = st.slider("Number of K-Means Recommendations to Display", 5, 50, 20, key="kmeans_output_limit_slider")
+
+    # K-Means Recommendation Button
+    st.markdown("---")
+    st.header("Generate K-Means Recommendations")
+
+    if st.button("Get K-Means Recommendations", type="primary"):
+        if st.session_state.kmeans_user_books_data:
+            st.session_state.kmeans_run_recommendation_logic_on_rerun = True
+            st.rerun()
+        else:
+            st.warning("Please add some books to the K-Means list before generating recommendations!")
+
+    # --- Conditional K-Means Recommendation Display ---
+    if st.session_state.kmeans_run_recommendation_logic_on_rerun and st.session_state.kmeans_user_books_data:
+        kmeans_user_books_backend = [item['title'] for item in st.session_state.kmeans_user_books_data]
+        with st.spinner("Generating K-Means recommendations..."):
+            kmeans_rec_list_backend = get_kmeans_recommendations(kmeans_user_books_backend, kmeans_output_limit)
+        
+        st.session_state.kmeans_last_recommendations_display = [format_book_title_for_display(book) for book in kmeans_rec_list_backend]
+        
+        st.subheader("✨ Your K-Means Recommendations:")
+        if st.session_state.kmeans_last_recommendations_display:
+            for rec_book_display in st.session_state.kmeans_last_recommendations_display:
+                st.write(f"- {rec_book_display}")
+        else:
+            st.info("No K-Means recommendations found. Try adding more books or different ones.")
+        
+        st.session_state.kmeans_run_recommendation_logic_on_rerun = False # Reset flag after generation

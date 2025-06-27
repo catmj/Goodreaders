@@ -9,7 +9,7 @@ from contextlib import redirect_stdout, redirect_stderr
 
 # --- Import functions from your content-based and collaborative filtering modules ---
 try:
-    from cb_get_recs_new import find_all_books_with_scores, BASE_FILE_NAME
+    from cb_get_recs import find_all_books_with_scores, BASE_FILE_NAME
     from cf_get_recs import load_pretrained_data, generate_user_predictions, \
                             PRETRAINED_DATA_PATH
 except ImportError as e:

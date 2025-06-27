@@ -28,7 +28,7 @@ def calculate_book_similarity(books_with_vectors_filepath, genre_weight=0.5, key
     Returns:
         tuple: A tuple containing:
                - combined_sim_matrix (np.array): The square similarity matrix.
-               - combined_headers (list): List of strings "Title, Author Name" for each book.
+               - combined_headers (list): List of strings "title, author name" for each book.
                - df (pd.DataFrame): The loaded DataFrame for potential further use.
                Returns (None, None, None) if an error occurs or data is insufficient.
     """

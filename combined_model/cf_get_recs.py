@@ -130,7 +130,7 @@ def prepare_user_ratings(
 
     return user_ratings_array, user_rated_indices
 
-# --- Train Linear Regression Model (now with Ridge regularization) ---
+# --- Train Ridge Regression Model ---
 def train_user_preference_model(
     book_features: np.ndarray,
     item_bias: np.ndarray,
@@ -175,7 +175,7 @@ def train_user_preference_model(
         return None, None
 
     # Train the Ridge regression model
-    # alpha is the regularization strength (lambda)
+    # alpha is the regularization strength
     ridge_model = Ridge(alpha=regularization_strength).fit(features_for_rated_books, target_for_rated_books)
 
     user_weights = ridge_model.coef_  
@@ -237,7 +237,6 @@ def generate_user_predictions(
         return None
 
     # Step 3: Calculate predictions for all books
-    # The `normalized_predictions` represent the user's raw preference based on features and their personal bias
     normalized_predictions = np.matmul(book_features, user_weights) + user_bias
 
     # Add back the global mean rating and item-specific bias to get the final predicted rating

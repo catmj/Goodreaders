@@ -788,6 +788,7 @@ Verify the accuracy of book recommendation lists.
 -   `collab_filtering\scripts_older_versions\cf_v4.py` 
 -   `collab_filtering\scripts_older_versions\cf_v5.py` 
 -   `collab_filtering\scripts_older_versions\cf_v6.py` 
+-   `collab_filtering\scripts_older_versions\cf_v7.py` 
 -   `combined_model\scripts_older_versions\analyze_old.py`
 -   `combined_model\scripts_older_versions\bagging_test.py`
 -   `combined_model\scripts_older_versions\combined_recs_testing_v1.py` 

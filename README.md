@@ -63,11 +63,29 @@ Collect data from `https://www.goodreads.com/` using BeautifulSoup web scraping.
 **2. DATA CLEANING AND MATCHING:** 
 Modify scraped data to make formats more consistent, remove problematic books, etc. Match user reviews of books with the corresponding books. 
 
-- `cleaning\same_books_v2.py`
+-   `cleaning\same_books_v2.py`
+
+-   Cleans datasets for books and user reviews, and then matches each review to its corresponding book.
 
 - **Parameters:**
 
+    -   `books_full_unmatched_uncleaned.csv`: str (CSV file)
+
+        -   Uncleaned and unmatched books dataset.
+
+    -   `books_by_user.csv`: str (CSV file)
+
+        -   Uncleaned and unmatched user reviews dataset.
+
 - **Returns:**
+
+    -   `books_matched`: CSV file
+
+        -   Cleaned and matched books dataset.
+
+    -   `reviews_matched`: CSV file
+    
+        -   Cleaned and matched user reviews dataset.
 
 
 **3. DATA SPLITTING:**
@@ -802,6 +820,3 @@ Verify the accuracy of book recommendation lists.
 -   `keyword_analysis_keyBERT\scripts_older_versions\keyword_extraction_v1.py` 
 -   `keyword_analysis_keyBERT\scripts_older_versions\keyword_extraction_v2.py` 
 -   `keyword_processing\scripts_older_versions\get_keys_v1.py`
-
-
-**REMAINING TO DO:** `cleaning\same_books_v2.py`

@@ -118,7 +118,6 @@ def load_and_preprocess_combined_training_data(train_file, cv_file):
     ratings['Rating'] = ratings['Rating'].astype(int)
 
     # Drop duplicate ratings for the same (book, user) pair, keeping the first one
-    # This is important after concatenation to avoid bias in pivot_table
     ratings.drop_duplicates(subset=['book', 'User_id'], inplace=True)
 
     pivot_ratings = ratings.pivot_table(index='book', columns='User_id', values='Rating')

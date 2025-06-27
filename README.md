@@ -2,77 +2,76 @@
 
 [](https://github.com/catmj/Goodreaders#goodreaders)
 
-Goodreaders book recommender project for The Erdos Institute Data Science Bootcamp. Catherine Johnston, Yevgeniya “Jonah” Tarasova, Katie Johnston, and Ava Bamforth
+Goodreaders book recommender project for The Erdos Institute Data Science Bootcamp. By Catherine Johnston, Yevgeniya “Jonah” Tarasova, Katie Johnston, and Ava Bamforth.
+
 
 Procedural order from data collection to book recommendations and verification: 
 
 
 **1. SCRAPING:** 
-Collect data from "https://www.goodreads.com/" using BeautifulSoup web scraping. Scrape data for individual books, as well as data for individual user reviews of books.
+Collect data from `https://www.goodreads.com/` using BeautifulSoup web scraping. Scrape data for individual books, as well as data for individual user reviews of books.
 
-scraping\goodreads_scraping.py (scraping\goodreads_scraping.ipynb)
+-   `scraping\goodreads_scraping.py` (`scraping\goodreads_scraping.ipynb`)
 
-Scrapes book data from Goodreads' yearly Readers' Favorite Books lists at "https://www.goodreads.com/choiceawards/best-books-XXXX", where XXXX is a year between 2011-2024. Will likely work for future years.
+-   Scrapes book data from Goodreads' yearly Readers' Favorite Books lists at `https://www.goodreads.com/choiceawards/best-books-XXXX`, where `XXXX` is a year between 2011-2024. Will likely work for future years.
 
-Parameters:
+-   **Parameters:**
 
-start_url : str (URL)
+    -   `start_url`: str (URL)
 
-Readers' Favorite Books end-of-year list webpage to scrape.
+        -   Readers' Favorite Books end-of-year list webpage to scrape.
 
-Returns:
+-   **Returns:**
 
-"books.csv" : CSV file
+    -   `books.csv`: CSV file
 
-Contains data for each book scraped, such as title, author, description, average rating, and genres.
+        -   Contains data for each book scraped, such as title, author, description, average rating, and genres.
 
-scraping\goodreads_scraping_user.py (scraping\goodreads_scraping_user.ipynb)
+-   `scraping\goodreads_scraping_user.py` (`scraping\goodreads_scraping_user.ipynb`)
 
-Scrapes user book review data from the Goodreads pages of randomly selected Goodreads users.
+-   Scrapes user book review data from the Goodreads pages of randomly selected Goodreads users.
 
-Parameters:
+-   **Parameters:**
 
-base_url : str (URL)
+    -   `base_url`: str (URL)
 
-The webpage from which to scrape a user's ratings and reviews. The exact URL differs by user ID.
+        -   The webpage from which to scrape a user's ratings and reviews. The exact URL differs by user ID.
 
-Returns:
+-   **Returns:**
 
-"books_by_user.csv" : CSV file
+    -   `books_by_user.csv`: CSV file
 
-Contains data for each user review scraped, such as book title, book author, user ID, user rating, average rating, and review text.
+        -   Contains data for each user review scraped, such as book title, book author, user ID, user rating, average rating, and review text.
 
-add_reviews_to_books\add_to_books.py
+-   `add_reviews_to_books\add_to_books.py`
 
-Scrapes book data for books that do not appear on Goodreads' Readers' Favorite Books lists but do have ratings scraped by "goodreads_scraping_user.py".
+-   Scrapes book data for books that do not appear on Goodreads' Readers' Favorite Books lists but do have ratings scraped by `goodreads_scraping_user.py`.
 
-- Parameters:
+-   **Parameters:**
 
-"reviews_with_urls_left_to_scrape.csv" : str (CSV file)
+    -   `reviews_with_urls_left_to_scrape.csv`: str (CSV file)
 
-Each row corresponds to a book and contains the portion of its URL after "https://www.goodreads.com/book/show/". Some books have duplicate URLs, particularly books whose titles contain non-Latin characters.
+        -   Each row corresponds to a book and contains the portion of its URL that comes after `https://www.goodreads.com/book/show/`. Some books have duplicate URLs, particularly books whose titles contain non-Latin characters.
 
-- Returns:
+-   **Returns:**
 
-"books_in_progress.csv" : CSV file
+    -   `books_in_progress.csv`: CSV file
 
-Adds a row of data for each book scraped, one at a time. Can add rows to an existing file "books_in_progress.csv".
+        -   Adds a row of data for each book scraped, one at a time. Can add rows to an existing file `books_in_progress.csv`.
+
 
 **2. DATA CLEANING AND MATCHING:** 
+Modify scraped data to make formats more consistent, remove problematic books, etc. Match user reviews of books with the corresponding books. 
 
-- cleaning\same_books_v2.py
-
-- Modify scraped data to make formats more consistent, remove problematic books, etc. Match user reviews of books with the corresponding books.
-  
+- `cleaning\same_books_v2.py`
 
 - **Parameters:**
 
 - **Returns:**
 
-- 
-            
 
 **3. DATA SPLITTING:**
+Split cleaned and matched data into a training dataset and a testing dataset. Use the latter for verification purposes.
 
 -   `train_test_split\split_data.py`
     
@@ -116,10 +115,11 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
             
     -   `OUTPUT_PATH`: Path (directory)
         
-        -   The directory (`split_data/`) where all generated split and chunked CSV files are saved.
-            
+        -   The directory (`split_data/`) where all generated split and chunked CSV files are saved.            
 
-**4. KEYWORD PREPROCESSING (optional):** Create a list of potential keywords from book descriptions by removing common and problematic words. Reformat book descriptions to ensure consistency.
+
+**4. KEYWORD PREPROCESSING (optional):** 
+Create a list of potential keywords from book descriptions by removing common and problematic words. Reformat book descriptions to ensure consistency.
 
 -   `keyword_preprocessing\keyword_preprocessing.py`
     
@@ -127,30 +127,31 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
     
 -   **Parameters:**
     
-    -   "books_matched_copy.csv" : str (CSV file)
+    -   `books_matched_copy.csv`: str (CSV file)
         
-        -   Contains an indexed list of books, where each book has a description ("description").
+        -   Contains an indexed list of books, where each book has a description (`description`).
             
-    -   "reviews_matched_copy.csv" : str (CSV file)
+    -   `reviews_matched_copy.csv`: str (CSV file)
         
-        -   Contains an indexed list of user reviews of books, where each user review may have user-written text ("review").
+        -   Contains an indexed list of user reviews of books, where each user review may have user-written text (`review`).
             
-    -   new_stop_words : str list
+    -   `new_stop_words`: str list
         
         -   Additional stopwords to add to the default list of stopwords from the `nltk.corpus` library. Generally, contains words common in book descriptions and reviews, such as words related to reading, publishing, or writing.
             
 -   **Returns:**
     
-    -   "output_file_books.csv" : CSV file
+    -   `output_file_books.csv`: CSV file
         
-        -   Contains all potential keywords from each book description from the "books_matched_copy.csv" dataset.
+        -   Contains all potential keywords from each book description from the `books_matched_copy.csv` dataset.
             
-    -   "output_file_reviews.csv" : CSV file
+    -   `output_file_reviews.csv`: CSV file
         
-        -   Contains all potential keywords from each user review from the "reviews_matched_copy.csv" dataset. Not as useful since book reviews are usually blank (ratings only).
-            
+        -   Contains all potential keywords from each user review from the `reviews_matched_copy.csv` dataset. Not as useful since book reviews are usually blank (ratings only).
 
-**5. KEYWORD PROCESSING:** Create a list of keywords from each book's description.
+
+**5. KEYWORD PROCESSING:** 
+Create a list of keywords from each book's description.
 
 -   `keyword_processing\get_keys_v2.py`
     
@@ -175,9 +176,10 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
         -   Also contains `genre_vector` (list representation of a binary vector indicating genre presence), and `genre_vector_sum` (sum of elements in the genre vector).
             
         -   This file is sorted by `keyword_vector_sum` then `genre_vector_sum` in descending order.
-            
 
-**6. KEYWORD CLUSTERING:** Create clusters of keywords that have similar meanings. Assign each cluster a component in the feature vectors.
+
+**6. KEYWORD CLUSTERING:** 
+Create clusters of keywords that have similar meanings. Assign each cluster a component in the feature vectors.
 
 -   `keyword_clustering\cluster_keywords.py`
     
@@ -194,9 +196,10 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
     -   `keys_by_cluster.csv`: CSV file
         
         -   Contains a list of keyword clusters, where each row represents a cluster and contains the keywords belonging to that cluster, separated by commas.
-            
 
-**7. K-MODES BOOK CLUSTERING (optional):** Create clusters of similar books using their feature vectors and the k-modes algorithm (a variant of k-modes for categorical data). Use these clusters to reduce runtime when making book recommendations.
+
+**7. K-MODES BOOK CLUSTERING (optional):** 
+Create clusters of similar books using their feature vectors and the k-modes algorithm (a variant of k-modes for categorical data). Use these clusters to reduce runtime when making book recommendations.
 
 -   `k_means_clustering\k_modes_v2.py`
     
@@ -204,19 +207,19 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
     
 -   **Parameters:**
     
-    -   num_clusters : int
+    -   `num_clusters`: int
         
         -   The predetermined number of clusters to form using KModes.
             
-    -   cat_dissim : callable
+    -   `cat_dissim`: callable
         
         -   Specifies the function to use as the dissimilarity metric (e.g., `hamming_dist`, `cosine_dissim`).
             
-    -   "books_with_vectors_and_sums_and_ratings.csv" : str (CSV file)
+    -   `books_with_vectors_and_sums_and_ratings.csv`: str (CSV file)
         
         -   CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided. Also includes number of ratings and average rating for each book.
             
-    -   keyword_weight : float
+    -   `keyword_weight`: float
         
         -   How much keywords should be weighted relative to genres when measuring similarities. The optimal is somewhere around 0.8.
             
@@ -224,11 +227,11 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
         
 -   **Returns:**
     
-    -   "books_clustered.csv" : CSV file
+    -   `books_clustered.csv`: CSV file
         
         -   The input CSV file with an additional column indicating the assigned cluster for each book.
             
-    -   "books_by_cluster.csv" : CSV file
+    -   `books_by_cluster.csv`: CSV file
         
         -   CSV file containing lists of books, grouped by their assigned cluster.
             
@@ -238,19 +241,19 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
     
 -   **Parameters:**
     
-    -   K : int list
+    -   `K`: int list
         
         -   List of numbers of initial cluster centroids to test with KModes.
             
-    -   cat_dissim : callable
+    -   `cat_dissim`: callable
         
         -   Specifies the function to use as the dissimilarity metric (e.g., `hamming_dist`, `cosine_dissim`).
             
-    -   "books_with_vectors_and_sums.csv" : str (CSV file)
+    -   `books_with_vectors_and_sums.csv`: str (CSV file)
         
         -   CSV file containing books (titles and authors) and their feature vectors. Two separate feature vectors for genres and (clustered) keywords are generally provided.
             
-    -   keyword_weight : float
+    -   `keyword_weight`: float
         
         -   How much keywords should be weighted relative to genres when measuring similarities. The optimal is somewhere around 0.8.
             
@@ -258,7 +261,7 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
         
 -   **Returns:**
     
-    -   "elbow_graph.png" : PNG file
+    -   `elbow_graph.png`: PNG file
         
         -   The bend in the elbow plot is approximately the optimal number of book clusters in terms of costs.
             
@@ -268,42 +271,43 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
     
 -   **Parameters:**
     
-    -   sample_user_books : str list
+    -   `sample_user_books`: str list
         
         -   An unrated list of books (titles and authors) that a user has read before.
             
-    -   "books_clustered_ratings.csv" : str (CSV file)
+    -   `books_clustered_ratings.csv`: str (CSV file)
         
         -   CSV file containing books (titles and authors) and their feature vectors, with an additional column indicating the assigned cluster for each book. Also includes number of ratings and average rating for each book.
             
-    -   "books_by_cluster_ratings.csv" : str (CSV file)
+    -   `books_by_cluster_ratings.csv`: str (CSV file)
         
-        -   CSV file containing lists of books, grouped by their assigned cluster. Must correspond to the clusters in "books_clustered_ratings.csv".
+        -   CSV file containing lists of books, grouped by their assigned cluster. Must correspond to the clusters in `books_clustered_ratings.csv`.
             
-    -   std_num_outlier : float
+    -   `std_num_outlier`: float
         
         -   The number of standard deviations below the mean similarity that serves as the threshold for outliers.
             
-    -   highest_hits_to_keep : int
+    -   `highest_hits_to_keep`: int
         
         -   The number of books with the highest number of ratings to keep. Should be very high relative to the number of books left after filtering for outliers.
             
-    -   highest_ratings_to_keep : int
+    -   `highest_ratings_to_keep`: int
         
-        -   The number of the most highly rated books (in terms of average rating) to keep. Should be less than "highest_hits_to_keep".
+        -   The number of the most highly rated books (in terms of average rating) to keep. Should be less than `highest_hits_to_keep`.
             
-    -   keyword_weight : float
+    -   `keyword_weight`: float
         
         -   How much keywords should be weighted relative to genres when measuring similarities. The optimal is somewhere around 0.8.
             
 -   **Returns:**
     
-    -   "recommendations.csv" : CSV file
+    -   `recommendations.csv`: CSV file
         
-        -   Popular books that share a k-modes cluster with a book the user has read before, sorted by average rating.
-            
+        -   Popular books that share a k-modes cluster with a book the user has read before, sorted by average rating. 
 
-**8A. CONTENT-BASED FILTERING:** Train the content-based filtering model.
+
+**8A. CONTENT-BASED FILTERING:** 
+Train the content-based filtering model.
 
 -   `content_filtering\train_similarity_final.py`
     
@@ -400,7 +404,8 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
         -   Multiple HDF5 files, each representing a chunk of the original dataset. These files are saved in the specified `OUTPUT_DIR`.
             
 
-**8B. COLLABORATIVE FILTERING:** Train the collaborative filtering model.
+**8B. COLLABORATIVE FILTERING:** 
+Train the collaborative filtering model.
 
 -   `collab_filtering\cf_final.py`
     
@@ -408,18 +413,16 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
     
 -   **Parameters:**
 
-    - `DATA_PATH` : str 
+    - `DATA_PATH`: str 
 
         - The directory where the ratings file is saved (e.g. `../train_test_split/split_data_combined/`)
     
     -   `TRAIN_RATINGS_FILE`: str (CSV file path)
         
         -   Path to the CSV file containing user ratings (e.g., `train_ratings.csv`). This file should include 'User_id', 'Book_id', and 'Book_Rating'.
-            
-            
+                    
 -   **Returns:**
-    
-            
+         
     -   `X_features_{num_features}_lambda_{lambda_val}.npy`: NumPy `.npy` file (saved in `output_dir`)
         
         -   Learned item features (`X`) from the matrix factorization model.
@@ -437,7 +440,8 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
         -   The mean rating for each book used in the model.
             
 
-**8C. COMBINED FILTERING:** Generate book recommendation lists using a combination of content-based filtering and collaborative filtering.
+**8C. COMBINED FILTERING:** 
+Generate book recommendation lists using a combination of content-based filtering and collaborative filtering.
 
 -   `combined_model\cb_get_recs_new.py`
     
@@ -467,42 +471,41 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
         
         -   A DataFrame with 'Book Identifier', 'Weighted Similarity Score', 'Rated by User' (boolean), and 'Original Rating' columns. The DataFrame is sorted by 'Weighted Similarity Score' in descending order. Returns an empty DataFrame if no valid rated books are found or an error occurs.
 
-            
 -   `combined_model\cf_get_recs.py`
     
 -   Prepares user ratings, trains a user-specific Ridge regression model using pre-trained book features and biases, and calculates predicted ratings for all books. The output includes user-rated books with their original ratings and a flag indicating if they were rated.
     
 -   **Parameters:**
     
-    -   `book_features`: `np.ndarray`
+    -   `book_features`: np.ndarray
         
         -   The full matrix of all book features.
             
-    -   `item_bias`: `np.ndarray`
+    -   `item_bias`: np.ndarray
         
         -   The full item bias vector.
             
-    -   `mean_book_ratings`: `np.ndarray`
+    -   `mean_book_ratings`: np.ndarray
         
         -   The mean rating for all books.
             
-    -   `all_book_identifiers`: `list[str]`
+    -   `all_book_identifiers`: list[str]
         
         -   The master list of all book identifiers.
             
-    -   `total_books`: `int`
+    -   `total_books`: int
         
         -   Total number of books.
             
-    -   `user_rated_book_identifiers`: `list[str]`
+    -   `user_rated_book_identifiers`: list[str]
         
         -   List of book identifiers rated by the user.
             
-    -   `user_book_ratings`: `list[float]`
+    -   `user_book_ratings`: list[float]
         
         -   List of ratings corresponding to user_rated_book_identifiers.
             
-    -   `new_user_regularization_strength`: `float`
+    -   `new_user_regularization_strength`: float
         
         -   Regularization parameter for the new user model.
             
@@ -567,7 +570,8 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
             -   **Strategy 4: Hybrid Strategy 2+1:** Recommends books by combining a fraction of pure top N content-based recommendations with the remaining fraction from a list of top content-based books re-ranked by collaborative filtering, prioritizing books appearing in both lists.
                 
 
-**9. TESTING AND VALIDATION:** Verify the accuracy of book recommendation lists.
+**9. TESTING AND VALIDATION:** 
+Verify the accuracy of book recommendation lists.
 
 -   `combined_model\combined_recs_testing_final.py`
     
@@ -665,7 +669,7 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
     
     -   `checkpoint_root_dir`: str
         
-        -   The root directory where the output directories from `testing_final.py` are located (e.g., "single_run_evaluation_results_loop").
+        -   The root directory where the output directories from `testing_final.py` are located (e.g., `single_run_evaluation_results_loop`).
             
     -   `parameters_list`: list of dict
         
@@ -694,3 +698,79 @@ Adds a row of data for each book scraped, one at a time. Can add rows to an exis
 -   **MANUAL TESTING**
     
 -   The quality of book recommendation lists can be verified by developers by inputting a list of books with ratings out of five stars and then evaluating the quality of the resulting recommendations.
+
+
+**APP:**
+
+-   `app\app.py`
+
+-   Creates an app with a user interface that makes the recommendation process easier. 
+
+-   `app\app_v2.py`
+
+-   Creates an app with a user interface that makes the recommendation process easier. Includes a k-modes recommender.
+
+
+**OTHER IMPORTANT SCRIPTS:** 
+
+-   `large_files.py` (various locations) 
+
+-   Breaks large CSV files into smaller chunks so that GitHub can store them properly.
+
+-   `recombine_files.py` (various locations) 
+
+-   Recombines file chunks created by `large_files.py` into one CSV file. 
+
+-   `big_data_set\combine_v2.py`
+
+-   Recombines file chunks created by `large_files.py` into one CSV file. Newer version?
+
+-   `cleaning\create_fake_data.py` 
+
+-   Generates fake feature vectors for a list of title-author pairs (for testing purposes). 
+
+-   `collab_filtering\create_dummy_data.py`
+
+-   Generates fake data (for testing purposes)?
+
+-   `fake_data\genre_list.py`
+
+-   Searches for books by genre?
+
+-   `big_data_set\find_ids.py`
+
+
+**OTHER SCRIPTS NOT USED:**
+-   `big_data_set\scripts_older_versions\author_names.py`
+-   `big_data_set\scripts_older_versions\combine_v1.py` 
+-   `cleaning\scripts_older_versions\goodreads_ratings_change_df.py` 
+-   `cleaning\scripts_older_versions\goodreads_ratings_change_df.ipynb`
+-   `cleaning\scripts_older_versions\same_books_v1.py` 
+-   `collab_filtering\scripts_older_versions\cf_new_user_v1.py` 
+-   `collab_filtering\scripts_older_versions\cf_new_user_v2.py` 
+-   `collab_filtering\scripts_older_versions\cf_new_user_v3.py` 
+-   `collab_filtering\scripts_older_versions\cf_new_user_v4.py` 
+-   `collab_filtering\scripts_older_versions\cf_new_user_v5.py` 
+-   `collab_filtering\scripts_older_versions\cf_silly.py` 
+-   `collab_filtering\scripts_older_versions\cf_v1.py` 
+-   `collab_filtering\scripts_older_versions\cf_v2.py` 
+-   `collab_filtering\scripts_older_versions\cf_v3.py` 
+-   `collab_filtering\scripts_older_versions\cf_v4.py` 
+-   `collab_filtering\scripts_older_versions\cf_v5.py` 
+-   `collab_filtering\scripts_older_versions\cf_v6.py` 
+-   `combined_model\scripts_older_versions\analyze.py` 
+-   `combined_model\scripts_older_versions\bagging_test.py`
+-   `combined_model\scripts_older_versions\combined_recs_testing_v1.py` 
+-   `combined_model\scripts_older_versions\combined_recs_testing_v2.py` 
+-   `combined_model\scripts_older_versions\testing_no_print_v1.py` 
+-   `combined_model\scripts_older_versions\testing.py` 
+-   `content_filtering\scripts_older_versions\get_recs.py` 
+-   `content_filtering\scripts_older_versions\train_similarity_v1.py` 
+-   `k_means_clustering\scripts_older_versions\elbow_method_v1.py` 
+-   `k_means_clustering\scripts_older_versions\k_modes_v1.py` 
+-   `keyword_analysis_keyBERT\scripts_older_versions\keyword_extraction_v1.py` 
+-   `keyword_analysis_keyBERT\scripts_older_versions\keyword_extraction_v2.py` 
+-   `keyword_processing\scripts_older_versions\get_keys_v1.py`
+
+
+**REMAINING TO DO:** `keyword_analysis_keyBERT\keyword_extraction_final.py`, `cleaning\same_books_v2.py`

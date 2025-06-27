@@ -140,7 +140,7 @@ def train_user_preference_model(
 ) -> tuple[np.ndarray | None, float | None]:
     """
     Trains a Ridge Regression model for a specific user to learn their preferences
-    based on their ratings and book features, with L2 regularization.
+    based on their ratings and book features.
 
     Args:
         book_features (ndarray): Matrix of all book features.

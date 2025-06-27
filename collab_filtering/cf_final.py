@@ -78,7 +78,7 @@ def load_and_preprocess_combined_training_data(train_file, cv_file):
 
     This function reads ratings from both the training and cross-validation CSV files,
     concatenates them, and then performs the following preprocessing steps:
-    1. Combines 'Title' and 'Author' to create a unique 'book' identifier.
+    1. Combines 'Title' and 'Author' to create a unique book identifier.
     2. Filters out 'Invalid rating' entries and converts ratings to integers.
     3. Drops duplicate (book, user) ratings, keeping the first occurrence.
     4. Pivots the DataFrame to create a matrix where rows are books and columns are users,

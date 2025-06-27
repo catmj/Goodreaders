@@ -6,8 +6,7 @@ import os # For path manipulation and directory creation
 import json # For potentially saving metadata alongside checkpoints (not fully used here, but good practice)
 
 # --- Define file paths ---
-# Adjust this path if your 'books_with_vectors.csv' is in a different location
-output_vectors_csv_file = '../keyword_processing/books_with_vectors.csv'
+books_with_vectors_filepath = '../keyword_processing/books_with_vectors.csv'
 base_output_filename = 'book_similarity_matrix'
 # Directory to save intermediate checkpoint files and final outputs
 checkpoint_dir = './similarity_checkpoints'
@@ -200,7 +199,7 @@ if __name__ == "__main__":
 
         # Calculate similarity, passing the checkpoint directory
         combined_sim_matrix, combined_headers, _ = calculate_book_similarity(
-            output_vectors_csv_file,
+            books_with_vectors_filepath,
             genre_weight=g,
             keyword_weight=k,
             checkpoint_dir=checkpoint_dir # Pass the checkpoint directory for saving/loading

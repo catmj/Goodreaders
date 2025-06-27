@@ -5,12 +5,19 @@ import nltk
 from nltk.corpus import words # Import 'words' corpus
 import os
 
+# --- Configuration Variables ---
+INPUT_FILE_PATH = "../keyword_analysis_keyBERT/output_file_books_train_preprocessed_n15_div0.2.csv"
+OUTPUT_FILE_PATH = "keys_by_cluster.csv"
+MIN_COMMUNITY_SIZE = 4
+THRESHOLD = 0.65
+# --- End Configuration Variables ---
+
 nltk.download('words')
 
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-key_frame = pd.read_csv("../keyword_analysis_keyBERT/output_file_books_train_preprocessed_n15_div0.2.csv")
+key_frame = pd.read_csv(INPUT_FILE_PATH)
 
 key_sentences = key_frame.keywords.tolist()
 
@@ -58,7 +65,7 @@ start_time = time.time()
 # min_cluster_size: Only consider cluster that have at least 10 elements
 # threshold: Consider sentence pairs with a cosine-similarity larger than threshold as similar
 
-clusters = util.community_detection(key_embeddings, min_community_size=4, threshold=0.65)
+clusters = util.community_detection(key_embeddings, min_community_size=MIN_COMMUNITY_SIZE, threshold=THRESHOLD)
 
 print(f"Clustering done after {time.time() - start_time:.2f} sec")
 
@@ -80,4 +87,6 @@ print(f"Total clustered keywords: {total_clustered}")
 print(f"Total unique keywords processed: {len(keys)}")
 
 df = pd.DataFrame({"key_clusters":keys_by_cluster})
-df.to_csv('keys_by_cluster.csv', index=False) # Added index=False for cleaner CSV output
+
+df.to_csv(OUTPUT_FILE_PATH, index=False)
+print(f"Keyword clusters saved to '{OUTPUT_FILE_PATH}'")

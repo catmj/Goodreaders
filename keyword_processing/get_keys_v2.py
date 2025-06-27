@@ -290,7 +290,7 @@ def export_dictionaries_to_json(dictionary, output_filename):
 
 
 
-# --- Define your CSV file paths and output JSON file names ---
+# --- Define CSV file paths and output JSON file names ---
 key_clusters_file = "../keyword_clustering/keys_by_cluster.csv"
 books_file = "../keyword_analysis_keyBERT/output_file_books_train_preprocessed_n15_div0.2.csv"
 output_csv_file = 'books_with_vectors.csv'
@@ -302,7 +302,7 @@ genre_map_json_file = 'genre_to_index_map.json'
 books_df_processed, keyword_vectors_output, unique_genres_list, genre_vectors_output, \
     keyword_map_output, genre_map_output = process_book_data_from_csv(key_clusters_file, books_file)
 
-# --- Display Results (Optional - for verification) ---
+# --- Display Results ---
 print("\n--- Results ---")
 
 if not books_df_processed.empty:

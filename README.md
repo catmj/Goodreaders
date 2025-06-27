@@ -71,7 +71,7 @@ Modify scraped data to make formats more consistent, remove problematic books, e
 
 
 **3. DATA SPLITTING:**
-Split cleaned and matched data into a training dataset and a testing dataset. Use the latter for verification purposes.
+Split cleaned and matched data into a training dataset and a testing dataset. Use the latter for verification purposes. 
 
 -   `train_test_split\split_data.py`
     
@@ -94,6 +94,11 @@ Split cleaned and matched data into a training dataset and a testing dataset. Us
     -   `MAX_FILE_SIZE_MB`: int
         
         -   Maximum desired size for each chunked output file in megabytes.
+
+    -   `OUTPUT_PATH`: str (directory)
+        
+        -   The directory (`split_data/`) where all generated split and chunked CSV files are saved.            
+
             
 -   **Returns:**
     
@@ -113,10 +118,6 @@ Split cleaned and matched data into a training dataset and a testing dataset. Us
         
         -   The training set for book data, matched with the user rating splits. Also available as chunked files (e.g., `books_train_part_1.csv`).
             
-    -   `OUTPUT_PATH`: Path (directory)
-        
-        -   The directory (`split_data/`) where all generated split and chunked CSV files are saved.            
-
 
 **4. KEYWORD PREPROCESSING (optional):** 
 Create a list of potential keywords from book descriptions by removing common and problematic words. Reformat book descriptions to ensure consistency.
@@ -150,55 +151,86 @@ Create a list of potential keywords from book descriptions by removing common an
         -   Contains all potential keywords from each user review from the `reviews_matched_copy.csv` dataset. Not as useful since book reviews are usually blank (ratings only).
 
 
-**5. KEYWORD PROCESSING:** 
-Create a list of keywords from each book's description.
+**5. KEYWORD EXTRACTION & PROCESSING:**
+The following scripts are used to extract keywords from book descriptions, cluster them semantically, and then process these keywords into numerical vectors for analysis.
+
+-   `keyword_analysis_keyBERT\keyword_extraction_final.py`
+    
+-   Creates a list of keywords from each book's description using the KeyBERT model. Handles text preprocessing, keyword extraction, and saving the results.
+    
+-   **Parameters:**
+    
+    -   `data_folder_path`: str
+
+        -   The path to the directory containing the input CSV files (e.g., `'data_folder'`). All CSV files found within this folder will be processed.
+
+    -   `n_values`: list of int
+
+        -   A list of integer values representing the `top_n` parameter for KeyBERT (maximum number of keywords to extract per document). The script will run keyword extraction for each `n` value in this list (e.g., `[15, 10]`).
+        
+    -   `diversity_values`: list of float
+
+        -   A list of float values representing the `diversity` parameter for KeyBERT, controlling the uniqueness of extracted keywords. The script will run keyword extraction for each `diversity` value in this list (e.g., `[0.2, 0.4]`).
+    
+-   **Returns:**
+    
+    -   Output CSV file(s) : CSV file
+
+        -   CSV file(s) containing the original book metadata, descriptions (raw and preprocessed), and KeyBERT-extracted keywords, with filename(s) dynamically reflecting the input source and parameters.
+
+
+-   `keyword_clustering\cluster_keywords.py`
+
+-   Extracts keywords into semantic clusters and facilitates the creation of keyword feature vectors.
+
+-   **Parameters:**
+
+    -   `INPUT_FILE_PATH`: str
+
+        -   The path to the input CSV file containing a 'keywords' column (default: `../keyword_analysis_keyBERT/output_file_books_train_preprocessed_n15_div0.2.csv`).
+
+    -   `OUTPUT_FILE_PATH`: str
+
+        -   The path to save the output CSV file with keyword clusters (default: `keys_by_cluster.csv`).
+
+    -   `MIN_COMMUNITY_SIZE`: int
+
+        -   The minimum number of elements required for a cluster to be considered valid (default: `4`).
+
+    -   `THRESHOLD`: float
+
+        -   The cosine-similarity threshold used by the community detection algorithm. Keyword pairs with a similarity larger than this threshold are considered similar and potentially grouped (default: `0.65`).
+
+-   **Returns:**
+
+    -   `keys_by_cluster.csv`: CSV file
+
+        -   Contains a mapping of each identified cluster to a comma-separated list of keywords belonging to that cluster. 
+
 
 -   `keyword_processing\get_keys_v2.py`
     
--   This script handles the loading, preprocessing, and vector generation for book data. It reads keyword cluster information, loads and cleans raw book data (extracting genres and keywords), generates numerical feature vectors for both keywords (based on clusters) and genres, and then exports the processed book data along with these vectors and their sums to a CSV file.
+-  This script focuses on transforming extracted keywords and genres into numerical feature vectors based on predefined keyword clusters.
     
 -   **Parameters:**
     
     -   `key_clusters_filepath`: str (CSV file path)
         
-        -   Path to the CSV file containing keyword clusters (e.g., `../keyword_clustering/keys_by_cluster.csv`).
+        -   Path to the CSV file containing keyword cluster definitions (e.g., `../keyword_clustering/keys_by_cluster.csv`, which is an output from `cluster_keywords.py`). This file defines which keywords belong to which clusters.
             
     -   `books_filepath`: str (CSV file path)
         
-        -   Path to the CSV file containing preprocessed book data, including 'genres' and 'keywords' columns (e.g., `../keyword_analysis_keyBERT/output_file_books_train_preprocessed_n15_div0.2.csv` from Keyword Processing).
+        -   Path to the CSV file containing preprocessed book data, which *must* include 'genres' and 'keywords' columns (e.g., the output from `keyword_extraction_final.py` like `../keyword_analysis_keyBERT/output_file_books_train_preprocessed_n15_div0.2.csv`).
             
 -   **Returns:**
     
     -   `books_with_vectors.csv`: CSV file
         
-        -   Contains book titles, authors, `rating`, `num_ratings`, the generated `keyword_vector` (list representation of a binary vector indicating keyword cluster presence), and `keyword_vector_sum` (sum of elements in the keyword vector).
-            
-        -   Also contains `genre_vector` (list representation of a binary vector indicating genre presence), and `genre_vector_sum` (sum of elements in the genre vector).
-            
-        -   This file is sorted by `keyword_vector_sum` then `genre_vector_sum` in descending order.
+        -   Includes book titles, authors, ratings, and number of ratings, along with generated binary keyword vectors (and their sums) and genre vectors (and their sums).
 
 
-**6. KEYWORD CLUSTERING:** 
-Create clusters of keywords that have similar meanings. Assign each cluster a component in the feature vectors.
 
--   `keyword_clustering\cluster_keywords.py`
-    
--   Loads keywords, filters out non-English words and short words, then uses Sentence-BERT embeddings and community detection to group semantically similar keywords into clusters.
-    
--   **Parameters:**
-    
-    -   `../keyword_analysis_keyBERT/output_file_books_train_preprocessed_n15_div0.2.csv`: str (CSV file path)
-        
-        -   The input CSV file containing book keywords that need to be clustered.
-            
--   **Returns:**
-    
-    -   `keys_by_cluster.csv`: CSV file
-        
-        -   Contains a list of keyword clusters, where each row represents a cluster and contains the keywords belonging to that cluster, separated by commas.
-
-
-**7. K-MODES BOOK CLUSTERING (optional):** 
+**6. K-MODES BOOK CLUSTERING (optional):** 
 Create clusters of similar books using their feature vectors and the k-modes algorithm (a variant of k-modes for categorical data). Use these clusters to reduce runtime when making book recommendations.
 
 -   `k_means_clustering\k_modes_v2.py`
@@ -306,7 +338,7 @@ Create clusters of similar books using their feature vectors and the k-modes alg
         -   Popular books that share a k-modes cluster with a book the user has read before, sorted by average rating. 
 
 
-**8A. CONTENT-BASED FILTERING:** 
+**7A. CONTENT-BASED FILTERING:** 
 Train the content-based filtering model.
 
 -   `content_filtering\train_similarity_final.py`
@@ -319,27 +351,23 @@ Train the content-based filtering model.
         
         -   Path to the CSV file containing book titles, authors, and keyword/genre vectors as string representations of lists (e.g., `../keyword_processing/books_with_vectors.csv` from Keyword Processing).
             
-    -   `genre_weight`: float, optional
+    -   `weight_pairs`: list of tuple
         
-        -   Weight to assign to genre similarity in the combined similarity calculation. Defaults to 0.5.
-            
-    -   `keyword_weight`: float, optional
-        
-        -   Weight to assign to keyword similarity in the combined similarity calculation. Defaults to 0.5.
+        -   Weights to assign to genre and keyword similarity in the combined similarity calculation. Defaults to `[(0.8, 0.2)]`.
             
     -   `checkpoint_dir`: str, optional
         
-        -   Directory path for saving and loading intermediate similarity matrix checkpoints (`.npy` files). If `None`, checkpointing is skipped. Defaults to `./similarity_checkpoints`.
+        -   Directory path for saving and loading intermediate similarity matrix checkpoints (`.npy` files). Defaults to `./similarity_checkpoints`.
             
 -   **Returns:**
     
     -   `book_similarity_matrix_{genre_weight_normalized}.npy`: NumPy `.npy` file
         
-        -   A square NumPy array representing the combined similarity matrix between all books. The filename will include the normalized `genre_weight` (e.g., `book_similarity_matrix_g0-8_k0-2.npy`).
+        -   A square NumPy array representing the combined similarity matrix between all books. The filename will include the genre weight (e.g., `book_similarity_matrix_0-8.npy`).
             
     -   `book_similarity_matrix_books_{genre_weight_normalized}.txt`: Text file
         
-        -   A text file containing a list of book identifiers (e.g., "Title, Author Name"), corresponding to the order of books in the similarity matrix. The filename will include the normalized `genre_weight`.
+        -   A text file containing a list of book identifiers ("title, author name"), corresponding to the order of books in the similarity matrix. The filename will include the normalized genre weight.
             
     -   (Implicit) Intermediate Checkpoints:
         
@@ -379,32 +407,32 @@ Train the content-based filtering model.
     
 -   Splits a large HDF5 file into smaller HDF5 chunks.
     
--   **Parameters:**
-    
-    -   `ORIGINAL_H5_FILEPATH`: str
+   
+    -   `LARGE_H5_FILEPATH`: str
         
-        -   Path to the original large HDF5 file (e.g., `book_similarity_matrix.h5` generated by `numpy_to_h5.py`).
+        -   Path to the original large HDF5 file (e.g., `book_similarity_matrix.h5`).
             
-    -   `H5_DATASET_NAME`: str
+    -   `LARGE_H5_DATASET_NAME`: str
         
         -   The name of the dataset within the HDF5 file to be split (e.g., `similarity_matrix`).
             
-    -   `CHUNK_SIZE_MB`: int
+    -   `CHUNK_SIZE_ROWS`: int
         
-        -   The maximum desired size for each output HDF5 chunk file in megabytes.
+        -   The maximum desired number of rows for each output HDF5 chunk file (e.g., `3000`).
             
     -   `OUTPUT_DIR`: str
         
-        -   The directory where the chunked HDF5 files will be saved.
+        -   The directory where the chunked HDF5 files will be saved (e.g., `split_h5_chunks`).
             
 -   **Returns:**
     
-    -   `{OUTPUT_DIR}/{original_filename_prefix}_part_{chunk_index}.h5`: HDF5 (.h5) files
+    -   `{OUTPUT_DIR}/chunk_XXX.h5`: HDF5 (.h5) files
         
-        -   Multiple HDF5 files, each representing a chunk of the original dataset. These files are saved in the specified `OUTPUT_DIR`.
+        -   Multiple HDF5 files, each representing a chunk of the original dataset. These files are saved in the specified `OUTPUT_DIR` and named sequentially (e.g., `chunk_000.h5`, `chunk_001.h5`). Each chunk file contains a dataset named `chunk_data_XXX`.
+
             
 
-**8B. COLLABORATIVE FILTERING:** 
+**7B. COLLABORATIVE FILTERING:** 
 Train the collaborative filtering model.
 
 -   `collab_filtering\cf_final.py`
@@ -413,13 +441,45 @@ Train the collaborative filtering model.
     
 -   **Parameters:**
 
-    - `DATA_PATH`: str 
+    -   `DATA_PATH`: str 
 
-        - The directory where the ratings file is saved (e.g. `../train_test_split/split_data_combined/`)
+        -   The base directory where the split ratings files are located (e.g., `../train_test_split/split_data_combined/`).
     
-    -   `TRAIN_RATINGS_FILE`: str (CSV file path)
-        
-        -   Path to the CSV file containing user ratings (e.g., `train_ratings.csv`). This file should include 'User_id', 'Book_id', and 'Book_Rating'.
+    -   `TRAIN_RATINGS_FILE`: str 
+
+        -   The full path to the training ratings CSV file (e.g., `../train_test_split/split_data_combined/train_ratings.csv`).
+    
+    -   `CROSS_VAL_RATINGS_FILE`: str 
+
+        -   The full path to the cross-validation ratings CSV file (e.g., `../train_test_split/split_data_combined/cross_val_ratings.csv`).
+            
+    -   `LEARNING_RATE`: float
+
+        -   The learning rate used for the gradient descent optimization in matrix factorization (e.g., `0.005`).
+            
+    -   `ITERATIONS`: int
+
+        -   The number of training iterations for the matrix factorization model (e.g., `1000`).
+            
+    -   `TOP_N_RECOMMENDATIONS`: int
+
+        -   The default number of top recommendations to generate (e.g., `20`).
+            
+    -   `TRAINED_DATA_FOLDER`: str
+
+        -   The directory where trained model artifacts and checkpoints will be saved (e.g., `trained_data/`).
+            
+    -   `TRAINING_CHECKPOINT_FILENAME`: str
+
+        -   The full path and filename for saving training progress checkpoints (e.g., `trained_data/training_progress_checkpoint.pkl`).
+            
+    -   `NUM_FEATURES`: int
+
+        -   The number of latent features to learn for users and items in the matrix factorization model (e.g., `600`).
+            
+    -   `LAMBDA_VAL`: int or float
+
+        -   The regularization parameter (lambda) used to prevent overfitting in the matrix factorization model (e.g., `5`).
                     
 -   **Returns:**
          
@@ -440,7 +500,7 @@ Train the collaborative filtering model.
         -   The mean rating for each book used in the model.
             
 
-**8C. COMBINED FILTERING:** 
+**7C. COMBINED FILTERING:** 
 Generate book recommendation lists using a combination of content-based filtering and collaborative filtering.
 
 -   `combined_model\cb_get_recs_new.py`
@@ -449,27 +509,47 @@ Generate book recommendation lists using a combination of content-based filterin
     
 -   **Parameters:**
     
-    -   `book_identifiers_txt_filepath`: str (file path)
-        
-        -   Path to the text file containing the book identifiers (e.g., `../content_filtering/book_similarity_matrix_books_0-8.txt`), corresponding to the HDF5 matrix order.
+    -   `BASE_FILE_NAME`: str
+
+        -   The base name for the similarity matrix and book identifiers text file (e.g., `../content_filtering/book_similarity_matrix`).
+            
+    -   `GENRE_WEIGHT`: float
+
+        -   The genre weight used in the combined similarity calculation, which is used to derive the `BOOK_IDENTIFIERS_TXT_FILEPATH` (e.g., `0.8`).
+            
+    -   `H5_CHUNKS_DIR`: str
+
+        -   The directory containing the chunked HDF5 similarity matrices (e.g., `../content_filtering/split_h5_chunks`).
+            
+    -   `H5_CHUNK_FILE_PREFIX`: str
+
+        -   The prefix used for the filenames of the HDF5 chunk files (e.g., `chunk_`).
+            
+    -   `H5_CHUNK_DATASET_PREFIX`: str
+
+        -   The prefix used for the dataset names *inside* the HDF5 chunk files (e.g., `chunk_data_`).
+            
+    -   `CHUNK_SIZE_ROWS`: int
+
+        -   The number of rows per chunk used during the initial HDF5 file splitting. This value is crucial for correctly processing the chunks (e.g., `3000`).
+            
+    -   `BOOK_IDENTIFIERS_TXT_FILEPATH`: str
+
+        -   The full path to the text file containing the book identifiers, derived from `BASE_FILE_NAME` and `GENRE_WEIGHT` (e.g., `../content_filtering/book_similarity_matrix_books_0-8.txt`). This file corresponds to the order of books in the HDF5 similarity matrix.
             
     -   `user_books`: list of str
-        
-        -   A list of book identifiers (e.g., "Title, Author Name") that the user has rated.
+
+        -   A list of book identifiers ("title, author name") that the user has rated.
             
     -   `user_ratings`: list of int or float
-        
+
         -   A list of corresponding ratings for `user_books` (e.g., 1-5 scale).
-            
-    -   (Implicit) `H5_CHUNKS_DIR`: str
-        
-        -   Directory containing the chunked HDF5 similarity matrices (e.g., `../content_filtering/split_h5_chunks`).
             
 -   **Returns:**
     
     -   `pd.DataFrame`:
         
-        -   A DataFrame with 'Book Identifier', 'Weighted Similarity Score', 'Rated by User' (boolean), and 'Original Rating' columns. The DataFrame is sorted by 'Weighted Similarity Score' in descending order. Returns an empty DataFrame if no valid rated books are found or an error occurs.
+        -   A DataFrame with 'Book Identifier', 'Weighted Similarity Score', 'Rated by User' (boolean), and 'Original Rating' columns. Returns an empty DataFrame if no valid rated books are found or an error occurs.
 
 -   `combined_model\cf_get_recs.py`
     
@@ -521,7 +601,7 @@ Generate book recommendation lists using a combination of content-based filterin
     
     -   `user_books`: list[str]
         
-        -   A list of book identifiers (e.g., "Title, Author Name") that the user has rated.
+        -   A list of book identifiers ("title, author name") that the user has rated.
             
     -   `user_ratings`: list[float]
         
@@ -537,7 +617,7 @@ Generate book recommendation lists using a combination of content-based filterin
             
     -   `new_user_regularization_strength`: int, optional
         
-        -   Regularization strength for the new user CF model. Defaults to 5.
+        -   Regularization strength of a new user for the collaborative filtering model. Defaults to 5.
             
 -   **Returns:**
     
@@ -545,7 +625,7 @@ Generate book recommendation lists using a combination of content-based filterin
         
         -   The primary return is a DataFrame containing:
             
-            -   `'Book Identifier'`: Combined book identifier (e.g., "Title, Author Name").
+            -   `'Book Identifier'`: Combined book identifier ("title, author name").
                 
             -   `'CB_Weighted_Similarity_Score'`: Content-based similarity score.
                 
@@ -555,7 +635,6 @@ Generate book recommendation lists using a combination of content-based filterin
                 
             -   `'Original Rating'`: The user's original rating for the book (NaN if not rated).
                 
-        -   This DataFrame is sorted by `CF_Predicted_Rating` then `CB_Weighted_Similarity_Score` in descending order. Returns `None` if data loading or prediction fails.
             
     -   (Implicit) Printed Recommendation Lists:
         
@@ -570,134 +649,88 @@ Generate book recommendation lists using a combination of content-based filterin
             -   **Strategy 4: Hybrid Strategy 2+1:** Recommends books by combining a fraction of pure top N content-based recommendations with the remaining fraction from a list of top content-based books re-ranked by collaborative filtering, prioritizing books appearing in both lists.
                 
 
-**9. TESTING AND VALIDATION:** 
+**8. TESTING AND VALIDATION:** 
 Verify the accuracy of book recommendation lists.
 
--   `combined_model\combined_recs_testing_final.py`
+-   `combined_model\testing_final.py`
     
--   This script evaluates the performance of various combined recommendation strategies across multiple users. It loads and preprocesses raw user rating data, splits each user's ratings into training and validation sets, and then generates recommendations for each user based on their _training_ data. It compares these generated recommendations against the "relevant" books (highly rated books) in the user's _validation_ set. The script defines several recommendation strategies (pure content-based, pure collaborative filtering, CB filtered by CF, multiplied scores, hybrid, and random) and organizes the results for subsequent metric calculation. This script imports and utilizes `combined_model/cb_get_recs.py` rather than `combined_model/cb_get_recs_new.py` for its content-based filtering logic.
+-   This script manages a recommendation evaluation pipeline for a predefined configuration. It loads, preprocesses, and splits user rating data into training and validation sets. Recommendations are then generated for users using various strategies (content-based, collaborative filtering, hybrid, and random baseline). The script evaluates performance by calculating the overlap of recommendations with relevant validation books. It includes a checkpointing system for resumption, saving intermediate DataFrames as Parquet files and final evaluation results as a CSV. Core recommendation logic and helpers are imported from `combined_recs_testing_final.py`.
     
--   **Parameters:**
+-   **Internal Configuration Parameters:**
     
-    -   `user_ratings_file_path`: str (CSV file path)
+    -   The script defines its operational parameters internally within a `test_config` dictionary and other variables. These values directly influence the behavior of the imported recommendation functions:
         
-        -   Path to the input CSV file containing raw user ratings, which will be processed and split for testing (e.g., `../split_data/test_ratings.csv`). This file is expected to have 'User_id', 'Title', 'Author', and 'Rating' columns.
-            
-    -   `relevance_threshold`: float, optional
+    -   `user_ratings_file_path`: Located at `../train_test_split/split_data_combined/test_ratings.csv`. This path specifies the input CSV file containing raw user ratings.
         
-        -   The minimum rating (inclusive) for a book to be considered "relevant" in the validation set for evaluation purposes. Defaults to 3.0.
-            
-    -   `validation_split_ratio`: float, optional
+    -   `relevance_threshold`: Set to `3.0`. This minimum rating determines if a book is considered "relevant" in the validation set for evaluation.
         
-        -   The fraction (0.0 to 1.0) of a user's rated books to reserve for the validation set during the split. Defaults to 0.5. For a user to be included in the split, they must have at least two ratings.
-            
-    -   `genre_weight`: int, optional
+    -   `validation_split_ratio`: Set to `0.5`. This is the fraction of a user's rated books reserved for the validation set.
         
-        -   The weight applied to genre similarity in content-based model file paths. Defaults to 1.
-            
-    -   `num_features`: int, optional
+    -   `genre_weight`: Configured as `0.8`. This weight is applied to genre similarity in content-based model file paths.
         
-        -   Number of latent features for the collaborative filtering model. Defaults to 400.
-            
-    -   `new_user_regularization_strength`: int, optional
+    -   `num_features`: Configured as `600`. This specifies the number of latent features for the collaborative filtering model.
         
-        -   Regularization strength for the new user CF model. Defaults to 15.
-            
-    -   `output_limit_per_strategy`: int, optional
+    -   `new_user_regularization_strength`: Configured as `5` (from `lambda_val`). This is the regularization strength for the new user collaborative filtering model.
         
-        -   The maximum number of recommendations to generate for each strategy for each user during testing. Defaults to 20.
-            
--   **Returns:**
+    -   `output_limit_per_strategy`: Set to `60`. This is the maximum number of recommendations generated for each strategy for each user.
+        
+-   **Outputs:**
     
-    -   `pd.DataFrame`: A DataFrame where each row corresponds to a user that had enough ratings to be split. It contains:
+    -   **Intermediate Parquet Files:** The script saves various intermediate DataFrames (e.g., processed user data, training/validation splits, generated recommendations, relevant validation books) as `.parquet` files within a configuration-specific subdirectory under `single_run_evaluation_results_loop/`.
+        
+    -   **Final Overlap Evaluation CSV:** A CSV file named using the configuration parameters (e.g., `overlap_evaluation_nf600_rs5_gw0-8.csv`) is saved to the configuration's output directory. This DataFrame contains the final evaluation results with the following columns:
         
         -   `'User_id'`: The ID of the user.
             
-        -   `'Book_Identifications_List'`: List of book identifiers used for _training_ the user's model.
+        -   `'Total_Relevant_Books'`: The total count of relevant books in the user's validation set.
             
-        -   `'Ratings_List'`: List of ratings corresponding to `Book_Identifications_List` (training ratings).
+        -   `'Overlap_Rec_CB_Only'`: The number of recommended books from the pure content-based strategy that overlap with the user's relevant validation books.
             
-        -   `'Relevant_Books_List'`: List of book identifiers from the validation set that the user rated at or above `relevance_threshold`.
+        -   `'Overlap_Rec_CF_Only'`: The number of recommended books from the pure collaborative filtering strategy that overlap with the user's relevant validation books.
             
-        -   `'Original_Validation_Ratings_List'`: List of original ratings from the validation set.
+        -   `'Overlap_Rec_CB_Filtered_by_CF'`: The number of recommended books from the content-based strategy (re-ranked by CF) that overlap with the user's relevant validation books.
             
-        -   `'Rec_CB_Only'`: List of recommended book identifiers from the pure content-based strategy.
+        -   `'Overlap_Rec_By_Multiplying_Scores'`: The number of recommended books from the multiplied scores strategy that overlap with the user's relevant validation books.
             
-        -   `'Rec_CF_Only'`: List of recommended book identifiers from the pure collaborative filtering strategy.
+        -   `'Overlap_Rec_Random'`: The number of recommended books from the random strategy that overlap with the user's relevant validation books.
             
-        -   `'Rec_CB_Filtered_by_CF'`: List of recommended book identifiers from the content-based strategy, re-ranked by CF scores.
-            
-        -   `'Rec_By_Multiplying_Scores'`: List of recommended book identifiers where CB and CF scores are multiplied.
-            
-        -   `'Rec_Random'`: List of randomly selected recommended book identifiers (as a baseline).
-            
--   `combined_model\testing_final.py`
-    
--   This script executes the evaluation pipeline. It handles the loading of necessary models and data, processes user ratings, splits data for testing, generates recommendations using `combined_recs_testing_final.py`, and evaluates the overlap of these recommendations with relevant books from the validation set. It includes checkpointing for resuming interrupted runs and handles various configurations. 
-    
--   **Parameters:**
-    
-    -   `test_config`: dict
-        
-        -   A dictionary defining the configuration for the test run, including `'num_features'`, `'lambda_val'`, and `'genre_weight'`.
-            
-    -   (Implicit) `csv_file_path`: str
-        
-        -   Path to the main CSV file containing test user ratings (e.g., `../train_test_split/split_data_combined/test_ratings.csv`).
-            
--   **Returns:**
-    
-    -   `overlap_evaluation_nf{nf}_rs{rs}_gw{gw}.csv`: CSV file
-        
-        -   A CSV file containing the overlap evaluation results (precision, recall, etc.) for each recommendation strategy, saved within a configuration-specific subdirectory under `CHECKPOINT_ROOT_DIR`. This file is then used as input by `analyze.py`.
-            
-    -   (Implicit) Checkpoint Files:
-        
-        -   `overall_pipeline_progress.pkl`: Pickle file
-            
-            -   Saves the overall progress of the pipeline, including the last completed step and paths to intermediate dataframes for each configuration.
                 
-        -   Intermediate Parquet files (`.parquet`):
-            
-            -   `user_data_processed.parquet`, `training_df.parquet`, `validation_df.parquet`, `all_user_recs.parquet`, `relevant_val_books.parquet` are saved within configuration-specific subdirectories for checkpointing and efficient loading.
-                
+
 -   `combined_model\analyze.py`
     
 -   This script handles the statistical analysis and visualization of the recommendation overlap results generated by `testing_final.py`. It loads the `overlap_evaluation` CSV files, calculates descriptive statistics (mean, median, skew, etc.) for overall performance and within different bins of "total relevant books" (e.g., low, medium, high), and then generates various plots (bar charts, KDE plots) to help interpret the effectiveness of different recommendation strategies. It is the designated visualization component of the pipeline.
     
 -   **Parameters:**
     
-    -   `checkpoint_root_dir`: str
+    -   `CHECKPOINT_ROOT_DIR`: str
         
         -   The root directory where the output directories from `testing_final.py` are located (e.g., `single_run_evaluation_results_loop`).
             
-    -   `parameters_list`: list of dict
+    -   `parameters_to_process`: list of dict
         
         -   A list of dictionaries, where each dictionary specifies the configuration (e.g., `{'num_features': 600, 'lambda_val': 5, 'genre_weight': 0.8}`) for which `overlap_evaluation` CSV files are to be analyzed.
             
-    -   `output_file_path`: str, optional
+    -   `OUTPUT_RESULTS_FILE`: str, optional
         
         -   The path to a text file where the detailed statistical analysis results will be written. If `None`, results are only printed to the console.
             
 -   **Returns:**
     
-    -   `output_file_path`: Text file
+    -   `{OUTPUT_RESULTS_FILE}`: Text file
         
         -   A text file containing the detailed descriptive statistics for each processed overlap evaluation file, including overall and binned results.
             
     -   Plot Files (PNG):
-        
-        -   Various plots are generated and saved within `plots` subdirectories inside each configuration's output folder:
             
-            -   `overall_mean_overlap_nf{nf}_rs{rs}_gw{gw}.png`
+         -   `overall_mean_overlap_nf{nf}_rs{rs}_gw{gw}.png`
                 
-            -   `binned_mean_overlap_nf{nf}_rs{rs}_gw{gw}.png`
+        -   `binned_mean_overlap_nf{nf}_rs{rs}_gw{gw}.png`
                 
-            -   `distribution_overlap_rec_{strategy_name}_nf{nf}_rs{rs}_gw{gw}.png`
+        -   `distribution_{strategy_name_lower}_nf{nf}_rs{rs}_gw{gw}.png` (e.g., `distribution_overlap_rec_cb_only_nf600_rs5_gw0.8.png`)
                 
 -   **MANUAL TESTING**
     
--   The quality of book recommendation lists can be verified by developers by inputting a list of books with ratings out of five stars and then evaluating the quality of the resulting recommendations.
+-   The quality of book recommendation lists can be verified by developers by inputting a list of books with ratings out of five stars into `combined_model\combined_get_recs_final.py` and then evaluating the quality of the resulting recommendations.
 
 
 **APP:**
@@ -773,4 +806,4 @@ Verify the accuracy of book recommendation lists.
 -   `keyword_processing\scripts_older_versions\get_keys_v1.py`
 
 
-**REMAINING TO DO:** `keyword_analysis_keyBERT\keyword_extraction_final.py`, `cleaning\same_books_v2.py`
+**REMAINING TO DO:** `cleaning\same_books_v2.py`

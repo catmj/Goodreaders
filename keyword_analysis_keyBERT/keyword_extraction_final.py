@@ -125,8 +125,8 @@ class KeywordExtractor:
             self.process_file(file_path, param_combinations)
 
 if __name__ == "__main__":
-    data_folder_path = 'data_folder' # Adjust this to your data directory
-
+    data_folder_path = 'data_folder' 
+    
     # Define ranges for n and diversity
     n_values = [15]
     diversity_values = [0.2]
